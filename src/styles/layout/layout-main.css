@@ -1,0 +1,106 @@
+/*
+    ---------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------
+    ----------  /curso-100-proyectos-html-css-js/  ----------
+    ----------  /05-proyectos-javascript/  ------------------
+    ----------  /src/  --------------------------------------
+    ----------  /styles/  -----------------------------------
+    ----------  /layout/  -----------------------------------
+    ----------  /layout-main.css  ---------------------------
+    ---------------------------------------------------------
+*/
+
+
+.layout__main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 5rem; */
+    /* margin-bottom: 5rem; */
+}
+
+/* @media(min-width: 768px) {
+    
+    .main__container {
+        margin-top: 5rem;
+    }   
+    
+} */
+
+.main__container {
+    flex: 1;
+    width: 100vw;
+    min-height: 60rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    /* place-items: center; */
+}
+
+
+.main__description-project {
+    max-width: 76.8rem;
+    width: 100%;
+    /* margin-bottom: 5rem; */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #b4a8a8;
+}
+
+@media(min-width: 480px) {
+    
+    .main__description-project {
+        padding: 3rem;
+    }   
+    
+}
+
+.description-project__title {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #E8EFFA;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #b4a8a8;
+}
+
+@media(min-width: 768px) {
+    
+    .description-project__title {
+        font-size: 3rem;
+    }   
+    
+}
+
+.description-project__description {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    line-height: 2;
+    background-color: #E8EFFA;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #b4a8a8;
+}
+
+
+#content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+span {
+    display: inline;
+}
+
+#content span {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+

@@ -1,0 +1,141 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-23.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+}
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+@media (min-width: 500px) {
+
+    .main__container {
+        min-height: 60rem;    
+        padding-top: 20rem;
+    }
+}
+
+.main__validation-email {
+    position: relative;
+    width: 90%;
+    max-width: 60rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    transition: all 300ms linear;
+}
+
+
+.validation-email__input {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+@media (min-width: 500px) {
+
+    .validation-email__input {  
+        font-size: 1.6rem;
+    }
+}
+
+.validation-email__icons {
+    position: relative;
+    flex-basis: 10%;
+    background-color: #ffffff;
+}
+
+.icons__check,
+.icons__xmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 300ms linear;
+}
+
+@media (min-width: 500px) {
+
+    .icons__check,
+    .icons__xmark {
+        font-size: 3rem;
+    }
+}
+
+.icons__check {
+    color: #6dc06d;
+}
+
+.icons__xmark {
+    color: #f95d5d;
+}
+
+.focus {
+    border-color: black;
+}
+
+.validation-email__icons > .show {
+    opacity: 1;
+}
+
+
+/*  -----  Estilos fondos del input e iconos - FOCUS  -----  */
+.main__validation-email:focus-within .validation-email__input {
+    background-color: #f0f0f0;
+}
+
+.main__validation-email:focus-within .validation-email__icons {
+    background-color: #f0f0f0;
+}
+
+
+/*  -----  Sobrescribir fondo amarillo/azul del autofill  ----- */
+.validation-email__input:-webkit-autofill,
+.validation-email__input:-webkit-autofill:hover,
+.validation-email__input:-webkit-autofill:focus,
+.validation-email__input:-webkit-autofill:active {
+
+    
+    -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset !important;
+    -webkit-text-fill-color: #000000 !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Cambiar también el fondo del contenedor de iconos */
+.validation-email__input:-webkit-autofill ~ .validation-email__icons {
+    background-color: #f0f0f0;
+}
+

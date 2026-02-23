@@ -1,0 +1,70 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-22.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+.main__search {
+    width: 95%;
+    max-width: 50rem;
+    background-color: #e6e1f0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    
+}
+
+.main__input,
+.main__textarea {
+    width: 100%;
+    display: block;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #ccc;
+    outline: none;
+    margin-bottom: 3rem;
+}
+
+.main__textarea {
+    height: 20rem;
+    text-align: left;
+    overflow-y: auto;
+    margin-bottom: 3rem;
+    background-color: #fdf8f8;
+}
+
+.main__text {
+    height: 25rem;
+    text-align: justify;
+    line-height: 1.8;
+    overflow-y: auto;
+}
+
+/* clase que añade el javascript dinamicamente */
+.text__search {
+    background-color: #cdbaf5;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+}

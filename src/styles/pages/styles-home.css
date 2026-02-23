@@ -1,0 +1,34 @@
+/*
+    ---------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------
+    ----------  /curso-100-proyectos-html-css-js/  ----------
+    ----------  /05-proyectos-javascript/  ------------------
+    ----------  /src/  --------------------------------------
+    ----------  /styles/  -----------------------------------
+    ----------  /projects/  ---------------------------------
+    ----------  /styles-home.css  ---------------------------
+    ---------------------------------------------------------
+*/
+
+
+body {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+}
+
+.main__title {
+    text-align: center;
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: #5ac274;
+}

@@ -1,0 +1,58 @@
+<!--    
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/pages/  --------------------------------------------
+    ----------  /proyecto-19.html  --------------------------------------
+    ---------------------------------------------------------------------
+-->
+
+<!--  
+
+    ----------  Enunciado Proyecto 19  ----------  
+
+    -  Utiliza los estilos de las tarjetas de proyectos anteriores y añade este formulario. Ver PDF.
+    -  El usuario podrá crear artículos.
+    -  Los artículos al refrescar la página no deberán borrarse (usa el LocalStorage).
+                                  
+-->
+
+
+<div class="main__container">
+
+
+    <!--  -----  sección del formulário  -----  -->
+    <section class="layout__container-form">
+
+        <form class="form__create">
+
+            <div class="create__container">
+                <label class="create__label" for="title"> Título </label>
+                <input class="create__input" type="text" id="title" required>
+            </div>
+
+            <div class="create__container">
+                <label class="create__label" for="subtitle"> Subtítulo </label>
+                <input class="create__input" type="text" id="subtitle" required>
+            </div>
+
+            <div class="create__container">
+                <label class="create__label" for="description"> Descripción </label>
+                <textarea class="create__input" id="description" required> </textarea>
+            </div>
+
+            <input class="create__btn" type="submit" value="Crear artículo">
+
+        </form>
+
+    </section>
+
+
+    <!--  -----  sección de artículos  -----  -->
+    <section class="layout__articles">
+        <!--  -----  Renderizado de los artículos con JS  -----  -->
+    </section>
+
+</div>

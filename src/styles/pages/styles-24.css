@@ -1,0 +1,71 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-24.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+@media (min-width: 500px) {
+
+    .main__container {
+        min-height: 60rem;    
+        padding-top: 20rem;
+    }
+}
+
+
+.main__form-password {
+    display: flex;
+    border: 2px solid #444;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+.form__input {
+    display: block;
+    width: 26rem;
+    height: 5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.form__eye {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    color: #444;
+}
+
+.form__eye > .fa-solid {
+    cursor: pointer;
+}
+
+.form__eye > .fa-solid:active {
+    color: red;
+}

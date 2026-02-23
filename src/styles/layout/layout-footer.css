@@ -1,0 +1,80 @@
+/*
+    ---------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------
+    ----------  /curso-100-proyectos-html-css-js/  ----------
+    ----------  /05-proyectos-javascript/  ------------------
+    ----------  /src/  --------------------------------------
+    ----------  /styles/  -----------------------------------
+    ----------  /layout/  -----------------------------------
+    ----------  /layout-footer.css  -------------------------
+    ---------------------------------------------------------
+*/
+
+
+.footer__container {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/*
+    ---------------------------
+    -----  Layout Footer  -----
+    ---------------------------
+*/
+
+.layout__footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background-color: #f7f8bc;
+}
+
+
+/*  -----  Contenedor del Título  -----  */
+.footer__container-title {
+    width: 100%;
+    /* margin-bottom: 2rem; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+/*  -----  Título  -----  */
+.footer__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #036AAD;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer__title p {
+    font-size: 1.6rem;
+}
+
+
+@media (min-width: 768px) {
+ 
+    .footer__title {
+       font-size: 2rem;
+    }
+ 
+
+}
+
+@media (min-width: 1024px) {
+
+    .footer__title {
+       font-size: 3rem;
+    }
+}
+

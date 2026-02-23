@@ -1,0 +1,179 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-17.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+
+/*  -----  Para el formulario  -----  */
+
+.layout__container-form {
+    width: 95%;
+    max-width: 60rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 20px #bcbec0;
+}
+
+.form__create {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create__container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.create__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+.create__input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border:  none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #686666;
+    resize: none;
+}
+
+.create__input:focus {
+    box-shadow: 0px 0px 5px #0D6EFD;
+}
+
+.create__btn {
+    display: inline-block;
+    width: 20rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: white;
+    background-color: #358bd5;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.create__btn:hover {
+    background-color: #2a6da7;
+}
+
+
+
+/*  -----  Para los artículos  -----  */
+
+.layout__articles{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.layout__card{
+    width: 30rem;
+    padding: 1rem;
+    background-color: #0D6EFD;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 0px 10px #bcbec0;
+}
+
+.card__header{
+    border-bottom: 1px solid #0b58ca;
+}
+
+.header__author{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.card__content{
+    padding: 1.5rem;
+}
+
+.content__title{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.content__description{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.content__btn,
+.delete__btn{
+    border: 1px solid #0b58ca;
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+
+/*  -----  Para cambiar estilos en JS  -----  */
+.layout__card.active {
+    box-shadow: 0px 0px 14px black;
+}
+
+.card__header.active {
+    background-color: #1b62ca;
+}
+
+.content__description.active {
+    opacity: 0.8;
+}
+
+.content__btn.active {
+    color: #1b62ca;
+    background-color: white;
+}

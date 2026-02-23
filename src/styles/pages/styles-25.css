@@ -1,0 +1,53 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-25.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+.main__emojis {
+    margin-top: 8rem;
+    width: 28rem;
+    height: 28rem;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emojis__emoji {
+    font-size: 20rem;
+    filter: grayscale(1);
+}
+
+.emojis__emoji:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+    cursor: pointer;
+    
+}

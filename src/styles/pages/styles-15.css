@@ -1,0 +1,99 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-15.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+
+
+.layout__card {
+    width: 30rem;
+    height: 33rem;
+    padding: 1rem;
+    background-color: #0D6EFD;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card__header {
+    border-bottom: 1px solid #0b58ca;
+}
+
+.header__author {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.card__content {
+    padding: 1.5rem;
+}
+
+.content__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.content__description {
+    height: 10rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.btn-add-card {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #0b58ca;
+    background-color: #0b58ca;
+    color: white;
+    width: 10rem;
+    padding: 1rem;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.content__btn,
+.delete__btn {
+    border: 1px solid #0b58ca;
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}

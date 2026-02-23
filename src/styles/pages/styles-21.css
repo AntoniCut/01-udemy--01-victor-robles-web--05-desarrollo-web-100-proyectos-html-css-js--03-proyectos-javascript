@@ -1,0 +1,95 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-21.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+.main__subtitle {
+    width: 95%;
+    max-width: 40rem;
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0px 0px 8px inset black;
+}
+
+.main__inventario-almacen {
+    width: 95%;
+    max-width: 40rem;
+}
+
+.main__inventario {
+    width: 100%;
+    min-height: 15rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}
+
+.inventario__caja {
+    width: 8rem;
+    height: 8rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f3f1f1;
+}
+
+.main__almacen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 50rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 2rem;
+}
+
+.almacen__estanteria {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ccc;
+    box-shadow: 0px 0px 8px inset black;
+    opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+    
+    .almacen__estanteria {
+        width: 8rem;
+        height: 8rem;
+    }
+}

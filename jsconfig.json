@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "module": "ESNext",
+        "target": "ES2022",
+        "lib": [
+            "ES2022",
+            "DOM"
+        ],
+        "moduleResolution": "bundler"
+    },
+    "include": [
+        "global.d.ts",
+        "src",
+        "node_modules/@types/**/*",
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

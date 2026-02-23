@@ -1,0 +1,242 @@
+/*
+    ---------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------
+    ----------  /curso-100-proyectos-html-css-js/  ----------
+    ----------  /05-proyectos-javascript/  ------------------
+    ----------  /src/  --------------------------------------
+    ----------  /styles/  -----------------------------------
+    ----------  /layout/  -----------------------------------
+    ----------  /layout-header.css  -------------------------
+    ---------------------------------------------------------
+*/
+
+
+.layout__header {
+    min-width: 100%;
+    display: flex;
+}
+
+
+/*
+    ---------------------------
+    -----  Layout Header  -----
+    ---------------------------
+*/
+
+.header__container {
+    width: 100vw;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: 8rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #f7f8bc;
+    /* background-color: #E4BC02; */
+}
+
+
+@media (min-width: 768px) {
+
+    .header__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        padding-top: 9rem;
+        
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .header__container {
+        padding-top: 5rem;
+        
+    }
+
+}
+
+
+/* 
+    -----------------------------------------------------------------
+    -----  Contenedor de los Logos y Descripciones del Proyecto -----
+    -----------------------------------------------------------------  
+*/
+
+.header__container-logos-left,
+.header__container-logos-right {
+    /* margin-top: 10rem; */
+    width: 100%;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding: 2rem;
+    /* background-color: #E8EFFA; */
+    box-shadow: 1px 1px 5px #b4a8a8;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+
+    .header__container-logos-left,
+    .header__container-logos-right {
+        width: 20rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .header__container-logos-left,
+    .header__container-logos-right {
+        width: 40rem;
+        margin-top: 0;
+        flex-direction: row;
+    }
+
+}
+
+
+.javascript__description {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.javascript__logos {
+    display: flex;
+    gap: 2rem;
+}
+
+.html__logo {
+    width: 4rem;
+    height: auto;
+    mix-blend-mode: multiply;
+    transition: all 300ms ease-in-out;
+}
+
+.css__logo {
+    width: 4rem;
+    height: auto;
+    mix-blend-mode: multiply;
+    transition: all 300ms ease-in-out;
+}
+
+.javascript__logo {
+    width: 4rem;
+    height: auto;
+    mix-blend-mode: multiply;
+    transition: all 300ms ease-in-out;
+}
+
+
+.github-logo {
+    width: 3rem;
+    height: 3rem;
+    transition: all 300ms ease-in-out;
+}
+
+.html__logo:hover,
+.css__logo:hover,
+.javascript__logo:hover,
+.github-logo:hover {
+    transform: scale(1.1);
+}
+
+.header__container-title {
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    /* background-color: #E8EFFA; */
+    box-shadow: 1px 1px 5px #b4a8a8;
+}
+
+@media (min-width: 480px) {
+
+    .header__container-title {
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    .header__container-title {
+        width: 20rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .header__container-title {
+        width: 40rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .header__container-title {
+        padding: 3rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+
+/*  -----  Título del Header  -----  */
+.header__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header__title p {
+    font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+
+    .header__title {
+        font-size: 2rem;
+    }
+
+    .header__title p {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .header__title {
+        font-size: 3rem;
+    }
+
+    .header__title p {
+        font-size: 2rem;
+    }
+
+}
