@@ -1,0 +1,106 @@
+/*
+    ---------------------------------------------------------------------
+    ----------  /udemy.antonydev.tech/  ---------------------------------
+    ----------  /01-victor-robles-web/  ---------------------------------
+    ----------  /05-desarrollo-web-100-proyectos-html-css-js/  ----------
+    ----------  /03-proyectos-javascript/  ------------------------------
+    ----------  /src/styles/pages/  -------------------------------------
+    ----------  /styles-26.css  -----------------------------------------
+    ---------------------------------------------------------------------
+*/
+
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
+
+@media (min-width: 768px) {
+
+    .main__container {
+        min-height: 60rem;
+    }
+}
+
+.main__star-container {
+    width: 18rem;
+    height: 18rem;
+}
+
+@media (min-width: 480px) {
+
+    .main__star-container {
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .main__star-container {
+        width: 25rem;
+        height: 25rem;
+    }
+}
+
+.main__star {
+    position: absolute;
+    color: #fbe323;
+    font-size: 18rem;
+    cursor: pointer;
+}
+
+@media (min-width: 480px) {
+
+    .main__star {
+        font-size: 20rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .main__star {
+        font-size: 25rem;
+    }
+}
+
+.main__star--gray {
+    color: gray;
+    z-index: 1;
+    opacity: 1;
+}
+
+.main__star--yellow {
+    color: #fbe323;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes scale-animation {
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+.visible {
+    animation: scale-animation 1s linear;
+    opacity: 1;
+    visibility: visible;
+}
+
+.yellow-color {
+    color: #fbe323;
+}
