@@ -3,18 +3,19 @@
         "checkJs": true,
         "noImplicitAny": true,
         "strict": true,
-        "module": "ESNext",
+        "module": "esnext",
         "target": "ES2022",
         "lib": [
             "ES2022",
             "DOM"
         ],
-        "moduleResolution": "bundler"
+        "moduleResolution": "node",
+        "ignoreDeprecations": "6.0"
     },
     "include": [
         "global.d.ts",
         "src",
-        "node_modules/@types/**/*",
+        
     ],
     "exclude": [
         "node_modules"

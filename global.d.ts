@@ -2,8 +2,6 @@
 /// <reference lib="es2022" />
 
 
-import type { JQueryStatic } from "jquery";
-
 
 /**
  * -------------------------------------------------
@@ -11,6 +9,7 @@ import type { JQueryStatic } from "jquery";
  *  (por si tu versión de lib.dom.d.ts no los incluye)
  * -------------------------------------------------
  */
+
 
 interface HTMLDivElement extends HTMLElement {}
 interface HTMLHeaderElement extends HTMLElement {}
@@ -25,19 +24,3 @@ interface HTMLFigcaptionElement extends HTMLElement {}
 interface NodeListOf<TNode extends Node> extends NodeList {
     [index: number]: TNode;
 }
-
-
-/**
- * ----------------------------------------------
- * -----  Extensiones globales para jQuery  -----
- * ----------------------------------------------
- */
-
-declare global {
-
-    interface Window {
-        jQuery: JQueryStatic;
-    }
-}
-
-export { };

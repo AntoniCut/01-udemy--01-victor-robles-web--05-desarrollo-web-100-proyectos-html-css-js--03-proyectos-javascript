@@ -513,6 +513,23 @@ export const routesProyectosJS = [
             src: `${scripts}/main-26.js`
         }]
     },
+
+
+    {
+        id: 'js27',
+        urlLayoutHeader: urlLayoutHeader,
+        urlLayoutNavbar: urlLayoutNavbar,
+        urlLayoutMain: `${urlLayoutMain}/proyecto-27.html`,
+        urlLayoutFooter: urlLayoutFooter,
+        favicon: favicon,
+        pageTitle: 'Proyecto 27 JavaScript',
+        path: '/proyecto-27-js/',
+        headerTitle: 'Proyecto 27 JavaScript',
+        styles: `${styles}/styles-27.css`,
+        scripts: [{
+            src: `${scripts}/main-27.js`
+        }]
+    },
     
 
 

@@ -32,7 +32,7 @@
 
     //  -----  Referencias al HTML  -----
 
-    /** @type {HTMLSectionElement | null} - `contenedor de artículos` */
+    /** @type {HTMLArticleElement | null} - `contenedor de artículos` */
     const articlesCard = document.querySelector(".layout__articles");
 
     /** @type {HTMLInputElement | null} - `input del título` */
