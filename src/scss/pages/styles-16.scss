@@ -1,0 +1,20 @@
+/*
+    *  -----------------------------------------------------------------  *
+    *  -----  /styles-16.css  --  /src/styles/pages/styles-16.css  -----  *
+    *  -----------------------------------------------------------------  *
+*/
+
+.main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+    font-family: 'Monserrat', sans-serif;
+    background-color: #e8effa;
+}
