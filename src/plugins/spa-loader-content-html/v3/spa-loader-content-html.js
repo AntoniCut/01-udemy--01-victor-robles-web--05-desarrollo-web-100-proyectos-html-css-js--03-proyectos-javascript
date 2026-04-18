@@ -79,23 +79,21 @@ export const spaLoaderContentHtml = (options = {}) => {
 
     const init = () => {
 
-        console.log('\n');
-        console.warn('-------------------------------------------------------------------------------');
-        console.warn('-----  ✅ Plugin SPA cargado correctamente - spa-loader-content-html.js  -----');
-        console.warn('-------------------------------------------------------------------------------');
-        console.log('\n');
-
-        console.log("%c -------------------------------------------------------------------------------", "background:#2ecc71; color:white; padding:4px;");
-        console.log("%c -----  ✅ Plugin SPA cargado correctamente - spa-loader-content-html.js  -----", "background:#2ecc71; color:white; padding:4px;");
-        console.log("%c -------------------------------------------------------------------------------", "background:#2ecc71; color:white; padding:4px;");
+        
+        
+        console.log(
+            '%c  ✅ Plugin SPA cargado correctamente - spa-loader-content-html.js  ', 
+            'background:#2ecc71; color:white; padding:4px;'
+        );
+        
 
 
-        console.log("%c Fondo rojo", "background:#e74c3c; color:white; padding:4px;");
-        console.log("%c Fondo verde", "background:#2ecc71; color:white; padding:4px;");
-        console.log("%c Fondo azul", "background:#3498db; color:white; padding:4px;");
-        console.log("%c Fondo amarillo", "background:#f1c40f; color:black; padding:4px;");
-        console.log("%c Gris", "background:#7f8c8d; color:white; padding:4px;");
-        console.log("%c Negro", "background:#000; color:#0f0; padding:4px;");
+        // console.log("%c Fondo rojo", "background:#e74c3c; color:white; padding:4px;");
+        // console.log("%c Fondo verde", "background:#2ecc71; color:white; padding:4px;");
+        // console.log("%c Fondo azul", "background:#3498db; color:white; padding:4px;");
+        // console.log("%c Fondo amarillo", "background:#f1c40f; color:black; padding:4px;");
+        // console.log("%c Gris", "background:#7f8c8d; color:white; padding:4px;");
+        // console.log("%c Negro", "background:#000; color:#0f0; padding:4px;");
 
 
         //  -----  Configurar listener para navegación (antes de la carga inicial para capturar clics durante la carga)  -----

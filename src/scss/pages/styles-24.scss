@@ -36,6 +36,14 @@
     background-color: #ffffff;
 }
 
+.form__hidden-username {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
 .form__input {
     display: block;
     width: 26rem;

@@ -27,8 +27,8 @@
 
         console.warn("Versión de jQuery UI:", jqueryUiVersion);
 
-    } 
-    
+    }
+
     else
         console.warn("jQuery UI no está cargado.");
 
@@ -37,7 +37,7 @@
 
     /** @type {JQuery<HTMLDivElement>} - `Contenedor de las cajas` */
     const $cajas = $(".inventario__caja");
-    
+
     /** @type {JQuery<HTMLDivElement>} - `Contenedor de las estanterías` */
     const $estanterias = $(".almacen__estanteria");
 
@@ -61,7 +61,7 @@
 
                 //  -----  Asignar un ID único a cada caja  -----
                 const id = "caja" + (index + 1);
-                
+
                 //  -----  Establecer el atributo ID de la caja  -----
                 $element.attr("id", id);
 
@@ -85,10 +85,10 @@
      * @type {JQueryUI.DroppableOptions} */
 
     const droppableOptions = {
-        
+
         accept: ".inventario__caja",
         hoverClass: "hovered",
-        
+
         /**
          * - Función que se ejecuta cuando una caja es soltada sobre una estantería. 
          *   Verifica si la estantería está ocupada y maneja el movimiento de la caja.
@@ -107,7 +107,7 @@
             const $estanteria = $(this);
 
 
-            //  -----  Verificar si la estantería ya tiene una caja  -----
+            /**  `-----  Verificar si la estantería ya tiene una caja  -----` */
             const estanteriaOcupada = $estanteria.children().length > 0;
 
             //  -----  Si la estantería no está ocupada, mover la caja a la estantería  -----
@@ -128,23 +128,19 @@
                 /** @type {JQuery<HTMLElement>} - `Contenedor del inventario` */
                 const $inventario = $(".main__inventario");
 
-                //  -----  Verificar si el inventario está vacío después de mover la caja  -----
+                /**  `-----  Verificar si el inventario está vacío después de mover la caja  -----` */
                 const sinCajas = $inventario.children().length === 0;
 
                 //  -----  Si el inventario está vacío, mostrar una alerta después de un breve retraso  -----
-                if (sinCajas) {
-                    
-                    setTimeout(
-                        /** @returns {void} */
-                        () => {
-                            alert("😊 ¡Todas las cajas han sido guardadas! 😊");
-                        },
-                        1000
-                    );
-                }
+                if (sinCajas) 
 
-            } 
-            
+                    setTimeout(() => {
+                        alert("😊 ¡Todas las cajas han sido guardadas! 😊");
+                    }, 1000);
+                
+
+            }
+
             //  -----  de lo contrario, revertir el movimiento y mostrar una alerta     -----
             else {
 
@@ -161,7 +157,7 @@
 
     };
 
-    
+
     //  -----  Hacer que las estanterías sean droppables con jQuery UI usando las opciones definidas  -----
     $estanterias.droppable(droppableOptions);
 

@@ -19,7 +19,15 @@
 
     <form class="main__form-password">
 
-        <input type="password" id="password" class="form__input" placeholder="Introduce tu contraseña">
+        <input
+            type="text"
+            name="username"
+            class="form__hidden-username"
+            autocomplete="username"
+            tabindex="-1"
+        >
+
+        <input type="password" id="password" class="form__input" placeholder="Introduce tu contraseña" autocomplete="new-password">
 
         <div class="form__eye">
             <i class="fa-solid fa-eye"> </i>
