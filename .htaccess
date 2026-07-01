@@ -1,9 +1,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/
+    RewriteBase /victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/
     RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/index.html [L]
+    RewriteRule . /victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/index.html [L]
 </IfModule>
 

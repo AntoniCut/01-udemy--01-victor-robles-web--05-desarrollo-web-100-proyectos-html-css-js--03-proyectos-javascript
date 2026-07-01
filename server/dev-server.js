@@ -14,7 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 /** Prefijo URL que usa el base href del proyecto. */
-const DEV_ROUTE_BASE = '/01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
+const DEV_ROUTE_BASE = '/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
 
 /** Puerto público del servidor de desarrollo. */
 const DEV_SERVER_PORT = Number(process.env.DEV_SERVER_PORT || 3000);
@@ -120,8 +120,8 @@ const internalServer = app.listen(0, '127.0.0.1', () => {
         throw new Error('No se pudo resolver el puerto interno del servidor Express.');
     }
 
-    console.log(`Servidor de desarrollo Express escuchando en http://${address.address}:${address.port}`);
-    
+    console.log(`Servidor de desarrollo Express escuchando en http://${address.address}:${address.port}\n`);
+
     bs.init({
         proxy: `http://127.0.0.1:${address.port}`,
         port: DEV_SERVER_PORT,

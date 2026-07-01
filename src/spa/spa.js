@@ -10,7 +10,7 @@ import { spaLoaderContentHtml } from "../plugins/spa-loader-content-html/v3/spa-
 
 
 /** @type {string} - `Base del proyecto` */
-export const base = '/01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
+export const base = '/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
 
 
 /**  

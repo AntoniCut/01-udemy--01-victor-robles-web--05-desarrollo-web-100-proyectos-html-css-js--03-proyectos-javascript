@@ -6,7 +6,7 @@ import path from 'node:path';
 
 
 /** Prefijo URL que usa el base href del proyecto. */
-const DEV_ROUTE_BASE = '/01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
+const DEV_ROUTE_BASE = '/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
 
 /** Puerto público para previsualizar el build de producción. */
 const PREVIEW_SERVER_PORT = Number(process.env.PREVIEW_SERVER_PORT || 4173);

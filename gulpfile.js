@@ -1,6 +1,10 @@
-/** @file gulpfile.js — Build pipeline: src/ → app/ (dev) | app/ → dist/ (prod) */
+/*
+    *  --------------------------------------------  *
+    *  -----  /gulpfile.js  --  /gulpfile.js  -----  *
+    *  --------------------------------------------  *
+*/
 
-// ── IMPORTS ──────────────────────────────────────────────
+
 
 import gulp from 'gulp';
 import gulpSass from 'gulp-sass';
@@ -16,18 +20,23 @@ import fs from 'fs';
 import path from 'node:path';
 
 
-
+/**  -----  desestructuración de métodos de Gulp  ----- */
 const { src, dest, watch, series, parallel } = gulp;
 
 
-/** Instancia de Dart Sass para gulp-sass. */
+/**  `-----  Instancia de Dart Sass para gulp-sass como motor de compilación -----` */
 const sass = gulpSass(dartSass);
 
 
-// ── CONFIG ───────────────────────────────────────────────
+/** 
+ * ------------------------
+ * -----  `paths`  --------
+ * ------------------------
+ * - Rutas centralizadas de origen/destino para evitar hardcode.
+ */
 
-/** Rutas centralizadas de origen y destino. */
 const paths = {
+    
     srcRoot:  'src',
     appRoot:  'app',
     distRoot: 'dist',
@@ -38,30 +47,43 @@ const paths = {
     },
 
     src: {
+        
         componentsDir:    path.join('src', 'components'),
         components:       path.posix.join('src', 'components', '**/*'),
+        
         effectsDir:       path.join('src', 'effects'),
         effects:          path.posix.join('src', 'effects', '**/*'),
+        
         fontsDir:         path.join('src', 'fonts'),
         fonts:            path.posix.join('src', 'fonts', '**/*'),
+        
         libsDir:          path.join('src', 'libs'),
         libs:             path.posix.join('src', 'libs', '**/*'),
+        
         markdownShikiDir: path.join('src', 'markdown-shiki'),
         markdownShiki:    path.posix.join('src', 'markdown-shiki', '**/*'),
+        
         pagesDir:         path.join('src', 'pages'),
         pages:            path.posix.join('src', 'pages', '**/*'),
+        
         pdfsDir:          path.join('src', 'pdfs'),
         pdfs:             path.posix.join('src', 'pdfs', '**/*'),
+        
         pluginsDir:       path.join('src', 'plugins'),
         plugins:          path.posix.join('src', 'plugins', '**/*'),
+        
         routesDir:        path.join('src', 'routes'),
         routes:           path.posix.join('src', 'routes', '**/*'),
+        
         spaDir:           path.join('src', 'spa'),
         spa:              path.posix.join('src', 'spa', '**/*'),
+        
         scriptsDir:       path.join('src', 'scripts'),
         scripts:          path.posix.join('src', 'scripts', '**/*.js'),
         scriptsNoMap:     '!' + path.posix.join('src', 'scripts', '**/*.map'),
+        
         main:             path.posix.join('src', 'main.js'),
+        
         scssGlobals:      path.posix.join('src', 'scss', 'globals.scss'),
         scssPagesDir:     path.join('src', 'scss', 'pages'),
         scssPages:        path.posix.join('src', 'scss', 'pages', '**/*.scss'),
@@ -73,26 +95,43 @@ const paths = {
         css:     path.posix.join('app', '**/*.css'),
         js:      path.posix.join('app', '**/*.js'),
         jsNoMap: '!' + path.posix.join('app', '**/*.map'),
-    },
+    }
+
 };
 
-/** Opciones de chokidar para watchers. Soporta polling vía env vars (útil en Linux/Docker). */
+
+
+/**
+ * -----------------------------
+ * -----  `WATCH_OPTIONS`  ----- 
+ * -----------------------------
+ * - Opciones de chokidar para watchers. 
+ * - Soporta polling vía env vars (útil en Linux/Docker). 
+ * */
+
 const WATCH_OPTIONS = /** @type {import('gulp').WatchOptions} */ ({
+    
     ignoreInitial: true,
     usePolling:    process.env.CHOKIDAR_USEPOLLING === 'true',
     interval:      Number(process.env.CHOKIDAR_INTERVAL || 250),
-    awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 100 },
+    awaitWriteFinish: { 
+        stabilityThreshold: 200, 
+        pollInterval: 100 
+    }
+
 });
 
 
 
-// ── HELPERS ──────────────────────────────────────────────
-
-
 /**
- * Previene que Gulp se detenga ante errores en los streams.
+ * ---------------------------
+ * -----  `safePipe()`  ------
+ * ---------------------------
+ * - Evita que Gulp se detenga ante errores en los streams de tareas.
  * @returns {NodeJS.ReadWriteStream}
  */
+
+
 const safePipe = () => plumber({
     errorHandler(err) {
         console.error(err.message);
@@ -103,12 +142,19 @@ const safePipe = () => plumber({
 
 
 /**
- * Transform de validación no bloqueante: registra archivos vacíos o streams.
+ * -------------------------------
+ * -----  `validateFiles()`  -----
+ * -------------------------------
+ * - Valida archivos en streams de tareas sin bloquear el proceso.
+ * - Transform de validación no bloqueante: registra archivos vacíos o streams.
  * @param {string} taskName — Nombre de la tarea para mensajes de advertencia.
  * @returns {Transform}
  */
+
 const validateFiles = (taskName) => new Transform({
+    
     objectMode: true,
+    
     transform(file, _enc, cb) {
         const rel = path.relative(process.cwd(), file.path || '');
         if (file.stat?.isDirectory?.()) return cb(null, file);
@@ -121,6 +167,9 @@ const validateFiles = (taskName) => new Transform({
 
 
 /**
+ * ---------------------------
+ * -----  `existsDir()`  -----
+ * ---------------------------
  * Comprueba si un directorio existe en disco.
  * @param {string} dirPath
  * @returns {boolean}
@@ -129,15 +178,42 @@ const existsDir = (dirPath) => fs.existsSync(dirPath);
 
 
 
-// ── CLEAN ────────────────────────────────────────────────
+/*
+    ---------------------------
+    -----  🧹  --  CLEAN  -----
+    ---------------------------
+*/
 
-/** Elimina dist/. */
+
+/**
+ * ---------------------------
+ * -----  `cleanDist()`  -----
+ * ---------------------------
+ * - Elimina la carpeta dist/ y su contenido.
+ */
+
 export const cleanDist = () => deleteAsync(['dist']);
 
-/** Elimina app/. */
+
+
+/**
+ * --------------------------
+ * -----  `cleanApp()`  -----
+ * --------------------------
+ * - Elimina la carpeta app/ y su contenido.
+ */
+
 export const cleanApp = () => deleteAsync(['app']);
 
-/** Elimina dist/ y app/ en paralelo. */
+
+
+/**
+ * -----------------------
+ * -----  `clean()`  -----
+ * -----------------------
+ * - Elimina en paralelo dist/ y app/.
+ */
+
 export const clean = parallel(cleanDist, cleanApp);
 
 
@@ -146,6 +222,10 @@ export const clean = parallel(cleanDist, cleanApp);
 
 
 /**
+ * -------------------------------
+ * -----  `CopyTaskOptions`  -----
+ * -------------------------------
+ * - Objeto de opciones para crear tareas de copia con createCopyTask().
  * @typedef {Object} CopyTaskOptions
  * @property {string | string[]} glob      — Glob(s) de origen.
  * @property {string}            checkPath — Ruta a verificar antes de copiar.
@@ -159,7 +239,10 @@ export const clean = parallel(cleanDist, cleanApp);
 
 
 /**
- * Crea una tarea Gulp de copia con validación y manejo de errores.
+ * --------------------------------
+ * -----  `createCopyTask()`  -----
+ * --------------------------------
+ * - Crea una tarea Gulp de copia con validación y manejo de errores.
  * @param {string} name — Nombre visible de la tarea.
  * @param {CopyTaskOptions} opts
  * @returns {import('gulp').TaskFunction}
@@ -194,8 +277,11 @@ const createCopyTask = (name, opts) => {
     };
 
     fn.displayName = name;
+
     return fn;
+
 };
+
 
 
 // ── COPY TASKS (src → app) ──────────────────────────────
@@ -398,7 +484,7 @@ export const copyRootAssetsToDist = () =>
               .pipe(dest(paths.distRoot));
 
 
-// ── MISC ─────────────────────────────────────────────────
+// ── MISC ─────────────────────────────────────────────────  
 
 /**
  * Agrega //@ts-nocheck al inicio de los archivos JS (solo en desarrollo).
