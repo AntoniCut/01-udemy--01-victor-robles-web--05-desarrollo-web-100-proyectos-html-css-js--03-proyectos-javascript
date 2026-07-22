@@ -32,8 +32,29 @@ export { };
  * ---------------------------
  * @typedef {Object} RouteScript - Representa un script que debe cargarse dinámicamente.
  * @property {string} src - Ruta absoluta o relativa del archivo JS.
+ * @property {boolean} [isModule] - Si es true, el script se carga como módulo ES6 con import() dinámico.
+ * @property {string|null} [exportFunctionName] - Nombre de la función exportada a ejecutar tras importar el módulo (solo si isModule es true).
  */
 
+
+/**
+ * ----------------------------------
+ * -----  `MarkdownShikiEntry`  -----
+ * ----------------------------------
+ * @typedef {Object} MarkdownShikiEntry - Entrada de archivo HTML generado por Shiki para resaltar código.
+ * @property {string} url - URL absoluta al archivo .html generado con Shiki.
+ * @property {string} target - Selector CSS del contenedor DOM donde se insertará el HTML (p.ej. `'[data-shiki="codeJs"]'`).
+ */
+
+
+/**
+ * ---------------------------------
+ * -----  `PageComponentEntry`  -----
+ * ---------------------------------
+ * @typedef {Object} PageComponentEntry - Entrada de componente HTML que se renderiza dentro de la página actual.
+ * @property {string} url - URL absoluta al archivo .html del componente de página.
+ * @property {string} target - Selector CSS del contenedor DOM donde se insertará el componente (p.ej. `'[data-component-page="home"]'`).
+ */
 
 
 /**
@@ -47,7 +68,8 @@ export { };
  * @property {string} headerTitle - Título que se mostrará dentro del layout-header.
  * @property {string} favicon - Ruta del favicon específico de la vista.
  * @property {RouteComponents} components - Mapa selector → URL de componente HTML.
- * @property {string[]} MarkdownShikiHtml - Rutas a los archivos .html generados por Shiki para mostrar código.
+ * @property {PageComponentEntry[]} [pagesComponents] - Componentes HTML inyectados en contenedores de la propia página.
+ * @property {MarkdownShikiEntry[]} MarkdownShikiHtml - Rutas a los archivos .html generados por Shiki para mostrar código.
  * @property {RouteStyle[]|null} styles - Lista de hojas CSS asociadas a la vista (opcional).
  * @property {RouteScript[]|null} scripts - Lista de scripts a cargar dinámicamente (opcional).
  */

@@ -13,12 +13,16 @@ const {
     layoutHeader, 
     layoutNavbar, 
     pages, 
+    pagesComponents,
+    MarkdownShikiHtml,
     layoutFooter, 
     styles, 
     scripts 
 } = paths;
 
-/** @type {Route} */
+
+/** @type {import("../../types/index.js").Route} */
+
 export const routeProyecto01JS = {
     id: 'js01',
     favicon: `${favicon}`,
@@ -30,7 +34,13 @@ export const routeProyecto01JS = {
         layoutMain: `${pages}/proyecto-01.html`,
         layoutFooter: `${layoutFooter}`,
     },
-    MarkdownShikiHtml: [],
+    pagesComponents: [
+        { url: `${pagesComponents}/proyecto-01.html`, target: '[data-component-page="proyecto01"]' },
+    ],
+    MarkdownShikiHtml: [
+        { url: `${MarkdownShikiHtml}/proyecto-01/proyecto-01-html.html`, target: '[data-shiki="codeHtml"]' },
+        { url: `${MarkdownShikiHtml}/proyecto-01/main-01-js.html`, target: '[data-shiki="codeJs"]' },
+    ],
     headerTitle: 'Proyecto 1 JavaScript',
     styles: [],
     scripts: [

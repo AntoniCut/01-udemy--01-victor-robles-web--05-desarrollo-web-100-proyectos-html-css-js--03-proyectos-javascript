@@ -19,6 +19,8 @@ import plumber from 'gulp-plumber';
 import fs from 'fs';
 import path from 'node:path';
 
+import { generateMarkdownShiki } from './generate-markdown-shiki.js';
+
 
 /**  -----  desestructuración de métodos de Gulp  ----- */
 const { src, dest, watch, series, parallel } = gulp;
@@ -65,6 +67,9 @@ const paths = {
         
         pagesDir:         path.join('src', 'pages'),
         pages:            path.posix.join('src', 'pages', '**/*'),
+
+        pagesComponentsDir: path.join('src', 'pages-components'),
+        pagesComponents:    path.posix.join('src', 'pages-components', '**/*'),
         
         pdfsDir:          path.join('src', 'pdfs'),
         pdfs:             path.posix.join('src', 'pdfs', '**/*'),
@@ -292,6 +297,7 @@ export const copyFonts         = createCopyTask('copyFonts',         { glob: pat
 export const copyLibs          = createCopyTask('copyLibs',          { glob: paths.src.libs,          checkPath: paths.src.libsDir,          binary: true });
 export const copyMarkdownShiki = createCopyTask('copyMarkdownShiki', { glob: paths.src.markdownShiki, checkPath: paths.src.markdownShikiDir });
 export const copyPages         = createCopyTask('copyPages',         { glob: paths.src.pages,         checkPath: paths.src.pagesDir });
+export const copyPagesComponents = createCopyTask('copyPagesComponents', { glob: paths.src.pagesComponents, checkPath: paths.src.pagesComponentsDir });
 export const copyPdfs          = createCopyTask('copyPdfs',          { glob: paths.src.pdfs,          checkPath: paths.src.pdfsDir,          binary: true });
 export const copyPlugins       = createCopyTask('copyPlugins',       { glob: paths.src.plugins,       checkPath: paths.src.pluginsDir });
 export const copyRoutes        = createCopyTask('copyRoutes',        { glob: paths.src.routes,        checkPath: paths.src.routesDir });
@@ -347,25 +353,40 @@ export const cssPages = () =>
 export const styles = parallel(css, cssPages);
 
 
+/**
+ * Genera bloques HTML resaltados con Shiki en src/markdown-shiki/.
+ * @returns {Promise<void>}
+ */
+const generateShiki = async () => {
+    await generateMarkdownShiki();
+};
+
+generateShiki.displayName = 'generateShiki';
+
 
 // ── COPY ALL ─────────────────────────────────────────────
 
-
-/** Copia y compila todo src/ → app/ en paralelo. */
-const copyAll = parallel(
-    copyComponents, 
-    copyEffects, 
-    copyFonts, 
-    copyLibs, 
-    copyMarkdownShiki,
-    copyPages, 
-    copyPdfs, 
-    copyPlugins, 
-    copyRoutes, 
+const buildSources = parallel(
+    copyComponents,
+    copyEffects,
+    copyFonts,
+    copyLibs,
+    copyPages,
+    copyPagesComponents,
+    copyPdfs,
+    copyPlugins,
+    copyRoutes,
     copySpa,
-    copyScripts, 
-    copyMain, 
+    copyScripts,
+    copyMain,
     styles,
+);
+
+/** Copia, compila y genera Shiki: src/ → app/. */
+const copyAll = series(
+    buildSources,
+    generateShiki,
+    copyMarkdownShiki,
 );
 
 
@@ -382,13 +403,14 @@ const watchTask = () => {
         [paths.src.libs,          copyLibs],
         [paths.src.markdownShiki, copyMarkdownShiki],
         [paths.src.pages,         copyPages],
+        [paths.src.pagesComponents, copyPagesComponents],
         [paths.src.pdfs,          copyPdfs],
         [paths.src.plugins,       copyPlugins],
         [paths.src.routes,        copyRoutes],
         [paths.src.spa,           copySpa],
         [paths.src.scripts,       copyScripts],
         [paths.src.main,          copyMain],
-        [paths.src.scssAll,       styles],
+        [paths.src.scssAll,       series(styles, generateShiki, copyMarkdownShiki)],
     ];
 
     for (const [glob, task] of watchers) {
@@ -401,7 +423,7 @@ watchTask.displayName = 'watch';
 
 
 
-/** Genera app/ y queda escuchando cambios. El servidor se levanta con `pnpm run server`. */
+/** Genera app/ y queda escuchando cambios. Usa `pnpm dev` para watch + servidor. */
 export const dev = series(copyAll, watchTask);
 
 

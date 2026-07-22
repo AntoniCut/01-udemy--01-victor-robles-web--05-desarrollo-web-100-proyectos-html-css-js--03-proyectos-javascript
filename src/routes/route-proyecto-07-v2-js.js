@@ -31,6 +31,7 @@ export const routeProyecto07V2JS = {
         layoutMain: `${pages}/proyecto-07-v2.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [],
     MarkdownShikiHtml: [],
     headerTitle: 'Proyecto 7 Version 2 JavaScript',
     styles: [],

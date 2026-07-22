@@ -30,6 +30,7 @@ export const routeProyecto02JS = {
         layoutMain: `${pages}/proyecto-02.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [],
     MarkdownShikiHtml: [],
     headerTitle: 'Proyecto 2 JavaScript',
     styles: [],

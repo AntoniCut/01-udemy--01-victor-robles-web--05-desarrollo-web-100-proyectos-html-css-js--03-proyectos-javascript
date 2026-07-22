@@ -32,6 +32,7 @@ export const routeProyecto21JQueryUI = {
         layoutMain: `${pages}/proyecto-21-jquery-ui.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [],
     MarkdownShikiHtml: [],
     headerTitle: 'Proyecto 21 jQuery UI',
     styles: [

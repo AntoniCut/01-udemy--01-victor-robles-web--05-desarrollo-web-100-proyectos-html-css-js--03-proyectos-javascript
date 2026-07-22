@@ -7,7 +7,16 @@
 
 import { paths } from './paths.js';
 
-const { favicon, layoutHeader, layoutNavbar, pages, layoutFooter, styles } = paths;
+const {
+    favicon,
+    layoutHeader,
+    layoutNavbar,
+    pages,
+    pagesComponents,
+    MarkdownShikiHtml,
+    layoutFooter,
+    styles,
+} = paths;
 
 
 /** @type {import("../../types/index.js").Route} */
@@ -22,11 +31,13 @@ export const route00Home = {
         layoutMain: `${pages}/home.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [
+        { url: `${pagesComponents}/home.html`, target: '[data-component-page="home"]' },
+    ],
     MarkdownShikiHtml: [],
     headerTitle: '50 Proyectos JavaScript del curso + de 100 Proyectos HTML, CSS y JS',
     styles: [
         { href: `${styles}/styles-home.css` },
     ],
     scripts: [],
-}
-
+};

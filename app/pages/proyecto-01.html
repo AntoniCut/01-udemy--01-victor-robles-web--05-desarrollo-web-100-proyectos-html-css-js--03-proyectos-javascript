@@ -20,7 +20,9 @@
 <!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+
+    <!--*  -----  Descripcion del proyecto  -----  -->
+    <section class="main__description-project">
 
         <h2 class="description-project__title">
             Enunciado Proyecto 1 JS
@@ -37,9 +39,35 @@
 
         </div>
 
+    </section>
 
-    </div>
 
-    <div class="main__description-project" id="content"> </div>
+    <!--*  -----  Renderizado del Proyecto  -----  -->
+    <section data-component-page="proyecto01">
+        <!--*  -----  Contenido inyectado desde pages-components/proyecto-01.html  -----  -->
+    </section>
+
+
+     <!--*  -----  Código Markdown  -----  -->
+     <section class="main__section-markdown">
+
+        <h3 class="markdown__title"> Código Markdown </h3>
+
+        <div class="markdown__container">
+
+            <article data-shiki="codeHtml" data-label="proyecto-01-html.html" class="markdown-code">
+            <!--  ***** Renderizar 'html' archivo .html tipo 'markdown'  *****  -->
+            </article>
+
+            <article data-shiki="codeJs" data-label="main-01-js.html" class="markdown-code">
+                <!--  ***** Renderizar 'js' archivo .js tipo 'markdown'  *****  -->
+            </article>
+            
+        </div>
+
+
+    </section>
+
+    
 
 </div>

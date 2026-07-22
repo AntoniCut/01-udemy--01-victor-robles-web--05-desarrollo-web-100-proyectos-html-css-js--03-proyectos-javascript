@@ -30,6 +30,7 @@ export const routeProyecto32JS = {
         layoutMain: `${pages}/proyecto-32.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [],
     MarkdownShikiHtml: [],
     headerTitle: 'Proyecto 32 JavaScript',
     styles: [

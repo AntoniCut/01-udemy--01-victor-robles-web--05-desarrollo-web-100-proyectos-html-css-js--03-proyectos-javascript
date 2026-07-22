@@ -1,6 +1,14 @@
+/*
+    *  --------------------------------------------------------------  *
+    *  -----  preview-server.js  --  /server/preview-server.js  -----  *
+    *  --------------------------------------------------------------  *
+*/
+
+
 import 'dotenv/config';
 
 import express from 'express';
+import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -42,6 +50,104 @@ const redirectRootToBase = (req, res, next) => {
 };
 
 /**
+ * Ejecuta archivos .php via php-cgi y devuelve la respuesta CGI al cliente.
+ * @param {string} rootDir
+ * @param {number} serverPort
+ * @returns {import('express').RequestHandler}
+ */
+const makePhpHandler = (rootDir, serverPort) => (req, res, next) => {
+    if (!req.path.endsWith('.php')) {
+        next();
+        return;
+    }
+
+    const relativePath = req.path.startsWith(DEV_ROUTE_BASE)
+        ? req.path.slice(DEV_ROUTE_BASE.length).replace(/^\//, '')
+        : req.path.replace(/^\//, '');
+
+    const phpFile = path.join(rootDir, relativePath);
+
+    if (!fs.existsSync(phpFile)) {
+        next();
+        return;
+    }
+
+    const queryString = req.originalUrl.includes('?')
+        ? req.originalUrl.split('?')[1]
+        : '';
+
+    const cgiEnv = {
+        ...process.env,
+        REDIRECT_STATUS: '200',
+        SCRIPT_FILENAME: phpFile,
+        SCRIPT_NAME: req.path,
+        REQUEST_METHOD: req.method,
+        QUERY_STRING: queryString,
+        CONTENT_TYPE: req.headers['content-type'] ?? '',
+        CONTENT_LENGTH: req.headers['content-length'] ?? '0',
+        SERVER_NAME: 'localhost',
+        SERVER_PORT: String(serverPort),
+        SERVER_PROTOCOL: 'HTTP/1.1',
+        GATEWAY_INTERFACE: 'CGI/1.1',
+        HTTP_HOST: req.headers['host'] ?? 'localhost',
+        DOCUMENT_ROOT: rootDir,
+    };
+
+    const php = spawn('php-cgi', [], { env: cgiEnv });
+
+    let stdout = Buffer.alloc(0);
+    let stderr = '';
+
+    php.stdout.on('data', (chunk) => {
+        stdout = Buffer.concat([stdout, chunk]);
+    });
+
+    php.stderr.on('data', (chunk) => {
+        stderr += chunk.toString();
+    });
+
+    php.on('close', () => {
+        if (stderr) console.error(`[php-cgi] ${stderr.trim()}`);
+
+        let sepIndex = stdout.indexOf('\r\n\r\n');
+        let sepLen = 4;
+
+        if (sepIndex === -1) {
+            sepIndex = stdout.indexOf('\n\n');
+            sepLen = 2;
+        }
+
+        if (sepIndex === -1) {
+            res.status(500).send('Error: PHP no devolvió una respuesta CGI válida.');
+            return;
+        }
+
+        const headersRaw = stdout.slice(0, sepIndex).toString();
+        const body = stdout.slice(sepIndex + sepLen);
+
+        for (const line of headersRaw.split(/\r?\n/)) {
+            const colonIndex = line.indexOf(':');
+            if (colonIndex === -1) continue;
+            const name = line.slice(0, colonIndex).trim();
+            const value = line.slice(colonIndex + 1).trim();
+            if (name.toLowerCase() === 'status') {
+                res.status(parseInt(value, 10));
+            } else {
+                res.setHeader(name, value);
+            }
+        }
+
+        res.send(body);
+    });
+
+    php.on('error', () => {
+        res.status(500).send('Error interno: php-cgi no está disponible. Instálalo con: sudo apt install php-cgi');
+    });
+
+    req.pipe(php.stdin);
+};
+
+/**
  * Hace fallback a index.html para rutas internas del build de la SPA.
  * @param {import('express').Request} req
  * @param {import('express').Response} res
@@ -73,6 +179,7 @@ const serveSpaFallback = (req, res, next) => {
 };
 
 app.use(redirectRootToBase);
+app.use(makePhpHandler(DIST_ROOT, PREVIEW_SERVER_PORT));
 app.use(DEV_ROUTE_BASE, express.static(DIST_ROOT, { index: false }));
 app.use(serveSpaFallback);
 
@@ -81,7 +188,7 @@ app.use((req, res) => {
 });
 
 const previewServer = app.listen(PREVIEW_SERVER_PORT, '127.0.0.1', () => {
-    console.log(`Preview disponible en http://localhost:${PREVIEW_SERVER_PORT}${DEV_ROUTE_BASE}/`);
+    console.log(`\nPreview disponible en http://localhost:${PREVIEW_SERVER_PORT}${DEV_ROUTE_BASE}/\n`);
 });
 
 /** Cierre ordenado del servidor. */

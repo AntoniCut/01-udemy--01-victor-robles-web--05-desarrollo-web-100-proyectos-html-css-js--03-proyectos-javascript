@@ -20,6 +20,7 @@ export const route404NotFoundPage = {
         layoutMain: `${pages}/404/404-not-found-page.html`,
         layoutFooter: `${layoutFooter}`,
     },
+    pagesComponents: [],
     MarkdownShikiHtml: [],
     headerTitle: '404 - Pagina no encontrada',
     styles: [],

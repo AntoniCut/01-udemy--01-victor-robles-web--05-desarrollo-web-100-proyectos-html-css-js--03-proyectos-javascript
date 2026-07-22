@@ -1,0 +1,125 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 1 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> content</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#content'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">content</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        ---------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        -----  1. Crea un fichero JavaScript y vinculalo con tu fichero HTML  -----</span></span>
+<span class="line"><span style="color:#6A9955">        ----------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Proyecto 1 JavaScript - Fichero Vinculado'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">3000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        ----------------------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        -----  2. Debes crear las variables: nombre, apellido, edad, pais y conocimientos  -----</span></span>
+<span class="line"><span style="color:#6A9955">        -----  esta ultima debe ser un array  --------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        ----------------------------------------------------------------------------------------</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> nombre</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'Antonio Francisco'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> apellidos</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'Cutillas Garcia'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> edad</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">49</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> pais</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'España'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> conocimientos</span><span style="color:#D4D4D4"> = [</span></span>
+<span class="line"><span style="color:#CE9178">        'HTML'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        'CSS'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        'JavaScript'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        'jQuery'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        'React'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        'Astro'</span></span>
+<span class="line"><span style="color:#D4D4D4">    ];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*  </span></span>
+<span class="line"><span style="color:#6A9955">        --------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        -----  3. Muestra todos los valores de las variables por la consola  -----</span></span>
+<span class="line"><span style="color:#6A9955">        --------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`</span></span>
+<span class="line"><span style="color:#CE9178">    </span></span>
+<span class="line"><span style="color:#CE9178">        Hola, soy </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">nombre</span><span style="color:#569CD6">}</span><span style="color:#569CD6"> ${</span><span style="color:#9CDCFE">apellidos</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> y tengo </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edad</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> años, soy de </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">pais</span><span style="color:#569CD6">}</span></span>
+<span class="line"><span style="color:#CE9178">        y tengo los siguientes conocimientos: </span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">3</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">4</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">        - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">5</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.        </span></span>
+<span class="line"><span style="color:#CE9178">    </span></span>
+<span class="line"><span style="color:#CE9178">    `</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Mostrar en el HTML  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;div></span></span>
+<span class="line"><span style="color:#CE9178">            Hola, soy &#x3C;span></span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">nombre</span><span style="color:#569CD6">}</span><span style="color:#569CD6"> ${</span><span style="color:#9CDCFE">apellidos</span><span style="color:#569CD6">}</span><span style="color:#CE9178">&#x3C;/span> y tengo &#x3C;span> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edad</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/span> años.</span></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;div></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;div></span></span>
+<span class="line"><span style="color:#CE9178">            Soy de &#x3C;span> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">pais</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/span> y tengo los siguientes conocimientos: &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;/div></span></span>
+<span class="line"><span style="color:#CE9178">                         </span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">3</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">4</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            - </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">5</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;br>   </span></span>
+<span class="line"><span style="color:#CE9178">    `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*  </span></span>
+<span class="line"><span style="color:#6A9955">        --------------------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        -----  4. Después cambia el valor de la edad y añade un nuevo elemento al array  -----</span></span>
+<span class="line"><span style="color:#6A9955">        --------------------------------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"><span style="color:#9CDCFE">    edad</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">50</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    conocimientos</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'PHP'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*  </span></span>
+<span class="line"><span style="color:#6A9955">        -----------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        -----  5. Muestra esos nuevos valores por la consola  -----</span></span>
+<span class="line"><span style="color:#6A9955">        -----------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`</span></span>
+<span class="line"><span style="color:#CE9178">        Hola, ahora mi edad es de </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edad</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> años,</span></span>
+<span class="line"><span style="color:#CE9178">        y tengo un conocimiento más que es </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> - </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.</span></span>
+<span class="line"><span style="color:#CE9178">    `</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Mostrar en el HTML  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;div></span></span>
+<span class="line"><span style="color:#CE9178">            Hola, ahora mi edad es de &#x3C;span> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edad</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/span> años, &#x3C;br></span></span>
+<span class="line"><span style="color:#CE9178">            y tengo un conocimiento más que es &#x3C;span> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">conocimientos</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> - </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">]</span><span style="color:#569CD6">}</span><span style="color:#CE9178">. &#x3C;/span></span></span>
+<span class="line"><span style="color:#CE9178">        &#x3C;/div></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">    `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>
