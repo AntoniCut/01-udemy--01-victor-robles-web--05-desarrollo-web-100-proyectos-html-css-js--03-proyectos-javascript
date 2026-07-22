@@ -13,7 +13,8 @@ export { };
  * -------------------------------
  * -----  `RouteComponents`  -----
  * -------------------------------
- * @typedef {Record<string, string|undefined>} RouteComponents - Mapa de componentes HTML a cargar dinámicamente. Cada valor puede ser string o undefined.
+ * @typedef {Record<string, string|undefined>} RouteComponents - Mapa de componentes HTML a cargar dinámicamente. 
+ *                                                               Cada valor puede ser string o undefined.
  */
 
 
@@ -37,13 +38,17 @@ export { };
  */
 
 
+
 /**
  * ----------------------------------
  * -----  `MarkdownShikiEntry`  -----
  * ----------------------------------
- * @typedef {Object} MarkdownShikiEntry - Entrada de archivo HTML generado por Shiki para resaltar código.
- * @property {string} url - URL absoluta al archivo .html generado con Shiki.
- * @property {string} target - Selector CSS del contenedor DOM donde se insertará el HTML (p.ej. `'[data-shiki="codeJs"]'`).
+ * @typedef {Object} MarkdownShikiEntry - Entrada que define cómo generar y dónde servir un bloque HTML resaltado con Shiki.
+ * @property {string} fileName - Nombre del fichero .html generado (p.ej. 'astro-page-html.html').
+ * @property {string} fileExtension - Tipo/lenguaje a resaltar: 'html' | 'css' | 'scss' | 'js' (mapeado a lang de Shiki).
+ * @property {string} urlInput - URL (con base) del archivo fuente a renderizar (debe existir en disco para que no haya error).
+ * @property {string} urlOutput - URL (con base) de la CARPETA donde se guarda el .html generado. El archivo final se sirve de `urlOutput + '/' + fileName`.
+ * @property {string} target - Selector CSS del contenedor DOM donde se insertará el HTML (p.ej. `'[data-shiki="codeHtml"]'`). Permite múltiples archivos del mismo tipo sin colisión de IDs.
  */
 
 
@@ -52,9 +57,12 @@ export { };
  * -----  `PageComponentEntry`  -----
  * ---------------------------------
  * @typedef {Object} PageComponentEntry - Entrada de componente HTML que se renderiza dentro de la página actual.
+ *                                        A diferencia de `components` (que pueblan regiones del layout mediante ID),
+ *                                          `pagesComponents` inyecta HTML en contenedores de la propia vista usando selectores CSS arbitrarios.
  * @property {string} url - URL absoluta al archivo .html del componente de página.
- * @property {string} target - Selector CSS del contenedor DOM donde se insertará el componente (p.ej. `'[data-component-page="home"]'`).
+ * @property {string} target - Selector CSS del contenedor DOM donde se insertará el componente (p.ej. `'[data-component-page="htmlPage"]'`). Permite renderizar varios componentes en la misma página.
  */
+
 
 
 /**
@@ -68,8 +76,10 @@ export { };
  * @property {string} headerTitle - Título que se mostrará dentro del layout-header.
  * @property {string} favicon - Ruta del favicon específico de la vista.
  * @property {RouteComponents} components - Mapa selector → URL de componente HTML.
- * @property {PageComponentEntry[]} [pagesComponents] - Componentes HTML inyectados en contenedores de la propia página.
- * @property {MarkdownShikiEntry[]} MarkdownShikiHtml - Rutas a los archivos .html generados por Shiki para mostrar código.
+ * @property {PageComponentEntry[]} [pagesComponents] - Lista de componentes HTML que se renderizan dentro de la propia página (en contenedores con `data-component-page="..."`). Cada entrada define `{ url, target }`. Opcional.
+ * @property {MarkdownShikiEntry[]} MarkdownShikiHtml - Entradas que definen los bloques HTML resaltados con Shiki.
+ *                                          Cada entrada indica el fuente (`urlInput`), el tipo (`fileExtension`), el nombre del fichero generado (`fileName`) y la carpeta de salida (`urlOutput`).
+ *                                          Ejecuta `pnpm code-highlight` para regenerarlos.
  * @property {RouteStyle[]|null} styles - Lista de hojas CSS asociadas a la vista (opcional).
  * @property {RouteScript[]|null} scripts - Lista de scripts a cargar dinámicamente (opcional).
  */

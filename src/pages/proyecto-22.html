@@ -4,49 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 22  ----------  
-
-    -  Vamos a hacer un buscador de palabras en un texto.
-       Primero maqueta la web así y luego haz que al encontrar la palabra se marque en purpura. Ver PDF.
-    
-    -  Texto para el proyecto:
-        
-        JavaScript es un lenguaje de programación ampliamente utilizado en el desarrollo web. A
-        menudo se le conoce como el "lenguaje de la web" porque se utiliza principalmente para crear
-        interacciones dinámicas en sitios web. Fue creado originalmente para dar vida a las páginas
-        web, permitiendo a los desarrolladores agregar funcionalidades como formularios interactivos,
-        animaciones y actualizaciones en tiempo real.
-                                 
--->
-
 
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <main class="main__search">
+    <h2 class="main__title"> Proyecto 22 JavaScript </h2>
 
-        <input type="search" class="main__input" placeholder="Busca una palabra... Enter para confirmar.">
+    <section data-component-page="proyecto22Description">
+        <!--  Inyectado desde pages-components/proyecto-22/proyecto-22-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-        <div class="main__textarea" contenteditable="true">
-            JavaScript es un lenguaje de programación ampliamente utilizado en el desarrollo web. A
-            menudo se le conoce como el "lenguaje de la web" porque se utiliza principalmente para crear
-            interacciones dinámicas en sitios web. Fue creado originalmente para dar vida a las páginas
-            web, permitiendo a los desarrolladores agregar funcionalidades como formularios interactivos,
-            animaciones y actualizaciones en tiempo real.
+    <h2 class="main__title"> Proyecto 22 JavaScript — Demo Scripts </h2>
+
+    <div data-component-page="proyecto22Demo">
+        <!--  Inyectado desde pages-components/proyecto-22/proyecto-22-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 22 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-22-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-22.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-22.css" class="markdown-code"></article>
         </div>
-               
-        
-        <p class="main__text">
-            JavaScript es un lenguaje de programación ampliamente utilizado en el desarrollo web. A
-            menudo se le conoce como el "lenguaje de la web" porque se utiliza principalmente para crear
-            interacciones dinámicas en sitios web. Fue creado originalmente para dar vida a las páginas
-            web, permitiendo a los desarrolladores agregar funcionalidades como formularios interactivos,
-            animaciones y actualizaciones en tiempo real.
-        </p>
 
-    </main>
+    </section>
 
-
+    
 </div>

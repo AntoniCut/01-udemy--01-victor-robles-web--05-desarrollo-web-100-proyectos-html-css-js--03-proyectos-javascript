@@ -4,36 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 24  ----------  
-
-    -  Maqueta este formulario y al pulsar en el ojo que se muestre la contraseña. Ver PDF.
-       
--->
-
-
 
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <form class="main__form-password">
+    <h2 class="main__title"> Proyecto 24 JavaScript </h2>
 
-        <input
-            type="text"
-            name="username"
-            class="form__hidden-username"
-            autocomplete="username"
-            tabindex="-1"
-        >
+    <section data-component-page="proyecto24Description">
+        <!--  Inyectado desde pages-components/proyecto-24/proyecto-24-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-        <input type="password" id="password" class="form__input" placeholder="Introduce tu contraseña" autocomplete="new-password">
+    <h2 class="main__title"> Proyecto 24 JavaScript — Demo Scripts </h2>
 
-        <div class="form__eye">
-            <i class="fa-solid fa-eye"> </i>
+    <div data-component-page="proyecto24Demo">
+        <!--  Inyectado desde pages-components/proyecto-24/proyecto-24-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 24 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-24-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-24.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-24.css" class="markdown-code"></article>
         </div>
 
-    </form>
+    </section>
 
-
+    
 </div>

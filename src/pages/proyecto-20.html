@@ -4,33 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 20  ----------  
-
-    Crea una web que muestre la fecha y la hora actual, debe actualizarse sola sin refrescar la
-    pantalla y debe verse así. Ver PDF.
-                                  
--->
-
 
 <div class="main__container">
 
-    <!--  -----  contenedor de la fecha y hora  -----  -->
-    <section class="main__date-hour">
-        
-        <h2 class="main__title"> 
-            La fecha y la Hora de hoy es: 
-        </h2>
-        
-        <p class="main__date">  
-            <!--  -----  Aquí se mostrará la fecha actual  -----  -->
-        </p>
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <p class="main__hour">  
-            <!--  -----  Aquí se mostrará la hora actual  -----  -->
-        </p>
+    <h2 class="main__title"> Proyecto 20 JavaScript </h2>
+
+    <section data-component-page="proyecto20Description">
+        <!--  Inyectado desde pages-components/proyecto-20/proyecto-20-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
+
+    <h2 class="main__title"> Proyecto 20 JavaScript — Demo Scripts </h2>
+
+    <div data-component-page="proyecto20Demo">
+        <!--  Inyectado desde pages-components/proyecto-20/proyecto-20-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 20 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-20-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-20.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-20.css" class="markdown-code"></article>
+        </div>
 
     </section>
 
+    
 </div>

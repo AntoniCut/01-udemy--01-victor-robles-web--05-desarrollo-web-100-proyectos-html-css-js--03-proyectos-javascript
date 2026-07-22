@@ -1,0 +1,64 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">//@ts-check</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 12 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Referencias al HTML  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> resultBox</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#result'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">resultBox</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         *  - Array de animales</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {String[]}</span><span style="color:#6A9955">   </span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> animales</span><span style="color:#D4D4D4"> = [];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        do</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> animal</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Introduce un animal - SALIR: Cancelar o vacio '</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'gato'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Si el usuario cancela o deja vacío, salir del bucle  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">animal</span><span style="color:#D4D4D4">) </span><span style="color:#C586C0">break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            animales</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">animal</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        } </span><span style="color:#C586C0">while</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">animales</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  Función para recorrer y mostrar los animales -----</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@function</span><span style="color:#4EC9B0"> recorrerMostrar</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {String[]}</span><span style="color:#9CDCFE"> animales</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {void}</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> recorrerMostrar</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">animales</span><span style="color:#569CD6"> =></span><span style="color:#9CDCFE"> animales</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">animal</span><span style="color:#569CD6"> =></span><span style="color:#9CDCFE"> resultBox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;p> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">animal</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/p>`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Llamar a la función -----</span></span>
+<span class="line"><span style="color:#DCDCAA">        recorrerMostrar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">animales</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

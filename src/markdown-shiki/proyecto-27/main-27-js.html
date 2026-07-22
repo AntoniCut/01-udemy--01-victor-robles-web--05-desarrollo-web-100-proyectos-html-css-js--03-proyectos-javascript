@@ -1,0 +1,56 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 27 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement | null}</span><span style="color:#6A9955"> - `Articulo del lado izquierdo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleLeft</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.articles__article--left'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement | null}</span><span style="color:#6A9955"> - `Articulo del lado derecho` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleRight</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.articles__article--right'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Verificación de elementos  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$articleLeft</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$articleRight</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se han encontrado los elementos necesarios en el HTML.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse entre en el artículo izquierdo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'mouseenter'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'inactive'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse salga del artículo izquierdo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'mouseleave'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'inactive'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse entre en el artículo derecho  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'mouseenter'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'inactive'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse salga del artículo derecho  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'mouseleave'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'inactive'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

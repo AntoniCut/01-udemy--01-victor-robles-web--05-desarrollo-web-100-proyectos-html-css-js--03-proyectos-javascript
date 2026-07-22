@@ -6,11 +6,12 @@
 
 
 import { routeManifest } from '../routes/route-manifest.js';
-import { spaLoaderContentHtml } from "../plugins/spa-loader-content-html/v3.1/spa-loader-content-html.js";
+import { base } from '../routes/paths.js';
+import { spaLoaderContentHtml } from '../plugins/spa-loader-content-html/v4/spa-loader-content-html.js';
 
 
-/** @type {string} - `Base del proyecto` */
-export const base = '/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript';
+//  ----------  Re-exportamos base por compatibilidad con imports previos  ----------
+export { base };
 
 
 /**  
@@ -18,30 +19,29 @@ export const base = '/victor-robles-web/05-desarrollo-web-100-proyectos-html-css
  * -----  `spa()`  -----
  * ---------------------
  * - Función principal que `inicializa la SPA`.
- * - Utilizando el plugin spa-loader-content-html.js con un manifiesto de rutas para lazy loading.
+ * - Utilizando el plugin spa-loader-content-html.js (v4) con un manifiesto de rutas para lazy loading.
  */
 
 export const spa = () => {
 
-    
+
     //  ----------  Documento Cargado  ----------
     console.log('\n');
     console.warn('-----  spa.js - Cargado  -----');
     console.log('\n');
-       
-    
+
+
     //  ----------  Opciones que le pasamos al plugin (lazy loading con manifest)  ----------
-    
+
     /** @type {import("../../types/index.js").ConfigOptionsSPA} - `-----  Configuración para el plugin spa-loader-content-html.js  -----` */
-    
     const configOptionsSpa = {
         routeManifest,
         routeModulesBase: `${base}/app/routes`,
         base,
-    }
+    };
 
 
-    //  ----------  Invocamos el Plugins  --  spa-loader-content-html.js  ----------
+    //  ----------  Invocamos el Plugin  --  spa-loader-content-html.js (v4)  ----------
     spaLoaderContentHtml(configOptionsSpa);
 
-}
+};

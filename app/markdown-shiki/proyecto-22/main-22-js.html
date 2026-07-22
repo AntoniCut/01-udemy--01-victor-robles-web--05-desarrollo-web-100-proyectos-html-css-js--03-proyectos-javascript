@@ -1,0 +1,78 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 22 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `Referencia al input del usuario` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__input"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `Referencia al párrafo donde se mostrará el texto` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $textOutput</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__text"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLTextAreaElement | null}</span><span style="color:#6A9955"> - `Referencia al textarea donde se muestra el texto original` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $textArea</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__textarea"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Validación de elementos  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$textOutput</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$textArea</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se encontraron los elementos necesarios en el DOM."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Guarda el texto original para restaurarlo  -----</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $originalText</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$textOutput</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento para detectar cuando el usuario presiona "Enter"  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"keydown"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `Texto ingresado por el usuario` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> search</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">search</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">() != </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">key</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"Enter"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {RegExp}</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">             * - `Crea una expresión regular para buscar el texto ingresado de manera global, </span></span>
+<span class="line"><span style="color:#6A9955">             *    ignorando mayúsculas y minúsculas` </span></span>
+<span class="line"><span style="color:#6A9955">             */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> regExp</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> RegExp</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">search</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"gi"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `Texto base donde se realizará la búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> baseText</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$textArea</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Reemplaza el texto encontrado con una versión envuelta  -----</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  en un span para resaltar la búsqueda                    -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $textOutput</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">baseText</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replace</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#9CDCFE">                regExp</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">                `&#x3C;span class="text__search"></span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">search</span><span style="color:#569CD6">}</span><span style="color:#CE9178">&#x3C;/span>`</span></span>
+<span class="line"><span style="color:#D4D4D4">            );</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento para detectar cuando el usuario borra el texto (incluyendo la "X")  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"input"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">() === </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#9CDCFE">            $textOutput</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$originalText</span><span style="color:#D4D4D4">; </span><span style="color:#6A9955">// Restaurar el texto original</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento para actualizar el texto donde se realizará la búsqueda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $textArea</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"input"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $textOutput</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$textArea</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

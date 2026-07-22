@@ -1,0 +1,160 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 21 con jQuery y jQuery UI  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Verificar que jQuery y jQuery UI están cargados  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `Versión de jQuery` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> jqueryVersion</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">fn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">jquery</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Versión de jQuery:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">jqueryVersion</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Verificar si jQuery UI está cargado y mostrar su versión  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `Versión de jQuery UI` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> jqueryUiVersion</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">version</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Versión de jQuery UI:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">jqueryUiVersion</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    else</span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"jQuery UI no está cargado."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Contenedor de las cajas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $cajas</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".inventario__caja"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Contenedor de las estanterías` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $estanterias</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__estanteria"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Hacer que las cajas sean arrastrables  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $cajas</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  recorremos cada caja y le asignamos un ID único  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">        .</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /**</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@this</span><span style="color:#4EC9B0"> {HTMLDivElement}</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> index</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {HTMLDivElement}</span><span style="color:#9CDCFE"> element</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">             */</span></span>
+<span class="line"><span style="color:#569CD6">            function</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">element</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Elemento de la caja` */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> $element</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">element</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Asignar un ID único a cada caja  -----</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> id</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"caja"</span><span style="color:#D4D4D4"> + (</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Establecer el atributo ID de la caja  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                $element</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"id"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#D4D4D4">        )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Hacemos las cajas arrastrables con jQuery UI  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">        .</span><span style="color:#DCDCAA">draggable</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQueryUI.DraggableOptions}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#D4D4D4">            ({</span></span>
+<span class="line"><span style="color:#9CDCFE">                revert:</span><span style="color:#CE9178"> "invalid"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                containment:</span><span style="color:#CE9178"> ".layout"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                cursor:</span><span style="color:#CE9178"> "grab"</span></span>
+<span class="line"><span style="color:#D4D4D4">            })</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * - `Objeto de la configuración de las opciones para hacer las estanterías droppables con jQuery UI`</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQueryUI.DroppableOptions}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> droppableOptions</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        accept:</span><span style="color:#CE9178"> ".inventario__caja"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        hoverClass:</span><span style="color:#CE9178"> "hovered"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - Función que se ejecuta cuando una caja es soltada sobre una estantería. </span></span>
+<span class="line"><span style="color:#6A9955">         *   Verifica si la estantería está ocupada y maneja el movimiento de la caja.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@this</span><span style="color:#4EC9B0"> {HTMLElement}</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> event</span><span style="color:#6A9955"> - Evento de jQuery UI que se dispara al soltar un elemento sobre la estantería.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQueryUI.DroppableEventUIParam}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Objeto que contiene información sobre el elemento arrastrado y la estantería de destino.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        drop</span><span style="color:#9CDCFE">:</span><span style="color:#569CD6"> function</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $caja</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">draggable</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $estanteria</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /**  `-----  Verificar si la estantería ya tiene una caja  -----` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> estanteriaOcupada</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$estanteria</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">children</span><span style="color:#D4D4D4">().</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Si la estantería no está ocupada, mover la caja a la estantería  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">estanteriaOcupada</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                $caja</span></span>
+<span class="line"><span style="color:#D4D4D4">                    .</span><span style="color:#DCDCAA">appendTo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$estanteria</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                    .</span><span style="color:#DCDCAA">css</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#6A9955">                        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery.PlainObject&#x3C;string>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#D4D4D4">                        ({</span></span>
+<span class="line"><span style="color:#9CDCFE">                            position:</span><span style="color:#CE9178"> "relative"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                            left:</span><span style="color:#CE9178"> "0"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                            top:</span><span style="color:#CE9178"> "0"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                            boxShadow:</span><span style="color:#CE9178"> "none"</span></span>
+<span class="line"><span style="color:#D4D4D4">                        })</span></span>
+<span class="line"><span style="color:#D4D4D4">                    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `Contenedor del inventario` */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> $inventario</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__inventario"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /**  `-----  Verificar si el inventario está vacío después de mover la caja  -----` */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> sinCajas</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$inventario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">children</span><span style="color:#D4D4D4">().</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Si el inventario está vacío, mostrar una alerta después de un breve retraso  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">sinCajas</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">                    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                        alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"😊 ¡Todas las cajas han sido guardadas! 😊"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }, </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  de lo contrario, revertir el movimiento y mostrar una alerta     -----</span></span>
+<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">                alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"❌ ¡Estantería ocupada! ❌"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                $caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">draggable</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#CE9178">                    "option"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">                    "revert"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#569CD6">                    true</span></span>
+<span class="line"><span style="color:#D4D4D4">                );</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Hacer que las estanterías sean droppables con jQuery UI usando las opciones definidas  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $estanterias</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">droppable</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">droppableOptions</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

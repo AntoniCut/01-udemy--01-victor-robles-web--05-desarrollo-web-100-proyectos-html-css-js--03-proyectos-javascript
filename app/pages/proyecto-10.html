@@ -4,36 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 10  ----------  
-
-    -  Pide una palabra al usuario y crea una función que muestre
-       esa palabra en mayusculas y que además te diga que cantidad
-       de letras tiene dicha palabra.
-                     
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 10 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 10 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto10Description">
+        <!--  Inyectado desde pages-components/proyecto-10/proyecto-10-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            -  Pide una palabra al usuario y crea una función que muestre
-               esa palabra en mayusculas y que además te diga que cantidad
-               de letras tiene dicha palabra.
+    <h2 class="main__title"> Proyecto 10 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto10Demo">
+        <!--  Inyectado desde pages-components/proyecto-10/proyecto-10-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 10 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-10-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-10.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project" id="result"> </div>
-
+    
 </div>

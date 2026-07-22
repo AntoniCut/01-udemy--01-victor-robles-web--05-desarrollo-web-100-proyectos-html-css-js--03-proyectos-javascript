@@ -1,41 +1,36 @@
 <!--
-    *  ----------------------------------------------------------------------  *
-    *  -----  /proyecto-07-v2.html  --  /src/pages/proyecto-07-v2.html  -----  *
-    *  ----------------------------------------------------------------------  *
--->
-
-<!--  
-
-    ----------  Enunciado Proyecto 7  ----------  
-
-    -  Pidele al usuario su año de nacimiento en una ventana emergente
-       y calcula cuántos años tiene actualmente.
-    -  Si el año de nacimiento es menor de 1910 volver a pedir el año. 
-              
+    *  -----  /proyecto-07-v2.html  --  /src/pages/proyecto-07-v2.html  -----
 -->
 
 
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            ---------- Enunciado Proyecto 7 Versión 2 ----------
-        </h2>
+    <h2 class="main__title"> Proyecto 7 Version 2 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto07V2Description">
+        <!--  Inyectado desde pages-components/proyecto-07-v2/proyecto-07-v2-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-           -  Pidele al usuario su año de nacimiento en una ventana emergente
-              y calcula cuántos años tiene actualmente. 
-              <br>
-           -  Si el año de nacimiento es menor de 1910 volver a pedir el año.
+    <h2 class="main__title"> Proyecto 7 Version 2 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto07V2Demo">
+        <!--  Inyectado desde pages-components/proyecto-07-v2/proyecto-07-v2-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 7 Version 2 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-07-v2-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-07-v2.js" class="markdown-code"></article>
         </div>
 
+    </section>
 
-    </div>
-
-    <div class="main__description-project" id="resultado"> </div>
-
+    
 </div>

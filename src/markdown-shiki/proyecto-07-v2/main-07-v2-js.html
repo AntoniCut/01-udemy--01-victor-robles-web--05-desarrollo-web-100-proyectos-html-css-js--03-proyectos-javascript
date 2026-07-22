@@ -1,0 +1,113 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {    </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 7 JS Version 2  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  referencia al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">     /**</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> resultado</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#resultado'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4">(!</span><span style="color:#9CDCFE">resultado</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se encontro el elemento resultado'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> fechaActual</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> Date</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * - Fecha de nacimiento en formato dd/mm/aaaa</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string|null}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> fechaNacimiento</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'14/10/1975'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> edadAños</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;;</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> edadMeses</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;;</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> edadDias</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;;</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * - Fecha de nacimiento como objeto Date</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Date}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> fechaNac</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * - Limite de fecha: 150 años + 1 día antes de la fecha actual</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Date}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> limiteFecha</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> Date</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#9CDCFE">        fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getFullYear</span><span style="color:#D4D4D4">() - </span><span style="color:#B5CEA8">150</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMonth</span><span style="color:#D4D4D4">(),</span></span>
+<span class="line"><span style="color:#9CDCFE">        fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getDate</span><span style="color:#D4D4D4">() - </span><span style="color:#B5CEA8">1</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        do</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Solicitar fecha de nacimiento en formato dd/mm/aa  -----</span></span>
+<span class="line"><span style="color:#C586C0">            do</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
+<span class="line"><span style="color:#9CDCFE">                fechaNacimiento</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Introduce tu fecha de nacimiento en formato dd/mm/aa:"</span><span style="color:#D4D4D4">);    </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span><span style="color:#C586C0">while</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">fechaNacimiento</span><span style="color:#D4D4D4"> || !</span><span style="color:#D16969">/</span><span style="color:#DCDCAA">^</span><span style="color:#D16969">\d</span><span style="color:#D7BA7D">{1,2}\/</span><span style="color:#D16969">\d</span><span style="color:#D7BA7D">{1,2}\/</span><span style="color:#D16969">\d</span><span style="color:#D7BA7D">{4}</span><span style="color:#DCDCAA">$</span><span style="color:#D16969">/</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">test</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">fechaNacimiento</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Separar día, mes y año  -----</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#D4D4D4"> [</span><span style="color:#4FC1FF">dia</span><span style="color:#D4D4D4">, </span><span style="color:#4FC1FF">mes</span><span style="color:#D4D4D4">, </span><span style="color:#4FC1FF">año</span><span style="color:#D4D4D4">] = </span><span style="color:#9CDCFE">fechaNacimiento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">split</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'/'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">map</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">num</span><span style="color:#569CD6"> =></span><span style="color:#DCDCAA"> parseInt</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">num</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Convertir la fecha ingresada en un objeto Date  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            fechaNac</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> Date</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">año</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">mes</span><span style="color:#D4D4D4"> - </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">dia</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Validar que la fecha sea menor a la actual y no exceda el límite de 150 años + 1 día  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4"> >= </span><span style="color:#9CDCFE">limiteFecha</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Años  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                edadAños</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getFullYear</span><span style="color:#D4D4D4">() - </span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getFullYear</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Meses  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                edadMeses</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMonth</span><span style="color:#D4D4D4">() - </span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMonth</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Días  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                edadDias</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getDate</span><span style="color:#D4D4D4">() - </span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getDate</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  Ajustar si el mes o día actual es menor que el de nacimiento  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">edadDias</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                    edadMeses</span><span style="color:#D4D4D4">--;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  Días del mes anterior  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                    edadDias</span><span style="color:#D4D4D4"> += </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> Date</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getFullYear</span><span style="color:#D4D4D4">(), </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMonth</span><span style="color:#D4D4D4">(), </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">getDate</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">edadMeses</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    edadAños</span><span style="color:#D4D4D4">--;</span></span>
+<span class="line"><span style="color:#9CDCFE">                    edadMeses</span><span style="color:#D4D4D4"> += </span><span style="color:#B5CEA8">12</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        } </span><span style="color:#C586C0">while</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4"> > </span><span style="color:#9CDCFE">fechaActual</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">fechaNac</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">limiteFecha</span><span style="color:#D4D4D4"> || </span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">edadAños</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">       </span></span>
+<span class="line"><span style="color:#9CDCFE">        resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;h3> Tienes </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadAños</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> años, </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadMeses</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> meses y </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadDias</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> días. &#x3C;/h3></span></span>
+<span class="line"><span style="color:#CE9178">        `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">            alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`Tienes </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadAños</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> años, </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadMeses</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> meses y </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">edadDias</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> días.`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

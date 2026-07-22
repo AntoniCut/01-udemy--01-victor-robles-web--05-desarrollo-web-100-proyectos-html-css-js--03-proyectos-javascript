@@ -4,29 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 23  ----------  
-
-    -  Necesitamos hacer un validador de emails.
-       Si el email es correcto mostrara un check y si es incorrecto una cruz. Ver PDF.
-    -  Expresión regular validar email mas robusta:
-        let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
--->
-
 
 <div class="main__container">
 
-    <form class="main__validation-email">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <input type="email" id="email" class="validation-email__input" placeholder="Introduce tu Email">
+    <h2 class="main__title"> Proyecto 23 JavaScript </h2>
 
-        <div class="validation-email__icons">
-            <i class="icons__check fa-solid fa-circle-check"> </i>
-            <i class="icons__xmark fa-solid fa-circle-xmark"> </i>
+    <section data-component-page="proyecto23Description">
+        <!--  Inyectado desde pages-components/proyecto-23/proyecto-23-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
+
+    <h2 class="main__title"> Proyecto 23 JavaScript — Demo Scripts </h2>
+
+    <div data-component-page="proyecto23Demo">
+        <!--  Inyectado desde pages-components/proyecto-23/proyecto-23-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 23 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-23-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-23.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-23.css" class="markdown-code"></article>
         </div>
 
-    </form>
+    </section>
 
+    
 </div>

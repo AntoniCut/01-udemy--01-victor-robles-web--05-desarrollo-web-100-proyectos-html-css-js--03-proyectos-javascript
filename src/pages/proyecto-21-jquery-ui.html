@@ -1,77 +1,39 @@
 <!--
-    *  ------------------------------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
     *  -----  /proyecto-21-jquery-ui.html  --  /src/pages/proyecto-21-jquery-ui.html  -----  *
-    *  ------------------------------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
 -->
-
-<!--  
-
-    ----------  Enunciado Proyecto 21 con jQuery y jQuery UI  ----------  
-
-    -  Haz una web que se vea así. Ver PDF.
-    -  Esta web será un almacén de cajas.
-    -  Debemos poder mover las cajas a su hueco correspondiente en el almacén, al soltarlas
-       deberán quedarse ahí y quitar su sombra indicando que está ocupada, cuando no haya más
-       cajas que mover, se debe mostrar una alerta.
-       No puede haber más de 1 caja por hueco.
-
--->
-
 
 
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <!--  -----  Título del proyecto  -----  -->
-    <h2 class="main__subtitle"> Almacen con jQuery y jQuery UI </h2>
+    <h2 class="main__title"> Proyecto 21 jQuery UI </h2>
 
+    <section data-component-page="proyecto21JqueryUiDescription">
+        <!--  Inyectado desde pages-components/proyecto-21-jquery-ui/proyecto-21-jquery-ui-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-    <!--  -----  Contenedor de las cajas y el almacén  -----  -->
-    <div class="main__inventario-almacen">
+    <h2 class="main__title"> Proyecto 21 jQuery UI — Demo Scripts </h2>
 
-
-        <!--  -----  Contenedor de las cajas  -----  -->
-        <section class="main__inventario">
-
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-            <div class="inventario__caja"> </div>
-
-        </section>
-
-
-        <!--  -----  Contenedor del almacén  -----  -->
-        <section class="main__almacen">
-
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-            <div class="almacen__estanteria"> </div>
-
-        </section>
-
-
+    <div data-component-page="proyecto21JqueryUiDemo">
+        <!--  Inyectado desde pages-components/proyecto-21-jquery-ui/proyecto-21-jquery-ui-demo.html  -->
     </div>
+    <!--  *****  Código Markdown  *****  -->
 
+    <h2 class="main__title"> Proyecto 21 jQuery UI — Código Markdown </h2>
 
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-21-jquery-ui-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-21-jquery-ui.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-21.css" class="markdown-code"></article>
+        </div>
+
+    </section>
+
+    
 </div>

@@ -1,0 +1,38 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 00 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `input de tipo password` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__input"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `icono de ojo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $icon</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__eye > .fa-solid"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Validación de elementos en el DOM  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$icon</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el DOM"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Eventos  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $icon</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Toggle del tipo de input  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"password"</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">() != </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#9CDCFE">            $input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"text"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#C586C0">        else</span></span>
+<span class="line"><span style="color:#9CDCFE">            $input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"password"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

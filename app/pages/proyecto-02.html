@@ -4,37 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 2  ----------  
-    -  1. Crea un fichero JavaScript y vinculalo con tu fichero HTML. 
-    -  2. Debes crear las variables: marca, velocidad, stock y modelos (array).
-    -  3. Mostrar las variables por la pantalla (con una frase).
-    -  4. Mostrar todos los elementos del array (sin hacerlo manualmente). 
-    
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 2 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 2 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto02Description">
+        <!--  Inyectado desde pages-components/proyecto-02/proyecto-02-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            - 1. Crea un fichero JavaScript y vinculalo con tu fichero HTML. <br>
-            - 2. Debes crear las variables: marca, velocidad, stock y modelos (array). <br>
-            - 3. Mostrar las variables por la pantalla (con una frase). <br>
-            - 4. Mostrar todos los elementos del array (sin hacerlo manualmente). <br>
+    <h2 class="main__title"> Proyecto 2 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto02Demo">
+        <!--  Inyectado desde pages-components/proyecto-02/proyecto-02-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 2 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-02-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-02.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project" id="content"> </div>
-
+    
 </div>

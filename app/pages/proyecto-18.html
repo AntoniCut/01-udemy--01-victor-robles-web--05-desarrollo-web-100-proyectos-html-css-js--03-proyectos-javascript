@@ -4,48 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 18  ----------  
-
-    -  Antes de empezar con JS, deberás tener una web con estos estilos.
-    -  Crea un fichero JavaScript y vincúlalo con tu fichero HTML, con JS deberás hacer que el
-       cronometro empiece a contar al pulsar el botón de iniciar, el cronometro se parara cuando
-       llegue a 60 minutos o el usuario pulse el botón parar, al pararse podrá volver a iniciarse
-       pulsando el mismo botón. Ver PDF.
-                                  
--->
-
 
 <div class="main__container">
 
-    <!--  -----  Cronómetro -----  -->
-    <div class="main__crono">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <!--  -----  Contenedor del Cronómetro  -----  -->
-        <section class="layout__container-crono">
+    <h2 class="main__title"> Proyecto 18 JavaScript </h2>
 
-            <!--  -----  Números del Cronómetro  -----  -->
-            <div class="layout__crono">
+    <section data-component-page="proyecto18Description">
+        <!--  Inyectado desde pages-components/proyecto-18/proyecto-18-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-                <span class="crono__min"> 00 </span>
-                <span class="crono__separator"> : </span>
-                <span class="crono__sec"> 00 </span>
+    <h2 class="main__title"> Proyecto 18 JavaScript — Demo Scripts </h2>
 
-            </div>
-
-        </section>
-
-        <!--  -----  Botones del Cronómetro  -----  -->
-        <section class="layout__btns">
-
-            <button class="layout__btn-start"> Iniciar </button>
-            <button class="layout__btn-stop"> Parar </button>
-
-        </section>
-
-
+    <div data-component-page="proyecto18Demo">
+        <!--  Inyectado desde pages-components/proyecto-18/proyecto-18-demo.html  -->
     </div>
+    <!--  *****  Código Markdown  *****  -->
 
+    <h2 class="main__title"> Proyecto 18 JavaScript — Código Markdown </h2>
 
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-18-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-18.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-18.css" class="markdown-code"></article>
+        </div>
+
+    </section>
+
+    
 </div>

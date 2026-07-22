@@ -1,0 +1,70 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 10 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">     * */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> resultBox</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#result'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">resultBox</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se encontró el elemento #result'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Lógica del proyecto  -----   </span></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string|null}</span><span style="color:#6A9955">  Input de palabra por parte del usuario.</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> input</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'¿Introduce una palabra?'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'Hola Mundo!!!'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Validar entrada  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">().</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No has introducido ninguna palabra válida.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Validar si el valor introducido es un número  -----</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  (se considera número si todos los caracteres son dígitos o un número válido)  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">))) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No puedes utilizar un número. Debes introducir una palabra.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * `Convierte` una palabra a `mayúsculas` y `devuelve` su `conteo`.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> word</span><span style="color:#6A9955"> - Palabra introducida.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> HTML con la palabra y el número de letras.</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> countAndUpperLetter</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">word</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Convertir a mayúsculas  -----</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> upper</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">word</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toUpperCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Contar letras  -----</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> counter</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">word</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#CE9178"> `&#x3C;h3> La palabra ha sido &#x3C;strong> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">upper</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/strong> y tiene </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">counter</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> letras. &#x3C;/h3>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> resultHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">countAndUpperLetter</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#9CDCFE">        resultBox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">resultHTML</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostrar solo texto sin etiquetas  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">        setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">resultHTML</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replace</span><span style="color:#D4D4D4">(</span><span style="color:#D16969">/&#x3C;</span><span style="color:#CE9178">[^</span><span style="color:#D16969">></span><span style="color:#CE9178">]</span><span style="color:#D7BA7D">+</span><span style="color:#D16969">>/</span><span style="color:#569CD6">g</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">)), </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">); </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

@@ -331,7 +331,7 @@ export const css = () =>
         ? Promise.resolve()
         : src(paths.src.scssGlobals, { sourcemaps: true, allowEmpty: true })
               .pipe(safePipe())
-              .pipe(sass().on('error', sass.logError))
+              .pipe(sass({ charset: false }).on('error', sass.logError))
               .pipe(validateFiles('css'))
               .pipe(dest(path.posix.join(paths.appRoot, 'css'), { sourcemaps: true }));
 
@@ -343,7 +343,7 @@ export const cssPages = () =>
         ? Promise.resolve()
         : src(paths.src.scssPages, { base: paths.src.scssPagesDir, sourcemaps: true })
               .pipe(safePipe())
-              .pipe(sass().on('error', sass.logError))
+              .pipe(sass({ charset: false }).on('error', sass.logError))
               .pipe(validateFiles('cssPages'))
               .pipe(dest(path.posix.join(paths.appRoot, 'css', 'pages'), { sourcemaps: true }));
 

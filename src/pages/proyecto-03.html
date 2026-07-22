@@ -4,49 +4,34 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 3  ----------  
-
-    -  Un coche va a toda velocidad por la carretera. 
-       Va a una velocidad de 135 km/h y el limite es de 60 km/h. 
-       Debes comprobar que:
-        -  Si la velocidad es Mayor al limite debes de mostrar
-           un mensaje por la consola indicando que baje la velocidad.
-        -  Si la velocidad es Menor al limite debes de mostrar
-           un mensaje por la consola indicando que todo va bien.
--->
-
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
+    <h2 class="main__title"> Proyecto 3 JavaScript </h2>
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 3 JS
-        </h2>
+    <section data-component-page="proyecto03Description">
+        <!--  Inyectado desde pages-components/proyecto-03/proyecto-03-description.html  -->
+    </section>
 
-        <div class="description-project__description">
+    <!--  *****  Demo del proyecto  *****  -->
+    <h2 class="main__title"> Proyecto 3 JavaScript — Demo Scripts </h2>
 
-            Un coche va a toda velocidad por la carretera.
-            Va a una velocidad de 135 km/h y el limite es de 60 km/h.
-            Debes comprobar que:
-            <br>
-
-            - Si la velocidad es Mayor al limite debes de mostrar
-            un mensaje por la consola indicando que baje la velocidad.
-            <br>
-
-            - Si la velocidad es Menor al limite debes de mostrar
-            un mensaje por la consola indicando que todo va bien.
-
-        </div>
-
-
+    <div data-component-page="proyecto03Demo">
+        <!--  Inyectado desde pages-components/proyecto-03/proyecto-03-demo.html  -->
     </div>
 
-    <div class="main__description-project" id="content"> </div>
+    <!--  *****  Código Markdown  *****  -->
+    <h2 class="main__title"> Proyecto 3 JavaScript — Código Markdown </h2>
 
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-03-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-03.js" class="markdown-code"></article>
+        </div>
+
+    </section>
+
+    
 </div>

@@ -1,15 +1,36 @@
 <!--
-    *  --------------------------------------------------  *
-    *  -----  /home.html  --  /src/pages/home.html  -----  *
-    *  --------------------------------------------------  *
+    *  -----  /home.html  --  /src/pages/home.html  -----
 -->
 
-<main class="main__container">
 
-    <section data-component-page="home">
-        <!--  Contenido inyectado desde pages-components/home.html  -->
+<div class="main__container">
+
+    <!--  *****  Descripción  *****  -->
+
+    <h2 class="main__title"> 50 Proyectos JavaScript </h2>
+
+    <section data-component-page="homeDescription">
+        <!--  Inyectado desde pages-components/home-description.html  -->
     </section>
-   
 
-</main>
+    <!--  *****  Demo  *****  -->
 
+    <h2 class="main__title"> 50 Proyectos JavaScript — Demo Scripts </h2>
+
+    <section data-component-page="homeDemo">
+        <!--  Inyectado desde pages-components/home-demo.html  -->
+    </section>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> 50 Proyectos JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="pluginV4" data-label="spa-loader-content-html.js" class="markdown-code"></article>
+        </div>
+
+    </section>
+
+    
+</div>

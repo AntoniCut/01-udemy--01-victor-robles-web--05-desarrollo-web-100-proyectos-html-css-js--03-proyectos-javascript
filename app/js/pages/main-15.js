@@ -176,7 +176,7 @@
         const nuevaCard = crearTarjeta(contador++);
 
         //  -----  Agregar la nueva tarjeta al contenedor principal  -----
-        document.querySelector(".main__container")?.appendChild(nuevaCard);
+        document.querySelector(".main__demo")?.appendChild(nuevaCard);
 
     });
 

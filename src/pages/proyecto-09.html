@@ -4,46 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 9  ----------  
-
-    -  Crea una función que sume una cantidad indefinida de números
-       que se generan aleatoriamente pasados por parámetro.
-    
-    -  Muestra el Resultado en un encabezado de tercer nivel (h3).
-    -  Muestra los números que se han utilizado para el resultado debajo en un párrafo.
-              
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 9 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 9 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto09Description">
+        <!--  Inyectado desde pages-components/proyecto-09/proyecto-09-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            -  Crea una función que sume una cantidad indefinida de números
-               que se generan aleatoriamente pasados por parámetro.
-               <br>
-            -  Muestra el Resultado en un encabezado de tercer nivel (h3).
-            <br>
-            -  Muestra los números que se han utilizado para el resultado debajo en un párrafo.
+    <h2 class="main__title"> Proyecto 9 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto09Demo">
+        <!--  Inyectado desde pages-components/proyecto-09/proyecto-09-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 9 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-09-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-09.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project"> 
-
-        <h3 id="result"> </h3>
-        <p id="numbers"> </p>
-
-    </div>
-
+    
 </div>

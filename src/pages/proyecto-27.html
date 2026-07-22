@@ -4,36 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 27  ----------  
-
-    -  La web debe verse así por defecto (full screen). Ver PDF.
-    -  A pasar el ratón por encima de cualquiera de los artículos deberá mostrarse de esta manera. Ver PDF.
-    -  Cuando el ratón deje de estar encima deberá volver a su estado por defecto.
-    -  Debes hacer una “transición suavizada y animada con CSS” y está prohibido el uso de
-       pseudoclases en CSS.
-    -  No puedes usar :hover, solo eventos de JavaScript.
-       
--->
-
 
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <main class="main__articles-container">
+    <h2 class="main__title"> Proyecto 27 JavaScript </h2>
 
-        <article class="articles__article articles__article--left">
-            <h2 class="article__title"> Cursos de Victor Robles </h2>
-            <a class="article__btn" href="https://victorroblesweb.es/ruta"> Ver </a>
-        </article>
+    <section data-component-page="proyecto27Description">
+        <!--  Inyectado desde pages-components/proyecto-27/proyecto-27-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-        <article class="articles__article articles__article--right">
-            <h2 class="article__title"> Videos de Victor Robles </h2>
-            <a class="article__btn" href="https://youtube.com/victorroblesweb"> Ver </a>
-        </article>
+    <h2 class="main__title"> Proyecto 27 JavaScript — Demo Scripts </h2>
 
-    </main>
+    <div data-component-page="proyecto27Demo">
+        <!--  Inyectado desde pages-components/proyecto-27/proyecto-27-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
 
+    <h2 class="main__title"> Proyecto 27 JavaScript — Código Markdown </h2>
 
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-27-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-27.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-27.css" class="markdown-code"></article>
+        </div>
+
+    </section>
+
+    
 </div>

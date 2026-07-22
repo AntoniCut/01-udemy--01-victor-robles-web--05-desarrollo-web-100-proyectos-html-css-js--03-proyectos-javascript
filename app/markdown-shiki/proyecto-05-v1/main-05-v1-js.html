@@ -1,0 +1,80 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 5 JS Version 1  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  referencia al html  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**   {HTMLSectionElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement|null}</span><span style="color:#6A9955">  </span></span>
+<span class="line"><span style="color:#6A9955">     * */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> tableContainer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.tables'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">tableContainer</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> result</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  bucle para sacar el numero de la tabla  -----</span></span>
+<span class="line"><span style="color:#C586C0">    for</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">let</span><span style="color:#9CDCFE"> i</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4">++) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Plantilla para mostrar encabezado  --------  </span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  y crear caja operaciones de la tabla  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        tableContainer</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`</span></span>
+<span class="line"><span style="color:#CE9178">            </span></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;div class='tables__item'></span></span>
+<span class="line"><span style="color:#CE9178">                </span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;h2 class='tables__title'> </span></span>
+<span class="line"><span style="color:#CE9178">                    Tabla del </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">i</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> </span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;/h2></span></span>
+<span class="line"><span style="color:#CE9178">                </span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;div class='tables__box'></span></span>
+<span class="line"><span style="color:#CE9178">                    &#x3C;ul class='tables__list tables__list--</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">i</span><span style="color:#569CD6">}</span><span style="color:#CE9178">'> &#x3C;/ul></span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;/div></span></span>
+<span class="line"><span style="color:#CE9178">                </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;/div></span></span>
+<span class="line"><span style="color:#CE9178">        `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  bucle para sacar numeros para las operaciones de la tabla  -----</span></span>
+<span class="line"><span style="color:#C586C0">        for</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">let</span><span style="color:#9CDCFE"> n</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">n</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">n</span><span style="color:#D4D4D4">++) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  calcular resultado de la operación  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            result</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4"> * </span><span style="color:#9CDCFE">n</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  sacar caja donde mostrar operaciones  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /**</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLUListElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">             */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> lists</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.tables__list--'</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">lists</span><span style="color:#D4D4D4">) </span><span style="color:#C586C0">return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Imprimir todas las operaciones  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            lists</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;li class='list__item'></span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">i</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> X </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">n</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> = </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">result</span><span style="color:#569CD6">}</span><span style="color:#CE9178">&#x3C;/li>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Añadir &#x3C;hr> después de la quinta tabla  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">5</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D4D4D4">           </span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> separator</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'hr'</span><span style="color:#D4D4D4">); </span><span style="color:#6A9955">// Crear un nuevo &#x3C;hr> cada vez</span></span>
+<span class="line"><span style="color:#9CDCFE">            separator</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'separator'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            tableContainer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">separator</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

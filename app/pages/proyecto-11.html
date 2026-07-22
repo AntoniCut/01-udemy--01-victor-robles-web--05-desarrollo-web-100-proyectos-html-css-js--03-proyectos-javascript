@@ -4,34 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 11  ----------  
-
-    -  Dada una frase introducida por un prompt, crear una función que reemplace una palabra en ella,
-       la palabra a buscar y la de reemplazo deben ser solicitadas al usuario.
-                           
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 11 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 11 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto11Description">
+        <!--  Inyectado desde pages-components/proyecto-11/proyecto-11-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            -  Dada una frase introducida por un prompt, crear una función que reemplace una palabra en ella,
-               la palabra a buscar y la de reemplazo deben ser solicitadas al usuario.
+    <h2 class="main__title"> Proyecto 11 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto11Demo">
+        <!--  Inyectado desde pages-components/proyecto-11/proyecto-11-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 11 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-11-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-11.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project" id="result"> </div>
-
+    
 </div>

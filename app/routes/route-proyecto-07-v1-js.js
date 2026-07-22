@@ -1,24 +1,27 @@
 /*
     *  -----------------------------------------------------------------------------------------  *
-    *  -----  /route-proyecto-07-js.js  --  /src/routes/route-proyecto-07-js.js  -----  *
+    *  -----  /route-proyecto-07-v1-js.js  --  /src/routes/route-proyecto-07-v1-js.js  -----  *
     *  -----------------------------------------------------------------------------------------  *
 */
 
 
 import { paths } from './paths.js';
 
-
-const { 
-    favicon, 
-    layoutHeader, 
-    layoutNavbar, 
-    pages, 
-    layoutFooter, 
-    styles, 
-    scripts 
+const {
+    favicon,
+    layoutHeader,
+    layoutNavbar,
+    pages,
+    pagesComponents,
+    pagesComponentsSrc,
+    MarkdownShikiHtml,
+    layoutFooter,
+    scripts,
+    scriptsSrc,
 } = paths;
 
-/** @type {Route} */
+
+/** @type {import("../../types/index.js").Route} */
 export const routeProyecto07V1JS = {
     id: 'js07V1',
     favicon: `${favicon}`,
@@ -30,8 +33,26 @@ export const routeProyecto07V1JS = {
         layoutMain: `${pages}/proyecto-07-v1.html`,
         layoutFooter: `${layoutFooter}`,
     },
-    pagesComponents: [],
-    MarkdownShikiHtml: [],
+    pagesComponents: [
+        { url: `${pagesComponents}/proyecto-07-v1/proyecto-07-v1-description.html`, target: '[data-component-page="proyecto07V1Description"]' },
+        { url: `${pagesComponents}/proyecto-07-v1/proyecto-07-v1-demo.html`, target: '[data-component-page="proyecto07V1Demo"]' },
+    ],
+    MarkdownShikiHtml: [
+        {
+            fileName: 'proyecto-07-v1-demo-html.html',
+            fileExtension: 'html',
+            urlInput: `${pagesComponentsSrc}/proyecto-07-v1/proyecto-07-v1-demo.html`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-07-v1`,
+            target: '[data-shiki="codeHtml"]',
+        },
+        {
+            fileName: 'main-07-v1-js.html',
+            fileExtension: 'js',
+            urlInput: `${scriptsSrc}/main-07-v1.js`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-07-v1`,
+            target: '[data-shiki="codeJs"]',
+        },
+    ],
     headerTitle: 'Proyecto 7 Version 1 JavaScript',
     styles: [],
     scripts: [

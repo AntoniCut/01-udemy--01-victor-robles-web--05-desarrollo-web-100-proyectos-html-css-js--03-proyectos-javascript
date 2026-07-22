@@ -4,36 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 4  ----------  
-
-    -  Dado un sueldo, crea un condicional switch comparando su sueldo con diferentes
-       tipos de sueldo. Si su sueldo es bueno, malo, etc. 
-              
--->
-
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 4 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 4 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto04Description">
+        <!--  Inyectado desde pages-components/proyecto-04/proyecto-04-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            - Dado un sueldo, crea un condicional switch comparando su sueldo con diferentes
-            tipos de sueldo. Si su sueldo es bueno, malo, etc.
+    <h2 class="main__title"> Proyecto 4 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto04Demo">
+        <!--  Inyectado desde pages-components/proyecto-04/proyecto-04-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 4 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-04-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-04.js" class="markdown-code"></article>
         </div>
 
+    </section>
 
-    </div>
-
-    <div class="main__description-project" id="content"> </div>
-
+    
 </div>

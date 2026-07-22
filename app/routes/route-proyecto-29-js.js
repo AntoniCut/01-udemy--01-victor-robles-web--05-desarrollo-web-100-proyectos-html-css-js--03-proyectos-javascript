@@ -7,18 +7,22 @@
 
 import { paths } from './paths.js';
 
-
-const { 
-    favicon, 
-    layoutHeader, 
-    layoutNavbar, 
-    pages, 
-    layoutFooter, 
-    styles, 
-    scripts 
+const {
+    favicon,
+    layoutHeader,
+    layoutNavbar,
+    pages,
+    pagesComponents,
+    pagesComponentsSrc,
+    MarkdownShikiHtml,
+    layoutFooter,
+    styles,
+    scripts,
+    scriptsSrc,
 } = paths;
 
-/** @type {Route} */
+
+/** @type {import("../../types/index.js").Route} */
 export const routeProyecto29JS = {
     id: 'js29',
     favicon: `${favicon}`,
@@ -30,8 +34,33 @@ export const routeProyecto29JS = {
         layoutMain: `${pages}/proyecto-29.html`,
         layoutFooter: `${layoutFooter}`,
     },
-    pagesComponents: [],
-    MarkdownShikiHtml: [],
+    pagesComponents: [
+        { url: `${pagesComponents}/proyecto-29/proyecto-29-description.html`, target: '[data-component-page="proyecto29Description"]' },
+        { url: `${pagesComponents}/proyecto-29/proyecto-29-demo.html`, target: '[data-component-page="proyecto29Demo"]' },
+    ],
+    MarkdownShikiHtml: [
+        {
+            fileName: 'proyecto-29-demo-html.html',
+            fileExtension: 'html',
+            urlInput: `${pagesComponentsSrc}/proyecto-29/proyecto-29-demo.html`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-29`,
+            target: '[data-shiki="codeHtml"]',
+        },
+        {
+            fileName: 'main-29-js.html',
+            fileExtension: 'js',
+            urlInput: `${scriptsSrc}/main-29.js`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-29`,
+            target: '[data-shiki="codeJs"]',
+        },
+        {
+            fileName: 'styles-29-css.html',
+            fileExtension: 'css',
+            urlInput: `${styles}/styles-29.css`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-29`,
+            target: '[data-shiki="codeCss"]',
+        },
+    ],
     headerTitle: 'Proyecto 29 JavaScript',
     styles: [
         { href: `${styles}/styles-29.css` },

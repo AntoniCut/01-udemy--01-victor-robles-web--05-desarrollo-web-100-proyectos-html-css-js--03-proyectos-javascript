@@ -4,34 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 12  ----------  
-
-    -  Crea una función que recorra y muestre por pantalla en parrafos
-       un array de animales introducidos con un prompt.
-                           
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 12 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 12 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto12Description">
+        <!--  Inyectado desde pages-components/proyecto-12/proyecto-12-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-            -  Crea una función que recorra y muestre por pantalla en parrafos
-               un array de animales introducidos con un prompt.
+    <h2 class="main__title"> Proyecto 12 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto12Demo">
+        <!--  Inyectado desde pages-components/proyecto-12/proyecto-12-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 12 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-12-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-12.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project" id="result"> </div>
-
+    
 </div>

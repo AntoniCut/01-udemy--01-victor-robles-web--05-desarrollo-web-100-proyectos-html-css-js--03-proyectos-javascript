@@ -1,0 +1,184 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/**</span></span>
+<span class="line"><span style="color:#6A9955"> * - definición del tipo `Article` para describir la estructura de un artículo.</span></span>
+<span class="line"><span style="color:#6A9955"> * - Array de artículos que se utilizará para almacenar los artículos creados por el usuario.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@typedef</span><span style="color:#4EC9B0"> {Object}</span><span style="color:#4EC9B0"> Article</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> title</span><span style="color:#6A9955"> - Título del artículo</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> subtitle</span><span style="color:#6A9955"> - Subtítulo del artículo</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> description</span><span style="color:#6A9955"> - Descripción del artículo</span></span>
+<span class="line"><span style="color:#6A9955"> */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 19 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement | null}</span><span style="color:#6A9955"> - `contenedor de artículos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> articlesCard</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".layout__articles"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `input del título` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> title</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#title"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `input del subtítulo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> subtitle</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#subtitle"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLTextAreaElement | null}</span><span style="color:#6A9955"> - `input de la descripción` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> description</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#description"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario de creación` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> form</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__create"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validación de las referencias al HTML  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">articlesCard</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">subtitle</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">description</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">form</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han podido obtener las referencias del HTML"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  array donde insertamos los artículos  -----</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Article[]}</span><span style="color:#6A9955"> - Array de artículos */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> articles</span><span style="color:#D4D4D4"> = [];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">   </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `createArticle()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * - crear un nuevo artículo a partir de los datos ingresados en el formulario.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> createArticle</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  al enviar el formulário  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        form</span><span style="color:#D4D4D4">?.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'submit'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">event</span><span style="color:#569CD6"> =></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">subtitle</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">description</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  crear un nuevo artículo a partir de los datos ingresados en el formulario  -----</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> article</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    title:</span><span style="color:#9CDCFE"> title</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                    subtitle:</span><span style="color:#9CDCFE"> subtitle</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                    description:</span><span style="color:#9CDCFE"> description</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span></span>
+<span class="line"><span style="color:#D4D4D4">                };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  insertar el nuevo artículo en el array de artículos y almacenarlo en el localStorage  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                localStorage</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setItem</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'articles'</span><span style="color:#D4D4D4">, </span><span style="color:#4FC1FF">JSON</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">stringify</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">articles</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
+<span class="line"><span style="color:#6A9955">                //  -----  invertir el orden de los artículos para mostrar el más reciente primero  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reverse</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  mostrar los artículos en el DOM  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                showArticles</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
+<span class="line"><span style="color:#6A9955">                //  -----  resetear el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                form</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reset</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Faltan datos por rellenar en el formulário"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">articles</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `layoutArticles()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * - función que recibe un artículo y devuelve una plantilla HTML con el formato del artículo para mostrar en el DOM.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Article}</span><span style="color:#9CDCFE"> article</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - HTML del artículo</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> layoutArticles</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> layout</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span></span>
+<span class="line"><span style="color:#CE9178">        </span></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;!-- -----  Plantilla del artículo  ----- --></span></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;article class="layout__card"></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;header class="card__header"></span></span>
+<span class="line"><span style="color:#CE9178">                    &#x3C;p class="card__author"> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">subtitle</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/p></span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;/header></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;div class="card__content"></span></span>
+<span class="line"><span style="color:#CE9178">                    &#x3C;h2 class="content__title"> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h2></span></span>
+<span class="line"><span style="color:#CE9178">                    &#x3C;p class="content__description"></span></span>
+<span class="line"><span style="color:#569CD6">                        ${</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">description</span><span style="color:#569CD6">}</span></span>
+<span class="line"><span style="color:#CE9178">                    &#x3C;/p></span></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;/div></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">                &#x3C;button class="content__btn"> Leer más &#x3C;/button></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">            &#x3C;/article></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">        `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> layout</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">   </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `showArticles()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * - función que muestra los artículos almacenados en el array `articles` en el DOM </span></span>
+<span class="line"><span style="color:#6A9955">     *   utilizando la plantilla de formato del artículo definida en la función `layoutArticles()`.  </span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> showArticles</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  limpiar el contenedor de artículos antes de mostrar los artículos almacenados en el array `articles`  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        articlesCard</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  obtener los artículos almacenados en el localStorage, invertir el orden de los artículos para mostrar el más reciente primero y mostrar los artículos en el DOM  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        articles</span><span style="color:#D4D4D4"> = </span><span style="color:#4FC1FF">JSON</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">parse</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">localStorage</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getItem</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'articles'</span><span style="color:#D4D4D4">) || </span><span style="color:#CE9178">'[]'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  invertir el orden de los artículos para mostrar el más reciente primero  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reverse</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Si hay artículos almacenados en el array `articles`, mostrar los artículos en el DOM utilizando la plantilla de formato del artículo definida en la función `layoutArticles()`  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">articles</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  mostrar los artículos en el DOM utilizando la plantilla de formato del artículo definida en la función `layoutArticles()`  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">article</span><span style="color:#569CD6"> =></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                articlesCard</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#DCDCAA">layoutArticles</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ejecutar las funciones para crear y mostrar los artículos  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  al cargar la página  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    createArticle</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">    showArticles</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

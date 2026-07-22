@@ -1,0 +1,104 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 11 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencia al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> resultBox</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#result'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">resultBox</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se encontró el elemento con el id "result".'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Retardo para simular carga de proyecto  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Solicitar datos al usuario  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - `Solicitud` de una frase al usuario</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string|null}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> frase</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Introduce una frase:'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">frase</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No has introducido ninguna frase.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - `Solicitud` de la palabra a reemplazar en la frase</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string|null}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> palabra</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`En esta frase - "</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">frase</span><span style="color:#569CD6">}</span><span style="color:#CE9178">" - ¿Qué palabra quieres reemplazar?`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">palabra</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No has introducido ninguna palabra a reemplazar.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - `Solicitud` de la palabra de reemplazo</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string|null}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> reemplazo</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`Has elegido la palabra - "</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">palabra</span><span style="color:#569CD6">}</span><span style="color:#CE9178">" - ¿Por qué palabra la quieres sustituir?`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">reemplazo</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No has introducido ninguna palabra de reemplazo.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">              </span></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - `Variable` para almacenar la frase final con el reemplazo</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> fraseFinal</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">frase</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">       </span></span>
+<span class="line"><span style="color:#D4D4D4">       </span></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * - `Función` para reemplazar la palabra en la frase</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> frase</span><span style="color:#6A9955"> - la frase completa</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> palabra</span><span style="color:#6A9955"> - la palabra a reemplazar en la frase</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> reemplazo</span><span style="color:#6A9955"> - la palabra que reemplazará a la original</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@returns</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> reemplazar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">frase</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">palabra</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">reemplazo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  Verifica si la palabra está en la frase  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">frase</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">palabra</span><span style="color:#D4D4D4">))</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#9CDCFE"> frase</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replace</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">palabra</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">reemplazo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            else</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#CE9178"> 'Esa palabra no existe en la frase.'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostrar el resultado en un `alert` y en el HTML  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        fraseFinal</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">reemplazar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">frase</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">palabra</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">reemplazo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostrar el resultado en el DOM  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        resultBox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">            La frase es: &#x3C;h3> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">frase</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
+<span class="line"><span style="color:#CE9178">            La palabra a buscar es: &#x3C;h3> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">palabra</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
+<span class="line"><span style="color:#CE9178">            La palabra a reemplazar es: &#x3C;h3> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">reemplazo</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
+<span class="line"><span style="color:#CE9178">            La nueva frase es: &#x3C;h3> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">fraseFinal</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CE9178">        `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostrar el resultado en un `alert` después de 2 segundos  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">        setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'La nueva frase es: '</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">fraseFinal</span><span style="color:#D4D4D4">), </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">  </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

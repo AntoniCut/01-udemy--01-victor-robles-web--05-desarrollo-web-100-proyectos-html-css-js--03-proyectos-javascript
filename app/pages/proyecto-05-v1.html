@@ -1,38 +1,37 @@
 <!--
-    *  ----------------------------------------------------------------------  *
-    *  -----  /proyecto-05-v1.html  --  /src/pages/proyecto-05-v1.html  -----  *
-    *  ----------------------------------------------------------------------  *
--->
-
-<!--  
-
-----------  Enunciado Proyecto 5  ----------  
-
-    Crea una web con las tablas de multiplicar del 1 al 10. 
-    Se debe ver como en el PDF del enunciado: 
-               
+    *  -----  /proyecto-05-v1.html  --  /src/pages/proyecto-05-v1.html  -----
 -->
 
 
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 5 JS Version 1
-        </h2>
+    <h2 class="main__title"> Proyecto 5 Version 1 JavaScript </h2>
 
-        <div class="description-project__description">
-            Tabla de Multiplicar del 1 al 10 - Version 1
-        </div>
+    <section data-component-page="proyecto05V1Description">
+        <!--  Inyectado desde pages-components/proyecto-05-v1/proyecto-05-v1-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
+    <h2 class="main__title"> Proyecto 5 Version 1 JavaScript — Demo Scripts </h2>
+
+    <div data-component-page="proyecto05V1Demo">
+        <!--  Inyectado desde pages-components/proyecto-05-v1/proyecto-05-v1-demo.html  -->
     </div>
+    <!--  *****  Código Markdown  *****  -->
 
-    <section class="tables">
+    <h2 class="main__title"> Proyecto 5 Version 1 JavaScript — Código Markdown </h2>
 
-        <!--  ----------  Tablas de Multiplicar  ----------  -->
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-05-v1-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-05-v1.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-05.css" class="markdown-code"></article>
+        </div>
 
     </section>
 
+    
 </div>

@@ -4,37 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 16  ----------  
-
-    -  Muestra por pantalla el ancho, alto y URL de la web en la que te encuentras
-       actualmente, ademas de entrar a la web automáticamente deberá cargar
-       en otra pestaña https://victorroblesweb.es/ruta.
-
--->
-
 
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 16 Javascript
-        </h2>
+    <h2 class="main__title"> Proyecto 16 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto16Description">
+        <!--  Inyectado desde pages-components/proyecto-16/proyecto-16-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-           -  Muestra por pantalla el ancho, alto y URL de la web en la que te encuentras
-               actualmente, ademas de entrar a la web automáticamente deberá cargar
-               en otra pestaña https://victorroblesweb.es/ruta.
+    <h2 class="main__title"> Proyecto 16 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto16Demo">
+        <!--  Inyectado desde pages-components/proyecto-16/proyecto-16-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 16 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-16-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-16.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-16.css" class="markdown-code"></article>
         </div>
 
-    </div>
-
-
-    <div class="main__description-project" id="data"> </div>
+    </section>
 
     
 </div>

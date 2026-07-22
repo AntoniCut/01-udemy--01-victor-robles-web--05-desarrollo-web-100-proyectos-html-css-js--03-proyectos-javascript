@@ -4,89 +4,36 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
-
-    ----------  Enunciado Proyecto 15  ----------  
-
-    -  Maqueta una web con estas tarjetas. Ver PDF.
-    -  Luego, añade mediante JS, a todas las tarjetas, 
-       un botón de eliminar deberá quedar de esta forma. Ver PDF.
-                           
--->
-
 
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <button class="btn-add-card" id="btnAddCard"> Añadir Card </button>
+    <h2 class="main__title"> Proyecto 15 JavaScript </h2>
 
-    <!--  -----  card 1  -----  -->
-    <article class="layout__card">
+    <section data-component-page="proyecto15Description">
+        <!--  Inyectado desde pages-components/proyecto-15/proyecto-15-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> AntonyDev </p>
-        </header>
+    <h2 class="main__title"> Proyecto 15 JavaScript — Demo Scripts </h2>
 
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 1 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
+    <div data-component-page="proyecto15Demo">
+        <!--  Inyectado desde pages-components/proyecto-15/proyecto-15-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 15 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-15-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-15.js" class="markdown-code"></article>
+            <article data-shiki="codeCss" data-label="styles-15.css" class="markdown-code"></article>
         </div>
 
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
+    </section>
 
-    </article>
-
-
-    <!--  -----  card 2  -----  -->
-    <article class="layout__card">
-
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> Víctor Robles </p>
-        </header>
-
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 2 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
-        </div>
-
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
-    </article>
-
-
-    <!--  -----  card 3  -----  -->
-    <article class="layout__card">
-
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> AntonyDev </p>
-        </header>
-
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 3 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
-        </div>
-
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
-    </article>
-
+    
 </div>

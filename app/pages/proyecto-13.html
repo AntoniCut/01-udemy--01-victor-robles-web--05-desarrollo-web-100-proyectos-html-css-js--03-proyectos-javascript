@@ -4,37 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 13  ----------  
-
-    -  Un concesionario tiene 3 marcas de coches y 3 modelos distintos por cada
-       marca (array multidimensional).
-    -  Crear una funcion que muestre (encabezado y Lista).
-                           
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
-    <div class="main__description-project">
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 13 JS
-        </h2>
+    <h2 class="main__title"> Proyecto 13 JavaScript </h2>
 
-        <div class="description-project__description">
+    <section data-component-page="proyecto13Description">
+        <!--  Inyectado desde pages-components/proyecto-13/proyecto-13-description.html  -->
+    </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
-           -  Un concesionario tiene 3 marcas de coches y 3 modelos distintos por cada
-              marca (array multidimensional).
-              <br>
-            -  Crear una funcion que muestre (encabezado y Lista).
+    <h2 class="main__title"> Proyecto 13 JavaScript — Demo Scripts </h2>
 
+    <div data-component-page="proyecto13Demo">
+        <!--  Inyectado desde pages-components/proyecto-13/proyecto-13-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
+
+    <h2 class="main__title"> Proyecto 13 JavaScript — Código Markdown </h2>
+
+    <section class="main__section-markdown">
+
+        <div class="markdown__container">
+            <article data-shiki="codeHtml" data-label="proyecto-13-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-13.js" class="markdown-code"></article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main__description-project" id="concesionario"> </div>
-
+    
 </div>

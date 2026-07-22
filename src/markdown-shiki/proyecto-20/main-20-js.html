@@ -1,0 +1,107 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 20 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">      //  -----  Referencias al HTML  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0">  {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - Fecha */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> dateDom</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__date"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0">  {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - Hora */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> hourDom</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__hour"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Validación de elementos del DOM  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">dateDom</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">hourDom</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se han encontrado los elementos del DOM'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `myDate()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * - `Función para mostrar la fecha y hora actual en el DOM`</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> myDate</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos la fecha y hora actual del objeto Date` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> date</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> Date</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos el día actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> day</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getDate</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos el mes actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> month</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMonth</span><span style="color:#D4D4D4">() + </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos el año actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> year</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getFullYear</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos la hora actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> hour</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getHours</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos los minutos actuales` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> minutes</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getMinutes</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `obtenemos los segundos actuales` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> secons</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">date</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getSeconds</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostramos la fecha y hora actual por consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'day'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">day</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">' - month'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">month</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">' - year'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">year</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'hour'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">hour</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">' - minutes'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">' - secons'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `format()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span></span>
+<span class="line"><span style="color:#6A9955">         * - `Función para formatear un número a dos dígitos`</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> num</span><span style="color:#6A9955"> </span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {string}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> format</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">num</span><span style="color:#569CD6"> =></span><span style="color:#DCDCAA"> String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">num</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">padStart</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'0'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** `formateamos el día actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> dayStr</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">format</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">day</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `formateamos el mes actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> monthStr</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">format</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">month</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `formateamos la hora actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> hourStr</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">format</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">hour</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `formateamos los minutos actuales` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> minutesStr</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">format</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** `formateamos los segundos actuales` */</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> seconsStr</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">format</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Mostramos la fecha y hora actual en el DOM  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        dateDom</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">dayStr</span><span style="color:#569CD6">}</span><span style="color:#CE9178">/</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">monthStr</span><span style="color:#569CD6">}</span><span style="color:#CE9178">/</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">year</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        hourDom</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">hourStr</span><span style="color:#569CD6">}</span><span style="color:#CE9178">:</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">minutesStr</span><span style="color:#569CD6">}</span><span style="color:#CE9178">:</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">seconsStr</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Ejecutamos la función `myDate()` por primera vez  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    myDate</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Ejecutamos la función `myDate()` cada segundo  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> myDate</span><span style="color:#D4D4D4">(), </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

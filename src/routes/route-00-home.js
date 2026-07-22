@@ -16,6 +16,7 @@ const {
     MarkdownShikiHtml,
     layoutFooter,
     styles,
+    pluginsSource,
 } = paths;
 
 
@@ -32,9 +33,18 @@ export const route00Home = {
         layoutFooter: `${layoutFooter}`,
     },
     pagesComponents: [
-        { url: `${pagesComponents}/home.html`, target: '[data-component-page="home"]' },
+        { url: `${pagesComponents}/home-description.html`, target: '[data-component-page="homeDescription"]' },
+        { url: `${pagesComponents}/home-demo.html`, target: '[data-component-page="homeDemo"]' },
     ],
-    MarkdownShikiHtml: [],
+    MarkdownShikiHtml: [
+        {
+            fileName: 'spa-loader-content-html-js.html',
+            fileExtension: 'js',
+            urlInput: `${pluginsSource}/spa-loader-content-html/v4/spa-loader-content-html.js`,
+            urlOutput: `${MarkdownShikiHtml}/plugins/v4`,
+            target: '[data-shiki="pluginV4"]',
+        },
+    ],
     headerTitle: '50 Proyectos JavaScript del curso + de 100 Proyectos HTML, CSS y JS',
     styles: [
         { href: `${styles}/styles-home.css` },

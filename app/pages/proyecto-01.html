@@ -4,70 +4,35 @@
     *  ----------------------------------------------------------------  *
 -->
 
-<!--  
 
-    ----------  Enunciado Proyecto 1  ----------  
-    -  1. Crea un fichero JavaScript y vinculalo con tu fichero HTML. 
-    -  2. Debes crear las variables: nombre, apellido, edad, pais y conocimientos,
-          esta ultima debe ser un array.
-    -  3. Muestra todos los valores de las variables por la consola con una frase.
-    -  4. Después cambia el valor de la edad y añade un nuevo elemento al array. 
-    -  5. Muestra esos nuevos valores por la consola.
-
--->
-
-
-<!--  ----------  LAYOUT MAIN  ----------  -->
 <div class="main__container">
 
+    <!--  *****  Descripción del proyecto (enunciado)  *****  -->
 
-    <!--*  -----  Descripcion del proyecto  -----  -->
-    <section class="main__description-project">
+    <h2 class="main__title"> Proyecto 1 JavaScript </h2>
 
-        <h2 class="description-project__title">
-            Enunciado Proyecto 1 JS
-        </h2>
-
-        <div class="description-project__description">
-
-            - 1. Crea un fichero JavaScript y vinculalo con tu fichero HTML. <br>
-            - 2. Debes crear las variables: nombre, apellido, edad, pais y conocimientos,
-            esta ultima debe ser un array. <br>
-            - 3. Muestra todos los valores de las variables por la consola con una frase. <br>
-            - 4. Después cambia el valor de la edad y añade un nuevo elemento al array. <br>
-            - 5. Muestra esos nuevos valores por la consola. <br>
-
-        </div>
-
+    <section data-component-page="proyecto01Description">
+        <!--  Inyectado desde pages-components/proyecto-01/proyecto-01-description.html  -->
     </section>
+    <!--  *****  Demo del proyecto  *****  -->
 
+    <h2 class="main__title"> Proyecto 1 JavaScript — Demo Scripts </h2>
 
-    <!--*  -----  Renderizado del Proyecto  -----  -->
-    <section data-component-page="proyecto01">
-        <!--*  -----  Contenido inyectado desde pages-components/proyecto-01.html  -----  -->
-    </section>
+    <div data-component-page="proyecto01Demo">
+        <!--  Inyectado desde pages-components/proyecto-01/proyecto-01-demo.html  -->
+    </div>
+    <!--  *****  Código Markdown  *****  -->
 
+    <h2 class="main__title"> Proyecto 1 JavaScript — Código Markdown </h2>
 
-     <!--*  -----  Código Markdown  -----  -->
-     <section class="main__section-markdown">
-
-        <h3 class="markdown__title"> Código Markdown </h3>
+    <section class="main__section-markdown">
 
         <div class="markdown__container">
-
-            <article data-shiki="codeHtml" data-label="proyecto-01-html.html" class="markdown-code">
-            <!--  ***** Renderizar 'html' archivo .html tipo 'markdown'  *****  -->
-            </article>
-
-            <article data-shiki="codeJs" data-label="main-01-js.html" class="markdown-code">
-                <!--  ***** Renderizar 'js' archivo .js tipo 'markdown'  *****  -->
-            </article>
-            
+            <article data-shiki="codeHtml" data-label="proyecto-01-demo.html" class="markdown-code"></article>
+            <article data-shiki="codeJs" data-label="main-01.js" class="markdown-code"></article>
         </div>
-
 
     </section>
 
     
-
 </div>

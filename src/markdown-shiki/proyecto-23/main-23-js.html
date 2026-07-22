@@ -1,0 +1,79 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 23 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `Referencia al formulario de validación de email` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> main</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__validation-email"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `Referencia al input de email` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> input</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".validation-email__input"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `Referencia al icono de check - correcto` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> check</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".icons__check"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `Referencia al icono de cruz - incorrecto` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> xMark</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".icons__xmark"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Validación de email  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4">(!</span><span style="color:#9CDCFE">main</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">check</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">xMark</span><span style="color:#D4D4D4">) </span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se han podido obtener las referencias del HTML'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">   </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `validate()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * </span></span>
+<span class="line"><span style="color:#6A9955">     * - `Función que valida el email ingresado en el input utilizando una expresión regular`</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> validate</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //let pattern = /@.*\./;</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> pattern</span><span style="color:#D4D4D4"> =</span><span style="color:#D16969"> /</span><span style="color:#DCDCAA">^</span><span style="color:#CE9178">[^</span><span style="color:#D16969">\s@</span><span style="color:#CE9178">]</span><span style="color:#D7BA7D">+</span><span style="color:#D16969">@</span><span style="color:#CE9178">[^</span><span style="color:#D16969">\s@</span><span style="color:#CE9178">]</span><span style="color:#D7BA7D">+\.</span><span style="color:#CE9178">[^</span><span style="color:#D16969">\s@</span><span style="color:#CE9178">]</span><span style="color:#D7BA7D">+</span><span style="color:#DCDCAA">$</span><span style="color:#D16969">/</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> email</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  Validar que el email no esté vacío  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">email</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">() != </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {boolean}</span><span style="color:#6A9955"> - `Resultado de la prueba de la expresión regular` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> test</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">pattern</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">test</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">email</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#9CDCFE">            console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'test => '</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">test</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">test</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                check</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'show'</span><span style="color:#D4D4D4">);;</span></span>
+<span class="line"><span style="color:#9CDCFE">                xMark</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'show'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">                check</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'show'</span><span style="color:#D4D4D4">);;</span></span>
+<span class="line"><span style="color:#9CDCFE">                xMark</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'show'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento focus  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'focus'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> main</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'focus'</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento blur  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'blur'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> main</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'focus'</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  Evento keydown  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'keydown'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">validate</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span></code></pre>

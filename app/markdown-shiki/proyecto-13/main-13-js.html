@@ -1,0 +1,85 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 13 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">//  -----  Referencias al HTML  -----</span></span>
+<span class="line"><span style="color:#569CD6">const</span><span style="color:#4FC1FF"> cajaConcesionario</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#concesionario'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/**</span></span>
+<span class="line"><span style="color:#6A9955"> * Representa una marca y sus modelos en el concesionario.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@typedef</span><span style="color:#4EC9B0"> {Object}</span><span style="color:#4EC9B0"> ConcesionarioItem</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> marca</span><span style="color:#6A9955"> - Nombre de la marca de coches.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string[]}</span><span style="color:#9CDCFE"> modelos</span><span style="color:#6A9955"> - Lista de modelos disponibles de esa marca.</span></span>
+<span class="line"><span style="color:#6A9955"> */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/**</span></span>
+<span class="line"><span style="color:#6A9955"> * Lista de marcas y modelos disponibles en el concesionario.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ConcesionarioItem[]}</span></span>
+<span class="line"><span style="color:#6A9955"> */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">const</span><span style="color:#4FC1FF"> concesionario</span><span style="color:#D4D4D4"> = [</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    {</span></span>
+<span class="line"><span style="color:#9CDCFE">        marca:</span><span style="color:#CE9178"> "Mercedes"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        modelos:</span><span style="color:#D4D4D4"> [</span><span style="color:#CE9178">"clase A"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"clase B"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"clase C"</span><span style="color:#D4D4D4">]</span></span>
+<span class="line"><span style="color:#D4D4D4">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    {</span></span>
+<span class="line"><span style="color:#9CDCFE">        marca:</span><span style="color:#CE9178"> "Audi"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        modelos:</span><span style="color:#D4D4D4"> [</span><span style="color:#CE9178">"A4"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"A3"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"Q3"</span><span style="color:#D4D4D4">]</span></span>
+<span class="line"><span style="color:#D4D4D4">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    {</span></span>
+<span class="line"><span style="color:#9CDCFE">        marca:</span><span style="color:#CE9178"> "Renault"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        modelos:</span><span style="color:#D4D4D4"> [</span><span style="color:#CE9178">"Clio"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"Megane"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"Capture"</span><span style="color:#D4D4D4">]</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">//  -----  Mostrar los datos en el DOM  -----</span></span>
+<span class="line"><span style="color:#569CD6">const</span><span style="color:#DCDCAA"> mostrar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">datos</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    datos</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">(({ </span><span style="color:#9CDCFE">marca</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">modelos</span><span style="color:#D4D4D4"> }) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {   </span><span style="color:#6A9955">// ← desestructuramos cada coche</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'marca'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">marca</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  añadir marca en el DOM  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        cajaConcesionario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;h3></span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">marca</span><span style="color:#569CD6">}</span><span style="color:#CE9178">&#x3C;/h3>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  abrir lista -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        cajaConcesionario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;ul>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  recorrer cada modelo -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        modelos</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">modelo</span><span style="color:#569CD6"> =></span><span style="color:#D4D4D4"> {           </span><span style="color:#6A9955">// ← modelo directo</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
+<span class="line"><span style="color:#9CDCFE">            console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'modelo'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">modelo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            cajaConcesionario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;li>modelo </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">modelo</span><span style="color:#569CD6">}</span><span style="color:#CE9178">&#x3C;/li>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  cerrar lista -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        cajaConcesionario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> += </span><span style="color:#CE9178">`&#x3C;/ul>&#x3C;br>`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">mostrar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">concesionario</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
