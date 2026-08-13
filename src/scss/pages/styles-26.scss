@@ -1,54 +1,27 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-26.css  --  /src/styles/pages/styles-26.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-26.scss  --  /src/scss/pages/styles-26.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
+.demo__star {
     position: relative;
-    width: 100vw;
-    min-height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    // font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    min-height: 40rem;
 }
 
 @media (min-width: 768px) {
 
-    .main__container {
+    .demo__star {
         min-height: 60rem;
     }
 }
 
-.main__star-container {
-    width: 18rem;
-    height: 18rem;
-}
-
-@media (min-width: 480px) {
-
-    .main__star-container {
-        width: 20rem;
-        height: 20rem;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .main__star-container {
-        width: 25rem;
-        height: 25rem;
-    }
-}
-
-.main__star {
+.star__icon {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fbe323;
     font-size: 18rem;
     cursor: pointer;
@@ -56,45 +29,45 @@
 
 @media (min-width: 480px) {
 
-    .main__star {
+    .star__icon {
         font-size: 20rem;
     }
 }
 
 @media (min-width: 768px) {
 
-    .main__star {
+    .star__icon {
         font-size: 25rem;
     }
 }
 
-.main__star--gray {
+.star__icon--gray {
     color: gray;
     z-index: 1;
     opacity: 1;
 }
 
-.main__star--yellow {
+.star__icon--yellow {
     color: #fbe323;
     z-index: 1;
     opacity: 0;
     visibility: hidden;
 }
 
-@keyframes scale-animation {
+@keyframes star-burst {
 
     100% {
-        transform: scale(1.7);
+        transform: translate(-50%, -50%) scale(1.7);
         opacity: 0;
     }
 }
 
-.visible {
-    animation: scale-animation 1s linear;
+.star__icon--visible {
+    animation: star-burst 1s linear;
     opacity: 1;
     visibility: visible;
 }
 
-.yellow-color {
+.star__icon--active {
     color: #fbe323;
 }

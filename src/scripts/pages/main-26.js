@@ -1,44 +1,53 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-26.js  --  /src/scripts/main-26.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-26.js  --  /src/scripts/pages/main-26.js  -----  *
+    *  -----------------------------------------------------------  *
 */
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 26 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 26 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de estrella` */
+    const $star = document.querySelector(".demo__star");
 
     /** @type {HTMLElement | null} - `icono de estrella gris` */
-    const $grayStar = document.querySelector('.main__star--gray');
-        
+    const $grayStar = $star ? $star.querySelector(".star__icon--gray") : null;
+
     /** @type {HTMLElement | null} - `icono de estrella amarilla` */
-    const $yellowStar = document.querySelector('.main__star--yellow');
+    const $yellowStar = $star ? $star.querySelector(".star__icon--yellow") : null;
 
 
-    //  -----  Validación de elementos  -----
-    if(!$grayStar || !$yellowStar) 
-        throw new Error('No se han podido encontrar los elementos en el DOM');
+    //  -----  verificación de elementos  -----
+    if (!$star || !$grayStar || !$yellowStar) {
+        throw new Error("No se han podido encontrar los elementos en el DOM");
+    }
 
 
     //  -----  click en la estrella gris  -----
-    $grayStar.addEventListener('click', () => {
-        $yellowStar.classList.add('visible');
-        $grayStar.classList.add('yellow-color');
+    $grayStar.addEventListener("click", (event) => {
+        event.preventDefault();
+        $yellowStar.classList.add("star__icon--visible");
+        $grayStar.classList.add("star__icon--active");
     });
 
 
     //  -----  click en la estrella amarilla  -----
-    $yellowStar.addEventListener('click', () => {
-        $yellowStar.classList.remove('visible');
-        $grayStar.classList.remove('yellow-color');
+    $yellowStar.addEventListener("click", (event) => {
+        event.preventDefault();
+        $yellowStar.classList.remove("star__icon--visible");
+        $grayStar.classList.remove("star__icon--active");
     });
 
 
-    
 })();
