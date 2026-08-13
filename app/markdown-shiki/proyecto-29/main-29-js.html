@@ -39,7 +39,10 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> actualizarLabel</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">label</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `Verifica si el input tiene texto` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> tieneTexto</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">() !== </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** - `Verifica si el input está enfocado` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> estaEnfocado</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">activeElement</span><span style="color:#D4D4D4"> === </span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si hay texto o el input está enfocado, sacar el label  -----</span></span>
@@ -47,6 +50,7 @@
 <span class="line"><span style="color:#9CDCFE">            label</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"form__label--blur"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">            label</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"form__label--focus"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si está vacío y sin foco, devolver el label al input  -----</span></span>
 <span class="line"><span style="color:#C586C0">        else</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            label</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"form__label--focus"</span><span style="color:#D4D4D4">);</span></span>
@@ -57,7 +61,7 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">    $controls</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">control</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLLabelElement | null}</span><span style="color:#6A9955"> - `Label del control` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $label</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">control</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__label"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>

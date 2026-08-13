@@ -41,14 +41,14 @@
     }
 
     > [data-component-page] .main__demo {
-        width: min(100%, 120rem);
+        width: min(95%, 120rem);
         margin-inline: auto;
         align-items: center;
     }
 }
 
 .main__title {
-    width: min(100%, 120rem);
+    width: min(95%, 120rem);
     margin-top: 5rem;
     padding: 2rem;
     font-size: 3rem;
@@ -60,21 +60,9 @@
     border-radius: 5px;
 }
 
-.main__demo {
-    width: min(100%, 120rem);
-    min-height: 60rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    margin-inline: auto;
-}
-
-
 .main__description-project,
 .main__description {
-    width: min(100%, 96rem);
-    max-width: 96rem;
+    width: min(95%, 120rem);
     margin-inline: auto;
     display: flex;
     flex-direction: column;

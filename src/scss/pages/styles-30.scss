@@ -1,28 +1,107 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-30.css  --  /src/styles/pages/styles-30.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-30.scss  --  /src/scss/pages/styles-30.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__socials {
+    width: 100%;
+    min-height: unset;
+    align-self: stretch;
+    background-color: #37384e;
+    border-radius: 10px;
+    padding: 4rem 0;
+    gap: 0;
+}
+
+.socials__list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin-inline: auto;
+    padding: 0;
+}
+
+.socials__item {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    color: white;
 }
 
-@media (min-width: 768px) {
+.socials__icon {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
 
-    .main__container {
-        min-height: 60rem;
+.socials__icon--youtube {
+    color: #ff0000;
+}
+
+.socials__icon--twitter {
+    color: #1d9bf0;
+}
+
+.socials__icon--instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.socials__icon--facebook {
+    color: #1878f1;
+}
+
+.socials__number {
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+
+@media (min-width: 481px) {
+
+    .socials__number {
+        font-size: 5rem;
     }
 }
 
+@media (min-width: 769px) {
+
+    .socials__item {
+        flex: 1 1 50%;
+        width: 50%;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .socials__list {
+        flex-wrap: nowrap;
+    }
+
+    .socials__item {
+        flex: 1 1 0;
+        width: 25%;
+        margin-bottom: 0;
+    }
+}
+
+
+@media (min-width: 120rem) {
+
+    .demo__socials {
+        padding: 4rem 6rem;
+    }
+}
