@@ -6,7 +6,7 @@
 
 .demo__login {
     max-width: 45rem;
-    width: 95%;
+    width: 80%;
     min-height: unset;
     background-color: #37384e;
     border-radius: 1rem;
@@ -33,14 +33,14 @@
     gap: 5rem;
 }
 
-.login__control {
+.form__control {
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.login__label {
+.form__label {
     width: 100%;
     color: white;
     position: absolute;
@@ -49,19 +49,19 @@
     transition: all 300ms ease;
 }
 
-.login__label--blur {
+.form__label--blur {
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.login__label--focus {
+.form__label--focus {
     left: 0;
     top: -2.5rem;
     transform: translateY(0);
 }
 
-.login__input {
+.form__input {
     border: none;
     outline: none;
     color: white;
@@ -73,11 +73,12 @@
     transition: all 300ms ease;
 }
 
-.login__input:focus {
+.form__input:focus {
     box-shadow: 0px 0px 8px white;
 }
 
-.login__btn {
+.form__btn {
+    width: 100%;
     padding: 1rem;
     border: none;
     outline: none;
@@ -90,6 +91,6 @@
     transition: all 300ms ease-in-out;
 }
 
-.login__btn:hover {
+.form__btn:hover {
     background-color: #9292e0;
 }
