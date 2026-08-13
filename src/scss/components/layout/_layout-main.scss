@@ -1,7 +1,7 @@
 /*
-    *  ---------------------------------------------------------------------------------  *
-    *  -----  /layout-main.scss  --  /src/scss/components/layout/layout-main.scss  -----  *
-    *  ---------------------------------------------------------------------------------  *
+    *  ----------------------------------------------------------------------------------  *
+    *  -----  _layout-main.scss  --  /src/scss/components/layout/_layout-main.scss  -----  *
+    *  ----------------------------------------------------------------------------------  *
 */
 
 
@@ -71,7 +71,8 @@
 }
 
 
-.main__description-project {
+.main__description-project,
+.main__description {
     width: min(100%, 96rem);
     max-width: 96rem;
     margin-inline: auto;
@@ -86,7 +87,8 @@
 }
 
 @media (min-width: 768px) {
-    .main__description-project {
+    .main__description-project,
+    .main__description {
         padding: 3.2rem;
     }
 }

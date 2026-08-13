@@ -76,7 +76,7 @@
 
                 clearInterval(interval);
                 $complete.style.display = "block";
-                $btnReset.style.display = "block";
+                $btnReset.style.display = "inline-block";
 
             } else {
 
@@ -105,7 +105,7 @@
         $background.style.filter = "";
         $complete.style.display = "none";
         $btnReset.style.display = "none";
-        $btnLoad.style.display = "";
+        $btnLoad.style.display = "inline-block";
 
     };
 
