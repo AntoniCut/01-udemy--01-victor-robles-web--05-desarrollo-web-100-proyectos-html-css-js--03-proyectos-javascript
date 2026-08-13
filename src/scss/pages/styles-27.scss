@@ -4,30 +4,11 @@
     *  -----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
-}
-
-@media (min-width: 768px) {
-
-    .main__container {
-        min-height: 60rem;
-    }
-}
 
 .main__articles-container {
     width: 100%;
     max-width: 120rem;
-    height: 100%;
+    min-height: 40rem;
     display: flex;
     flex-direction: row;
 }
