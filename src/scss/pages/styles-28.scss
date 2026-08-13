@@ -1,10 +1,10 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-28.css  --  /src/styles/pages/styles-28.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-28.scss  --  /src/scss/pages/styles-28.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__load {
+.demo__load {
     position: relative;
     width: 95%;
     max-width: 120rem;
@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    gap: 0;
     border-radius: 1.2rem;
     box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.18);
 }
@@ -23,16 +24,18 @@
     display: block;
     position: absolute;
     inset: -6rem;
+    width: calc(100% + 12rem);
+    height: calc(100% + 12rem);
+    max-width: none;
     pointer-events: none;
     filter: blur(3rem);
 }
 
 .load__image {
-    position: absolute;
-    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
+    max-width: none;
     object-fit: cover;
     object-position: center;
 }

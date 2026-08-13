@@ -18,8 +18,8 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor independiente de la demo` */
-    const $load = document.querySelector(".main__load");
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de carga` */
+    const $load = document.querySelector(".demo__load");
 
     /** @type {HTMLPictureElement | null} - `Fondo con la imagen` */
     const $background = $load ? $load.querySelector(".load__background") : null;
