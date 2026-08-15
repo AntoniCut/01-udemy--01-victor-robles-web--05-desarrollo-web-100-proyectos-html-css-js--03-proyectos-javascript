@@ -1,28 +1,79 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-35.css  --  /src/styles/pages/styles-35.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-35.scss  --  /src/scss/pages/styles-35.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__course {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    align-items: center;
 }
 
-@media (min-width: 768px) {
+.course__card {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5rem;
+}
 
-    .main__container {
-        min-height: 60rem;
+@media (min-width: 481px) {
+
+    .course__card {
+        width: 45rem;
+        padding: 2rem;
     }
 }
 
+.course__title {
+    min-height: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (min-width: 481px) {
+
+    .course__title {
+        min-height: 3.2rem;
+        font-size: 2.4rem;
+    }
+}
+
+.course__image {
+    margin-bottom: 2rem;
+}
+
+.course__img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.course__price {
+    text-align: center;
+    color: #4d0084;
+    font-weight: 700;
+}
+
+.course__btn {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #a435f0;
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        background-color: #8e69a7;
+    }
+}
