@@ -1,28 +1,218 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-32.css  --  /src/styles/pages/styles-32.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-32.scss  --  /src/scss/pages/styles-32.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__slider {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    gap: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 
-    .main__container {
-        min-height: 60rem;
+    .demo__slider {
+        gap: 0;
     }
 }
 
+.slider__top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.slider__bottom {
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    margin-top: -3rem;
+}
+
+@media (min-width: 601px) {
+
+    .slider__bottom {
+        margin-top: 0;
+    }
+}
+
+.slider__bottom--inf {
+    display: flex;
+}
+
+@media (min-width: 769px) {
+
+    .slider__bottom--inf {
+        display: none;
+    }
+}
+
+.slider__bottom--sup {
+    display: none;
+}
+
+@media (min-width: 769px) {
+
+    .slider__bottom--sup {
+        display: flex;
+    }
+}
+
+
+//  -----  Slider  -----
+
+.slider__slides {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) {
+
+    .slider__slides {
+        width: 80rem;
+        border-radius: 0.5rem;
+    }
+}
+
+@media (min-width: 1001px) {
+
+    .slider__slides {
+        height: 40rem;
+    }
+}
+
+.slides__item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1000ms linear;
+}
+
+@media (min-width: 1001px) {
+
+    .slides__item {
+        transition: transform 1s ease-in-out;
+    }
+}
+
+.slides__img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+@media (min-width: 769px) {
+
+    .slides__img {
+        border-radius: 0.5rem;
+    }
+}
+
+
+//  -----  Botones de navegación  -----
+
+.slider__prev,
+.slider__next {
+    padding: 0;
+    background: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    border-radius: 0;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+
+    &:hover {
+        background: none;
+        background-color: transparent;
+        color: inherit;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .slider__prev,
+    .slider__next {
+        display: block;
+    }
+}
+
+.slider__prev .fa-solid,
+.slider__next .fa-solid {
+    font-size: 8rem;
+    color: #317cd8;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media (min-width: 769px) {
+
+    .slider__prev .fa-solid,
+    .slider__next .fa-solid {
+        font-size: 10rem;
+    }
+}
+
+@media (min-width: 1001px) {
+
+    .slider__prev .fa-solid,
+    .slider__next .fa-solid {
+        font-size: 13rem;
+    }
+}
+
+.slider__btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.slider__btns > .slider__prev,
+.slider__btns > .slider__next {
+    display: flex;
+}
+
+.slider__autoplay-wrapper {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider__autoplay-toggle {
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #317cd8;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider__autoplay-toggle:hover {
+    background-color: #255ea5;
+}

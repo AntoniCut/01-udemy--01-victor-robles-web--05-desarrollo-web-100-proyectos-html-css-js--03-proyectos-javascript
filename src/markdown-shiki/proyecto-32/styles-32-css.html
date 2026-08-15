@@ -1,21 +1,184 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">  position</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">relative</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100vw</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">40rem</span><span style="color:#D4D4D4">;</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.demo__slider</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">column</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  font-family</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">"Monserrat"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">sans-serif</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#e8effa</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">768px</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#D7BA7D">  .main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">    min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">60rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .demo__slider</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">  }</span></span>
-<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtMzIuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBTUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBRUk7SUFDSSIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gICAgKiAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcbiAgICAqICAtLS0tLSAgL3N0eWxlcy0zMi5jc3MgIC0tICAvc3JjL3N0eWxlcy9wYWdlcy9zdHlsZXMtMzIuY3NzICAtLS0tLSAgKlxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICAqXG4qL1xuXG4ubWFpbl9fY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuICAgIG1pbi1oZWlnaHQ6IDQwcmVtO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLXRvcDogNXJlbTtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cmVtO1xyXG4gICAgZ2FwOiA1cmVtO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb25zZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2U4ZWZmYTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7XHJcblxyXG4gICAgLm1haW5fX2NvbnRhaW5lciB7XHJcbiAgICAgICAgbWluLWhlaWdodDogNjByZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbiJdLCJmaWxlIjoic3R5bGVzLTMyLmNzcyJ9 */</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__top</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.slider__bottom</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">30rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">-3rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">601px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__bottom</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    margin-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__bottom--inf</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__bottom--inf</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__bottom--sup</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__bottom--sup</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__slides</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  position</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">relative</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">30rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  overflow</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">hidden</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__slides</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">80rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1001px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__slides</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">40rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slides__item</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  position</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">absolute</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  transition</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">all</span><span style="color:#B5CEA8"> 1000ms</span><span style="color:#CE9178"> linear</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1001px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slides__item</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    transition</span><span style="color:#D4D4D4">: transform </span><span style="color:#B5CEA8">1s</span><span style="color:#CE9178"> ease-in-out</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slides__img</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  object-fit</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">cover</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slides__img</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__prev</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__next</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">transparent</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  outline</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">inherit</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  cursor</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">pointer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-self</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__prev:hover</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__next:hover</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  background</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">transparent</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">inherit</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__prev</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__next</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">block</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__prev</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__next</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">8rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#317cd8</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  cursor</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">pointer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  transition</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">all</span><span style="color:#B5CEA8"> 300ms</span><span style="color:#CE9178"> ease-in-out</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__prev</span><span style="color:#D7BA7D"> .fa-solid:hover</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__next</span><span style="color:#D7BA7D"> .fa-solid:hover</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  transform</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">scale</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1.1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__prev</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__next</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">10rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1001px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__prev</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">  .slider__next</span><span style="color:#D7BA7D"> .fa-solid</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">13rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__btns</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">row</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.slider__btns</span><span style="color:#D4D4D4"> > </span><span style="color:#D7BA7D">.slider__prev</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D7BA7D">.slider__btns</span><span style="color:#D4D4D4"> > </span><span style="color:#D7BA7D">.slider__next</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.slider__autoplay-wrapper</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.slider__autoplay-toggle</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">20rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.6rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  text-align</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#B5CEA8"> 2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#317cd8</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">white</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">none</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  cursor</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">pointer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  transition</span><span style="color:#D4D4D4">: background-color </span><span style="color:#B5CEA8">0.3s</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.slider__autoplay-toggle:hover</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#255ea5</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtMzIuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBT0E7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBRUk7SUFDSTs7O0FBSVI7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUNJO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBQ0k7OztBQUdKO0VBRUk7SUFDSTs7O0FBSVI7RUFDSTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFPUjtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJO0lBQ0E7OztBQUlSO0VBRUk7SUFDSTs7O0FBSVI7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFJUjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFPUjtBQUFBO0VBRUk7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtFQUNJO0VBQ0E7RUFDQTs7O0FBSVI7RUFFSTtBQUFBO0lBRUk7OztBQUlSO0FBQUE7RUFFSTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0VBQ0k7OztBQUlSO0VBRUk7QUFBQTtJQUVJOzs7QUFJUjtFQUVJO0FBQUE7SUFFSTs7O0FBSVI7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtBQUFBO0VBRUk7OztBQUdKO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUNJIiwic291cmNlc0NvbnRlbnQiOlsiLypcclxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcclxuICAgICogIC0tLS0tICBzdHlsZXMtMzIuc2NzcyAgLS0gIC9zcmMvc2Nzcy9wYWdlcy9zdHlsZXMtMzIuc2NzcyAgLS0tLS0gICpcclxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcclxuKi9cclxuXHJcblxyXG4uZGVtb19fc2xpZGVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBnYXA6IDJyZW07XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5kZW1vX19zbGlkZXIge1xyXG4gICAgICAgIGdhcDogMDtcclxuICAgIH1cclxufVxyXG5cclxuLnNsaWRlcl9fdG9wIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIG1hcmdpbi1ib3R0b206IDNyZW07XHJcbn1cclxuXHJcbi5zbGlkZXJfX2JvdHRvbSB7XHJcbiAgICB3aWR0aDogMzByZW07XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAtM3JlbTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDYwMXB4KSB7XHJcblxyXG4gICAgLnNsaWRlcl9fYm90dG9tIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAwO1xyXG4gICAgfVxyXG59XHJcblxyXG4uc2xpZGVyX19ib3R0b20tLWluZiB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogNzY5cHgpIHtcclxuXHJcbiAgICAuc2xpZGVyX19ib3R0b20tLWluZiB7XHJcbiAgICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgIH1cclxufVxyXG5cclxuLnNsaWRlcl9fYm90dG9tLS1zdXAge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OXB4KSB7XHJcblxyXG4gICAgLnNsaWRlcl9fYm90dG9tLS1zdXAge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICB9XHJcbn1cclxuXHJcblxyXG4vLyAgLS0tLS0gIFNsaWRlciAgLS0tLS1cclxuXHJcbi5zbGlkZXJfX3NsaWRlcyB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDMwcmVtO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5zbGlkZXJfX3NsaWRlcyB7XHJcbiAgICAgICAgd2lkdGg6IDgwcmVtO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcclxuICAgIH1cclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDEwMDFweCkge1xyXG5cclxuICAgIC5zbGlkZXJfX3NsaWRlcyB7XHJcbiAgICAgICAgaGVpZ2h0OiA0MHJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLnNsaWRlc19faXRlbSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRyYW5zaXRpb246IGFsbCAxMDAwbXMgbGluZWFyO1xyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTAwMXB4KSB7XHJcblxyXG4gICAgLnNsaWRlc19faXRlbSB7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzIGVhc2UtaW4tb3V0O1xyXG4gICAgfVxyXG59XHJcblxyXG4uc2xpZGVzX19pbWcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5zbGlkZXNfX2ltZyB7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMC41cmVtO1xyXG4gICAgfVxyXG59XHJcblxyXG5cclxuLy8gIC0tLS0tICBCb3RvbmVzIGRlIG5hdmVnYWNpw7NuICAtLS0tLVxyXG5cclxuLnNsaWRlcl9fcHJldixcclxuLnNsaWRlcl9fbmV4dCB7XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIGNvbG9yOiBpbmhlcml0O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcblxyXG4gICAgJjpob3ZlciB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgICAgICBjb2xvcjogaW5oZXJpdDtcclxuICAgIH1cclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OXB4KSB7XHJcblxyXG4gICAgLnNsaWRlcl9fcHJldixcclxuICAgIC5zbGlkZXJfX25leHQge1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgfVxyXG59XHJcblxyXG4uc2xpZGVyX19wcmV2IC5mYS1zb2xpZCxcclxuLnNsaWRlcl9fbmV4dCAuZmEtc29saWQge1xyXG4gICAgZm9udC1zaXplOiA4cmVtO1xyXG4gICAgY29sb3I6ICMzMTdjZDg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMzAwbXMgZWFzZS1pbi1vdXQ7XHJcblxyXG4gICAgJjpob3ZlciB7XHJcbiAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgxLjEpO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogNzY5cHgpIHtcclxuXHJcbiAgICAuc2xpZGVyX19wcmV2IC5mYS1zb2xpZCxcclxuICAgIC5zbGlkZXJfX25leHQgLmZhLXNvbGlkIHtcclxuICAgICAgICBmb250LXNpemU6IDEwcmVtO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTAwMXB4KSB7XHJcblxyXG4gICAgLnNsaWRlcl9fcHJldiAuZmEtc29saWQsXHJcbiAgICAuc2xpZGVyX19uZXh0IC5mYS1zb2xpZCB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxM3JlbTtcclxuICAgIH1cclxufVxyXG5cclxuLnNsaWRlcl9fYnRucyB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGdhcDogMnJlbTtcclxufVxyXG5cclxuLnNsaWRlcl9fYnRucyA+IC5zbGlkZXJfX3ByZXYsXHJcbi5zbGlkZXJfX2J0bnMgPiAuc2xpZGVyX19uZXh0IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5zbGlkZXJfX2F1dG9wbGF5LXdyYXBwZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDVyZW07XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG4uc2xpZGVyX19hdXRvcGxheS10b2dnbGUge1xyXG4gICAgd2lkdGg6IDIwcmVtO1xyXG4gICAgaGVpZ2h0OiA1cmVtO1xyXG4gICAgZm9udC1zaXplOiAxLjZyZW07XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAxcmVtIDJyZW07XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzE3Y2Q4O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMC41cmVtO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjNzO1xyXG59XHJcblxyXG4uc2xpZGVyX19hdXRvcGxheS10b2dnbGU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI1NWVhNTtcclxufVxyXG4iXSwiZmlsZSI6InN0eWxlcy0zMi5jc3MifQ== */</span></span>
 <span class="line"></span></code></pre>
