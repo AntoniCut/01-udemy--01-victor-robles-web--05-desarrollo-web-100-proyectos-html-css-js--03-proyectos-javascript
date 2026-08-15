@@ -1,28 +1,224 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-33.css  --  /src/styles/pages/styles-33.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-33.scss  --  /src/scss/pages/styles-33.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+
+.demo__bank {
+    width: 100%;
+    max-width: 80rem;
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px #d3d3d3;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
-    .main__container {
-        min-height: 60rem;
+    .demo__bank {
+        width: 95%;
+        padding: 5rem;
     }
 }
 
+.bank__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid #d3d3d3;
+    box-shadow: 0 0 10px #d3d3d3;
+    border-radius: 0.5rem;
+    margin-bottom: 4rem;
+    line-height: 1;
+}
+
+@media (min-width: 481px) {
+
+    .bank__header {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .bank__header {
+        flex-direction: row;
+        gap: 0;
+    }
+}
+
+.header__number {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+}
+
+@media (min-width: 481px) {
+
+    .header__number {
+        font-size: 1.6rem;
+    }
+}
+
+.header__money {
+    font-size: 3rem;
+}
+
+@media (min-width: 481px) {
+
+    .header__money {
+        font-size: 4rem;
+    }
+}
+
+.list__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid #d3d3d3;
+    padding: 1.5rem 0.5rem;
+}
+
+@media (min-width: 481px) {
+
+    .list__item {
+        padding: 2rem;
+    }
+}
+
+.list__item:last-child {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.item__left {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 0;
+}
+
+@media (min-width: 769px) {
+
+    .item__left {
+        width: 20%;
+    }
+}
+
+.item__ico {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 10rem;
+    border: 1px solid #6a6aea;
+    color: #6a6aea;
+}
+
+.item__ico .fa-regular {
+    font-size: 1.6rem;
+}
+
+.item__container {
+    width: 65%;
+    min-width: 0;
+}
+
+.item__title {
+    line-height: 1.2;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+@media (min-width: 481px) {
+
+    .item__title {
+        font-size: 2rem;
+    }
+}
+
+.item__date {
+    font-size: 1.4rem;
+    color: #b7b7b7;
+}
+
+.item__right {
+    width: 30%;
+}
+
+@media (min-width: 769px) {
+
+    .item__right {
+        width: 15%;
+    }
+}
+
+.item__bill {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: right;
+    color: #cd4e4f;
+}
+
+@media (min-width: 481px) {
+
+    .item__bill {
+        font-size: 2rem;
+    }
+}
+
+.item__total {
+    font-size: 1.4rem;
+    text-align: right;
+    color: #b7b7b7;
+}
+
+
+//  -----  Animación de carga  -----
+
+@keyframes load {
+
+    0% {
+        background-position: 50% 0;
+    }
+
+    100% {
+        background-position: -150% 0;
+    }
+}
+
+.bank__load {
+    background-image: linear-gradient(
+        to right,
+        #7872ec 0%,
+        #857ff1 10%,
+        #8e89ec 20%,
+        #938ee7 100%
+    );
+    background-size: 200% 100%;
+    animation: load 1s linear infinite;
+}
+
+.bank__load-text {
+    border-radius: 5rem;
+    display: inline-block;
+    height: 1rem;
+    width: 100%;
+}
+
+.bank__header .bank__load-text {
+    width: 40%;
+}
+
+.list__item .bank__load-text {
+    height: 1.4rem;
+}

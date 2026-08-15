@@ -1,21 +1,186 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">  position</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">relative</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100vw</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">40rem</span><span style="color:#D4D4D4">;</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.demo__bank</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  max-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">80rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">white</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  box-shadow</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#B5CEA8"> 0</span><span style="color:#B5CEA8"> 10px</span><span style="color:#CE9178"> #d3d3d3</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .demo__bank</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">95%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.bank__header</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">column</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  font-family</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">"Monserrat"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">sans-serif</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#e8effa</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">space-between</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1px</span><span style="color:#CE9178"> solid</span><span style="color:#CE9178"> #d3d3d3</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  box-shadow</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#B5CEA8"> 0</span><span style="color:#B5CEA8"> 10px</span><span style="color:#CE9178"> #d3d3d3</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  line-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">768px</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#D7BA7D">  .main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">    min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">60rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .bank__header</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">4rem</span><span style="color:#B5CEA8"> 1.5rem</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">  }</span></span>
-<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtMzMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBTUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBRUk7SUFDSSIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gICAgKiAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcbiAgICAqICAtLS0tLSAgL3N0eWxlcy0zMy5jc3MgIC0tICAvc3JjL3N0eWxlcy9wYWdlcy9zdHlsZXMtMzMuY3NzICAtLS0tLSAgKlxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICAqXG4qL1xuXG4ubWFpbl9fY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuICAgIG1pbi1oZWlnaHQ6IDQwcmVtO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLXRvcDogNXJlbTtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cmVtO1xyXG4gICAgZ2FwOiA1cmVtO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb25zZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2U4ZWZmYTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7XHJcblxyXG4gICAgLm1haW5fX2NvbnRhaW5lciB7XHJcbiAgICAgICAgbWluLWhlaWdodDogNjByZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbiJdLCJmaWxlIjoic3R5bGVzLTMzLmNzcyJ9 */</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .bank__header</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">row</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.header__number</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">400</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#444</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .header__number</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.6rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.header__money</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .header__money</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.list__item</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">row</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">space-between</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1px</span><span style="color:#CE9178"> solid</span><span style="color:#CE9178"> #d3d3d3</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.5rem</span><span style="color:#B5CEA8"> 0.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .list__item</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.list__item:last-child</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1px</span><span style="color:#CE9178"> solid</span><span style="color:#CE9178"> #d3d3d3</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.item__left</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">65%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">row</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .item__left</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">20%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.item__ico</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-shrink</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  text-align</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-right</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">10rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1px</span><span style="color:#CE9178"> solid</span><span style="color:#CE9178"> #6a6aea</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#6a6aea</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.item__ico</span><span style="color:#D7BA7D"> .fa-regular</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.6rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.item__container</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">65%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.item__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  line-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.2</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.6rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">600</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .item__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.item__date</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#b7b7b7</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.item__right</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">30%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">769px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .item__right</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">15%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.item__bill</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.6rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">500</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  text-align</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">right</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#cd4e4f</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .item__bill</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.item__total</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  text-align</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">right</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#b7b7b7</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@keyframes</span><span style="color:#9CDCFE"> load</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">  0% {</span></span>
+<span class="line"><span style="color:#9CDCFE">    background-position</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">50%</span><span style="color:#B5CEA8"> 0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">  100% {</span></span>
+<span class="line"><span style="color:#9CDCFE">    background-position</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">-150%</span><span style="color:#B5CEA8"> 0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.bank__load</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-image</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">linear-gradient</span><span style="color:#D4D4D4">(to </span><span style="color:#CE9178">right</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">#7872ec</span><span style="color:#B5CEA8"> 0%</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">#857ff1</span><span style="color:#B5CEA8"> 10%</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">#8e89ec</span><span style="color:#B5CEA8"> 20%</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">#938ee7</span><span style="color:#B5CEA8"> 100%</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">200%</span><span style="color:#B5CEA8"> 100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  animation</span><span style="color:#D4D4D4">: load </span><span style="color:#B5CEA8">1s</span><span style="color:#CE9178"> linear</span><span style="color:#CE9178"> infinite</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.bank__load-text</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">inline-block</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.bank__header</span><span style="color:#D7BA7D"> .bank__load-text</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">40%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.list__item</span><span style="color:#D7BA7D"> .bank__load-text</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtMzMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBT0E7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7SUFDQTs7O0FBSVI7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBRUk7SUFDSTtJQUNBOzs7QUFJUjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFJUjtFQUNJOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBRUk7SUFDSTs7O0FBSVI7RUFDSTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTs7O0FBR0o7RUFDSTtFQUNBOzs7QUFHSjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFJUjtFQUNJO0VBQ0E7OztBQUdKO0VBQ0k7OztBQUdKO0VBRUk7SUFDSTs7O0FBSVI7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFJUjtFQUNJO0VBQ0E7RUFDQTs7O0FBTUo7RUFFSTtJQUNJOztFQUdKO0lBQ0k7OztBQUlSO0VBQ0k7RUFPQTtFQUNBOzs7QUFHSjtFQUNJO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUNJOzs7QUFHSjtFQUNJIiwic291cmNlc0NvbnRlbnQiOlsiLypcclxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcclxuICAgICogIC0tLS0tICBzdHlsZXMtMzMuc2NzcyAgLS0gIC9zcmMvc2Nzcy9wYWdlcy9zdHlsZXMtMzMuc2NzcyAgLS0tLS0gICpcclxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcclxuKi9cclxuXHJcblxyXG4uZGVtb19fYmFuayB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1heC13aWR0aDogODByZW07XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIHBhZGRpbmc6IDEuNXJlbTtcclxuICAgIGJveC1zaGFkb3c6IDAgMCAxMHB4ICNkM2QzZDM7XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA0ODFweCkge1xyXG5cclxuICAgIC5kZW1vX19iYW5rIHtcclxuICAgICAgICB3aWR0aDogOTUlO1xyXG4gICAgICAgIHBhZGRpbmc6IDVyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi5iYW5rX19oZWFkZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZ2FwOiAzcmVtO1xyXG4gICAgcGFkZGluZzogMXJlbTtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZDNkM2QzO1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDEwcHggI2QzZDNkMztcclxuICAgIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcclxuICAgIG1hcmdpbi1ib3R0b206IDRyZW07XHJcbiAgICBsaW5lLWhlaWdodDogMTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MXB4KSB7XHJcblxyXG4gICAgLmJhbmtfX2hlYWRlciB7XHJcbiAgICAgICAgcGFkZGluZzogNHJlbSAxLjVyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5iYW5rX19oZWFkZXIge1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICAgICAgZ2FwOiAwO1xyXG4gICAgfVxyXG59XHJcblxyXG4uaGVhZGVyX19udW1iZXIge1xyXG4gICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIGNvbG9yOiAjNDQ0O1xyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogNDgxcHgpIHtcclxuXHJcbiAgICAuaGVhZGVyX19udW1iZXIge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMS42cmVtO1xyXG4gICAgfVxyXG59XHJcblxyXG4uaGVhZGVyX19tb25leSB7XHJcbiAgICBmb250LXNpemU6IDNyZW07XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA0ODFweCkge1xyXG5cclxuICAgIC5oZWFkZXJfX21vbmV5IHtcclxuICAgICAgICBmb250LXNpemU6IDRyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi5saXN0X19pdGVtIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGdhcDogMXJlbTtcclxuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjZDNkM2QzO1xyXG4gICAgcGFkZGluZzogMS41cmVtIDAuNXJlbTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MXB4KSB7XHJcblxyXG4gICAgLmxpc3RfX2l0ZW0ge1xyXG4gICAgICAgIHBhZGRpbmc6IDJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi5saXN0X19pdGVtOmxhc3QtY2hpbGQge1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNkM2QzZDM7XHJcbn1cclxuXHJcbi5pdGVtX19sZWZ0IHtcclxuICAgIHdpZHRoOiA2NSU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBtaW4td2lkdGg6IDA7XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5pdGVtX19sZWZ0IHtcclxuICAgICAgICB3aWR0aDogMjAlO1xyXG4gICAgfVxyXG59XHJcblxyXG4uaXRlbV9faWNvIHtcclxuICAgIHdpZHRoOiAzLjVyZW07XHJcbiAgICBoZWlnaHQ6IDMuNXJlbTtcclxuICAgIGZsZXgtc2hyaW5rOiAwO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1yaWdodDogMXJlbTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcmVtO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzZhNmFlYTtcclxuICAgIGNvbG9yOiAjNmE2YWVhO1xyXG59XHJcblxyXG4uaXRlbV9faWNvIC5mYS1yZWd1bGFyIHtcclxuICAgIGZvbnQtc2l6ZTogMS42cmVtO1xyXG59XHJcblxyXG4uaXRlbV9fY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiA2NSU7XHJcbiAgICBtaW4td2lkdGg6IDA7XHJcbn1cclxuXHJcbi5pdGVtX190aXRsZSB7XHJcbiAgICBsaW5lLWhlaWdodDogMS4yO1xyXG4gICAgZm9udC1zaXplOiAxLjZyZW07XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogNDgxcHgpIHtcclxuXHJcbiAgICAuaXRlbV9fdGl0bGUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMnJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLml0ZW1fX2RhdGUge1xyXG4gICAgZm9udC1zaXplOiAxLjRyZW07XHJcbiAgICBjb2xvcjogI2I3YjdiNztcclxufVxyXG5cclxuLml0ZW1fX3JpZ2h0IHtcclxuICAgIHdpZHRoOiAzMCU7XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkge1xyXG5cclxuICAgIC5pdGVtX19yaWdodCB7XHJcbiAgICAgICAgd2lkdGg6IDE1JTtcclxuICAgIH1cclxufVxyXG5cclxuLml0ZW1fX2JpbGwge1xyXG4gICAgZm9udC1zaXplOiAxLjZyZW07XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBjb2xvcjogI2NkNGU0ZjtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MXB4KSB7XHJcblxyXG4gICAgLml0ZW1fX2JpbGwge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMnJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLml0ZW1fX3RvdGFsIHtcclxuICAgIGZvbnQtc2l6ZTogMS40cmVtO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBjb2xvcjogI2I3YjdiNztcclxufVxyXG5cclxuXHJcbi8vICAtLS0tLSAgQW5pbWFjacOzbiBkZSBjYXJnYSAgLS0tLS1cclxuXHJcbkBrZXlmcmFtZXMgbG9hZCB7XHJcblxyXG4gICAgMCUge1xyXG4gICAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IDUwJSAwO1xyXG4gICAgfVxyXG5cclxuICAgIDEwMCUge1xyXG4gICAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IC0xNTAlIDA7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5iYW5rX19sb2FkIHtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChcclxuICAgICAgICB0byByaWdodCxcclxuICAgICAgICAjNzg3MmVjIDAlLFxyXG4gICAgICAgICM4NTdmZjEgMTAlLFxyXG4gICAgICAgICM4ZTg5ZWMgMjAlLFxyXG4gICAgICAgICM5MzhlZTcgMTAwJVxyXG4gICAgKTtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogMjAwJSAxMDAlO1xyXG4gICAgYW5pbWF0aW9uOiBsb2FkIDFzIGxpbmVhciBpbmZpbml0ZTtcclxufVxyXG5cclxuLmJhbmtfX2xvYWQtdGV4dCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cmVtO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgaGVpZ2h0OiAxcmVtO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5iYW5rX19oZWFkZXIgLmJhbmtfX2xvYWQtdGV4dCB7XHJcbiAgICB3aWR0aDogNDAlO1xyXG59XHJcblxyXG4ubGlzdF9faXRlbSAuYmFua19fbG9hZC10ZXh0IHtcclxuICAgIGhlaWdodDogMS40cmVtO1xyXG59XHJcbiJdLCJmaWxlIjoic3R5bGVzLTMzLmNzcyJ9 */</span></span>
 <span class="line"></span></code></pre>
