@@ -1,28 +1,186 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-37.css  --  /src/styles/pages/styles-37.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-37.scss  --  /src/scss/pages/styles-37.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__menu {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    align-items: center;
 }
 
-@media (min-width: 768px) {
+.menu__nav {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+}
 
-    .main__container {
-        min-height: 60rem;
+@media (min-width: 481px) {
+
+    .menu__nav {
+        width: 40rem;
+        height: 40rem;
     }
 }
+
+.menu__list {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.menu__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    color: #03a9f4;
+    background-color: white;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 300ms linear;
+}
+
+.menu__item .fa-solid,
+.menu__item .fa-brands {
+    font-size: 3rem;
+    transition: all 300ms linear;
+
+    &:hover {
+        color: #0570a1;
+    }
+}
+
+
+//  -----  animaciones de los items  -----
+
+.menu__list--open > .menu__item:nth-child(1) {
+    transform: translate(-50%, -50%) translate(-10rem, 6rem);
+    transition-delay: 100ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(1) {
+        transform: translate(-50%, -50%) translate(-15rem, 6rem);
+    }
+}
+
+.menu__list--open > .menu__item:nth-child(2) {
+    transform: translate(-50%, -50%) translate(10rem, -6rem);
+    transition-delay: 400ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(2) {
+        transform: translate(-50%, -50%) translate(15rem, -6rem);
+    }
+}
+
+.menu__list--open > .menu__item:nth-child(3) {
+    transform: translate(-50%, -50%) translate(10rem, 6rem);
+    transition-delay: 500ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(3) {
+        transform: translate(-50%, -50%) translate(15rem, 6rem);
+    }
+}
+
+.menu__list--open > .menu__item:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(10rem);
+    transition-delay: 100ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(4) {
+        transform: translate(-50%, -50%) translateY(15rem);
+    }
+}
+
+.menu__list--open > .menu__item:nth-child(5) {
+    transform: translate(-50%, -50%) translateY(-10rem);
+    transition-delay: 300ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(5) {
+        transform: translate(-50%, -50%) translateY(-15rem);
+    }
+}
+
+.menu__list--open > .menu__item:nth-child(6) {
+    transform: translate(-50%, -50%) translate(-10rem, -6rem);
+    transition-delay: 200ms;
+}
+
+@media (min-width: 481px) {
+
+    .menu__list--open > .menu__item:nth-child(6) {
+        transform: translate(-50%, -50%) translate(-15rem, -6rem);
+    }
+}
+
+
+//  -----  botón de alternar menú  -----
+
+.menu__btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    width: 7rem;
+    height: 7rem;
+    padding: 0;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #03a9f4;
+    cursor: pointer;
+    font-size: 3rem;
+    line-height: 1;
+
+    &:hover {
+        background-color: white;
+        color: #0570a1;
+    }
+}
+
+.menu__icon {
+    line-height: 1;
+    pointer-events: none;
+}
+
+.menu__icon::before {
+    display: block;
+    line-height: 1;
+}
+
 
