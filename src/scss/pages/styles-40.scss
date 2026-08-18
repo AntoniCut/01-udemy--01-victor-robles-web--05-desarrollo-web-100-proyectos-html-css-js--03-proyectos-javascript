@@ -1,28 +1,80 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-40.css  --  /src/styles/pages/styles-40.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-40.scss  --  /src/scss/pages/styles-40.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__stars {
+    width: 100%;
+    min-height: 60rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    background-color: #f7f8fd;
 }
 
-@media (min-width: 768px) {
+.stars__title {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
 
-    .main__container {
-        min-height: 60rem;
+@media (min-width: 481px) {
+
+    .stars__title {
+        margin-bottom: 4rem;
+        font-size: 3rem;
     }
 }
 
+.stars__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 481px) {
+
+    .stars__list {
+        gap: 3rem;
+    }
+}
+
+.stars__star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    color: #b4b5bc;
+    font-size: 3.5rem;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: #b4b5bc;
+    }
+
+    &.stars__star--active,
+    &.stars__star--active:hover,
+    &.stars__star--active:focus {
+        background-color: transparent;
+        color: #4f61ec;
+    }
+}
+
+@media (min-width: 481px) {
+
+    .stars__star {
+        font-size: 6rem;
+    }
+}
