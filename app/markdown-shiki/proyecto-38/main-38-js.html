@@ -108,14 +108,16 @@
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">                $audio</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">volume</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0.5</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#569CD6">                void</span><span style="color:#9CDCFE"> $audio</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">play</span><span style="color:#D4D4D4">().</span><span style="color:#DCDCAA">then</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">                    $btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Parar"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">                    $btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sounds__btn--playing"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">                    $btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"aria-pressed"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"true"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                }).</span><span style="color:#DCDCAA">catch</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#DCDCAA">                    resetearBotones</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#D4D4D4">                });</span></span>
+<span class="line"><span style="color:#569CD6">                void</span><span style="color:#9CDCFE"> $audio</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">play</span><span style="color:#D4D4D4">()</span></span>
+<span class="line"><span style="color:#D4D4D4">                    .</span><span style="color:#DCDCAA">then</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">                        $btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Parar"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                        $btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sounds__btn--playing"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                        $btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"aria-pressed"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"true"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }).</span><span style="color:#DCDCAA">catch</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                        resetearBotones</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">                    });</span></span>
 <span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  al terminar un audio, restaurar botones  -----</span></span>
