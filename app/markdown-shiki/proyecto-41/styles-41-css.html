@@ -1,21 +1,120 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">  position</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">relative</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100vw</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">40rem</span><span style="color:#D4D4D4">;</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D7BA7D">.demo__news</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">70rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  overflow-x</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">hidden</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  overflow-y</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">auto</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">column</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-top</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  padding-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  font-family</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">"Monserrat"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">sans-serif</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#e8effa</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex-start</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  background-color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#f7f8fd</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.layout__main</span><span style="color:#D4D4D4"> > </span><span style="color:#D7BA7D">.main__container</span><span style="color:#D4D4D4"> > [</span><span style="color:#9CDCFE">data-component-page</span><span style="color:#D4D4D4">] </span><span style="color:#D7BA7D">.main__demo.demo__news</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  justify-content</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex-start</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/*</span></span>
+<span class="line"><span style="color:#6A9955">@media (min-width: 481px) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    .demo__news {</span></span>
+<span class="line"><span style="color:#6A9955">        height: 70rem;</span></span>
+<span class="line"><span style="color:#6A9955">    }</span></span>
+<span class="line"><span style="color:#6A9955">}</span></span>
+<span class="line"><span style="color:#6A9955">*/</span></span>
+<span class="line"><span style="color:#D7BA7D">.news__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2.2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">600</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#356876</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  text-align</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .news__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.news__list</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">column</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">95%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  max-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">75rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1rem</span><span style="color:#B5CEA8"> 1rem</span><span style="color:#B5CEA8"> 3rem</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">768px</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#D7BA7D">  .main__container</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">    min-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">60rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D7BA7D">  .news__list</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">3rem</span><span style="color:#B5CEA8"> 4rem</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">  }</span></span>
-<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtNDEuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBTUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBRUk7SUFDSSIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gICAgKiAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gICpcbiAgICAqICAtLS0tLSAgL3N0eWxlcy00MS5jc3MgIC0tICAvc3JjL3N0eWxlcy9wYWdlcy9zdHlsZXMtNDEuY3NzICAtLS0tLSAgKlxuICAgICogIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICAqXG4qL1xuXG4ubWFpbl9fY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuICAgIG1pbi1oZWlnaHQ6IDQwcmVtO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLXRvcDogNXJlbTtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cmVtO1xyXG4gICAgZ2FwOiA1cmVtO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb25zZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2U4ZWZmYTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7XHJcblxyXG4gICAgLm1haW5fX2NvbnRhaW5lciB7XHJcbiAgICAgICAgbWluLWhlaWdodDogNjByZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbiJdLCJmaWxlIjoic3R5bGVzLTQxLmNzcyJ9 */</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.news__article</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  padding</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2px</span><span style="color:#CE9178"> solid</span><span style="color:#CE9178"> #356876</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5px</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  transform</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">translate</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">400%</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">  transition</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">all</span><span style="color:#B5CEA8"> 400ms</span><span style="color:#CE9178"> linear</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.news__article--show</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  transform</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">translate</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.article__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.8rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  line-height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#356876</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">481px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .article__title</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.article__description</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#adaebf</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.article__info</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">row</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">center</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.info__avatar</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">5rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.info__img</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  height</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  object-fit</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">cover</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  border-radius</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">100%</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.info__identity</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  flex-direction</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">column</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  align-items</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">flex-end</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.info__name</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">600</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#453b43</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D7BA7D">.info__date</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-size</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">1.4rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  font-weight</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">400</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  color</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">#bbb</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span><span style="color:#6A9955">/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHlsZXMtNDEuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBT0E7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBQ0k7RUFDQTs7O0FBR0o7QUFBQTs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBUUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUVJO0lBQ0k7OztBQUlSO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFFSTtJQUNJOzs7QUFJUjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7OztBQUdKO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7OztBQUdKO0VBQ0k7RUFDQTtFQUNBOzs7QUFHSjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gICAgKiAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAgKlxyXG4gICAgKiAgLS0tLS0gIHN0eWxlcy00MS5zY3NzICAtLSAgL3NyYy9zY3NzL3BhZ2VzL3N0eWxlcy00MS5zY3NzICAtLS0tLSAgKlxyXG4gICAgKiAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAgKlxyXG4qL1xyXG5cclxuXHJcbi5kZW1vX19uZXdzIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA3MHJlbTtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjdmOGZkO1xyXG59XHJcblxyXG4ubGF5b3V0X19tYWluID4gLm1haW5fX2NvbnRhaW5lciA+IFtkYXRhLWNvbXBvbmVudC1wYWdlXSAubWFpbl9fZGVtby5kZW1vX19uZXdzIHtcclxuICAgIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbi8qXHJcbkBtZWRpYSAobWluLXdpZHRoOiA0ODFweCkge1xyXG5cclxuICAgIC5kZW1vX19uZXdzIHtcclxuICAgICAgICBoZWlnaHQ6IDcwcmVtO1xyXG4gICAgfVxyXG59XHJcbiovXHJcbi5uZXdzX190aXRsZSB7XHJcbiAgICBmb250LXNpemU6IDIuMnJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBjb2xvcjogIzM1Njg3NjtcclxuICAgIG1hcmdpbjogMnJlbTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDQ4MXB4KSB7XHJcblxyXG4gICAgLm5ld3NfX3RpdGxlIHtcclxuICAgICAgICBmb250LXNpemU6IDNyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi5uZXdzX19saXN0IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgZ2FwOiAycmVtO1xyXG4gICAgd2lkdGg6IDk1JTtcclxuICAgIG1heC13aWR0aDogNzVyZW07XHJcbiAgICBwYWRkaW5nOiAxcmVtIDFyZW0gM3JlbTtcclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7XHJcblxyXG4gICAgLm5ld3NfX2xpc3Qge1xyXG4gICAgICAgIHBhZGRpbmc6IDNyZW0gNHJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLm5ld3NfX2FydGljbGUge1xyXG4gICAgcGFkZGluZzogMnJlbTtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkICMzNTY4NzY7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSg0MDAlKTtcclxuICAgIHRyYW5zaXRpb246IGFsbCA0MDBtcyBsaW5lYXI7XHJcbn1cclxuXHJcbi5uZXdzX19hcnRpY2xlLS1zaG93IHtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKDApO1xyXG59XHJcblxyXG4uYXJ0aWNsZV9fdGl0bGUge1xyXG4gICAgZm9udC1zaXplOiAxLjhyZW07XHJcbiAgICBsaW5lLWhlaWdodDogMS40O1xyXG4gICAgY29sb3I6ICMzNTY4NzY7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxLjVyZW07XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA0ODFweCkge1xyXG5cclxuICAgIC5hcnRpY2xlX190aXRsZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgfVxyXG59XHJcblxyXG4uYXJ0aWNsZV9fZGVzY3JpcHRpb24ge1xyXG4gICAgZm9udC1zaXplOiAxLjRyZW07XHJcbiAgICBjb2xvcjogI2FkYWViZjtcclxuICAgIG1hcmdpbi1ib3R0b206IDJyZW07XHJcbn1cclxuXHJcbi5hcnRpY2xlX19pbmZvIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGdhcDogMnJlbTtcclxufVxyXG5cclxuLmluZm9fX2F2YXRhciB7XHJcbiAgICB3aWR0aDogNXJlbTtcclxuICAgIGhlaWdodDogNXJlbTtcclxuICAgIG1hcmdpbjogMDtcclxufVxyXG5cclxuLmluZm9fX2ltZyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxufVxyXG5cclxuLmluZm9fX2lkZW50aXR5IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xyXG59XHJcblxyXG4uaW5mb19fbmFtZSB7XHJcbiAgICBmb250LXNpemU6IDEuNHJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBjb2xvcjogIzQ1M2I0MztcclxufVxyXG5cclxuLmluZm9fX2RhdGUge1xyXG4gICAgZm9udC1zaXplOiAxLjRyZW07XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgY29sb3I6ICNiYmI7XHJcbn1cclxuIl0sImZpbGUiOiJzdHlsZXMtNDEuY3NzIn0= */</span></span>
 <span class="line"></span></code></pre>

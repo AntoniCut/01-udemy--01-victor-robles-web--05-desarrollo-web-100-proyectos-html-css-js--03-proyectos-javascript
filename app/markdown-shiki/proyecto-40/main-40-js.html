@@ -24,27 +24,38 @@
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> - `Grupo de estrellas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $lista</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $starsDemo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".stars__list"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement>}</span><span style="color:#6A9955"> - `Botones de las estrellas` */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $stars</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$starsDemo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".stars__star"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la lista de estrellas  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$lista</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">$stars</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `pintarEstrellas(hasta)`  -----</span></span>
 <span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Colorea las estrellas desde la primera hasta el índice indicado.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> hasta</span><span style="color:#6A9955"> - Índice de la última estrella a colorear.</span></span>
+<span class="line"><span style="color:#6A9955">     * - Colorea hasta el índice indicado. Con -1 se apagan todas.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> hasta</span><span style="color:#6A9955"> - Índice de la última estrella a colorear, o -1 para ninguna.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> pintarEstrellas</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">hasta</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $stars</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  si la estrella está dentro del rango, colorearla  -----</span></span>
-<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#9CDCFE">hasta</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si hay valoración y la estrella está en el rango, colorearla  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">hasta</span><span style="color:#D4D4D4"> >= </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#9CDCFE">hasta</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#9CDCFE">                $star</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"stars__star--active"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
-<span class="line"><span style="color:#6A9955">            //  -----  si está por encima, quitarle el color  -----</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si no entra en el rango, quitarle el color  -----</span></span>
 <span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">                $star</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"stars__star--active"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
@@ -53,10 +64,32 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `esSoloLaPrimeraActiva()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Comprueba si únicamente la primera estrella está marcada.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {boolean}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> esSoloLaPrimeraActiva</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement}</span><span style="color:#6A9955"> - `primera estrella` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $primera</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$stars</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$primera</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">contains</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"stars__star--active"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#D4D4D4"> !</span><span style="color:#9CDCFE">Array</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">from</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$stars</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">some</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> index</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">contains</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"stars__star--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `vincularEstrellas()`  -----</span></span>
 <span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Colorea al pasar el ratón y deja marcada la última valoración.</span></span>
+<span class="line"><span style="color:#6A9955">     * - Colorea al pasar el ratón y permite dejar la valoración a cero.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> vincularEstrellas</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
@@ -68,12 +101,40 @@
 <span class="line"><span style="color:#DCDCAA">                pintarEstrellas</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">            });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  click para confirmar la valoración  -----</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  click para confirmar o desactivar la primera  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">            $star</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">                event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si solo está la primera, un segundo click la apaga  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#DCDCAA">esSoloLaPrimeraActiva</span><span style="color:#D4D4D4">()) {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    pintarEstrellas</span><span style="color:#D4D4D4">(-</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DCDCAA">                pintarEstrellas</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">            });</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement}</span><span style="color:#6A9955"> - `primera estrella` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $primera</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$stars</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  al salir de la primera hacia fuera de la lista, apagar todas  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $primera</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseleave"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `destino del evento` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $destino</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">relatedTarget</span><span style="color:#569CD6"> instanceof</span><span style="color:#4EC9B0"> Node</span></span>
+<span class="line"><span style="color:#D4D4D4">                ? </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">relatedTarget</span></span>
+<span class="line"><span style="color:#D4D4D4">                : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el puntero sigue dentro de la lista, no apagar  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$destino</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">$lista</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">contains</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$destino</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            pintarEstrellas</span><span style="color:#D4D4D4">(-</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
