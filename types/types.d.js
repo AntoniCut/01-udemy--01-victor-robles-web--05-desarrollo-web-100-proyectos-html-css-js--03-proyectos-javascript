@@ -1,0 +1,58 @@
+/*
+    *  -----------------------------------------------  *
+    *  -----  types.d.js  --  /types/types.d.js  -----  *
+    *  -----------------------------------------------  *
+*/
+
+
+/**
+ * -----------------------
+ * -----  `Usuario`  -----
+ * -----------------------
+ * @typedef {object} Usuario - Usuario listo para pintar y filtrar en el buscador.
+ * @property {number} id - Identificador del usuario.
+ * @property {string} nombre - Nombre completo.
+ * @property {string} email - Correo electrónico.
+ * @property {string} avatar - URL de la imagen de perfil.
+ */
+
+
+/**
+ * -------------------------
+ * -----  `NombreApi`  -----
+ * -------------------------
+ * @typedef {object} NombreApi - Nombre que devuelve Random User.
+ * @property {string} first - Nombre.
+ * @property {string} last - Apellido.
+ */
+
+
+/**
+ * -----------------------
+ * -----  `FotoApi`  -----
+ * -----------------------
+ * @typedef {object} FotoApi - Fotos que devuelve Random User.
+ * @property {string} large - Foto grande.
+ * @property {string} medium - Foto mediana.
+ * @property {string} thumbnail - Miniatura.
+ */
+
+
+/**
+ * --------------------------
+ * -----  `UsuarioApi`  -----
+ * --------------------------
+ * @typedef {object} UsuarioApi - Usuario tal como lo devuelve Random User.
+ * @property {NombreApi} name - Nombre y apellido.
+ * @property {string} email - Correo electrónico.
+ * @property {FotoApi} picture - Fotos de perfil.
+ */
+
+
+/**
+ * ------------------------------------
+ * -----  `RespuestaUsuariosApi`  -----
+ * ------------------------------------
+ * @typedef {object} RespuestaUsuariosApi - Respuesta de Random User al listar usuarios.
+ * @property {UsuarioApi[]} results - Listado de usuarios.
+ */

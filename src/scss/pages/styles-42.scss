@@ -1,28 +1,199 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-42.css  --  /src/styles/pages/styles-42.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-42.scss  --  /src/scss/pages/styles-42.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 40rem;
+
+.demo__users {
+    width: 100%;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem 3rem;
+    background-color: #f7f8fd;
+}
+
+@media (min-width: 481px) {
+
+    .demo__users {
+        padding: 3rem 2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__users {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.users__search {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 5px 5px 0 0;
+    background-color: #ee4a00;
+}
+
+@media (min-width: 481px) {
+
+    .users__search {
+        padding: 3rem;
+    }
+}
+
+.search__input {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+}
+
+.search__btn {
+    flex-shrink: 0;
+    padding: 1rem;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.users__list {
+    width: 100%;
+    max-width: 50rem;
+    max-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    border: 3px solid #ee4a00;
+    border-radius: 0 0 5px 5px;
+    background-color: #fff;
+}
+
+@media (min-width: 481px) {
+
+    .users__list {
+        max-height: 60rem;
+    }
+}
+
+.users__list::-webkit-scrollbar {
+    width: 3rem;
+    background: #fff;
+}
+
+.users__list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 100px;
+    border: 1.2rem solid transparent;
+    box-shadow: inset 0 0 0 10px #ee4a00;
+}
+
+.users__list::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+}
+
+.users__list::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+@supports (-moz-appearance: none) {
+
+    .users__list {
+        scrollbar-width: thin;
+        scrollbar-color: #ee4a00 #fff;
+    }
+}
+
+.users__user {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 481px) {
+
+    .users__user {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 4rem;
+    }
+}
+
+.user__container-img {
+    width: 9rem;
+    height: 9rem;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@media (min-width: 481px) {
+
+    .user__container-img {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+.user__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user__content {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    gap: 0.5rem;
+    text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
-    .main__container {
-        min-height: 60rem;
+    .user__content {
+        align-items: flex-start;
+        text-align: left;
     }
 }
 
+.user__name {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.user__email {
+    font-weight: 500;
+    color: #666;
+    overflow-wrap: anywhere;
+}
+
+.users__empty {
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+    font-weight: 500;
+    color: #666;
+}

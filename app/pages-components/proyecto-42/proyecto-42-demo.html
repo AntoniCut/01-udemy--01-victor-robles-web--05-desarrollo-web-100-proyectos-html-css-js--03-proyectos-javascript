@@ -1,5 +1,31 @@
 <!--
-    *  -----  /proyecto-42-demo.html  --  /src/pages-components/proyecto-42/proyecto-42-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-42-demo.html  --  /src/pages-components/proyecto-42/proyecto-42-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content"></div>
+<section class="main__demo demo__users">
+
+
+    <form class="users__search">
+
+        <input
+            type="text"
+            class="search__input"
+            placeholder="Buscar un usuario"
+            autocomplete="off"
+            aria-label="Buscar un usuario"
+        >
+
+        <button type="submit" class="search__btn" aria-label="Buscar">
+            <i class="search__icon fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+
+    </form>
+
+
+    <section class="users__list" aria-live="polite">
+    </section>
+
+
+</section>
