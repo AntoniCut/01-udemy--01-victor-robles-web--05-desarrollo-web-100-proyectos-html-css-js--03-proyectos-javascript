@@ -89,10 +89,13 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `mensaje del listado` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"users__empty"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $container</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$mensaje</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
@@ -105,19 +108,26 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearTarjetaUsuario</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement}</span><span style="color:#6A9955"> - `tarjeta del usuario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $article</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"article"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"users__user"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFigureElement}</span><span style="color:#6A9955"> - `contenedor de la imagen` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $contenedorImg</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"figure"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $contenedorImg</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"user__container-img"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLImageElement}</span><span style="color:#6A9955"> - `avatar del usuario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $img</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"img"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $img</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"user__img"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $img</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">src</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">avatar</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $img</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">alt</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`Imagen de </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">nombre</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si el avatar remoto falla, usar la imagen local  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $img</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
@@ -126,28 +136,39 @@
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $contenedorImg</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$img</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement}</span><span style="color:#6A9955"> - `bloque de nombre y email` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $content</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"div"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"user__content"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `nombre del usuario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $nombre</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $nombre</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"user__name"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $nombre</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `email del usuario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $email</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $email</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"user__email"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $email</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">email</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  agregar los elementos al bloque de nombre y email  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $content</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$nombre</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $content</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$email</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  agregar los elementos a la tarjeta del usuario  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $article</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$contenedorImg</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $article</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$content</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  devolver la tarjeta del usuario  -----</span></span>
 <span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> $article</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
@@ -166,6 +187,7 @@
 <span class="line"><span style="color:#9CDCFE">            $container</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">crearTarjetaUsuario</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">usuario</span><span style="color:#D4D4D4">));</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
@@ -199,14 +221,18 @@
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> nombre</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">textoNormalizado</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">email</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">textoNormalizado</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si no hay coincidencias, avisar en el listado  -----</span></span>
 <span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">filtrados</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#DCDCAA">            mostrarMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No hay usuarios que coincidan con la búsqueda."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  pintar los usuarios filtrados  -----</span></span>
 <span class="line"><span style="color:#DCDCAA">        pintarUsuarios</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">filtrados</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
@@ -217,6 +243,7 @@
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {Promise&#x3C;Usuario[]>}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> obtenerUsuarios</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">async</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">        try</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
@@ -251,6 +278,7 @@
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `iniciarDemo()`  -----</span></span>
@@ -280,6 +308,7 @@
 <span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">            filtrarUsuarios</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
