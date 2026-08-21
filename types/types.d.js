@@ -56,3 +56,11 @@
  * @typedef {object} RespuestaUsuariosApi - Respuesta de Random User al listar usuarios.
  * @property {UsuarioApi[]} results - Listado de usuarios.
  */
+
+
+/**
+ * ----------------------------
+ * -----  `SliderAction`  -----
+ * ----------------------------
+ * @typedef {"up" | "down"} SliderAction - Dirección del movimiento del slider.
+ */

@@ -1,28 +1,218 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-45.css  --  /src/styles/pages/styles-45.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-45.scss  --  /src/scss/pages/styles-45.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
+
+.demo__vertical-slider {
     position: relative;
-    width: 100vw;
-    min-height: 40rem;
+    width: 100%;
+    height: 48rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
-    background-color: #e8effa;
+    background-color: #f7f8fd;
 }
 
 @media (min-width: 768px) {
 
-    .main__container {
-        min-height: 60rem;
+    .demo__vertical-slider {
+        flex-direction: row;
+        height: 52rem;
     }
 }
 
+@media (min-width: 1024px) {
+
+    .demo__vertical-slider {
+        height: 60rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__vertical-slider {
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+
+/*  -----  parte izquierda  -----  */
+
+.vertical-slider__left {
+    position: relative;
+    width: 100%;
+    height: 68%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__left {
+        width: 75%;
+        height: 100%;
+    }
+}
+
+.vertical-slider__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 500ms ease-in-out;
+}
+
+.vertical-slider__bg--1 {
+    background-image: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/img/proyecto-45/coche1.jpg");
+}
+
+.vertical-slider__bg--2 {
+    background-image: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/img/proyecto-45/coche2.jpg");
+}
+
+.vertical-slider__bg--3 {
+    background-image: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/img/proyecto-45/coche3.jpg");
+}
+
+.vertical-slider__bg--4 {
+    background-image: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/img/proyecto-45/coche4.jpg");
+}
+
+
+/*  -----  botones  -----  */
+
+.vertical-slider__btns {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__btns {
+        top: 50%;
+        left: 75%;
+    }
+}
+
+.vertical-slider__btn {
+    width: 3.6rem;
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #323232;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__btn {
+        width: 4rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+    }
+}
+
+.vertical-slider__btn--down {
+    border-radius: 5px 0 0 5px;
+}
+
+.vertical-slider__btn--up {
+    border-radius: 0 5px 5px 0;
+}
+
+.vertical-slider__btn:hover {
+    background-color: #323232;
+    color: #fff;
+}
+
+
+/*  -----  parte derecha  -----  */
+
+.vertical-slider__right {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__right {
+        width: 25%;
+        height: 100%;
+        flex: none;
+    }
+}
+
+.vertical-slider__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 500ms ease-in-out;
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__content {
+        padding: 2rem;
+    }
+}
+
+.vertical-slider__content--1 {
+    background-color: #cad2f6;
+}
+
+.vertical-slider__content--2 {
+    background-color: #b9f6b9;
+}
+
+.vertical-slider__content--3 {
+    background-color: #d57777;
+}
+
+.vertical-slider__content--4 {
+    background-color: #cad2f6;
+}
+
+.vertical-slider__title {
+    margin: 0 0 1.2rem;
+    padding: 1.2rem;
+    background-color: #323232;
+    font-size: 2rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+
+    .vertical-slider__title {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        font-size: 3rem;
+    }
+}
+
+.vertical-slider__text {
+    margin: 0;
+    font-weight: 600;
+    color: #000;
+}
