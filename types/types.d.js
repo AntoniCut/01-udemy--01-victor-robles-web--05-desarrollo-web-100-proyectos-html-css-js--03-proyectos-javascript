@@ -5,6 +5,13 @@
 */
 
 
+
+/*
+    *  ----------------------------  *
+    *  -----  Proyecto 42 JS  -----  *
+    *  ----------------------------  *
+*/
+
 /**
  * -----------------------
  * -----  `Usuario`  -----
@@ -56,6 +63,14 @@
  * @typedef {object} RespuestaUsuariosApi - Respuesta de Random User al listar usuarios.
  * @property {UsuarioApi[]} results - Listado de usuarios.
  */
+
+
+
+/*
+    *  ----------------------------  *
+    *  -----  Proyecto 45 JS  -----  *
+    *  ----------------------------  *
+*/
 
 
 /**
