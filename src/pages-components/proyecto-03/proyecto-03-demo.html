@@ -1,5 +1,39 @@
 <!--
-    *  -----  /proyecto-03-demo.html  --  /src/pages-components/proyecto-03/proyecto-03-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-03-demo.html  --  /src/pages-components/proyecto-03/proyecto-03-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content"> </div>
+<section class="main__demo demo__velocidad">
+
+
+    <article class="velocidad__card">
+
+        <h3 class="velocidad__title">Control de velocidad</h3>
+
+        <p class="velocidad__limite"></p>
+
+        <form class="velocidad__form">
+
+            <label class="velocidad__label" for="velocidad-vehiculo">¿A qué velocidad vas?</label>
+
+            <input
+                class="velocidad__input"
+                id="velocidad-vehiculo"
+                type="number"
+                name="velocidad"
+                min="0"
+                value="135"
+                required
+            >
+
+            <button type="submit" class="velocidad__submit">Comprobar</button>
+
+        </form>
+
+        <p class="velocidad__resultado" role="status" aria-live="polite"></p>
+
+    </article>
+
+
+</section>

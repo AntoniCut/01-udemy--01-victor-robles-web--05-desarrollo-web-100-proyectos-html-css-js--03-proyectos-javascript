@@ -1,7 +1,7 @@
 /*
-    *  -----------------------------------------------------------------------------------------  *
-    *  -----  /route-proyecto-03-js.js  --  /src/routes/route-proyecto-03-js.js  -----  *
-    *  -----------------------------------------------------------------------------------------  *
+    *  ------------------------------------------------------------------------------  *
+    *  -----  route-proyecto-03-js.js  --  /src/routes/route-proyecto-03-js.js  -----  *
+    *  ------------------------------------------------------------------------------  *
 */
 
 
@@ -16,6 +16,7 @@ const {
     pagesComponentsSrc,
     MarkdownShikiHtml,
     layoutFooter,
+    styles,
     scripts,
     scriptsSrc,
 } = paths;
@@ -52,9 +53,18 @@ export const routeProyecto03JS = {
             urlOutput: `${MarkdownShikiHtml}/proyecto-03`,
             target: '[data-shiki="codeJs"]',
         },
+        {
+            fileName: 'styles-03-css.html',
+            fileExtension: 'css',
+            urlInput: `${styles}/styles-03.css`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-03`,
+            target: '[data-shiki="codeCss"]',
+        },
     ],
     headerTitle: 'Proyecto 3 JavaScript',
-    styles: [],
+    styles: [
+        { href: `${styles}/styles-03.css` },
+    ],
     scripts: [
         { src: `${scripts}/main-03.js` },
     ],
