@@ -505,6 +505,13 @@ export const copyRootAssetsToDist = () =>
               .pipe(validateFiles('copyRootAssetsToDist'))
               .pipe(dest(paths.distRoot));
 
+/** Copia el proyecto 6 autocontenido → dist/proyecto-06. */
+export const copyProyecto06ToDist = () =>
+    src('proyecto-06/index.html', { allowEmpty: true, base: '.' })
+        .pipe(safePipe())
+        .pipe(validateFiles('copyProyecto06ToDist'))
+        .pipe(dest(paths.distRoot));
+
 
 // ── MISC ─────────────────────────────────────────────────  
 
@@ -534,7 +541,7 @@ export function addTsNoCheck(cb) {
 export const build = series(
     parallel(cleanDist, cleanApp),
     copyAll,
-    parallel(minifyAllJs, minifyAllCss, minifyRootIndex, minifyHtml, copyStaticAssetsToDist, copyRootAssetsToDist),
+    parallel(minifyAllJs, minifyAllCss, minifyRootIndex, minifyHtml, copyStaticAssetsToDist, copyRootAssetsToDist, copyProyecto06ToDist),
 );
 
 export default build;

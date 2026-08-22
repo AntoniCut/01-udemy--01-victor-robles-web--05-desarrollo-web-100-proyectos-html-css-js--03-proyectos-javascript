@@ -30,6 +30,7 @@ const SPA_ENTRY_FILE = path.join(PROJECT_ROOT, 'index.html');
 /** Archivos que deben disparar live reload (sin libs/assets estáticos pesados). */
 const BROWSER_SYNC_FILES = [
     'index.html',
+    'proyecto-06/**/*.html',
     'app/**/*.{html,css,js}',
     'assets/**/*',
     '!app/libs/**',
@@ -240,9 +241,37 @@ const assertPortAvailable = (port) => new Promise((resolve, reject) => {
 });
 
 
+/**
+ * Sirve el proyecto 6 (página autocontenida, fuera de la SPA).
+ * @param {string} rootDir
+ * @returns {import('express').RequestHandler}
+ */
+const serveProyecto06 = (rootDir) => (req, res, next) => {
+    const normalizedPath = req.path.replace(/\/+$/, '') || '/';
+    const isProyecto06 =
+        normalizedPath === `${DEV_ROUTE_BASE}/proyecto-06` ||
+        normalizedPath === `${DEV_ROUTE_BASE}/proyecto-06/index.html`;
+
+    if (!isProyecto06) {
+        next();
+        return;
+    }
+
+    const file = path.join(rootDir, 'proyecto-06', 'index.html');
+
+    if (!fs.existsSync(file)) {
+        next();
+        return;
+    }
+
+    res.sendFile(path.resolve(file));
+};
+
+
 app.use(redirectRootToBase);
 app.use(makePhpHandler(PROJECT_ROOT, DEV_SERVER_PORT));
-app.use(DEV_ROUTE_BASE, express.static(PROJECT_ROOT, { index: false }));
+app.use(serveProyecto06(PROJECT_ROOT));
+app.use(DEV_ROUTE_BASE, express.static(PROJECT_ROOT, { index: 'index.html' }));
 app.use(serveSpaFallback);
 
 app.use((req, res) => {

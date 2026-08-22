@@ -39,7 +39,9 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearOperacion</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">tabla</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">factor</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLLIElement}</span><span style="color:#6A9955"> - `Elemento de la operación` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> operacion</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"li"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        operacion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__operacion"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        operacion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">tabla</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> X </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">factor</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> = </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">tabla</span><span style="color:#D4D4D4"> * </span><span style="color:#9CDCFE">factor</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
@@ -57,22 +59,36 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearTabla</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement}</span><span style="color:#6A9955"> - `Artículo con título y operaciones` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> item</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"article"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        item</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__item"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLHeadingElement}</span><span style="color:#6A9955"> - `Título de la tabla` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> titulo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"h2"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        titulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__title"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        titulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`Tabla del </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">numero</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        item</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">titulo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement}</span><span style="color:#6A9955"> - `Caja con las operaciones` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> caja</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"div"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__box"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLUListElement}</span><span style="color:#6A9955"> - `Lista de operaciones` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> lista</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"ul"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        lista</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__list"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DocumentFragment}</span><span style="color:#6A9955"> - `Fragmento de documentos` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> fragmento</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createDocumentFragment</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  bucle para crear las operaciones de la tabla  -----</span></span>
 <span class="line"><span style="color:#C586C0">        for</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">let</span><span style="color:#9CDCFE"> factor</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">factor</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">factor</span><span style="color:#D4D4D4">++) {</span></span>
 <span class="line"><span style="color:#9CDCFE">            fragmento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">crearOperacion</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">factor</span><span style="color:#D4D4D4">));</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
@@ -94,12 +110,16 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearSeparador</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLHRElement}</span><span style="color:#6A9955"> - `Separador horizontal` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> separador</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"hr"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        separador</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"tablas__separator"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> separador</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  pintar las tablas del 1 al 10  -----</span></span>
 <span class="line"><span style="color:#C586C0">    for</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">let</span><span style="color:#9CDCFE"> numero</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">; </span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4">++) {</span></span>

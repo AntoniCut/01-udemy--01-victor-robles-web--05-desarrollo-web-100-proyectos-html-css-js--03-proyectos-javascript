@@ -178,9 +178,37 @@ const serveSpaFallback = (req, res, next) => {
     next();
 };
 
+/**
+ * Sirve el proyecto 6 (página autocontenida, fuera de la SPA).
+ * @param {string} rootDir
+ * @returns {import('express').RequestHandler}
+ */
+const serveProyecto06 = (rootDir) => (req, res, next) => {
+    const normalizedPath = req.path.replace(/\/+$/, '') || '/';
+    const isProyecto06 =
+        normalizedPath === `${DEV_ROUTE_BASE}/proyecto-06` ||
+        normalizedPath === `${DEV_ROUTE_BASE}/proyecto-06/index.html`;
+
+    if (!isProyecto06) {
+        next();
+        return;
+    }
+
+    const file = path.join(rootDir, 'proyecto-06', 'index.html');
+
+    if (!fs.existsSync(file)) {
+        next();
+        return;
+    }
+
+    res.sendFile(path.resolve(file));
+};
+
+
 app.use(redirectRootToBase);
 app.use(makePhpHandler(DIST_ROOT, PREVIEW_SERVER_PORT));
-app.use(DEV_ROUTE_BASE, express.static(DIST_ROOT, { index: false }));
+app.use(serveProyecto06(DIST_ROOT));
+app.use(DEV_ROUTE_BASE, express.static(DIST_ROOT, { index: 'index.html' }));
 app.use(serveSpaFallback);
 
 app.use((req, res) => {

@@ -1,23 +1,15 @@
-<!--    
-    ---------------------------------------------------------
-    ----------  /udemy.antonydev.tech/  ---------------------
-    ----------  /curso-100-proyectos-html-css-js/  ----------
-    ----------  /03-proyectos-javascript/  ------------------
-    ----------  /src/  --------------------------------------
-    ----------  /pages/  ------------------------------------
-    ----------  /proyecto-06.html  --------------------------
-    ---------------------------------------------------------
+<!--
+    *  -----------------------------------------------------  *
+    *  -----  index.html  --  /proyecto-06/index.html  -----  *
+    *  -----------------------------------------------------  *
 -->
 
 
-<!--  
-
-    ----------  Enunciado Proyecto 6  ----------  
-
-    -  Muestra los números del 1 al 177 directamente en la página. 
-    -  Sin usar el "DOM" y sin usar un bucle for.
-    -  Mostrar estilos sin usar una hoja aparte.
-                     
+<!--
+    ----------  Proyecto 6  --  página autocontenida  ----------
+    -  Desacoplada de la SPA: HTML, CSS y JS van en este archivo.
+    -  Muestra los números del 1 al 177 con el DOM.
+    -  Estilos sin hoja aparte.
 -->
 
 
@@ -27,102 +19,1111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <base href="/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/">
+
     <title> Proyecto 6 JS - + 100 Proyectos HTML, CSS y JS </title>
-    <link rel="icon" href="/01-victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/favicon/javascript-favicon.ico">
+    <link rel="icon" href="assets/favicon/javascript-favicon.ico">
 
     <style>
-        
+
+        /*  ----------  Reset  ----------  */
+
+        * {
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            scroll-behavior: smooth;
+        }
+
         body {
-            margin: 0 auto;
-            max-width: 1000px;
+            min-width: 100%;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Montserrat", Arial, Helvetica, sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            text-rendering: optimizeSpeed;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        img,
+        picture,
+        figure {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            display: block;
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            padding: 1rem 2rem;
+            background-color: cornflowerblue;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 300ms ease-in-out;
+        }
+
+        button:hover {
+            background-color: rgb(24, 56, 116);
+        }
+
+        span {
+            display: inline;
+        }
+
+
+        /*  ----------  Fuentes  ----------  */
+
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-regular.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-600.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-700.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url("/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-800.woff2") format("woff2");
+        }
+
+
+        /*  ----------  Tokens  ----------  */
+
+        :root {
+            --color-primary: #036AAD;
+            --color-accent: #EDD812;
+            --color-grid: #e5e7eb;
+            --bg-white: #ffffff;
+            --bg-dark: #1E293B;
+        }
+
+
+        /*  ----------  View Transition  ----------  */
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-group(*) {
+            animation-duration: 500ms;
+        }
+
+
+        /*  ----------  Scrollbar  ----------  */
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #EDD812;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 122, 204, 0.7);
+        }
+
+
+        /*  ----------  Layout  ----------  */
+
+        .layout {
+            width: 100vw;
+            min-height: 100dvh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%);
+            mix-blend-mode: multiply;
+        }
+
+
+        /*  ----------  Header  ----------  */
+
+        .layout__header {
+            position: relative;
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header__container {
+            position: relative;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-
-            background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%);
-            mix-blend-mode: multiply;
-        }
-
-        h1,
-        h2,
-        hr {
-            width: 95%;
-            display: flex;
-            justify-content: center;
+            gap: 2rem;
+            padding: 7rem 1.6rem 2.4rem;
             text-align: center;
-            flex-wrap: wrap;
+            background: linear-gradient(to left, rgb(189, 220, 230) 20%, rgb(133, 157, 189) 40%, rgb(100, 143, 230) 60%, rgb(197, 201, 221) 80%);
+            background-size: cover;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 30px;
+        @media (min-width: 768px) {
+            .header__container {
+                flex-direction: row;
+                align-items: stretch;
+                gap: 2.4rem;
+                padding: 3rem 2.4rem 3rem 9rem;
+                text-align: left;
+            }
         }
 
-        h2 {
-            font-size: 25px;
-            margin-bottom: 10px;
+        @media (min-width: 1024px) {
+            .header__container {
+                justify-content: space-around;
+            }
         }
-                
-        div {
-            width: 95%;
+
+        .header__brand {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 12rem;
+            padding: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            color: #E6EBF1;
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.78), rgba(30, 41, 59, 0.56));
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+            backdrop-filter: blur(12px);
+        }
+
+        @media (min-width: 768px) {
+            .header__brand {
+                width: 20rem;
+                flex: 0 0 20rem;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+            }
+
+            .header__brand--javascript {
+                order: 1;
+            }
+
+            .header__brand--stack {
+                order: 3;
+            }
+        }
+
+        .header__logo-shell {
+            width: 4.8rem;
+            height: 4.8rem;
+            flex-shrink: 0;
+            border-radius: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header__logo-javascript {
+            width: 3rem;
+            height: 3rem;
+            transition: transform 220ms ease;
+        }
+
+        .header__logo-javascript:hover {
+            transform: scale(1.2);
+        }
+
+        .header__logo-github {
+            width: 2.8rem;
+            height: 2.8rem;
+            transition: transform 220ms ease;
+        }
+
+        .header__logo-github:hover {
+            transform: scale(1.2);
+        }
+
+        .header__logo-shell--stack {
+            width: auto;
+            height: auto;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+        }
+
+        .header__logo-html,
+        .header__logo-css,
+        .header__logo-javascript-stack {
+            width: 2.1rem;
+            height: 2.1rem;
+            transition: transform 220ms ease;
+        }
+
+        .header__logo-html:hover,
+        .header__logo-css:hover,
+        .header__logo-javascript-stack:hover {
+            transform: scale(1.2);
+        }
+
+        .header__brand:hover .header__logo-javascript {
+            transform: scale(1.08);
+        }
+
+        .header__brand-copy {
             display: flex;
             flex-direction: column;
-            text-align: justify;
+            gap: 0.4rem;
         }
 
-        p {
-            font-size: 20px;
-            text-align: justify;
-            margin: 10px;
+        .header__eyebrow {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.16rem;
+            text-transform: uppercase;
+            color: rgba(230, 235, 241, 0.72);
         }
-       
-        hr {
-            height: 2px;
+
+        .header__content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 72rem;
+            padding: 1.6rem 1.4rem;
+            border-radius: 2.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(230, 238, 250, 0.82));
+            box-shadow: 0 24px 60px rgba(30, 41, 59, 0.2);
+            color: #0f172a;
         }
-       
+
+        @media (min-width: 768px) {
+            .header__content {
+                order: 2;
+                flex: 1 1 auto;
+                align-items: flex-start;
+                padding: 2rem 2.4rem;
+            }
+        }
+
+        .header__badge {
+            align-self: center;
+            margin-inline: auto;
+            padding: 0.6rem 1.1rem;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.14rem;
+            text-transform: uppercase;
+            color: #EDD812;
+            background: rgba(0, 122, 204, 0.12);
+        }
+
+        .header__title {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.1;
+            color: #EDD812;
+            text-wrap: balance;
+        }
+
+        @media (min-width: 768px) {
+            .header__title {
+                font-size: 2.8rem;
+            }
+        }
+
+        .header__dynamic-title {
+            width: 100%;
+            margin: 0;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(15, 23, 42, 0.12);
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+            color: #1e293b;
+        }
+
+        @media (min-width: 768px) {
+            .header__dynamic-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header__dynamic-title {
+                font-size: 1.7rem;
+            }
+        }
+
+
+        /*  ----------  Navbar (botón atrás)  ----------  */
+
+        .layout__navbar {
+            position: static;
+            width: 0;
+            height: 0;
+            overflow: visible;
+            z-index: 2147483001;
+        }
+
+        .navbar__btn-back {
+            position: fixed;
+            z-index: 2147483001;
+            top: 1.6rem;
+            left: 1.6rem;
+            width: 4.6rem;
+            height: 4.6rem;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            border-radius: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, rgba(0, 122, 204, 0.96), rgba(30, 64, 175, 0.92));
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.24);
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        @media (min-width: 768px) {
+            .navbar__btn-back {
+                top: 2.4rem;
+                left: 2.4rem;
+            }
+        }
+
+        .navbar__btn-back:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(145deg, rgba(0, 122, 204, 1), rgba(30, 64, 175, 1));
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.3);
+        }
+
+        .navbar__btn-back:focus-visible {
+            outline: 3px solid rgba(248, 156, 21, 0.9);
+            outline-offset: 4px;
+        }
+
+        .btn__icon-back {
+            display: block;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-left: 0.35rem;
+            border-left: 0.28rem solid #ffffff;
+            border-bottom: 0.28rem solid #ffffff;
+            transform: rotate(45deg);
+        }
+
+
+        /*  ----------  Main  ----------  */
+
+        .layout__main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main__container {
+            flex: 1;
+            width: 100%;
+            max-width: 100%;
+            min-height: 60rem;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .main__title {
+            width: min(95%, 120rem);
+            margin-top: 5rem;
+            padding: 2rem;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #000000;
+            text-align: center;
+            border-radius: 5px;
+            background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 10%, #fbff00 100%, #ffffff 10%);
+            background-size: 100% 100%;
+        }
+
+        @media (min-width: 768px) {
+            .main__title {
+                font-size: 3rem;
+            }
+        }
+
+        .main__description {
+            width: min(95%, 120rem);
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            padding: 2rem;
+            background: linear-gradient(145deg, #ffffff 0%, #f4f8ff 100%);
+            border: 1px solid #d8e3f5;
+            border-radius: 1.2rem;
+            box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.08);
+        }
+
+        @media (min-width: 768px) {
+            .main__description {
+                padding: 3.2rem;
+            }
+        }
+
+        .description-project__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .description-project__badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.4rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1e3a8a;
+            background: linear-gradient(135deg, #e8effa 0%, #dbeafe 100%);
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+        }
+
+        .description-project__title {
+            margin: 0;
+            font-size: 2.4rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        @media (min-width: 768px) {
+            .description-project__title {
+                font-size: 3.2rem;
+            }
+        }
+
+        .description-project__body {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            justify-items: center;
+        }
+
+        .description-project__instructions {
+            width: min(100%, 72rem);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2.4rem;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.05);
+        }
+
+        .description-project__subtitle {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .description-project__subtitle-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.6rem;
+            background-color: #fef3c7;
+            border-radius: 0.8rem;
+        }
+
+        .description-project__intro {
+            margin: 0;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .description-project__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .description-project__item {
+            position: relative;
+            padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: #334155;
+            background-color: #f8fafc;
+            border-left: 0.4rem solid #edd812;
+            border-radius: 0.8rem;
+        }
+
+        .description-project__item::before {
+            content: "✓";
+            position: absolute;
+            left: 1rem;
+            top: 1.2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ca8a04;
+        }
+
+        .description-project__quote {
+            margin: 0;
+            padding: 1.6rem 1.8rem;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: #475569;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 0.4rem solid #f59e0b;
+            border-radius: 0.8rem;
+        }
+
+
+        /*  ----------  Demo números  ----------  */
+
+        .main__demo.demo__numeros {
+            width: min(95%, 120rem);
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .numeros__list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.6rem 1.2rem 2.4rem;
+        }
+
+        @media (min-width: 768px) {
+            .numeros__list {
+                gap: 1.2rem;
+                padding: 2.4rem 2rem 3.2rem;
+            }
+        }
+
+        .numeros__item {
+            min-width: 6.4rem;
+            padding: 1rem 1.2rem;
+            border-radius: 0.8rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            color: #0f172a;
+            background: linear-gradient(180deg, #ffffff, #eff6ff);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            box-shadow: 0 10px 25px rgba(148, 163, 184, 0.16);
+        }
+
+        @media (min-width: 768px) {
+            .numeros__item {
+                min-width: 7.2rem;
+                font-size: 1.8rem;
+            }
+        }
+
+        .numeros__item--ultimo {
+            color: #ffffff;
+            background: linear-gradient(145deg, rgba(0, 122, 204, 0.96), rgba(30, 64, 175, 0.92));
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+
+        /*  ----------  Footer  ----------  */
+
+        .layout__footer {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+            background-color: #f7f8bc;
+        }
+
+        .footer__container-title {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 30px;
+        }
+
+        .footer__title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.8rem;
+            color: #036AAD;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 768px) {
+            .footer__title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer__title {
+                font-size: 3rem;
+            }
+        }
+
     </style>
-
 </head>
+
 
 <body>
 
-    <hr>
-    <h1> ----- Proyecto 6 JavaScript ----- </h1>
-    <hr>
+    <!--  ----------  LAYOUT  ----------  -->
+    <div class="layout" id="layout">
 
-    <div>
 
-        <h2> ------ Enunciado Proyecto 6 JS Externo ---------- </h2>
-        <p> - Muestra los números del 1 al 177 directamente en la página. </p>
-        <p> - Sin usar el "DOM" y sin usar un bucle for. </p>
-        <p> - Mostrar estilos sin usar una hoja aparte. </p>
+        <!--  ----------  HEADER  ----------  -->
+        <header class="layout__header" id="layoutHeader">
+
+            <div class="header__container">
+
+                <!--  -----  Contenedor Izquierda: 50 Proyectos JavaScript  -----  -->
+                <div class="header__brand header__brand--javascript">
+
+                    <span class="header__logo-shell">
+                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                            <img
+                                class="header__logo-javascript"
+                                src="assets/img/logos/javascript-logo.svg"
+                                alt="Logo JavaScript"
+                            >
+                        </a>
+                    </span>
+
+                    <span class="header__brand-copy">
+                        <span class="header__eyebrow"> 50 Proyectos JavaScript </span>
+                    </span>
+
+                </div>
+
+
+                <!--  -----  Contenedor Central  -----  -->
+                <div class="header__content">
+
+                    <p class="header__badge"> Udemy - Victor Robles Web </p>
+
+                    <h1 class="header__title">
+                        100 Proyectos de Desarrollo Web con HTML, CSS y JavaScript
+                    </h1>
+
+                    <span class="header__logo-shell header__logo-shell--github">
+                        <img
+                            class="header__logo-github"
+                            src="assets/img/logos/github-logo.svg"
+                            alt="Logo GitHub"
+                        >
+                    </span>
+
+                    <p id="headerTitle" class="header__dynamic-title">
+                        Proyecto 6 JavaScript
+                    </p>
+
+                </div>
+
+
+                <!--  -----  Contenedor Derecha: stack  -----  -->
+                <div class="header__brand header__brand--stack">
+
+                    <span class="header__brand-copy">
+                        <span class="header__eyebrow"> Desarrollo web 100 Proyectos con </span>
+                    </span>
+
+                    <span class="header__logo-shell header__logo-shell--stack">
+
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                            <img
+                                class="header__logo-html"
+                                src="assets/img/logos/html-logo.svg"
+                                alt="Logo HTML"
+                            >
+                        </a>
+
+                        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+                            <img
+                                class="header__logo-css"
+                                src="assets/img/logos/css-logo.svg"
+                                alt="Logo CSS"
+                            >
+                        </a>
+
+                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                            <img
+                                class="header__logo-javascript-stack"
+                                src="assets/img/logos/javascript-logo.svg"
+                                alt="Logo JavaScript"
+                            >
+                        </a>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!--  ----------  NAVBAR  --  botón atrás  ----------  -->
+        <nav class="layout__navbar" id="layoutNavbar">
+
+            <button
+                class="navbar__btn-back"
+                id="btnAtras"
+                type="button"
+                title="Volver atrás"
+                aria-label="Volver atrás"
+            >
+                <span class="btn__icon-back" aria-hidden="true"></span>
+            </button>
+
+        </nav>
+
+
+        <!--  ----------  MAIN  ----------  -->
+        <main class="layout__main" id="layoutMain">
+
+            <div class="main__container">
+
+                <h2 class="main__title"> Proyecto 6 JavaScript </h2>
+
+                <!--  *****  Descripción del proyecto (enunciado)  *****  -->
+                <section class="main__description">
+
+                    <header class="description-project__header">
+                        <span class="description-project__badge">Enunciado</span>
+                        <h2 class="description-project__title">Enunciado Proyecto 6 JS</h2>
+                    </header>
+
+                    <div class="description-project__body">
+
+                        <section class="description-project__instructions">
+                            <h3 class="description-project__subtitle">
+                                <span class="description-project__subtitle-icon" aria-hidden="true">📋</span>
+                                Instrucciones
+                            </h3>
+                            <p class="description-project__intro">
+                                Muestra los números del 1 al 177 directamente en la página.
+                            </p>
+                            <ul class="description-project__list">
+                                <li class="description-project__item">
+                                    Todo el proyecto (HTML, CSS y JavaScript) vive en un único <code>index.html</code>.
+                                </li>
+                                <li class="description-project__item">
+                                    Los estilos van embebidos: no se usa una hoja de estilos aparte.
+                                </li>
+                                <li class="description-project__item">
+                                    Esta página está desacoplada de la SPA. El navbar es un botón para volver atrás.
+                                </li>
+                            </ul>
+                            <p class="description-project__quote">
+                                Proyecto especial: un solo archivo, largo a propósito, con la misma estructura visual
+                                de layout (header, main y footer) que el resto del curso.
+                            </p>
+                        </section>
+
+                    </div>
+
+                </section>
+
+
+                <h2 class="main__title"> Proyecto 6 JavaScript — Demo </h2>
+
+                <!--  *****  Demo del proyecto  *****  -->
+                <section class="main__demo demo__numeros" aria-label="Números del 1 al 177">
+                    <ol class="numeros__list" id="listaNumeros">
+                        <!--  Los números se insertan con el DOM desde el script  -->
+                    </ol>
+                </section>
+
+            </div>
+
+        </main>
+
+
+        <!--  ----------  FOOTER  ----------  -->
+        <footer class="layout__footer" id="layoutFooter">
+
+            <div class="footer__container-title">
+                <h2 class="footer__title">
+                    &lt; 50 Proyectos JavaScript /&gt;
+                    <br>
+                    &lt; Curso 100 Proyectos html, CSS y JavaScript /&gt;
+                </h2>
+            </div>
+
+        </footer>
+
 
     </div>
 
-    <hr> <br>
 
     <script>
+    
+        (() => {
 
-        let numero = 1;
 
-        while (numero <= 177) {
+            console.log("\n");
+            console.warn("-----  Proyecto 6 JS  -----");
+            console.log("\n");
 
-            if (numero === 177) document.write(numero);
-            else document.write(numero + ', ');
-       
-            numero++;
-        }
 
+            /** @type {string} - `Ruta de inicio de la SPA` */
+            const rutaHomeSpa = "/victor-robles-web/05-desarrollo-web-100-proyectos-html-css-js/03-proyectos-javascript/";
+
+
+            /*
+                *  ---------------------------------  *
+                *  -----  Referencias al HTML  -----  *
+                *  ---------------------------------  *
+            */
+
+            /** @type {HTMLButtonElement | null} - `Botón para volver atrás` */
+            const btnAtras = /** @type {HTMLButtonElement | null} */ (
+                document.getElementById("btnAtras")
+            );
+
+            /** @type {HTMLOListElement | null} - `Lista de números del 1 al 177` */
+            const listaNumeros = /** @type {HTMLOListElement | null} */ (
+                document.getElementById("listaNumeros")
+            );
+
+
+            //  -----  verificación de la demo  -----
+            if (!btnAtras || !listaNumeros) {
+                throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+            }
+
+
+            /**
+             * ------------------------------------------
+             * -----  `silenciarTransicion(event)`  -----
+             * ------------------------------------------
+             * - Evita el AbortError de consola si Chrome salta la view transition.
+             * @param {{ viewTransition?: ViewTransition | null }} event - Evento de revelado o intercambio de página.
+             * @return {void}
+             */
+            const silenciarTransicion = (event) => {
+
+                /** @type {ViewTransition | null | undefined} - `Transición activa` */
+                const transicion = event.viewTransition;
+
+                if (!transicion) {
+                    return;
+                }
+
+                transicion.finished.catch((error) => {
+
+                    //  -----  skip de chrome: no es un fallo de la página  -----
+                    if (error instanceof DOMException && error.name === "AbortError") {
+                        return;
+                    }
+
+                    throw error;
+                });
+            };
+
+
+            /**
+             * ------------------------------
+             * -----  `irAtras(event)`  -----
+             * ------------------------------
+             * - Vuelve a la página anterior o, si no hay historial, al inicio de la SPA.
+             * @param {MouseEvent} event - Evento de click del botón.
+             * @return {void}
+             */
+            const irAtras = (event) => {
+                event.preventDefault();
+
+                //  -----  si hay historial y un origen, volver  -----
+                if (window.history.length > 1 && document.referrer !== "") {
+                    window.history.back();
+                    return;
+                }
+
+                window.location.assign(rutaHomeSpa);
+            };
+
+
+            /**
+             * ----------------------------------
+             * -----  `crearNumero(valor)`  -----
+             * ----------------------------------
+             * - Crea un elemento de lista con un número.
+             * @param {number} valor - Número a mostrar.
+             * @return {HTMLLIElement} - Elemento con el número.
+             */
+            const crearNumero = (valor) => {
+
+                /** @type {HTMLLIElement} - `Elemento del número` */
+                const item = document.createElement("li");
+
+                item.className = "numeros__item";
+                item.textContent = String(valor);
+
+                //  -----  destacar el último número  -----
+                if (valor === 177) {
+                    item.classList.add("numeros__item--ultimo");
+                }
+
+                return item;
+            };
+
+
+            /**
+             * -------------------------------------------------
+             * -----  `pintarNumeros(lista, inicio, fin)`  -----
+             * -------------------------------------------------
+             * - Inserta en la lista los números del rango indicado.
+             * @param {HTMLOListElement} lista - Lista destino.
+             * @param {number} inicio - Primer número.
+             * @param {number} fin - Último número.
+             * @return {void}
+             */
+            const pintarNumeros = (lista, inicio, fin) => {
+
+                /** @type {DocumentFragment} - `Fragmento de documentos` */
+                const fragmento = document.createDocumentFragment();
+
+                /** @type {number} - `Número actual del recuento` */
+                let numero = inicio;
+
+                //  -----  recuento del 1 al 177  -----
+                while (numero <= fin) {
+                    fragmento.appendChild(crearNumero(numero));
+                    numero += 1;
+                }
+
+                lista.appendChild(fragmento);
+            };
+
+
+            //  -----  click en volver atras  -----
+            btnAtras.addEventListener("click", irAtras);
+
+
+            //  -----  silenciar view transition saltada  -----
+            window.addEventListener("pagereveal", silenciarTransicion);
+            window.addEventListener("pageswap", silenciarTransicion);
+
+
+            //  -----  pintar los números del 1 al 177  -----
+            pintarNumeros(listaNumeros, 1, 177);
+
+
+        })();
+    
+    
     </script>
-
-    <br> <br>
-    <hr>
-
 
 </body>
 

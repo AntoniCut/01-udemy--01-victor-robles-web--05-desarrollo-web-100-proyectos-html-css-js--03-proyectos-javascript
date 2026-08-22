@@ -38,3 +38,16 @@ interface ViewTransition {
 interface Document {
     startViewTransition(callback: () => Promise<void> | void): ViewTransition;
 }
+
+interface PageRevealEvent extends Event {
+    readonly viewTransition?: ViewTransition | null;
+}
+
+interface PageSwapEvent extends Event {
+    readonly viewTransition?: ViewTransition | null;
+}
+
+interface WindowEventMap {
+    pagereveal: PageRevealEvent;
+    pageswap: PageSwapEvent;
+}
