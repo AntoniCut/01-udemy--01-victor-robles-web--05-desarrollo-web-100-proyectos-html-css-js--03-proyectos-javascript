@@ -1,7 +1,61 @@
 <!--
-    *  -----  /proyecto-47-demo.html  --  /src/pages-components/proyecto-47/proyecto-47-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-47-demo.html  --  /src/pages-components/proyecto-47/proyecto-47-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content">
-    <!--*  -----  Renderizado del Proyecto (main-47.js escribe aquí)  -----  -->
-</div>
+<section class="main__demo demo__perspective">
+
+
+    <!--  -----  navegación  -----  -->
+    <nav class="perspective__nav" aria-label="Menú de páginas">
+
+        <button
+            type="button"
+            class="perspective__btn"
+            aria-expanded="true"
+            aria-controls="perspective-list"
+            aria-label="Cerrar menú"
+        >
+            <i class="perspective__icon perspective__icon--menu fa-solid fa-bars" aria-hidden="true"></i>
+            <i class="perspective__icon perspective__icon--close fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
+        <ul class="perspective__list perspective__list--show" id="perspective-list">
+
+            <li class="perspective__item">
+                <button type="button" class="perspective__link">Inicio</button>
+            </li>
+
+            <li class="perspective__item">
+                <button type="button" class="perspective__link">Contacto</button>
+            </li>
+
+            <li class="perspective__item">
+                <button type="button" class="perspective__link">Cursos</button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!--  -----  páginas  -----  -->
+    <div class="perspective__pages perspective__pages--show">
+
+        <article class="perspective__page perspective__page--home perspective__page--active">
+            <h3 class="perspective__title">Inicio</h3>
+        </article>
+
+        <article class="perspective__page perspective__page--contact">
+            <h3 class="perspective__title">Contacto</h3>
+        </article>
+
+        <article class="perspective__page perspective__page--courses">
+            <h3 class="perspective__title">Cursos</h3>
+        </article>
+
+    </div>
+
+
+</section>
