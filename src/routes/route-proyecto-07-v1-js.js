@@ -1,7 +1,7 @@
 /*
-    *  -----------------------------------------------------------------------------------------  *
-    *  -----  /route-proyecto-07-v1-js.js  --  /src/routes/route-proyecto-07-v1-js.js  -----  *
-    *  -----------------------------------------------------------------------------------------  *
+    *  ------------------------------------------------------------------------------------  *
+    *  -----  route-proyecto-07-v1-js.js  --  /src/routes/route-proyecto-07-v1-js.js  -----  *
+    *  ------------------------------------------------------------------------------------  *
 */
 
 
@@ -16,6 +16,7 @@ const {
     pagesComponentsSrc,
     MarkdownShikiHtml,
     layoutFooter,
+    styles,
     scripts,
     scriptsSrc,
 } = paths;
@@ -52,9 +53,18 @@ export const routeProyecto07V1JS = {
             urlOutput: `${MarkdownShikiHtml}/proyecto-07-v1`,
             target: '[data-shiki="codeJs"]',
         },
+        {
+            fileName: 'styles-07-v1-css.html',
+            fileExtension: 'css',
+            urlInput: `${styles}/styles-07-v1.css`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-07-v1`,
+            target: '[data-shiki="codeCss"]',
+        },
     ],
     headerTitle: 'Proyecto 7 Version 1 JavaScript',
-    styles: [],
+    styles: [
+        { href: `${styles}/styles-07-v1.css` },
+    ],
     scripts: [
         { src: `${scripts}/main-07-v1.js` },
     ],

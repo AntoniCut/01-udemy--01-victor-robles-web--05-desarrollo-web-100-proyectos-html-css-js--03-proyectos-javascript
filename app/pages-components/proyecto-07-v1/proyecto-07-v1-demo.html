@@ -1,5 +1,38 @@
 <!--
-    *  -----  /proyecto-07-v1-demo.html  --  /src/pages-components/proyecto-07-v1/proyecto-07-v1-demo.html  -----
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-07-v1-demo.html  --  /src/pages-components/proyecto-07-v1/proyecto-07-v1-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="resultado"> </div>
+<section class="main__demo demo__edad">
+
+
+    <article class="edad__card">
+
+        <h3 class="edad__title">Calcula tu edad</h3>
+
+        <p class="edad__anio-actual"></p>
+
+        <form class="edad__form">
+
+            <label class="edad__label" for="edad-anio-nacimiento">¿En qué año naciste?</label>
+
+            <input
+                class="edad__input"
+                id="edad-anio-nacimiento"
+                type="number"
+                name="anio"
+                value="1990"
+                required
+            >
+
+            <button type="submit" class="edad__submit">Calcular</button>
+
+        </form>
+
+        <p class="edad__resultado" role="status" aria-live="polite"></p>
+
+    </article>
+
+
+</section>
