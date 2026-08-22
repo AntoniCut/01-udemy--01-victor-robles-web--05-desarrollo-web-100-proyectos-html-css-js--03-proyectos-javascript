@@ -1,7 +1,7 @@
 /*
-    *  -----------------------------------------------------------------------------------------  *
-    *  -----  /route-proyecto-01-js.js  --  /src/routes/route-proyecto-01-js.js  -----  *
-    *  -----------------------------------------------------------------------------------------  *
+    *  ------------------------------------------------------------------------------  *
+    *  -----  route-proyecto-01-js.js  --  /src/routes/route-proyecto-01-js.js  -----  *
+    *  ------------------------------------------------------------------------------  *
 */
 
 
@@ -53,9 +53,18 @@ export const routeProyecto01JS = {
             urlOutput: `${MarkdownShikiHtml}/proyecto-01`,
             target: '[data-shiki="codeJs"]',
         },
+        {
+            fileName: 'styles-01-css.html',
+            fileExtension: 'css',
+            urlInput: `${styles}/styles-01.css`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-01`,
+            target: '[data-shiki="codeCss"]',
+        },
     ],
     headerTitle: 'Proyecto 1 JavaScript',
-    styles: [],
+    styles: [
+        { href: `${styles}/styles-01.css` },
+    ],
     scripts: [
         { src: `${scripts}/main-01.js` },
     ],
