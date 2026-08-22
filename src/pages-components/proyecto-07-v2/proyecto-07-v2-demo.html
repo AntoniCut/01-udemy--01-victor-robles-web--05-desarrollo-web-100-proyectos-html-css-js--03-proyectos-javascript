@@ -1,5 +1,39 @@
 <!--
-    *  -----  /proyecto-07-v2-demo.html  --  /src/pages-components/proyecto-07-v2/proyecto-07-v2-demo.html  -----
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-07-v2-demo.html  --  /src/pages-components/proyecto-07-v2/proyecto-07-v2-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="resultado"> </div>
+<section class="main__demo demo__edad-exacta">
+
+
+    <article class="edad-exacta__card">
+
+        <h3 class="edad-exacta__title">Calcula tu edad exacta</h3>
+
+        <p class="edad-exacta__fecha-actual"></p>
+
+        <form class="edad-exacta__form">
+
+            <label class="edad-exacta__label" for="edad-exacta-fecha">¿Cuál es tu fecha de nacimiento? (dd/mm/aaaa)</label>
+
+            <input
+                class="edad-exacta__input"
+                id="edad-exacta-fecha"
+                type="text"
+                name="fecha"
+                value="14/10/1975"
+                placeholder="dd/mm/aaaa"
+                required
+            >
+
+            <button type="submit" class="edad-exacta__submit">Calcular</button>
+
+        </form>
+
+        <p class="edad-exacta__resultado" role="status" aria-live="polite"></p>
+
+    </article>
+
+
+</section>
