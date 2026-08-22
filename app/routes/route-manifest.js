@@ -35,8 +35,7 @@ export const routeManifest = [
     { id: 'js04',        path: 'proyecto-04-js',       file: 'route-proyecto-04-js' },
 
     //  ----------  05  ----------
-    { id: 'js05V1',      path: 'proyecto-05-v1-js',    file: 'route-proyecto-05-v1-js' },
-    { id: 'js05V2',      path: 'proyecto-05-v2-js',    file: 'route-proyecto-05-v2-js' },
+    { id: 'js05',        path: 'proyecto-05-js',       file: 'route-proyecto-05-js' },
 
     //  ----------  07  ----------
     { id: 'js07V1',      path: 'proyecto-07-v1-js',    file: 'route-proyecto-07-v1-js' },

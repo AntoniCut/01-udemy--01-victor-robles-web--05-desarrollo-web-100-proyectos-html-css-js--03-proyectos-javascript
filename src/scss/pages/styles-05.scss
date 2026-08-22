@@ -1,28 +1,42 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-05.css  --  /src/styles/pages/styles-05.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-05.scss  --  /src/scss/pages/styles-05.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-hr {
-    width: 100%;
-    height: 2px;
-}
 
-.tables {
-    width: 95%;
+.demo__tablas {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.6rem;
+    padding: 1.6rem 1.2rem 2.4rem;
 }
 
-.tables__item {
+@media (min-width: 768px) {
+
+    .demo__tablas {
+        gap: 3rem;
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__tablas {
+    width: min(95%, 140rem);
+    justify-content: center;
+    align-items: stretch;
+}
+
+
+.tablas__item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25rem;
+    width: 100%;
+    max-width: 25rem;
     color: #ffffff;
     background-color: #4747ea;
     font-size: 1.6rem;
@@ -32,29 +46,83 @@ hr {
     border: 5px solid #1010f3;
 }
 
-.tables__title {
-    color: #ffffff;
-    font-size: 3rem;
-    margin: 2rem;
+@media (min-width: 480px) {
+
+    .tablas__item {
+        width: calc(50% - 0.8rem);
+    }
 }
 
-.tables__box {
+@media (min-width: 768px) {
+
+    .tablas__item {
+        width: 25rem;
+    }
+}
+
+
+.tablas__title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin: 1.6rem;
+}
+
+@media (min-width: 768px) {
+
+    .tablas__title {
+        font-size: 3rem;
+        margin: 2rem;
+    }
+}
+
+
+.tablas__box {
     width: 14rem;
     text-align: left;
-    margin-left: 5rem;
+    margin-inline: auto;
 }
 
-.tables__list {
+@media (min-width: 768px) {
+
+    .tablas__box {
+        margin-left: 5rem;
+        margin-right: 0;
+    }
+}
+
+
+.tablas__list {
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     list-style: none;
     text-align: left;
-    padding: 0; 
+    padding: 0;
 }
 
-.separator {
-    width: 120%;
+@media (min-width: 768px) {
+
+    .tablas__list {
+        font-size: 2rem;
+    }
+}
+
+
+.tablas__operacion {
+    color: #ffffff;
+}
+
+
+.tablas__separator {
+    width: 100%;
     height: 0.5rem;
-    margin: 5rem;
+    margin: 1.6rem 0;
+    border: none;
     background-color: #aaa;
+}
+
+@media (min-width: 768px) {
+
+    .tablas__separator {
+        margin: 5rem 0;
+    }
 }
