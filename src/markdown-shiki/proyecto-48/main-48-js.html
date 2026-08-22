@@ -1,11 +1,278 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 48 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 48 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo del generador` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__password"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `control del rango` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $controlRange</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__range"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> - `número del rango` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $controlNumber</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__number"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $mainForm</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__form"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `contraseña` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $generatePassword</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__value"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para copiar la contraseña` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $copyPassword</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__copy"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `mensaje de feedback` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $feedback</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".password__feedback"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `checkbox de letras en minúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $lowerCheckbox</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#password-lower"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `checkbox de letras en mayúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $upperCheckbox</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#password-upper"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `checkbox de números` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $numberCheckbox</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#password-number"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `checkbox de símbolos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $symbolCheckbox</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#password-symbol"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de controles  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$controlRange</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$controlNumber</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$mainForm</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$generatePassword</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$copyPassword</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$feedback</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$lowerCheckbox</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$upperCheckbox</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$numberCheckbox</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$symbolCheckbox</span></span>
+<span class="line"><span style="color:#D4D4D4">    ) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `longitud de la contraseña` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> valueRange</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$controlRange</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `temporizador del mensaje de feedback` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> feedbackTimer</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `getLower()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera una letra aleatoria entre a y z.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Letra en minúsculas.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> getLower</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> String</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">fromCharCode</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * </span><span style="color:#B5CEA8">26</span><span style="color:#D4D4D4">) + </span><span style="color:#B5CEA8">97</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `getUpper()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera una letra aleatoria entre A y Z.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Letra en mayúsculas.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> getUpper</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> String</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">fromCharCode</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * </span><span style="color:#B5CEA8">26</span><span style="color:#D4D4D4">) + </span><span style="color:#B5CEA8">65</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `getNumber()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera un dígito aleatorio entre 0 y 9.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Número.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> getNumber</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> String</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">fromCharCode</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">) + </span><span style="color:#B5CEA8">48</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `getSymbol()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera un símbolo aleatorio del rango ASCII 33-47.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Símbolo.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> getSymbol</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> String</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">fromCharCode</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * </span><span style="color:#B5CEA8">15</span><span style="color:#D4D4D4">) + </span><span style="color:#B5CEA8">33</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarFeedback(mensaje, tipo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra un mensaje de error o de éxito dentro de la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> mensaje</span><span style="color:#6A9955"> - Texto que verá el usuario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {"error" | "success"}</span><span style="color:#9CDCFE"> tipo</span><span style="color:#6A9955"> - Tipo visual del mensaje.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarFeedback</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">tipo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">feedbackTimer</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"password__feedback--error"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"password__feedback--success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#9CDCFE">            tipo</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"password__feedback--error"</span><span style="color:#D4D4D4"> : </span><span style="color:#CE9178">"password__feedback--success"</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  ocultar el mensaje de éxito al cabo de un rato  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">tipo</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"success"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            feedbackTimer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">                $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"password__feedback--success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }, </span><span style="color:#B5CEA8">2500</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `generarPassword()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Construye la contraseña según las opciones marcadas en el formulario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> generarPassword</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string[]}</span><span style="color:#6A9955"> - `caracteres de la contraseña` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> password</span><span style="color:#D4D4D4"> = [];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  comprobar que alguna opción esté seleccionada  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#D4D4D4">            !</span><span style="color:#9CDCFE">$lowerCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26;</span></span>
+<span class="line"><span style="color:#D4D4D4">            !</span><span style="color:#9CDCFE">$upperCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26;</span></span>
+<span class="line"><span style="color:#D4D4D4">            !</span><span style="color:#9CDCFE">$numberCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26;</span></span>
+<span class="line"><span style="color:#D4D4D4">            !</span><span style="color:#9CDCFE">$symbolCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span></span>
+<span class="line"><span style="color:#D4D4D4">        ) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Por favor, seleccione al menos una opción"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  generar la contraseña con las opciones seleccionadas  -----</span></span>
+<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> count</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        do</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$lowerCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                password</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">getLower</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#9CDCFE">                count</span><span style="color:#D4D4D4">++;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$upperCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                password</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">getUpper</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#9CDCFE">                count</span><span style="color:#D4D4D4">++;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$numberCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                password</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">getNumber</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#9CDCFE">                count</span><span style="color:#D4D4D4">++;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$symbolCheckbox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">checked</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                password</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">getSymbol</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#9CDCFE">                count</span><span style="color:#D4D4D4">++;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        } </span><span style="color:#C586C0">while</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">password</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  mostrar la contraseña en el html  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $generatePassword</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">password</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $feedback</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"password__feedback--error"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"password__feedback--success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `copiarPassword()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Copia la contraseña al portapapeles y muestra el resultado en la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {Promise&#x3C;void>}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> copiarPassword</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">async</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `texto de la contraseña visible` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> texto</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$generatePassword</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> ?? </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        try</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#C586C0">            await</span><span style="color:#9CDCFE"> navigator</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">clipboard</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">writeText</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Contraseña copiada al portapapeles"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        } </span><span style="color:#C586C0">catch</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">_error</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se pudo copiar la contraseña"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento para actualizar el valor del rango  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $controlRange</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"input"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        valueRange</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$controlRange</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $controlNumber</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">valueRange</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento para generar la contraseña  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $mainForm</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">        generarPassword</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento para copiar la contraseña al portapapeles  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $copyPassword</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">        copiarPassword</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>
 <span class="line"></span></code></pre>

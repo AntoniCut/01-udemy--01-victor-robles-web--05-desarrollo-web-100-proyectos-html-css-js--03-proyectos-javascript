@@ -1,7 +1,89 @@
 <!--
-    *  -----  /proyecto-48-demo.html  --  /src/pages-components/proyecto-48/proyecto-48-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-48-demo.html  --  /src/pages-components/proyecto-48/proyecto-48-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content">
-    <!--*  -----  Renderizado del Proyecto (main-48.js escribe aquí)  -----  -->
-</div>
+<section class="main__demo demo__password">
+
+
+    <h3 class="password__title">Generador de contraseñas</h3>
+
+
+    <div class="password__generate">
+        <p class="password__value">f123s</p>
+        <button type="button" class="password__copy" aria-label="Copiar contraseña">
+            <i class="password__icon fa-solid fa-copy" aria-hidden="true"></i>
+        </button>
+    </div>
+
+
+    <p class="password__feedback" role="status" aria-live="polite"></p>
+
+
+    <form class="password__form">
+
+        <div class="password__slider">
+
+            <header class="password__header">
+                <label class="password__text" for="password-length">Longitud</label>
+                <span class="password__number">5</span>
+            </header>
+
+            <input
+                class="password__range"
+                id="password-length"
+                type="range"
+                value="5"
+                min="5"
+                max="15"
+            >
+
+        </div>
+
+        <div class="password__control">
+            <input
+                type="checkbox"
+                class="password__checkbox"
+                id="password-lower"
+                name="letters"
+            >
+            <label for="password-lower" class="password__label">Con letras en minúsculas</label>
+        </div>
+
+        <div class="password__control">
+            <input
+                type="checkbox"
+                class="password__checkbox"
+                id="password-upper"
+                name="mayus"
+            >
+            <label for="password-upper" class="password__label">Con letras en mayúsculas</label>
+        </div>
+
+        <div class="password__control">
+            <input
+                type="checkbox"
+                class="password__checkbox"
+                id="password-number"
+                name="numbers"
+            >
+            <label for="password-number" class="password__label">Con números</label>
+        </div>
+
+        <div class="password__control">
+            <input
+                type="checkbox"
+                class="password__checkbox"
+                id="password-symbol"
+                name="sym"
+            >
+            <label for="password-symbol" class="password__label">Con Simbolos</label>
+        </div>
+
+        <button type="submit" class="password__submit">Crear</button>
+
+    </form>
+
+
+</section>
