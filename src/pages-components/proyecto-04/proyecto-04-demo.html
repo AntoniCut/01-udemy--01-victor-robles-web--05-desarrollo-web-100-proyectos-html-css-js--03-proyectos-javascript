@@ -1,5 +1,37 @@
 <!--
-    *  -----  /proyecto-04-demo.html  --  /src/pages-components/proyecto-04/proyecto-04-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-04-demo.html  --  /src/pages-components/proyecto-04/proyecto-04-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content"> </div>
+<section class="main__demo demo__sueldo">
+
+
+    <article class="sueldo__card">
+
+        <h3 class="sueldo__title">Clasificación de sueldo</h3>
+
+        <form class="sueldo__form">
+
+            <label class="sueldo__label" for="sueldo-cantidad">¿Cuánto cobras?</label>
+
+            <input
+                class="sueldo__input"
+                id="sueldo-cantidad"
+                type="number"
+                name="sueldo"
+                min="0"
+                value="1200"
+                required
+            >
+
+            <button type="submit" class="sueldo__submit">Clasificar</button>
+
+        </form>
+
+        <p class="sueldo__resultado" role="status" aria-live="polite"></p>
+
+    </article>
+
+
+</section>

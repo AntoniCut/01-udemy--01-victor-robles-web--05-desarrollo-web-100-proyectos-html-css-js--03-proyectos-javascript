@@ -1,55 +1,144 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 4 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  referencia al HTML  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 4 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo de sueldo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__sueldo"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario de clasificación` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $form</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldo__form"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `campo del sueldo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldo__input"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `mensaje del resultado` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $resultado</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldo__resultado"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de bloques  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$form</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$resultado</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement|null}</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarResultado(mensaje, tipo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra la clasificación del sueldo en la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> mensaje</span><span style="color:#6A9955"> - Texto que verá el usuario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {"bajo" | "minimo" | "bueno" | "extra" | "estudiante" | "error"}</span><span style="color:#9CDCFE"> tipo</span><span style="color:#6A9955"> - Tipo visual del mensaje.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> content</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#content'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarResultado</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">tipo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--bajo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--minimo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--bueno"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--extra"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--estudiante"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            "sueldo__resultado--error"</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`sueldo__resultado--</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">tipo</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number}</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `clasificarSueldo()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Compara el sueldo con los tramos y muestra el tipo correspondiente.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> clasificarSueldo</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">content</span><span style="color:#D4D4D4">) </span></span>
-<span class="line"><span style="color:#C586C0">        return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">        /** - `sueldo introducido por el usuario` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> sueldo</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  validar que el sueldo sea un número válido  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Introduce un sueldo válido (0 o más)."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">        do</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#D4D4D4">            </span></span>
-<span class="line"><span style="color:#9CDCFE">            sueldo</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">parseInt</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'¿Cuanto cobras?'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'0'</span><span style="color:#D4D4D4">) ?? </span><span style="color:#CE9178">'0'</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        }</span><span style="color:#C586C0">while</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /*</span></span>
+<span class="line"><span style="color:#6A9955">            ----------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">            -----  switch comparando el sueldo con diferentes tramos  -----</span></span>
+<span class="line"><span style="color:#6A9955">            ----------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">        */</span></span>
 <span class="line"><span style="color:#C586C0">        switch</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  media jornada  -----</span></span>
 <span class="line"><span style="color:#C586C0">            case</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">500</span><span style="color:#D4D4D4">:</span></span>
-<span class="line"><span style="color:#9CDCFE">                content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'&#x3C;h3> Trabajas a media jornada &#x3C;/h3>'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Trabajas a media jornada."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Trabajas a media jornada."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"bajo"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">                break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  salario mínimo  -----</span></span>
 <span class="line"><span style="color:#C586C0">            case</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">500</span><span style="color:#D4D4D4">:</span></span>
-<span class="line"><span style="color:#9CDCFE">                content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'&#x3C;h3> Tienes el salario mínimo &#x3C;/h3>'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes el salario mínimo."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes el salario mínimo."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"minimo"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">                break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  sueldo bueno  -----</span></span>
 <span class="line"><span style="color:#C586C0">            case</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">1700</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">:</span></span>
-<span class="line"><span style="color:#9CDCFE">                content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'&#x3C;h3> Tienes un sueldo bueno &#x3C;/h3>'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes un sueldo bueno."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes un sueldo bueno."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"bueno"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">                break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  sueldo extraordinario  -----</span></span>
 <span class="line"><span style="color:#C586C0">            case</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">1700</span><span style="color:#D4D4D4">:</span></span>
-<span class="line"><span style="color:#9CDCFE">                content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'&#x3C;h3> Tienes un sueldo extraordinario &#x3C;/h3>'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes un sueldo extraordinario."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Tienes un sueldo extraordinario."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"extra"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">                break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  sin sueldo  -----</span></span>
 <span class="line"><span style="color:#C586C0">            default</span><span style="color:#D4D4D4">:</span></span>
-<span class="line"><span style="color:#9CDCFE">                content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'&#x3C;h3> Eres un estudiante, porque no tienes sueldo &#x3C;/h3>'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Eres un estudiante, porque no tienes sueldo."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarResultado</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Eres un estudiante, porque no tienes sueldo."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"estudiante"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">                break</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        };</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  clasificar al enviar el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $form</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">        clasificarSueldo</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>
