@@ -1,5 +1,36 @@
 <!--
-    *  -----  /proyecto-10-demo.html  --  /src/pages-components/proyecto-10/proyecto-10-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-10-demo.html  --  /src/pages-components/proyecto-10/proyecto-10-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="result"> </div>
+<section class="main__demo demo__palabra">
+
+
+    <article class="palabra__card">
+
+        <h2 class="palabra__title">Palabra en mayúsculas</h2>
+
+        <form class="palabra__form">
+
+            <label class="palabra__label" for="palabra-texto">Introduce una palabra</label>
+
+            <input
+                class="palabra__input"
+                id="palabra-texto"
+                type="text"
+                name="palabra"
+                value="Hola Mundo!!!"
+                required
+            >
+
+            <button type="submit" class="palabra__submit">Comprobar</button>
+
+        </form>
+
+        <h3 class="palabra__resultado" role="status" aria-live="polite"></h3>
+
+    </article>
+
+
+</section>

@@ -1,0 +1,195 @@
+/*
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-10.scss  --  /src/scss/pages/styles-10.scss  -----  *
+    *  ----------------------------------------------------------------  *
+*/
+
+
+.demo__palabra {
+    width: 100%;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 1.2rem 2.4rem;
+    background-color: #f7f8fd;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+
+    .demo__palabra {
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__palabra {
+    width: min(95%, 64rem);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+.palabra__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    border: 1px solid #d8e3f5;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 768px) {
+
+    .palabra__card {
+        gap: 2rem;
+        padding: 2.4rem;
+    }
+}
+
+
+.palabra__title {
+    margin: 0;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__title {
+        font-size: 2.2rem;
+    }
+}
+
+
+.palabra__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__form {
+        gap: 1.6rem;
+    }
+}
+
+
+.palabra__label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__label {
+        font-size: 1.5rem;
+    }
+}
+
+
+.palabra__input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    border: 1px solid #d8e3f5;
+    border-radius: 0.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__input {
+        padding: 1.4rem 1.6rem;
+        font-size: 1.8rem;
+    }
+}
+
+.palabra__input:focus {
+    outline: 2px solid #1e3a8a;
+    outline-offset: 2px;
+}
+
+
+.palabra__submit {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #edd812;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__submit {
+        padding: 1.4rem;
+        font-size: 1.6rem;
+    }
+}
+
+.palabra__submit:hover,
+.palabra__submit:focus {
+    color: #0f172a;
+    background-color: #ca8a04;
+    box-shadow: none;
+}
+
+
+.palabra__resultado {
+    width: 100%;
+    min-height: 6rem;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    border-left: 0.4rem solid transparent;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+
+    .palabra__resultado {
+        min-height: 6.8rem;
+        padding: 1.6rem 1.8rem;
+        font-size: 1.8rem;
+    }
+}
+
+.palabra__resultado:empty {
+    visibility: hidden;
+}
+
+.palabra__resultado--ok {
+    visibility: visible;
+    color: #166534;
+    background-color: #f0fdf4;
+    border-left-color: #22c55e;
+}
+
+.palabra__resultado--error {
+    visibility: visible;
+    color: #b42318;
+    background-color: #fef3f2;
+    border-left-color: #b42318;
+}
