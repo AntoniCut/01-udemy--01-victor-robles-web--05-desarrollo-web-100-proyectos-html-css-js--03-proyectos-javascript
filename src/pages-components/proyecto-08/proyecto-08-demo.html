@@ -1,5 +1,36 @@
 <!--
-    *  -----  /proyecto-08-demo.html  --  /src/pages-components/proyecto-08/proyecto-08-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-08-demo.html  --  /src/pages-components/proyecto-08/proyecto-08-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="resultado"> </div>
+<section class="main__demo demo__par-impar">
+
+
+    <article class="par-impar__card">
+
+        <h3 class="par-impar__title">¿Par o impar?</h3>
+
+        <form class="par-impar__form">
+
+            <label class="par-impar__label" for="par-impar-numero">Introduce un número</label>
+
+            <input
+                class="par-impar__input"
+                id="par-impar-numero"
+                type="number"
+                name="numero"
+                value="0"
+                required
+            >
+
+            <button type="submit" class="par-impar__submit">Comprobar</button>
+
+        </form>
+
+        <p class="par-impar__resultado" role="status" aria-live="polite"></p>
+
+    </article>
+
+
+</section>
