@@ -1,7 +1,7 @@
 /*
-    *  --------------------------------------------------------  *
-    *  -----  /route-types.js  --  /types/route-types.js  -----  *
-    *  --------------------------------------------------------  *
+    *  -------------------------------------------  *
+    *  -----  route.js  --  /types/route.js  -----  *
+    *  -------------------------------------------  *
 */
 
 
@@ -77,7 +77,7 @@ export { };
  * @property {string} favicon - Ruta del favicon específico de la vista.
  * @property {RouteComponents} components - Mapa selector → URL de componente HTML.
  * @property {PageComponentEntry[]} [pagesComponents] - Lista de componentes HTML que se renderizan dentro de la propia página (en contenedores con `data-component-page="..."`). Cada entrada define `{ url, target }`. Opcional.
- * @property {MarkdownShikiEntry[]} MarkdownShikiHtml - Entradas que definen los bloques HTML resaltados con Shiki.
+ * @property {MarkdownShikiEntry[]} [MarkdownShikiHtml] - Entradas que definen los bloques HTML resaltados con Shiki. Opcional.
  *                                          Cada entrada indica el fuente (`urlInput`), el tipo (`fileExtension`), el nombre del fichero generado (`fileName`) y la carpeta de salida (`urlOutput`).
  *                                          Ejecuta `pnpm code-highlight` para regenerarlos.
  * @property {RouteStyle[]|null} styles - Lista de hojas CSS asociadas a la vista (opcional).

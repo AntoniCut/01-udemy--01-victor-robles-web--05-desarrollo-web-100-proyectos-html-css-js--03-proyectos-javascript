@@ -1,0 +1,115 @@
+
+Bienvenido al Curso de Desarrollo Web que no sabias que necesitabas, en el que solamente haremos proyectos y ejercicios con HTML, CSS y JavaScript, haremos 100 y aprenderemos todo lo necesario para dominar los lenguajes más importantes de la programación web.
+
+Este no es un curso cualquiera, estás ante un máster completo en el que aprenderemos:
+
+HTML, el lenguaje de marcado imprescindible en cualquier web.
+
+HTML5, conociendo todas las nuevas etiquetas del lenguaje.
+
+CSS, el lenguaje que nos permitirá darle estilos y aplicar un diseño a nuestras webs.
+
+CSS3, enseñando las últimas novedades y los increíbles efectos para las páginas web.
+
+JavaScript moderno, el lenguaje de programación más popular en la actualidad.
+
+EcmaScript 2024, los últimos estándares para el lenguaje JS.
+
+Maquetación web, creando muchas páginas web visualmente impactantes.
+
+Desarrollo web, programando muchas aplicaciones web desde cero.
+
+Habilidades de front-end experto, haciendo cientos de ejercicios, prácticas y proyectos completos.
+
+Si quieres ser desarrollador front-end o full-stack, o incluso si ya te dedicas al desarrollo web, aprender a trabajar con estas tecnologías es muy importante.
+
+La metodología de aprendizaje es la ideal:
+
+Todo explicado desde cero y paso a paso.
+
+Decenas de horas de contenido en clases en vídeo.
+
+Cientos de prácticas y ejercicios.
+
+Más de 247 clases bien explicadas.
+
+Más de 100 proyectos poniendo en práctica todo lo aprendido.
+
+Diseñado para interiorizar todos los conocimientos, prepararte para el trabajo real de desarrollador web, prepararte para las exigentes pruebas técnicas y aumentar la lógica de programación tanto si sabes programar mucho como si no.
+
+Además te estaré ayudando cuando tengas cualquier duda o problema.
+
+Al finalizar el curso:
+
+Sabrás más de desarrollo web que antes.
+
+Dominarás a la perfección HTML5, CSS3 y JavaScript para desarrollar proyectos o aplicarlo a proyectos ya existentes.
+
+Habrás aumentado tu lógica de programación.
+
+Estarás preparado para pruebas técnicas reales para el puesto de programador web.
+
+Conocerás las novedades de HTML, CSS y JavaScript.
+
+Y mucho más.
+
+Durante las más de 31 horas del curso verás como desarrollar varias webs y haremos muchísimos proyectos con todo lo que enseñamos.
+
+Trataremos todos los temas paso a paso y poco a poco hasta conseguir un buen nivel en Programación, HTML, CSS, JavaScript, Flexbox, CSS Grid Layout, ES6, etc.
+
+Para aprovechar al 100% el curso te recomendamos tener conocimientos básicos en HTML, CSS y JS, aún así dentro del curso haremos un repaso de desarrollo web y maquetaremos varias webs para machacar estos conceptos.
+
+¿No crees que necesitas dar un paso más, dominar de verdad HTML5, CSS3 y JavaScript moderno, mejorar tus habilidades de front-end y poder superar pruebas técnicas avanzadas para puestos de desarrollo web?
+
+
+
+Si quieres aprender desarrollo front-end moderno con HTML5, CSS3 y JavaScript sin dolor, practicando poco a poco con las tecnologías más actuales, subir de nivel en el desarrollo web y aumentar tus oportunidades laborales ¡Este es tu MASTER!
+
+Échale un vistazo al programa del curso para ver todos temas que aprenderás.
+
+Únete al curso y sube de nivel: ¡¡ Conviértete en Desarrollador Web !!
+
+Lo que aprenderás
+Dominar HTML
+Dominar HTML5
+Dominar CSS
+Dominar CSS3
+Dominar JavaScript
++180 ejercicios de programación y pruebas técnicas reales resueltas
+Superar pruebas técnicas de HTML, CSS y JS
+Aumentar y mejorar la Lógica de programación
+Practicar con muchos retos de programación
+Prepararte para entrevistas técnicas con pruebas de código
+Pruebas técnicas para puestos de programación, desarrollo web e ingeniería de software
+Proyectos para programar mejor y aumentar tus habilidades
+Aprender a usar todas las etiquetas más importantes en profundidad
+HTML moderno en profundidad
+Aplicar efectos y animaciones a tus webs
+Aplicar diseños avanzados a un sitio web
+Aumentar el nivel en el desarrollo web front-end
+Animaciones y transiciones avanzadas en CSS
+Conocer las nuevas características de CSS3
+Reforzar el conocimiento de JavaScript y buenas prácticas
+Crear aplicaciones web modernas con JavaScript
+Ejercicios de programación explicados y resueltos
+Aumentar tus posibilidades laborales
+¡Y mucho más!
+¿Hay requisitos para realizar el curso?
+HTML, CSS y JavaScript básico
+Saber usar un sistema operativo
+¿Para quién es este curso?
+Programadores
+Desarrolladores web
+Estudiantes de informática
+Estudiantes de ingeniería o ciclos formativos
+Interesados en HTML, CSS y JavaScript
+Interesados en HTML5, CSS3 y JavaScript moderno
+Interesados en la maquetación web
+Interesados en el desarrollo web front-end
+Interesados en la programación con JavaScript
+Interesados en el diseño y desarrollo web
+Interesados en el Responsive Web Design
+Desarrolladores Junior o novatos
+Desarrolladores Semi Senior o middle
+Desarrolladores Senior o experimentados que quieran reforzar conocimientos
+Gente con ganas de aprender nuevas tecnologías
