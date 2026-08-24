@@ -1,0 +1,223 @@
+/*
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-09.scss  --  /src/scss/pages/styles-09.scss  -----  *
+    *  ----------------------------------------------------------------  *
+*/
+
+
+.demo__suma-aleatoria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 1.2rem 2.4rem;
+    background-color: #f7f8fd;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+
+    .demo__suma-aleatoria {
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__suma-aleatoria {
+    width: min(95%, 64rem);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+.suma-aleatoria__card {
+    min-height: 55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    border: 1px solid #d8e3f5;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__card {
+        gap: 2rem;
+        padding: 2.4rem;
+    }
+}
+
+
+.suma-aleatoria__title {
+    margin: 0;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__title {
+        font-size: 2.2rem;
+    }
+}
+
+
+.suma-aleatoria__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__form {
+        gap: 1.6rem;
+    }
+}
+
+
+.suma-aleatoria__label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__label {
+        font-size: 1.5rem;
+    }
+}
+
+
+.suma-aleatoria__input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    border: 1px solid #d8e3f5;
+    border-radius: 0.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__input {
+        padding: 1.4rem 1.6rem;
+        font-size: 1.8rem;
+    }
+}
+
+.suma-aleatoria__input:focus {
+    outline: 2px solid #1e3a8a;
+    outline-offset: 2px;
+}
+
+
+.suma-aleatoria__submit {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #edd812;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__submit {
+        padding: 1.4rem;
+        font-size: 1.6rem;
+    }
+}
+
+.suma-aleatoria__submit:hover,
+.suma-aleatoria__submit:focus {
+    color: #0f172a;
+    background-color: #ca8a04;
+    box-shadow: none;
+}
+
+
+.suma-aleatoria__resultado {
+    min-height: 6rem;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    border-left: 0.4rem solid transparent;
+    background-color: #f8fafc;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__resultado {
+        min-height: 6.8rem;
+        padding: 1.6rem 1.8rem;
+        font-size: 1.8rem;
+    }
+}
+
+.suma-aleatoria__resultado:empty {
+    visibility: hidden;
+}
+
+.suma-aleatoria__resultado--ok {
+    visibility: visible;
+    color: #166534;
+    background-color: #f0fdf4;
+    border-left-color: #22c55e;
+}
+
+.suma-aleatoria__resultado--error {
+    visibility: visible;
+    color: #b42318;
+    background-color: #fef3f2;
+    border-left-color: #b42318;
+}
+
+
+.suma-aleatoria__numeros {
+    min-height: 10rem;
+    max-height: 20rem;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #334155;
+    background-color: #f8fafc;
+    border-radius: 0.8rem;
+    border-left: 0.4rem solid transparent;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+
+    .suma-aleatoria__numeros {
+        min-height: 12rem;
+        padding: 1.6rem 1.8rem;
+        font-size: 1.5rem;
+    }
+}
+
+.suma-aleatoria__numeros:empty {
+    visibility: hidden;
+}
+
+.suma-aleatoria__numeros:not(:empty) {
+    visibility: visible;
+    border-left-color: #94a3b8;
+}

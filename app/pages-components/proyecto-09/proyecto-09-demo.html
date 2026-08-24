@@ -1,10 +1,40 @@
 <!--
-    *  -----  /proyecto-09-demo.html  --  /src/pages-components/proyecto-09/proyecto-09-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-09-demo.html  --  /src/pages-components/proyecto-09/proyecto-09-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project">
+<section class="main__demo demo__suma-aleatoria">
 
-    <h3 id="result"> </h3>
-    <p id="numbers"> </p>
 
-</div>
+    <article class="suma-aleatoria__card">
+
+        <h2 class="suma-aleatoria__title">Suma de números aleatorios</h2>
+
+        <form class="suma-aleatoria__form">
+
+            <label class="suma-aleatoria__label" for="suma-aleatoria-cantidad">¿Cuántos números quieres sumar?</label>
+
+            <input
+                class="suma-aleatoria__input"
+                id="suma-aleatoria-cantidad"
+                type="number"
+                name="cantidad"
+                min="1"
+                max="50"
+                value="5"
+                required
+            >
+
+            <button type="submit" class="suma-aleatoria__submit">Generar y sumar</button>
+
+        </form>
+
+        <h3 class="suma-aleatoria__resultado" role="status" aria-live="polite"></h3>
+
+        <p class="suma-aleatoria__numeros"></p>
+
+    </article>
+
+
+</section>

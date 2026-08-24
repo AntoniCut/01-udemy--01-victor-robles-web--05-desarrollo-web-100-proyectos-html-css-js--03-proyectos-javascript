@@ -1,78 +1,163 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-09.js  --  /src/scripts/main-09.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-09.js  --  /src/scripts/pages/main-09.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+/// <reference path="../../../types/global.d.ts" />
+
 
 (() => {
 
-    
-    console.log('\n');
-    console.warn('-----  Proyecto 9 JS  -----');
-    console.log('\n');
 
-    // ----- Referencias al HTML -----
-    
-    /** 
-     * @type {HTMLHeadingElement|null} 
-     * */
-    const resultBox = document.querySelector('#result');
-    
-    if (!resultBox) 
-        return console.error('No se encontró el elemento #result');
+    console.log("\n");
+    console.warn("-----  Proyecto 9 JS  -----");
+    console.log("\n");
 
 
-    /** @type {HTMLParagraphElement|null} */
-    const numbersBox = document.querySelector('#numbers');
-    
-    if (!numbersBox) 
-        return console.error('No se encontró el elemento #numbers');
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo suma aleatoria` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__suma-aleatoria")
+    );
+
+
+    //  -----  verificación de la demo  -----
+    if (!$demo) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
+
+
+    /** @type {HTMLFormElement | null} - `formulario de generación` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".suma-aleatoria__form")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de cantidad` */
+    const $input = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector(".suma-aleatoria__input")
+    );
+
+    /** @type {HTMLHeadingElement | null} - `encabezado del resultado` */
+    const $resultado = /** @type {HTMLHeadingElement | null} */ (
+        $demo.querySelector(".suma-aleatoria__resultado")
+    );
+
+    /** @type {HTMLParagraphElement | null} - `párrafo con los números usados` */
+    const $numeros = /** @type {HTMLParagraphElement | null} */ (
+        $demo.querySelector(".suma-aleatoria__numeros")
+    );
+
+
+    //  -----  verificación de bloques  -----
+    if (!$form || !$input || !$resultado || !$numeros) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
 
 
     /**
-     * Genera un `arreglo de números aleatorios enteros`.
-     * @param {number} count - Cantidad de números.
-     * @param {number} min - Valor mínimo.
-     * @param {number} max - Valor máximo.
-     * @returns {number[]} Array con números aleatorios.
+     * ------------------------------------------------------------
+     * -----  `generarNumerosAleatorios(cantidad, min, max)`  -----
+     * ------------------------------------------------------------
+     * - Genera un arreglo de números aleatorios enteros.
+     * @param {number} cantidad - Cantidad de números a generar.
+     * @param {number} min - Valor mínimo inclusive.
+     * @param {number} max - Valor máximo inclusive.
+     * @return {number[]} - Arreglo con números aleatorios.
      */
-    const generateRandomNumbers = (count, min, max) =>
-        Array.from({ length: count }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    const generarNumerosAleatorios = (cantidad, min, max) => (
+        Array.from(
+            { length: cantidad },
+            () => Math.floor(Math.random() * (max - min + 1)) + min
+        )
+    );
 
 
     /**
-     * `Suma todos los números dados y muestra resultados`.
-     * @param {...number} numbers - Lista de números a sumar.
+     * -------------------------------------
+     * -----  `mostrarError(mensaje)`  -----
+     * -------------------------------------
+     * - Muestra un mensaje de error en la demo.
+     * @param {string} mensaje - Texto del error.
+     * @return {void}
      */
-    const sumAll = (...numbers) => {
-        
-        let result = 0;
+    const mostrarError = (mensaje) => {
 
-        numbersBox.textContent = `Los números son: ${numbers.join(', ')}`;
-        result = numbers.reduce((acc, num) => acc + num, 0);
-        resultBox.textContent = `El resultado es: ${result}`;
-        
+        $resultado.classList.remove("suma-aleatoria__resultado--ok");
+        $resultado.classList.add("suma-aleatoria__resultado--error");
+        $resultado.textContent = mensaje;
+        $numeros.textContent = "";
     };
 
 
+    /**
+     * --------------------------------------
+     * -----  `sumarTodos(...numeros)`  -----
+     * --------------------------------------
+     * - Suma todos los números dados y muestra resultados en pantalla y consola.
+     * @param {...number} numeros - Lista de números a sumar.
+     * @return {void}
+     */
+    const sumarTodos = (...numeros) => {
 
-    // ----- Inicio de la lógica del proyecto -----
-    setTimeout(() => {
-        
-        const input = prompt('¿Cuántos números quieres sumar?', '5') || '5';
-        const count = parseInt(input, 10);
+        /** - `suma total de los números` */
+        const total = numeros.reduce((acumulado, numero) => acumulado + numero, 0);
 
-        if (isNaN(count) || count <= 0) {
-            alert('Por favor, introduce un número válido o un número mayor que 0.');
+        /** - `texto con el resultado` */
+        const textoResultado = `El resultado es: ${total}`;
+
+        /** - `texto con los números utilizados` */
+        const textoNumeros = `Los números son: ${numeros.join(", ")}`;
+
+        console.log(textoNumeros);
+        console.log(textoResultado);
+
+        $resultado.classList.remove("suma-aleatoria__resultado--error");
+        $resultado.classList.add("suma-aleatoria__resultado--ok");
+        $resultado.textContent = textoResultado;
+        $numeros.textContent = textoNumeros;
+    };
+
+
+    /**
+     * -------------------------------
+     * -----  `generarYSumar()`  -----
+     * -------------------------------
+     * - Genera números aleatorios según la cantidad indicada y los suma.
+     * @return {void}
+     */
+    const generarYSumar = () => {
+
+        /** - `cantidad de números a generar` */
+        const cantidad = Number($input.value);
+
+
+        //  -----  validar que la cantidad sea un número válido  -----
+        if (Number.isNaN(cantidad) || cantidad <= 0) {
+            mostrarError("Introduce un número válido mayor que 0.");
             return;
         }
 
-        const randomNumbers = generateRandomNumbers(count, 1, 100);
-        
-        //  -----  Llamada a la función para sumar y mostrar resultados  -----
-        sumAll(...randomNumbers);
 
-    }, 2000);
+        /** - `números aleatorios generados` */
+        const numerosAleatorios = generarNumerosAleatorios(cantidad, 1, 100);
+
+        sumarTodos(...numerosAleatorios);
+    };
+
+
+    //  -----  generar y sumar al enviar el formulario  -----
+    $form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        generarYSumar();
+    });
 
 
 })();

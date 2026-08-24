@@ -1,72 +1,156 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 9 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    // ----- Referencias al HTML -----</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#6A9955">    /** </span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLHeadingElement|null}</span><span style="color:#6A9955"> </span></span>
-<span class="line"><span style="color:#6A9955">     * */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> resultBox</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#result'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">resultBox</span><span style="color:#D4D4D4">) </span></span>
-<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se encontró el elemento #result'</span><span style="color:#D4D4D4">);</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement|null}</span><span style="color:#6A9955"> */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> numbersBox</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#numbers'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">numbersBox</span><span style="color:#D4D4D4">) </span></span>
-<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se encontró el elemento #numbers'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 9 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo suma aleatoria` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__suma-aleatoria"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario de generación` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $form</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".suma-aleatoria__form"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `campo de cantidad` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".suma-aleatoria__input"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLHeadingElement | null}</span><span style="color:#6A9955"> - `encabezado del resultado` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $resultado</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLHeadingElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".suma-aleatoria__resultado"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `párrafo con los números usados` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $numeros</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".suma-aleatoria__numeros"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de bloques  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$form</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$resultado</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$numeros</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * Genera un `arreglo de números aleatorios enteros`.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> count</span><span style="color:#6A9955"> - Cantidad de números.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> min</span><span style="color:#6A9955"> - Valor mínimo.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> max</span><span style="color:#6A9955"> - Valor máximo.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@returns</span><span style="color:#4EC9B0"> {number[]}</span><span style="color:#6A9955"> Array con números aleatorios.</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `generarNumerosAleatorios(cantidad, min, max)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera un arreglo de números aleatorios enteros.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> cantidad</span><span style="color:#6A9955"> - Cantidad de números a generar.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> min</span><span style="color:#6A9955"> - Valor mínimo inclusive.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> max</span><span style="color:#6A9955"> - Valor máximo inclusive.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {number[]}</span><span style="color:#6A9955"> - Arreglo con números aleatorios.</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> generateRandomNumbers</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">min</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">max</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span></span>
-<span class="line"><span style="color:#9CDCFE">        Array</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">from</span><span style="color:#D4D4D4">({ </span><span style="color:#9CDCFE">length:</span><span style="color:#9CDCFE"> count</span><span style="color:#D4D4D4"> }, () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * (</span><span style="color:#9CDCFE">max</span><span style="color:#D4D4D4"> - </span><span style="color:#9CDCFE">min</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">)) + </span><span style="color:#9CDCFE">min</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> generarNumerosAleatorios</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">cantidad</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">min</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">max</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        Array</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">from</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#D4D4D4">            { </span><span style="color:#9CDCFE">length:</span><span style="color:#9CDCFE"> cantidad</span><span style="color:#D4D4D4"> },</span></span>
+<span class="line"><span style="color:#D4D4D4">            () </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">random</span><span style="color:#D4D4D4">() * (</span><span style="color:#9CDCFE">max</span><span style="color:#D4D4D4"> - </span><span style="color:#9CDCFE">min</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">)) + </span><span style="color:#9CDCFE">min</span></span>
+<span class="line"><span style="color:#D4D4D4">        )</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * `Suma todos los números dados y muestra resultados`.</span></span>
-<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {...number}</span><span style="color:#9CDCFE"> numbers</span><span style="color:#6A9955"> - Lista de números a sumar.</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarError(mensaje)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra un mensaje de error en la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> mensaje</span><span style="color:#6A9955"> - Texto del error.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> sumAll</span><span style="color:#D4D4D4"> = (...</span><span style="color:#9CDCFE">numbers</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
-<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> result</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarError</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        numbersBox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`Los números son: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">numbers</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">', '</span><span style="color:#D4D4D4">)</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        result</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">numbers</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reduce</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">acc</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">num</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> acc</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">num</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        resultBox</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`El resultado es: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">result</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"suma-aleatoria__resultado--ok"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"suma-aleatoria__resultado--error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $numeros</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `sumarTodos(...numeros)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Suma todos los números dados y muestra resultados en pantalla y consola.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {...number}</span><span style="color:#9CDCFE"> numeros</span><span style="color:#6A9955"> - Lista de números a sumar.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> sumarTodos</span><span style="color:#D4D4D4"> = (...</span><span style="color:#9CDCFE">numeros</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    // ----- Inicio de la lógica del proyecto -----</span></span>
-<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> input</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'¿Cuántos números quieres sumar?'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'5'</span><span style="color:#D4D4D4">) || </span><span style="color:#CE9178">'5'</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> count</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">parseInt</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">input</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">        /** - `suma total de los números` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> total</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">numeros</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reduce</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">acumulado</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> acumulado</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">numero</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">            alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Por favor, introduce un número válido o un número mayor que 0.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">        /** - `texto con el resultado` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> textoResultado</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`El resultado es: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">total</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `texto con los números utilizados` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> textoNumeros</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`Los números son: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">numeros</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">", "</span><span style="color:#D4D4D4">)</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">textoNumeros</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">textoResultado</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"suma-aleatoria__resultado--error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"suma-aleatoria__resultado--ok"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">textoResultado</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $numeros</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">textoNumeros</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `generarYSumar()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Genera números aleatorios según la cantidad indicada y los suma.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> generarYSumar</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `cantidad de números a generar` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> cantidad</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  validar que la cantidad sea un número válido  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">cantidad</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">cantidad</span><span style="color:#D4D4D4"> &#x3C;= </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarError</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Introduce un número válido mayor que 0."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> randomNumbers</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">generateRandomNumbers</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Llamada a la función para sumar y mostrar resultados  -----</span></span>
-<span class="line"><span style="color:#DCDCAA">        sumAll</span><span style="color:#D4D4D4">(...</span><span style="color:#9CDCFE">randomNumbers</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">        /** - `números aleatorios generados` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> numerosAleatorios</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">generarNumerosAleatorios</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">cantidad</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        sumarTodos</span><span style="color:#D4D4D4">(...</span><span style="color:#9CDCFE">numerosAleatorios</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  generar y sumar al enviar el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $form</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">        generarYSumar</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>
