@@ -1,5 +1,39 @@
 <!--
-    *  -----  /proyecto-12-demo.html  --  /src/pages-components/proyecto-12/proyecto-12-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-12-demo.html  --  /src/pages-components/proyecto-12/proyecto-12-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="result"> </div>
+<section class="main__demo demo__animales">
+
+
+    <article class="animales__card">
+
+        <h2 class="animales__title">Lista de animales</h2>
+
+        <form class="animales__form">
+
+            <label class="animales__label" for="animales-nombre">Introduce un animal</label>
+            <input
+                class="animales__input"
+                id="animales-nombre"
+                type="text"
+                name="animal"
+                placeholder="Ejemplo: gato"
+                required
+            >
+
+            <button type="submit" class="animales__submit">Añadir animal</button>
+
+        </form>
+
+        <button type="button" class="animales__show">Mostrar animales</button>
+
+        <p class="animales__status" role="status" aria-live="polite"></p>
+
+        <div class="animales__resultado" aria-live="polite"></div>
+
+    </article>
+
+
+</section>
