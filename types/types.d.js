@@ -79,3 +79,21 @@
  * ----------------------------
  * @typedef {"up" | "down"} SliderAction - Dirección del movimiento del slider.
  */
+
+
+
+/*
+
+*  ----------------------------  *
+*  -----  Proyecto 49 JS  -----  *
+*  ----------------------------  *
+*/
+
+/**
+ * -------------------------------------------------
+ * -----  `TaskData`  --  `datos de la tarea`  -----
+ * -------------------------------------------------
+ * @typedef {Object} TaskData - `datos de la tarea`
+ * @property {string} text - `texto de la tarea`
+ * @property {boolean} completed - `estado del checkbox`
+ */
