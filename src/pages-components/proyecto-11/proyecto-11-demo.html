@@ -1,5 +1,61 @@
 <!--
-    *  -----  /proyecto-11-demo.html  --  /src/pages-components/proyecto-11/proyecto-11-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-11-demo.html  --  /src/pages-components/proyecto-11/proyecto-11-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="result"> </div>
+<section class="main__demo demo__reemplazo">
+
+
+    <article class="reemplazo__card">
+
+        <h2 class="reemplazo__title">Reemplazar una palabra</h2>
+
+        <form class="reemplazo__form">
+
+            <div class="reemplazo__field">
+                <label class="reemplazo__label" for="reemplazo-frase">Introduce una frase</label>
+                <input
+                    class="reemplazo__input"
+                    id="reemplazo-frase"
+                    type="text"
+                    name="frase"
+                    value="El aprendizaje de JavaScript es divertido."
+                    required
+                >
+            </div>
+
+            <div class="reemplazo__field">
+                <label class="reemplazo__label" for="reemplazo-palabra">Palabra que quieres reemplazar</label>
+                <input
+                    class="reemplazo__input"
+                    id="reemplazo-palabra"
+                    type="text"
+                    name="palabra"
+                    value="divertido"
+                    required
+                >
+            </div>
+
+            <div class="reemplazo__field">
+                <label class="reemplazo__label" for="reemplazo-nueva-palabra">Palabra de reemplazo</label>
+                <input
+                    class="reemplazo__input"
+                    id="reemplazo-nueva-palabra"
+                    type="text"
+                    name="reemplazo"
+                    value="interesante"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="reemplazo__submit">Reemplazar palabra</button>
+
+        </form>
+
+        <div class="reemplazo__resultado" role="status" aria-live="polite"></div>
+
+    </article>
+
+
+</section>

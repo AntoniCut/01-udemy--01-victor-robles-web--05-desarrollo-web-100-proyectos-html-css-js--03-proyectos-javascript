@@ -1,109 +1,194 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-11.js  --  /src/scripts/main-11.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-11.js  --  /src/scripts/pages/main-11.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+/// <reference path="../../../types/global.d.ts" />
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 11 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 11 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencia al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de reemplazo` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__reemplazo")
+    );
+
+
+    //  -----  verificación de la demo  -----
+    if (!$demo) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
+
+
+    /** @type {HTMLFormElement | null} - `formulario de reemplazo` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".reemplazo__form")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de la frase` */
+    const $frase = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector("#reemplazo-frase")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de la palabra a reemplazar` */
+    const $palabra = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector("#reemplazo-palabra")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de la palabra nueva` */
+    const $reemplazo = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector("#reemplazo-nueva-palabra")
+    );
+
+    /** @type {HTMLDivElement | null} - `contenedor del resultado` */
+    const $resultado = /** @type {HTMLDivElement | null} */ (
+        $demo.querySelector(".reemplazo__resultado")
+    );
+
+
+    //  -----  verificación de bloques  -----
+    if (!$form || !$frase || !$palabra || !$reemplazo || !$resultado) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
+
 
     /**
-     * @type {HTMLDivElement|null}
+     * -------------------------------------
+     * -----  `mostrarError(mensaje)`  -----
+     * -------------------------------------
+     * - Muestra un mensaje de error en la demo.
+     * @param {string} mensaje - Texto del error.
+     * @return {void}
      */
-    const resultBox = document.querySelector('#result');
+    const mostrarError = (mensaje) => {
 
-    if (!resultBox) 
-        return console.error('No se encontró el elemento con el id "result".');
-
-
-    //  -----  Retardo para simular carga de proyecto  -----
-    setTimeout(() => {
-
-        //  -----  Solicitar datos al usuario  -----
-        
-        /**
-         * - `Solicitud` de una frase al usuario
-         * @type {string|null}
-         */
-        const frase = prompt('Introduce una frase:');
-
-        if (!frase) 
-            return alert('No has introducido ninguna frase.');
+        $resultado.classList.remove("reemplazo__resultado--ok");
+        $resultado.classList.add("reemplazo__resultado--error");
+        $resultado.textContent = mensaje;
+    };
 
 
-        /**
-         * - `Solicitud` de la palabra a reemplazar en la frase
-         * @type {string|null}
-         */
-        const palabra = prompt(`En esta frase - "${frase}" - ¿Qué palabra quieres reemplazar?`);
-        
-        if (!palabra) 
-            return alert('No has introducido ninguna palabra a reemplazar.');
+    /**
+     * ------------------------------------------------------------
+     * -----  `reemplazarPalabra(frase, palabra, reemplazo)`  -----
+     * ------------------------------------------------------------
+     * - Reemplaza la primera coincidencia de una palabra en una frase.
+     * @param {string} frase - Frase completa.
+     * @param {string} palabra - Palabra que se quiere reemplazar.
+     * @param {string} reemplazo - Texto que sustituirá a la palabra.
+     * @return {string | null} - Frase modificada o null si no existe la palabra.
+     */
+    const reemplazarPalabra = (frase, palabra, reemplazo) => {
+
+        if (!frase.includes(palabra)) {
+            return null;
+        }
+
+        return frase.replace(palabra, reemplazo);
+    };
 
 
-        /**
-         * - `Solicitud` de la palabra de reemplazo
-         * @type {string|null}
-         */
-        const reemplazo = prompt(`Has elegido la palabra - "${palabra}" - ¿Por qué palabra la quieres sustituir?`);
+    /**
+     * -----------------------------------
+     * -----  `crearLinea(etiqueta, valor)`  -----
+     * -----------------------------------
+     * - Crea una línea de información para el resultado.
+     * @param {string} etiqueta - Nombre del dato.
+     * @param {string} valor - Valor del dato.
+     * @return {HTMLParagraphElement} - Línea creada.
+     */
+    const crearLinea = (etiqueta, valor) => {
 
-        if (!reemplazo) 
-            return alert('No has introducido ninguna palabra de reemplazo.');
+        const $linea = document.createElement("p");
+        const $etiqueta = document.createElement("strong");
+        const $valor = document.createElement("span");
 
-              
-        /**
-         * - `Variable` para almacenar la frase final con el reemplazo
-         * @type {string}
-         */
-        let fraseFinal = frase;
-       
-       
-        /**
-         * - `Función` para reemplazar la palabra en la frase
-         * @param {string} frase - la frase completa
-         * @param {string} palabra - la palabra a reemplazar en la frase
-         * @param {string} reemplazo - la palabra que reemplazará a la original
-         * @returns 
-         */
-        const reemplazar = (frase, palabra, reemplazo) => {
+        $etiqueta.textContent = `${etiqueta}: `;
+        $valor.textContent = valor;
+        $linea.append($etiqueta, $valor);
 
-            //  -----  Verifica si la palabra está en la frase  -----
-            if (frase.includes(palabra))
-                return frase.replace(palabra, reemplazo);
-
-            else
-                return 'Esa palabra no existe en la frase.';
-        };
+        return $linea;
+    };
 
 
-        //  -----  Mostrar el resultado en un `alert` y en el HTML  -----
-        fraseFinal = reemplazar(frase, palabra, reemplazo);
-        
-        
-        //  -----  Mostrar el resultado en el DOM  -----
-        resultBox.innerHTML += `
+    /**
+     * -------------------------------------------------------------
+     * -----  `mostrarResultado(frase, palabra, reemplazo, fraseFinal)`  -----
+     * -------------------------------------------------------------
+     * - Pinta los datos de la operación y la frase modificada.
+     * @param {string} frase - Frase original.
+     * @param {string} palabra - Palabra buscada.
+     * @param {string} reemplazo - Palabra de reemplazo.
+     * @param {string} fraseFinal - Frase resultante.
+     * @return {void}
+     */
+    const mostrarResultado = (frase, palabra, reemplazo, fraseFinal) => {
 
-            La frase es: <h3> ${frase} </h3>
-            La palabra a buscar es: <h3> ${palabra} </h3>
-            La palabra a reemplazar es: <h3> ${reemplazo} </h3>
-            La nueva frase es: <h3> ${fraseFinal} </h3>
+        $resultado.classList.remove("reemplazo__resultado--error");
+        $resultado.classList.add("reemplazo__resultado--ok");
+        $resultado.replaceChildren(
+            crearLinea("Frase original", frase),
+            crearLinea("Palabra buscada", palabra),
+            crearLinea("Palabra de reemplazo", reemplazo),
+            crearLinea("Nueva frase", fraseFinal)
+        );
+    };
 
-        `;
+
+    /**
+     * --------------------------------------
+     * -----  `procesarFormulario()`  -----
+     * --------------------------------------
+     * - Valida los datos y muestra la frase con el reemplazo.
+     * @return {void}
+     */
+    const procesarFormulario = () => {
+
+        const frase = $frase.value.trim();
+        const palabra = $palabra.value.trim();
+        const reemplazo = $reemplazo.value.trim();
 
 
-        //  -----  Mostrar el resultado en un `alert` después de 2 segundos  -----
-        setTimeout(() => alert('La nueva frase es: ' + fraseFinal), 2000);
+        //  -----  validar que se hayan introducido todos los datos  -----
+        if (!frase || !palabra || !reemplazo) {
+            mostrarError("Completa todos los campos para realizar el reemplazo.");
+            return;
+        }
 
 
-    }, 2000);
-  
+        const fraseFinal = reemplazarPalabra(frase, palabra, reemplazo);
+
+        if (fraseFinal === null) {
+            mostrarError("La palabra buscada no existe en la frase.");
+            return;
+        }
+
+
+        console.log(`La nueva frase es: ${fraseFinal}`);
+        mostrarResultado(frase, palabra, reemplazo, fraseFinal);
+    };
+
+
+    //  -----  procesar al enviar el formulario  -----
+    $form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        procesarFormulario();
+    });
 
 
 })();
