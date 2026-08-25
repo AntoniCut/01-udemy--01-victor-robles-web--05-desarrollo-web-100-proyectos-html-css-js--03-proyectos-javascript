@@ -8,6 +8,23 @@
 
 /*
     *  ----------------------------  *
+    *  -----  Proyecto 13 JS  -----  *
+    *  ----------------------------  *
+*/
+
+/**
+ * -----------------------------------
+ * -----  `ConcesionarioItem`  -----
+ * -----------------------------------
+ * @typedef {object} ConcesionarioItem - Marca y modelos de un concesionario.
+ * @property {string} marca - Nombre de la marca de coches.
+ * @property {string[]} modelos - Lista de modelos disponibles.
+ */
+
+
+
+/*
+    *  ----------------------------  *
     *  -----  Proyecto 42 JS  -----  *
     *  ----------------------------  *
 */

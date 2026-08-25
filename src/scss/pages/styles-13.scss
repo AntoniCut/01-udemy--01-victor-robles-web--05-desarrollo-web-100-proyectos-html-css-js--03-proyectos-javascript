@@ -1,0 +1,140 @@
+/*
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-13.scss  --  /src/scss/pages/styles-13.scss  -----  *
+    *  ----------------------------------------------------------------  *
+*/
+
+
+.demo__concesionario {
+    width: 100%;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 1.2rem 2.4rem;
+    background-color: #f7f8fd;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+
+    .demo__concesionario {
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__concesionario {
+    width: min(95%, 64rem);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+.concesionario__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    border: 1px solid #d8e3f5;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__card {
+        gap: 2.4rem;
+        padding: 2.4rem;
+    }
+}
+
+
+.concesionario__title {
+    margin: 0;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__title {
+        font-size: 2.2rem;
+    }
+}
+
+
+.concesionario__resultado {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__resultado {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.6rem;
+    }
+}
+
+
+.concesionario__marca {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 1.4rem;
+    background-color: #f8fafc;
+    border: 1px solid #d8e3f5;
+    border-left: 0.4rem solid #edd812;
+    border-radius: 0.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__marca {
+        padding: 1.6rem;
+    }
+}
+
+
+.concesionario__marca-title {
+    margin: 0;
+    color: #1e3a8a;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__marca-title {
+        font-size: 1.9rem;
+    }
+}
+
+
+.concesionario__modelos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+    padding-left: 2rem;
+    color: #334155;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+
+    .concesionario__modelos {
+        font-size: 1.5rem;
+    }
+}
+
+
+.concesionario__modelo::marker {
+    color: #ca8a04;
+}
