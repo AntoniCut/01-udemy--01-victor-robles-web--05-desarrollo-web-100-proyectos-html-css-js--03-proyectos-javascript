@@ -137,6 +137,11 @@
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isFinite</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">animal</span><span style="color:#D4D4D4">))) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarError</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No puedes añadir un número. Introduce el nombre de un animal."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        animales</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">animal</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>

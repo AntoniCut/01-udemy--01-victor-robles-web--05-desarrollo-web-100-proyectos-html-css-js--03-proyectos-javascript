@@ -144,6 +144,11 @@
             return;
         }
 
+        if (Number.isFinite(Number(animal))) {
+            mostrarError("No puedes añadir un número. Introduce el nombre de un animal.");
+            return;
+        }
+
 
         animales.push(animal);
         $input.value = "";

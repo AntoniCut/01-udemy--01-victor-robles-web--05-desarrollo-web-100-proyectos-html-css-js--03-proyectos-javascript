@@ -180,7 +180,9 @@
 
 
 .animales__resultado {
-    min-height: 10rem;
+    flex: 0 0 20rem;
+    height: 20rem;
+    min-height: 0;
     margin: 0;
     padding: 1.2rem 1.4rem;
     font-size: 1.6rem;
@@ -192,13 +194,14 @@
     box-sizing: border-box;
     overflow-wrap: break-word;
     word-break: break-word;
-    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 @media (min-width: 768px) {
 
     .animales__resultado {
-        min-height: 12rem;
+        flex-basis: 24rem;
+        height: 24rem;
         padding: 1.6rem 1.8rem;
         font-size: 1.8rem;
     }
