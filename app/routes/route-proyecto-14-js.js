@@ -17,6 +17,7 @@ const {
     pagesComponentsSrc,
     MarkdownShikiHtml,
     layoutFooter,
+    styles,
     scripts,
     scriptsSrc,
 } = paths;
@@ -53,9 +54,18 @@ export const routeProyecto14JS = {
             urlOutput: `${MarkdownShikiHtml}/proyecto-14`,
             target: '[data-shiki="codeJs"]',
         },
+        {
+            fileName: 'styles-14-css.html',
+            fileExtension: 'css',
+            urlInput: `${styles}/styles-14.css`,
+            urlOutput: `${MarkdownShikiHtml}/proyecto-14`,
+            target: '[data-shiki="codeCss"]',
+        },
     ],
     headerTitle: 'Proyecto 14 JavaScript',
-    styles: [],
+    styles: [
+        { href: `${styles}/styles-14.css` },
+    ],
     scripts: [
         { src: `${scripts}/main-14.js` },
     ],

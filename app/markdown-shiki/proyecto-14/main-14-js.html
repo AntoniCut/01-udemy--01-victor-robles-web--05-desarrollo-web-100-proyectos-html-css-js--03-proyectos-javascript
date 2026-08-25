@@ -1,51 +1,151 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 14 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 14 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Referencia al HTML  -----</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> cajaContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#content'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Sueldos de empleados  -----</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> sueldos</span><span style="color:#D4D4D4"> = [</span><span style="color:#B5CEA8">1050</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">640</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">750</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1500</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">2200</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">3011</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">432</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo de sueldos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__sueldos"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> sueldoUsuario</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">parseInt</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">prompt</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'¿Cuál es tu sueldo?'</span><span style="color:#D4D4D4">) ?? </span><span style="color:#CE9178">'0'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Función para buscar sueldos iguales o mayores -----</span></span>
-<span class="line"><span style="color:#569CD6">        function</span><span style="color:#DCDCAA"> buscarSueldos</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">salarios</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">miSueldo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario de búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $form</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldos__form"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  Validar si el sueldo ingresado es un número válido  -----</span></span>
-<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">miSueldo</span><span style="color:#D4D4D4">)) {</span></span>
-<span class="line"><span style="color:#9CDCFE">                cajaContent</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`&#x3C;h3> Por favor, ingresa un número válido. &#x3C;/h3>`</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `campo del sueldo del usuario` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldos__input"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  ----- Filtrar sueldos mayores o iguales al del usuario  -----</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> busquedas</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">salarios</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">salario</span><span style="color:#569CD6"> =></span><span style="color:#9CDCFE"> salario</span><span style="color:#D4D4D4"> >= </span><span style="color:#9CDCFE">miSueldo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> - `contenedor de resultados` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $resultado</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".sueldos__resultado"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  Ordenar los resultados en orden ascendente  -----</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> ordenar</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">busquedas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">sort</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">a</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">b</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> a</span><span style="color:#D4D4D4"> - </span><span style="color:#9CDCFE">b</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  Mostrar en el DOM los sueldos encontrados  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">            cajaContent</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span></span>
-<span class="line"><span style="color:#CE9178">                &#x3C;h3> Salarios iguales o mayores a </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">miSueldo</span><span style="color:#569CD6">}</span><span style="color:#CE9178">: &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">                &#x3C;p> </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">ordenar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">ordenar</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">', '</span><span style="color:#D4D4D4">) : </span><span style="color:#CE9178">"No hay sueldos mayores o iguales al tuyo."</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/p></span></span>
-<span class="line"><span style="color:#CE9178">            `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de bloques  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$form</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$resultado</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number[]}</span><span style="color:#6A9955"> - `sueldos de los empleados` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> sueldos</span><span style="color:#D4D4D4"> = [</span><span style="color:#B5CEA8">1050</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">640</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">750</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1500</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">2200</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">3011</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">432</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarError(mensaje)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra un mensaje de error en la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> mensaje</span><span style="color:#6A9955"> - Texto del error.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarError</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--ok"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `crearSueldo(sueldo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Crea un elemento de lista para un sueldo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#6A9955"> - Sueldo que se mostrará.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {HTMLLIElement}</span><span style="color:#6A9955"> - Elemento de lista creado.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearSueldo</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $sueldo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"li"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $sueldo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">sueldo</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> €`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> $sueldo</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `buscarSueldos(salarios, sueldo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Busca y ordena los sueldos iguales o mayores al indicado.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number[]}</span><span style="color:#9CDCFE"> salarios</span><span style="color:#6A9955"> - Sueldos de los empleados.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> sueldo</span><span style="color:#6A9955"> - Sueldo introducido por el usuario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> buscarSueldos</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">salarios</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isFinite</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            mostrarError</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Introduce un sueldo válido."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Ejecutar la función  -----</span></span>
-<span class="line"><span style="color:#DCDCAA">        buscarSueldos</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldos</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">sueldoUsuario</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number[]}</span><span style="color:#6A9955"> - `sueldos filtrados y ordenados` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> resultados</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">salarios</span></span>
+<span class="line"><span style="color:#D4D4D4">            .</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">salario</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> salario</span><span style="color:#D4D4D4"> >= </span><span style="color:#9CDCFE">sueldo</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">            .</span><span style="color:#DCDCAA">sort</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">a</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">b</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> a</span><span style="color:#D4D4D4"> - </span><span style="color:#9CDCFE">b</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $titulo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"h3"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $titulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado-title"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $titulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`Sueldos iguales o mayores a </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">sueldo</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> €`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">resultados</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado-message"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"No hay sueldos mayores o iguales al tuyo."</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--ok"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replaceChildren</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$titulo</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$mensaje</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $lista</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"ul"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $lista</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__list"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        resultados</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">sueldoEncontrado</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`Sueldo encontrado: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">sueldoEncontrado</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $lista</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">crearSueldo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldoEncontrado</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"sueldos__resultado--ok"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replaceChildren</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$titulo</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$lista</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  buscar al enviar el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $form</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">        buscarSueldos</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">sueldos</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">valueAsNumber</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>

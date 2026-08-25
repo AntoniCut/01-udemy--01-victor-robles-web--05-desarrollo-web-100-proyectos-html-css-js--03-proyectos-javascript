@@ -1,0 +1,222 @@
+/*
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-14.scss  --  /src/scss/pages/styles-14.scss  -----  *
+    *  ----------------------------------------------------------------  *
+*/
+
+
+.demo__sueldos {
+    width: 100%;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 1.2rem 2.4rem;
+    background-color: #f7f8fd;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+
+    .demo__sueldos {
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__sueldos {
+    width: min(95%, 64rem);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+.sueldos__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    border: 1px solid #d8e3f5;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__card {
+        gap: 2rem;
+        padding: 2.4rem;
+    }
+}
+
+
+.sueldos__title {
+    margin: 0;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__title {
+        font-size: 2.2rem;
+    }
+}
+
+
+.sueldos__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__form {
+        gap: 1.6rem;
+    }
+}
+
+
+.sueldos__label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__label {
+        font-size: 1.5rem;
+    }
+}
+
+
+.sueldos__input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    border: 1px solid #d8e3f5;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__input {
+        padding: 1.4rem 1.6rem;
+        font-size: 1.8rem;
+    }
+}
+
+.sueldos__input:focus {
+    outline: 2px solid #1e3a8a;
+    outline-offset: 2px;
+}
+
+
+.sueldos__submit {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #edd812;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__submit {
+        padding: 1.4rem;
+        font-size: 1.6rem;
+    }
+}
+
+.sueldos__submit:hover,
+.sueldos__submit:focus {
+    color: #0f172a;
+    background-color: #ca8a04;
+    box-shadow: none;
+}
+
+
+.sueldos__resultado {
+    width: 100%;
+    height: 30rem;
+    min-height: 0;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #334155;
+    border-radius: 0.8rem;
+    border-left: 0.4rem solid transparent;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__resultado {
+        height: 32rem;
+        padding: 1.6rem 1.8rem;
+        font-size: 1.6rem;
+    }
+}
+
+.sueldos__resultado-title {
+    margin: 0 0 1rem;
+    color: #0f172a;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+
+    .sueldos__resultado-title {
+        font-size: 1.8rem;
+    }
+}
+
+.sueldos__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.sueldos__resultado-message {
+    margin: 0;
+}
+
+.sueldos__resultado:empty {
+    visibility: hidden;
+}
+
+.sueldos__resultado--ok {
+    visibility: visible;
+    color: #166534;
+    background-color: #f0fdf4;
+    border-left-color: #22c55e;
+}
+
+.sueldos__resultado--error {
+    visibility: visible;
+    color: #b42318;
+    background-color: #fef3f2;
+    border-left-color: #b42318;
+}

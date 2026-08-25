@@ -1,5 +1,37 @@
 <!--
-    *  -----  /proyecto-14-demo.html  --  /src/pages-components/proyecto-14/proyecto-14-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-14-demo.html  --  /src/pages-components/proyecto-14/proyecto-14-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content"> </div>
+<section class="main__demo demo__sueldos">
+
+
+    <article class="sueldos__card">
+
+        <h2 class="sueldos__title">Consulta de sueldos</h2>
+
+        <form class="sueldos__form">
+
+            <label class="sueldos__label" for="sueldos-usuario">Introduce tu sueldo</label>
+            <input
+                class="sueldos__input"
+                id="sueldos-usuario"
+                type="number"
+                name="sueldo"
+                min="0"
+                step="0.01"
+                placeholder="Ejemplo: 1500"
+                required
+            >
+
+            <button type="submit" class="sueldos__submit">Buscar sueldos</button>
+
+        </form>
+
+        <div class="sueldos__resultado" role="status" aria-live="polite"></div>
+
+    </article>
+
+
+</section>
