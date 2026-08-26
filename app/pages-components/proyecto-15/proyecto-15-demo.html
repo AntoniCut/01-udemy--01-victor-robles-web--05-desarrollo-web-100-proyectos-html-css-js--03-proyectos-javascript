@@ -1,78 +1,76 @@
 <!--
-    *  -----  /proyecto-15-demo.html  --  /src/pages-components/proyecto-15/proyecto-15-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-15-demo.html  --  /src/pages-components/proyecto-15/proyecto-15-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<section class="main__demo">
-
-    <button class="btn-add-card" id="btnAddCard"> Añadir Card </button>
-
-    <!--  -----  card 1  -----  -->
-    <article class="layout__card">
-
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> AntonyDev </p>
-        </header>
-
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 1 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
-        </div>
-
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
-
-    </article>
+<section class="main__demo demo__tarjetas">
 
 
-    <!--  -----  card 2  -----  -->
-    <article class="layout__card">
+    <button type="button" class="tarjetas__add" id="btnAddCard">Añadir tarjeta</button>
 
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> Víctor Robles </p>
-        </header>
+    <div class="tarjetas__grid">
 
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 2 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
-        </div>
+        <article class="tarjetas__card">
 
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
-    </article>
+            <header class="tarjetas__card-header">
+                <p class="tarjetas__author">AntonyDev</p>
+            </header>
+
+            <div class="tarjetas__content">
+                <h2 class="tarjetas__title">Caja de prueba 1</h2>
+                <p class="tarjetas__description">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
+                </p>
+            </div>
+
+            <button type="button" class="tarjetas__style-button">Cambiar estilos</button>
+            <button type="button" class="tarjetas__delete-button">Eliminar tarjeta</button>
+
+        </article>
 
 
-    <!--  -----  card 3  -----  -->
-    <article class="layout__card">
+        <article class="tarjetas__card">
 
-        <!--  -----  header  -----  -->
-        <header class="card__header">
-            <p class="header__author"> AntonyDev </p>
-        </header>
+            <header class="tarjetas__card-header">
+                <p class="tarjetas__author">Víctor Robles</p>
+            </header>
 
-        <!--  -----  content  -----  -->
-        <div class="card__content">
-            <h2 class="content__title"> Caja de prueba 3 </h2>
-            <p class="content__description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
-            </p>
-        </div>
+            <div class="tarjetas__content">
+                <h2 class="tarjetas__title">Caja de prueba 2</h2>
+                <p class="tarjetas__description">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
+                </p>
+            </div>
 
-        <!--  -----  button  -----  -->
-        <button class="content__btn"> Cambiar estilos </button>
-        <button class="delete__btn"> Eliminar Tarjeta </button>
-    </article>
+            <button type="button" class="tarjetas__style-button">Cambiar estilos</button>
+            <button type="button" class="tarjetas__delete-button">Eliminar tarjeta</button>
+
+        </article>
+
+
+        <article class="tarjetas__card">
+
+            <header class="tarjetas__card-header">
+                <p class="tarjetas__author">AntonyDev</p>
+            </header>
+
+            <div class="tarjetas__content">
+                <h2 class="tarjetas__title">Caja de prueba 3</h2>
+                <p class="tarjetas__description">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Aperiam ipsa itaque voluptatem incidunt praesentium tenetur deserunt.
+                </p>
+            </div>
+
+            <button type="button" class="tarjetas__style-button">Cambiar estilos</button>
+            <button type="button" class="tarjetas__delete-button">Eliminar tarjeta</button>
+
+        </article>
+
+    </div>
+
 
 </section>

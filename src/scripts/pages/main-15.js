@@ -1,185 +1,175 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-15.js  --  /src/scripts/main-15.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-15.js  --  /src/scripts/pages/main-15.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+/// <reference path="../../../types/global.d.ts" />
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 15 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 15 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
 
-    /** @type {HTMLButtonElement|null} - botón para agregar una nueva tarjeta */
-    const btnAddCard = document.querySelector("#btnAddCard");
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de tarjetas` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__tarjetas")
+    );
 
-    /** @type {NodeListOf<HTMLElement>} - listas de tarjetas */
-    const cards = document.querySelectorAll(".layout__card");
 
+    //  -----  verificación de la demo  -----
+    if (!$demo) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
+
+
+    /** @type {HTMLButtonElement | null} - `botón para añadir tarjetas` */
+    const $addCard = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".tarjetas__add")
+    );
+
+    /** @type {HTMLDivElement | null} - `grid de tarjetas` */
+    const $grid = /** @type {HTMLDivElement | null} */ (
+        $demo.querySelector(".tarjetas__grid")
+    );
+
+    /** @type {NodeListOf<HTMLArticleElement>} - `tarjetas iniciales` */
+    const $cards = /** @type {NodeListOf<HTMLArticleElement>} */ (
+        $demo.querySelectorAll(".tarjetas__card")
+    );
+
+
+    //  -----  verificación de bloques  -----
+    if (!$addCard || !$grid) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
 
 
     /**
-     * ------------------------------
-     * -----  `crearTarjeta()`  -----
-     * -------------------------------
-     * 
-     * - Crea una nueva tarjeta completa con eventos.
-     * @param {number} numero
-     * @returns {HTMLArticleElement}
-    */
+     * -----------------------------------------
+     * -----  `alternarEstilos(card)`  -----
+     * -----------------------------------------
+     * - Alterna el color de fondo de una tarjeta.
+     * @param {HTMLArticleElement} card - Tarjeta que cambiará de color.
+     * @return {void}
+     */
+    const alternarEstilos = (card) => {
 
-    const crearTarjeta = (numero) => {
-
-
-        /** @type {HTMLArticleElement} - article card */
-        const card = document.createElement("article");
-
-        card.classList.add("layout__card");
-        card.style.backgroundColor = "#0D6EFD";
-
-
-        // ----- Header -----
-
-        /** @type {HTMLHeaderElement} - header of the card */
-        const header = document.createElement("header");
-
-        header.classList.add("card__header");
-
-        /** @type {HTMLParagraphElement} - author of the card */
-        const author = document.createElement("p");
-
-        author.classList.add("header__author");
-        author.textContent = "AntonyDev";
-
-        // ----- Agregar el autor al header -----
-        header.appendChild(author);
-
-
-        // ----- Content -----
-
-        /** @type {HTMLDivElement} - content of the card */
-        const content = document.createElement("div");
-        content.classList.add("card__content");
-
-
-        /** @type {HTMLHeadingElement} - title of the card */
-        const title = document.createElement("h2");
-
-        title.classList.add("content__title");
-        title.textContent = `Caja dinámica ${numero}`;
-
-
-        /** @type {HTMLParagraphElement} - description of the card */
-        const description = document.createElement("p");
-
-        description.classList.add("content__description");
-        description.textContent = "Tarjeta creada dinámicamente con JavaScript.";
-
-
-        // ----- Agregar el título y la descripción al content -----
-        content.appendChild(title);
-        content.appendChild(description);
-
-
-        /** @type {HTMLButtonElement} - button to change styles */
-        const btnChangeEstilos = document.createElement("button");
-
-        btnChangeEstilos.classList.add("content__btn");
-        btnChangeEstilos.textContent = "Cambiar estilos";
-
-        btnChangeEstilos.addEventListener("click", () => {
-
-            // -----  Cambia el color de fondo a AZUL  -----
-            if (card.style.backgroundColor === "red")
-                card.style.backgroundColor = "#0D6EFD";
-
-            // -----  Cambia el color de fondo a ROJO  -----
-            else
-                card.style.backgroundColor = "red";
-        });
-
-
-        // ----- Botón eliminar -----
-        /** @type {HTMLButtonElement} - button to delete the card */
-        const btnEliminar = document.createElement("button");
-
-        btnEliminar.classList.add("delete__btn");
-        btnEliminar.textContent = "Eliminar Tarjeta";
-
-        btnEliminar.addEventListener("click", () => card.remove());
-
-        // ----- Estructura final -----
-        card.append(header);
-        card.append(content);
-        card.append(btnChangeEstilos);
-        card.append(btnEliminar);
-
-        return card;
+        card.style.backgroundColor = card.style.backgroundColor === "red"
+            ? "#0D6EFD"
+            : "red";
     };
 
 
+    /**
+     * --------------------------------------
+     * -----  `configurarTarjeta(card)`  -----
+     * --------------------------------------
+     * - Configura los eventos de una tarjeta.
+     * @param {HTMLArticleElement} card - Tarjeta que se configurará.
+     * @return {void}
+     */
+    const configurarTarjeta = (card) => {
 
-    //  -----  Recorrer cada tarjeta  -----
-    cards.forEach(
+        /** @type {HTMLButtonElement | null} - `botón de estilos` */
+        const $styleButton = /** @type {HTMLButtonElement | null} */ (
+            card.querySelector(".tarjetas__style-button")
+        );
 
-
-        /** @param {HTMLArticleElement} card - article card */
-
-        card => {
-
-            //  -----  Seleccionar botón de cambiar estilos existente -----
-
-            /** @type {HTMLButtonElement|null} */
-            const btnChangeEstilos = card.querySelector(".content__btn");
-
-            /** @type {HTMLButtonElement|null} */
-            const btnEliminar = card.querySelector(".delete__btn");
-
-            //  -----  Si no encuentra alguno de los botones, salir de la función  -----
-            if (!btnChangeEstilos || !btnEliminar)
-                return;
-
-
-            //  -----  Evento para cambiar el color de la tarjeta -----
-            btnChangeEstilos.addEventListener("click", () => {
-
-                //  -----  Vuelve al color original (Azul)  -----
-                if (card.style.backgroundColor === "red")
-                    card.style.backgroundColor = "#0D6EFD";
-
-                //  -----  Cambia a rojo  -----
-                else
-                    card.style.backgroundColor = "red";
-
-            });
-
-            //  -----  Evento para eliminar la tarjeta  -----
-            btnEliminar?.addEventListener("click", () => card.remove());
+        /** @type {HTMLButtonElement | null} - `botón de eliminar` */
+        const $deleteButton = /** @type {HTMLButtonElement | null} */ (
+            card.querySelector(".tarjetas__delete-button")
+        );
 
 
+        if (!$styleButton || !$deleteButton) {
+            return;
+        }
 
+
+        $styleButton.addEventListener("click", () => {
+            alternarEstilos(card);
         });
 
+        $deleteButton.addEventListener("click", () => {
+            card.remove();
+        });
+    };
 
 
-    //  -----  Contador para las nuevas tarjetas  -----
-    let contador = cards.length + 1;
+    /**
+     * ------------------------------------
+     * -----  `crearTarjeta(numero)`  -----
+     * ------------------------------------
+     * - Crea una nueva tarjeta completa con sus eventos.
+     * @param {number} numero - Número de la tarjeta.
+     * @return {HTMLArticleElement} - Tarjeta creada.
+     */
+    const crearTarjeta = (numero) => {
 
-    //  -----  Evento para el botón de agregar nueva tarjeta  -----
-    btnAddCard?.addEventListener("click", () => {
+        const $card = document.createElement("article");
+        const $header = document.createElement("header");
+        const $author = document.createElement("p");
+        const $content = document.createElement("div");
+        const $title = document.createElement("h2");
+        const $description = document.createElement("p");
+        const $styleButton = document.createElement("button");
+        const $deleteButton = document.createElement("button");
 
-        //  -----  Crear una nueva tarjeta con el número del contador  -----
-        const nuevaCard = crearTarjeta(contador++);
+        $card.classList.add("tarjetas__card");
+        $card.style.backgroundColor = "#0D6EFD";
+        $header.classList.add("tarjetas__card-header");
+        $author.classList.add("tarjetas__author");
+        $content.classList.add("tarjetas__content");
+        $title.classList.add("tarjetas__title");
+        $description.classList.add("tarjetas__description");
+        $styleButton.classList.add("tarjetas__style-button");
+        $deleteButton.classList.add("tarjetas__delete-button");
 
-        //  -----  Agregar la nueva tarjeta al contenedor principal  -----
-        document.querySelector(".main__demo")?.appendChild(nuevaCard);
+        $author.textContent = "AntonyDev";
+        $title.textContent = `Caja dinámica ${numero}`;
+        $description.textContent = "Tarjeta creada dinámicamente con JavaScript.";
+        $styleButton.type = "button";
+        $styleButton.textContent = "Cambiar estilos";
+        $deleteButton.type = "button";
+        $deleteButton.textContent = "Eliminar tarjeta";
 
+        $header.append($author);
+        $content.append($title, $description);
+        $card.append($header, $content, $styleButton, $deleteButton);
+        configurarTarjeta($card);
+
+        return $card;
+    };
+
+
+    $cards.forEach((card) => {
+        configurarTarjeta(card);
     });
 
+
+    /** @type {number} - `contador de tarjetas nuevas` */
+    let contador = $cards.length + 1;
+
+
+    //  -----  crear una tarjeta nueva  -----
+    $addCard.addEventListener("click", () => {
+
+        $grid.append(crearTarjeta(contador));
+        contador++;
+    });
 
 
 })();
