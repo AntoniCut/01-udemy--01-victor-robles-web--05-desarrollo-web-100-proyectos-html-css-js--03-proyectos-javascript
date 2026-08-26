@@ -1,155 +1,198 @@
 <pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 18 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 18 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Referencias a elementos del DOM  -----</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> - `elemento que muestra los minutos` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> cronoMin</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".crono__min"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $minutes</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__minutes"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> - `elemento que muestra los segundos` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> cronoSec</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".crono__sec"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $seconds</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__seconds"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> - `elemento que muestra las milésimas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $milliseconds</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__milliseconds"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para iniciar el cronómetro` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> btnStart</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.layout__btn-start'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $startButton</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__button--start"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para detener el cronómetro` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> btnStop</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'.layout__btn-stop'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $stopButton</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__button--stop"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para reiniciar el cronómetro` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $resetButton</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__button--reset"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `mensaje de estado del cronómetro` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $status</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".cronometro__status"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Validamos que los elementos del DOM necesarios para el funcionamiento del cronómetro existan  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">cronoMin</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">cronoSec</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">btnStart</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">btnStop</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han podido encontrar los elementos del DOM necesarios para el funcionamiento del cronómetro."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que los elementos necesarios existan  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$minutes</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$seconds</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$milliseconds</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$startButton</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$stopButton</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$resetButton</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$status</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios del cronómetro."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Variables cuenta minutos y segundos  -----</span></span>
-<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> minutes</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> secons</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeJS.Timeout | null}</span><span style="color:#6A9955"> - `intervalo del cronómetro` */</span></span>
-<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> time</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** - `tiempo transcurrido en milisegundos` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> elapsedMilliseconds</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | null}</span><span style="color:#6A9955"> - `identificador del intervalo` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number}</span><span style="color:#6A9955"> - `momento en el que comenzó el intervalo actual` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> startedAt</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `tiempo máximo del cronómetro: 60 minutos en milisegundos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> MAX_MILLISECONDS</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">60</span><span style="color:#D4D4D4"> * </span><span style="color:#B5CEA8">60</span><span style="color:#D4D4D4"> * </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * -----------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -----  `start()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * -----------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Función para iniciar el cronómetro, actualiza los minutos y segundos cada segundo.</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `actualizarDisplay()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Actualiza el tiempo mostrado con minutos, segundos y milésimas formateados.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> start</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> actualizarDisplay</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> minutes</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">elapsedMilliseconds</span><span style="color:#D4D4D4"> / </span><span style="color:#B5CEA8">60000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> seconds</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">elapsedMilliseconds</span><span style="color:#D4D4D4"> % </span><span style="color:#B5CEA8">60000</span><span style="color:#D4D4D4">) / </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> milliseconds</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">elapsedMilliseconds</span><span style="color:#D4D4D4"> % </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">) / </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $minutes</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">padStart</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"0"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $seconds</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">seconds</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">padStart</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"0"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $milliseconds</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">milliseconds</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">padStart</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"0"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  inicializamos estilos  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStart</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">opacity</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'0.5'</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">backgroundColor</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'rgb(17, 14, 14)'</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active-hover'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'disabled-hover'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'time'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  Si el cronómetro no está corriendo, iniciamos el intervalo para actualizar minutos y segundos cada segundo  -----</span></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  actualizamos minutos y segundos cada segundo  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">            time</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">                secons</span><span style="color:#D4D4D4">++;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">60</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#9CDCFE">                    minutes</span><span style="color:#D4D4D4">++;</span></span>
-<span class="line"><span style="color:#9CDCFE">                    secons</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `actualizarEstadoBotones()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Actualiza el estado visual y funcional de los botones.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {boolean}</span><span style="color:#9CDCFE"> isRunning</span><span style="color:#6A9955"> - Indica si el cronómetro está activo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> actualizarEstadoBotones</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">isRunning</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $startButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">disabled</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">isRunning</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $stopButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">disabled</span><span style="color:#D4D4D4"> = !</span><span style="color:#9CDCFE">isRunning</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $startButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toggle</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"cronometro__button--running"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">isRunning</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">                //  -----  actualizamos el DOM con los minutos y segundos formateados a dos dígitos  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">                cronoSec</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"0"</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4"> : </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toString</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#9CDCFE">                cronoMin</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"0"</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4"> : </span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toString</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">                //  -----  mostramos minutos y segundos por consola  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"minutes:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">" secons:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">" time:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">minutes</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">secons</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">                    alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Has excedido el tiempo limite de 60 minutos"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#DCDCAA">                    stop</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#D4D4D4">                    </span></span>
-<span class="line"><span style="color:#C586C0">                    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">                        clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                    }</span></span>
-<span class="line"><span style="color:#9CDCFE">                    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'time'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                    </span></span>
-<span class="line"><span style="color:#DCDCAA">                    initCrono</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#D4D4D4">                }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">            }, </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `detenerCronometro(mensaje)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Detiene el intervalo y actualiza el mensaje de estado.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> mensaje</span><span style="color:#6A9955"> - Mensaje que se mostrará al detenerse.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> detenerCronometro</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">            actualizarTiempo</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#9CDCFE">            window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    }</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        actualizarEstadoBotones</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * -----------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -----  `stop()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * -----------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Función para detener el cronómetro, limpia el intervalo y resetea los estilos de los botones.</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `actualizarTiempo()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Calcula el tiempo transcurrido y actualiza el display.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> actualizarTiempo</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        elapsedMilliseconds</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">min</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#4FC1FF">            MAX_MILLISECONDS</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">            Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">floor</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">performance</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">now</span><span style="color:#D4D4D4">() - </span><span style="color:#9CDCFE">startedAt</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"><span style="color:#DCDCAA">        actualizarDisplay</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> stop</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  inicializamos estilos  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStart</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">opacity</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'1'</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">backgroundColor</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'#cccccc'</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'active-hover'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  detenemos el cronómetro limpiando el intervalo  -----</span></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">            clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">time</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">            time</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `iniciarCronometro()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Inicia el cronómetro si no existe un intervalo activo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> iniciarCronometro</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
-<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        actualizarEstadoBotones</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Cronómetro en marcha."</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        startedAt</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">performance</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">now</span><span style="color:#D4D4D4">() - </span><span style="color:#9CDCFE">elapsedMilliseconds</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">            actualizarTiempo</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  detenemos el cronómetro al alcanzar los 60 minutos  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">elapsedMilliseconds</span><span style="color:#D4D4D4"> >= </span><span style="color:#4FC1FF">MAX_MILLISECONDS</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">                detenerCronometro</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Has alcanzado el límite de 60 minutos."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">10</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -----  `initCrono()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Función para resetear el cronómetro, resetea los minutos y segundos a cero y actualiza el DOM.</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `reiniciarCronometro()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Detiene el cronómetro y restablece el tiempo a cero.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> initCrono</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  inicializamos estilos  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'disabled-hover'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  reseteamos variables y DOM  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        secons</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        minutes</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        cronoSec</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"00"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        cronoMin</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"00"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> reiniciarCronometro</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        detenerCronometro</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Cronómetro listo."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        elapsedMilliseconds</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#DCDCAA">        actualizarDisplay</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Evento Botón Iniciar  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    btnStart</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'click'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> start</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento del botón iniciar  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $startButton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">iniciarCronometro</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Evento Botón Stop  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    btnStop</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'click'</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> stop</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento del botón parar  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $stopButton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        detenerCronometro</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Cronómetro detenido."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evento del botón reset  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $resetButton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">reiniciarCronometro</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    actualizarDisplay</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#DCDCAA">    actualizarEstadoBotones</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>

@@ -1,161 +1,205 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-18.js  --  /src/scripts/main-18.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-18.js  --  /src/scripts/pages/main-18.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 18 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 18 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias a elementos del DOM  -----
-    
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
     /** @type {HTMLSpanElement | null} - `elemento que muestra los minutos` */
-    const cronoMin = document.querySelector(".crono__min");
-        
+    const $minutes = /** @type {HTMLSpanElement | null} */ (
+        document.querySelector(".cronometro__minutes")
+    );
+
     /** @type {HTMLSpanElement | null} - `elemento que muestra los segundos` */
-    const cronoSec = document.querySelector(".crono__sec");
-    
+    const $seconds = /** @type {HTMLSpanElement | null} */ (
+        document.querySelector(".cronometro__seconds")
+    );
+
+    /** @type {HTMLSpanElement | null} - `elemento que muestra las milésimas` */
+    const $milliseconds = /** @type {HTMLSpanElement | null} */ (
+        document.querySelector(".cronometro__milliseconds")
+    );
+
     /** @type {HTMLButtonElement | null} - `botón para iniciar el cronómetro` */
-    const btnStart = document.querySelector('.layout__btn-start');
+    const $startButton = /** @type {HTMLButtonElement | null} */ (
+        document.querySelector(".cronometro__button--start")
+    );
 
     /** @type {HTMLButtonElement | null} - `botón para detener el cronómetro` */
-    const btnStop = document.querySelector('.layout__btn-stop');
+    const $stopButton = /** @type {HTMLButtonElement | null} */ (
+        document.querySelector(".cronometro__button--stop")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón para reiniciar el cronómetro` */
+    const $resetButton = /** @type {HTMLButtonElement | null} */ (
+        document.querySelector(".cronometro__button--reset")
+    );
+
+    /** @type {HTMLParagraphElement | null} - `mensaje de estado del cronómetro` */
+    const $status = /** @type {HTMLParagraphElement | null} */ (
+        document.querySelector(".cronometro__status")
+    );
 
 
-    //  -----  Validamos que los elementos del DOM necesarios para el funcionamiento del cronómetro existan  -----
-    if (!cronoMin || !cronoSec || !btnStart || !btnStop) {
-        throw new Error("No se han podido encontrar los elementos del DOM necesarios para el funcionamiento del cronómetro.");
+    //  -----  validamos que los elementos necesarios existan  -----
+    if (!$minutes || !$seconds || !$milliseconds || !$startButton || !$stopButton || !$resetButton || !$status) {
+        throw new Error("No se han encontrado los elementos necesarios del cronómetro.");
     }
 
 
-    //  -----  Variables cuenta minutos y segundos  -----
-    let minutes = 0;
-    let secons = 0;
-    
-    
-    /** @type {NodeJS.Timeout | null} - `intervalo del cronómetro` */
-    let time = null;
+    /** - `tiempo transcurrido en milisegundos` */
+    let elapsedMilliseconds = 0;
+
+    /** @type {number | null} - `identificador del intervalo` */
+    let intervalId = null;
+
+    /** @type {number} - `momento en el que comenzó el intervalo actual` */
+    let startedAt = 0;
+
+    /** - `tiempo máximo del cronómetro: 60 minutos en milisegundos` */
+    const MAX_MILLISECONDS = 60 * 60 * 1000;
 
 
-        
     /**
-     * -----------------------
-     * -----  `start()`  -----
-     * -----------------------
-     * - Función para iniciar el cronómetro, actualiza los minutos y segundos cada segundo.
+     * ------------------------------------------
+     * -----  `actualizarDisplay()`  -----
+     * ------------------------------------------
+     * - Actualiza el tiempo mostrado con minutos, segundos y milésimas formateados.
+     * @return {void}
      */
-    
-    const start = () => {
+    const actualizarDisplay = () => {
+        const minutes = Math.floor(elapsedMilliseconds / 60000);
+        const seconds = Math.floor((elapsedMilliseconds % 60000) / 1000);
+        const milliseconds = Math.floor((elapsedMilliseconds % 1000) / 10);
+
+        $minutes.textContent = String(minutes).padStart(2, "0");
+        $seconds.textContent = String(seconds).padStart(2, "0");
+        $milliseconds.textContent = String(milliseconds).padStart(2, "0");
+    };
 
 
-        //  -----  inicializamos estilos  -----
-        btnStart.style.opacity = '0.5';
-        btnStop.style.backgroundColor = 'rgb(17, 14, 14)';
-        btnStop.classList.remove('active-hover');
-        btnStop.classList.add('disabled-hover');
-
-        console.log('time', time);
-
-
-        //  -----  Si el cronómetro no está corriendo, iniciamos el intervalo para actualizar minutos y segundos cada segundo  -----
-        if (!time) {
-
-            //  -----  actualizamos minutos y segundos cada segundo  -----
-            time = setInterval(() => {
-
-                secons++;
-
-                if (secons === 60) {
-                    minutes++;
-                    secons = 0;
-                }
+    /**
+     * -----------------------------------------------
+     * -----  `actualizarEstadoBotones()`  -----
+     * -----------------------------------------------
+     * - Actualiza el estado visual y funcional de los botones.
+     * @param {boolean} isRunning - Indica si el cronómetro está activo.
+     * @return {void}
+     */
+    const actualizarEstadoBotones = (isRunning) => {
+        $startButton.disabled = isRunning;
+        $stopButton.disabled = !isRunning;
+        $startButton.classList.toggle("cronometro__button--running", isRunning);
+    };
 
 
-                //  -----  actualizamos el DOM con los minutos y segundos formateados a dos dígitos  -----
-                cronoSec.textContent = secons < 10 ? "0" + secons : secons.toString();
-                cronoMin.textContent = minutes < 10 ? "0" + minutes : minutes.toString();
-
-
-                //  -----  mostramos minutos y segundos por consola  -----
-                console.log("minutes:", minutes, " secons:", secons, " time:", time);
-
-
-                if (minutes === 1 && secons === 0) {
-                    alert("Has excedido el tiempo limite de 60 minutos");
-                    stop();
-                    
-                    if (time) {
-                        clearInterval(time);
-                    }
-                    console.log('time', time);
-                    
-                    initCrono();
-                }
-
-            }, 1000);
-
+    /**
+     * ---------------------------------------------
+     * -----  `detenerCronometro(mensaje)`  -----
+     * ---------------------------------------------
+     * - Detiene el intervalo y actualiza el mensaje de estado.
+     * @param {string} mensaje - Mensaje que se mostrará al detenerse.
+     * @return {void}
+     */
+    const detenerCronometro = (mensaje) => {
+        if (intervalId !== null) {
+            actualizarTiempo();
+            window.clearInterval(intervalId);
+            intervalId = null;
         }
 
-    }
-
+        actualizarEstadoBotones(false);
+        $status.textContent = mensaje;
+    };
 
 
     /**
-     * -----------------------
-     * -----  `stop()`  -----
-     * -----------------------
-     * - Función para detener el cronómetro, limpia el intervalo y resetea los estilos de los botones.
+     * ------------------------------------
+     * -----  `actualizarTiempo()`  -----
+     * ------------------------------------
+     * - Calcula el tiempo transcurrido y actualiza el display.
+     * @return {void}
      */
+    const actualizarTiempo = () => {
+        elapsedMilliseconds = Math.min(
+            MAX_MILLISECONDS,
+            Math.floor(performance.now() - startedAt)
+        );
+        actualizarDisplay();
+    };
 
-    const stop = () => {
 
-        //  -----  inicializamos estilos  -----
-        btnStart.style.opacity = '1';
-        btnStop.style.backgroundColor = '#cccccc';
-        btnStop.classList.add('active-hover');
-
-        //  -----  detenemos el cronómetro limpiando el intervalo  -----
-        if (time) {
-            clearInterval(time);
-            time = null;
+    /**
+     * ------------------------------------
+     * -----  `iniciarCronometro()`  -----
+     * ------------------------------------
+     * - Inicia el cronómetro si no existe un intervalo activo.
+     * @return {void}
+     */
+    const iniciarCronometro = () => {
+        if (intervalId !== null) {
+            return;
         }
-    }
+
+        actualizarEstadoBotones(true);
+        $status.textContent = "Cronómetro en marcha.";
+        startedAt = performance.now() - elapsedMilliseconds;
+
+        intervalId = window.setInterval(() => {
+            actualizarTiempo();
+
+            //  -----  detenemos el cronómetro al alcanzar los 60 minutos  -----
+            if (elapsedMilliseconds >= MAX_MILLISECONDS) {
+                detenerCronometro("Has alcanzado el límite de 60 minutos.");
+            }
+        }, 10);
+    };
 
 
-        
     /**
-     * ---------------------------
-     * -----  `initCrono()`  -----
-     * ---------------------------
-     * - Función para resetear el cronómetro, resetea los minutos y segundos a cero y actualiza el DOM.
+     * -------------------------------------
+     * -----  `reiniciarCronometro()`  -----
+     * -------------------------------------
+     * - Detiene el cronómetro y restablece el tiempo a cero.
+     * @return {void}
      */
-
-    const initCrono = () => {
-
-        //  -----  inicializamos estilos  -----
-        btnStop.classList.remove('disabled-hover');
-
-        //  -----  reseteamos variables y DOM  -----
-        secons = 0;
-        minutes = 0;
-
-        cronoSec.innerHTML = "00";
-        cronoMin.innerHTML = "00";
-    }
+    const reiniciarCronometro = () => {
+        detenerCronometro("Cronómetro listo.");
+        elapsedMilliseconds = 0;
+        actualizarDisplay();
+    };
 
 
-    //  -----  Evento Botón Iniciar  -----
-    btnStart.addEventListener('click', () => start());
+    //  -----  evento del botón iniciar  -----
+    $startButton.addEventListener("click", iniciarCronometro);
 
 
-    //  -----  Evento Botón Stop  -----
-    btnStop.addEventListener('click', () => stop());
+    //  -----  evento del botón parar  -----
+    $stopButton.addEventListener("click", () => {
+        detenerCronometro("Cronómetro detenido.");
+    });
 
+
+    //  -----  evento del botón reset  -----
+    $resetButton.addEventListener("click", reiniciarCronometro);
+
+
+    actualizarDisplay();
+    actualizarEstadoBotones(false);
 
 
 })();

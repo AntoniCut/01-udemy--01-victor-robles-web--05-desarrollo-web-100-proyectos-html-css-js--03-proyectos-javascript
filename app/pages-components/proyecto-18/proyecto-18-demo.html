@@ -1,31 +1,44 @@
 <!--
-    *  -----  /proyecto-18-demo.html  --  /src/pages-components/proyecto-18/proyecto-18-demo.html  -----
+    *  --------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-18-demo.html  --  /src/pages-components/proyecto-18/proyecto-18-demo.html  -----  *
+    *  --------------------------------------------------------------------------------------------------  *
 -->
 
-<!--  -----  Cronómetro -----  -->
-<div class="main__crono">
+<section class="main__demo demo__cronometro">
 
-    <!--  -----  Contenedor del Cronómetro  -----  -->
-    <section class="layout__container-crono">
+    <article class="cronometro__card">
 
-        <!--  -----  Números del Cronómetro  -----  -->
-        <div class="layout__crono">
+        <h2 class="cronometro__title">Cronómetro</h2>
 
-            <span class="crono__min"> 00 </span>
-            <span class="crono__separator"> : </span>
-            <span class="crono__sec"> 00 </span>
-
+        <div
+            class="cronometro__display"
+            role="timer"
+            aria-live="polite"
+            aria-label="Tiempo transcurrido"
+        >
+            <span class="cronometro__minutes">00</span>
+            <span class="cronometro__separator" aria-hidden="true">:</span>
+            <span class="cronometro__seconds">00</span>
+            <span class="cronometro__separator" aria-hidden="true">:</span>
+            <span class="cronometro__milliseconds">00</span>
         </div>
 
-    </section>
+        <div class="cronometro__controls">
+            <button type="button" class="cronometro__button cronometro__button--start">
+                Iniciar
+            </button>
+            <button type="button" class="cronometro__button cronometro__button--stop" disabled>
+                Parar
+            </button>
+            <button type="button" class="cronometro__button cronometro__button--reset">
+                Reset
+            </button>
+        </div>
 
-    <!--  -----  Botones del Cronómetro  -----  -->
-    <section class="layout__btns">
+        <p class="cronometro__status" role="status" aria-live="polite">
+            Cronómetro listo.
+        </p>
 
-        <button class="layout__btn-start"> Iniciar </button>
-        <button class="layout__btn-stop"> Parar </button>
+    </article>
 
-    </section>
-
-
-</div>
+</section>
