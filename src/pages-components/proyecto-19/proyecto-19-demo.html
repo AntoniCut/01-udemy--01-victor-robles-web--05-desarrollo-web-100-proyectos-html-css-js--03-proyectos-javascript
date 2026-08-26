@@ -1,35 +1,60 @@
 <!--
-    *  -----  /proyecto-19-demo.html  --  /src/pages-components/proyecto-19/proyecto-19-demo.html  -----
+    *  --------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-19-demo.html  --  /src/pages-components/proyecto-19/proyecto-19-demo.html  -----  *
+    *  --------------------------------------------------------------------------------------------------  *
 -->
 
-<!--  -----  sección del formulário  -----  -->
-<section class="layout__container-form">
+<section class="main__demo demo__articulos">
 
-    <form class="form__create">
+    <section class="articulos__create" aria-labelledby="articulos-create-title">
+        <h2 class="articulos__section-title" id="articulos-create-title">Crear artículo</h2>
 
-        <div class="create__container">
-            <label class="create__label" for="title"> Título </label>
-            <input class="create__input" type="text" id="title" required>
-        </div>
+        <form class="articulos__form">
 
-        <div class="create__container">
-            <label class="create__label" for="subtitle"> Subtítulo </label>
-            <input class="create__input" type="text" id="subtitle" required>
-        </div>
+            <div class="articulos__field">
+                <label class="articulos__label" for="articulos-title">Título</label>
+                <input
+                    class="articulos__input"
+                    type="text"
+                    id="articulos-title"
+                    name="title"
+                    required
+                >
+            </div>
 
-        <div class="create__container">
-            <label class="create__label" for="description"> Descripción </label>
-            <textarea class="create__input" id="description" required> </textarea>
-        </div>
+            <div class="articulos__field">
+                <label class="articulos__label" for="articulos-subtitle">Subtítulo</label>
+                <input
+                    class="articulos__input"
+                    type="text"
+                    id="articulos-subtitle"
+                    name="subtitle"
+                    required
+                >
+            </div>
 
-        <input class="create__btn" type="submit" value="Crear artículo">
+            <div class="articulos__field">
+                <label class="articulos__label" for="articulos-description">Descripción</label>
+                <textarea
+                    class="articulos__input articulos__input--textarea"
+                    id="articulos-description"
+                    name="description"
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
 
-    </form>
+            <button type="submit" class="articulos__create-button">Crear artículo</button>
 
-</section>
+        </form>
+
+        <p class="articulos__status" role="status" aria-live="polite"></p>
+    </section>
 
 
-<!--  -----  sección de artículos  -----  -->
-<section class="layout__articles">
-    <!--  -----  Renderizado de los artículos con JS  -----  -->
+    <section class="articulos__list" aria-labelledby="articulos-list-title">
+        <h2 class="articulos__section-title" id="articulos-list-title">Artículos creados</h2>
+        <div class="articulos__grid"></div>
+    </section>
+
 </section>

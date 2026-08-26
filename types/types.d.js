@@ -25,6 +25,25 @@
 
 /*
     *  ----------------------------  *
+    *  -----  Proyecto 19 JS  -----  *
+    *  ----------------------------  *
+*/
+
+/**
+ * -----------------------
+ * -----  `Article`  -----
+ * -----------------------
+ * @typedef {object} Article - Artículo creado por el usuario.
+ * @property {string} id - Identificador único del artículo.
+ * @property {string} title - Título del artículo.
+ * @property {string} subtitle - Subtítulo o autor del artículo.
+ * @property {string} description - Descripción del artículo.
+ */
+
+
+
+/*
+    *  ----------------------------  *
     *  -----  Proyecto 42 JS  -----  *
     *  ----------------------------  *
 */
