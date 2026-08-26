@@ -53,16 +53,16 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** - `clave para guardar los artículos` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> STORAGE_KEY</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articles"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> STORAGE_KEY</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articlesJS19"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Article[]}</span><span style="color:#6A9955"> - `artículos creados por el usuario` */</span></span>
 <span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> articles</span><span style="color:#D4D4D4"> = [];</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `crearId()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Genera un identificador único para un artículo.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Identificador único.</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
@@ -70,18 +70,21 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `leerArticulos()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Lee y valida los artículos guardados en localStorage.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {Article[]}</span><span style="color:#6A9955"> - Artículos almacenados.</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> leerArticulos</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> storedArticles</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">localStorage</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getItem</span><span style="color:#D4D4D4">(</span><span style="color:#4FC1FF">STORAGE_KEY</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">storedArticles</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4"> [];</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">        try</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> parsedArticles</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {unknown}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#4FC1FF">JSON</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">parse</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">storedArticles</span><span style="color:#D4D4D4">));</span></span>
@@ -91,6 +94,7 @@
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> parsedArticles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">flatMap</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">                </span></span>
 <span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4"> || </span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> item</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">"object"</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#C586C0">                    return</span><span style="color:#D4D4D4"> [];</span></span>
 <span class="line"><span style="color:#D4D4D4">                }</span></span>
@@ -111,18 +115,22 @@
 <span class="line"><span style="color:#9CDCFE">                    subtitle:</span><span style="color:#9CDCFE"> article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">subtitle</span><span style="color:#D4D4D4">,</span></span>
 <span class="line"><span style="color:#9CDCFE">                    description:</span><span style="color:#9CDCFE"> article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">description</span><span style="color:#D4D4D4">,</span></span>
 <span class="line"><span style="color:#D4D4D4">                }];</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#C586C0">        catch</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4"> [];</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `guardarArticulos()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Guarda los artículos actuales en localStorage.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
@@ -147,9 +155,9 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `eliminarArticulo(id)`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Elimina un artículo del estado y de localStorage.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> id</span><span style="color:#6A9955"> - Identificador del artículo que se eliminará.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
@@ -163,73 +171,97 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `crearTarjeta(article)`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Crea una tarjeta semántica para representar un artículo.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Article}</span><span style="color:#9CDCFE"> article</span><span style="color:#6A9955"> - Artículo que se mostrará.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {HTMLArticleElement}</span><span style="color:#6A9955"> - Tarjeta creada.</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> crearTarjeta</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $card</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"article"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $card</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__card"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $header</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"header"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $header</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__card-header"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $author</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $author</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__author"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $author</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">subtitle</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $header</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$author</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $content</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"div"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $content</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__content"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $title</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"h3"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $title</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__card-title"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $title</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $description</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $description</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__card-description"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $description</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">description</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $content</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$title</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$description</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $deleteButton</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"button"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $deleteButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"button"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $deleteButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__delete-button"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $deleteButton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Eliminar tarjeta"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $deleteButton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"aria-label"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">`Eliminar artículo </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $deleteButton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#DCDCAA">            eliminarArticulo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $card</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$header</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$content</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$deleteButton</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> $card</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * -----  `mostrarArticulos()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
 <span class="line"><span style="color:#6A9955">     * - Renderiza todos los artículos almacenados en el grid.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarArticulos</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        $articlesGrid</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">replaceChildren</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">articles</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
 <span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $emptyMessage</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
 <span class="line"><span style="color:#9CDCFE">            $emptyMessage</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"articulos__empty"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">            $emptyMessage</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Todavía no hay artículos creados."</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">            $articlesGrid</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$emptyMessage</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            </span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            $articlesGrid</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">crearTarjeta</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">article</span><span style="color:#D4D4D4">));</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  creación de artículos al enviar el formulario  -----</span></span>

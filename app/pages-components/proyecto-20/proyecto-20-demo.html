@@ -1,20 +1,29 @@
 <!--
-    *  -----  /proyecto-20-demo.html  --  /src/pages-components/proyecto-20/proyecto-20-demo.html  -----
+    *  --------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-20-demo.html  --  /src/pages-components/proyecto-20/proyecto-20-demo.html  -----  *
+    *  --------------------------------------------------------------------------------------------------  *
 -->
 
-<!--  -----  contenedor de la fecha y hora  -----  -->
-<section class="main__date-hour">
-    
-    <h2 class="main__title"> 
-        La fecha y la Hora de hoy es: 
-    </h2>
-    
-    <p class="main__date">  
-        <!--  -----  Aquí se mostrará la fecha actual  -----  -->
-    </p>
+<section class="main__demo demo__date-hour">
 
-    <p class="main__hour">  
-        <!--  -----  Aquí se mostrará la hora actual  -----  -->
-    </p>
+    <article class="date-hour__card">
+
+        <h2 class="date-hour__title">Fecha y hora actuales</h2>
+
+        <div class="date-hour__result" aria-live="polite">
+
+            <p class="date-hour__item">
+                <span class="date-hour__label">Fecha</span>
+                <time class="date-hour__date"></time>
+            </p>
+
+            <p class="date-hour__item">
+                <span class="date-hour__label">Hora</span>
+                <time class="date-hour__time"></time>
+            </p>
+
+        </div>
+
+    </article>
 
 </section>

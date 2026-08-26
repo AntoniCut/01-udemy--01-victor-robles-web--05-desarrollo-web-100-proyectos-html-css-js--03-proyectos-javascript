@@ -1,75 +1,98 @@
 /*
     *  -----------------------------------------------------------------  *
-    *  -----  /styles-20.css  --  /src/styles/pages/styles-20.css  -----  *
+    *  -----  styles-20.scss  --  /src/scss/pages/styles-20.scss  -----  *
     *  -----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 60rem;
+
+.demo__date-hour {
+    width: 100%;
+    min-height: 42rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    padding: 2rem 1.2rem;
+    box-sizing: border-box;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-.main__date-hour {
-    width: 95%;
-    height: 100%;
+@media (min-width: 768px) {
+
+    .demo__date-hour {
+        min-height: 48rem;
+        padding: 3rem 2rem;
+    }
+}
+
+
+.date-hour__card {
+    width: min(100%, 60rem);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    align-items: stretch;
+    padding: 2rem 1.2rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 768px) {
+
+    .date-hour__card {
+        padding: 3rem;
+    }
 }
 
 
-.title {
-    padding: 2rem;
+.date-hour__title {
+    margin: 0 0 2.4rem;
+    color: #212529;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
     text-align: center;
-    background-color: #bedff1;
-    border-radius: 0.5rem;
-    text-shadow: 0px 0px 2px blue;
 }
 
 
-.layout__main {
-    width: 100%;
+.date-hour__result {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 1.4rem;
+}
+
+
+.date-hour__item {
+    margin: 0;
+    padding: 1.4rem 1rem;
+    color: #212529;
+    background-color: #e8effa;
+    border-radius: 0.6rem;
     text-align: center;
 }
 
-.main__title {
-    width: 100%;
-    font-size: 4rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-    color: #0091e5;
-    background-color: beige;
-}
 
-.main__date,
-.main__hour {
-    height: 5rem;
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 900;
+.date-hour__label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #495057;
+    font-size: 1.4rem;
+    font-weight: 600;
     text-transform: uppercase;
-    text-shadow: 0px 0px 2px blue;
-    margin-bottom: 0.1rem;
 }
 
-.main__hour {
-    font-size: 3rem;
-    font-feature-settings: "tnum"; /* Activa números tabulares si la fuente lo soporta */
+
+.date-hour__date,
+.date-hour__time {
+    display: block;
+    color: #0d6efd;
+    font-size: clamp(2.8rem, 9vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 0 2px rgba(13, 110, 253, 0.35);
+    font-variant-numeric: tabular-nums;
+}
+
+
+.date-hour__time {
+    font-size: clamp(2.6rem, 8vw, 4.2rem);
 }
