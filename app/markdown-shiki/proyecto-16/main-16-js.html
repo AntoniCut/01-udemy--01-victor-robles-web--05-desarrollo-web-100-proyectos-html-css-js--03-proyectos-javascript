@@ -1,52 +1,101 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 16 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> - Elemento donde se mostrará la información del navegador y la ventana */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> data</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#data"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 16 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">data</span><span style="color:#D4D4D4">)</span></span>
-<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'No se ha encontrado el elemento con el id "data"'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo del viewport` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__viewport"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `anchura del navegador` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $browserWidth</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__browser-width"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `altura del navegador` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $browserHeight</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__browser-height"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `URL del navegador` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $browserUrl</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__browser-url"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `anchura de la ventana` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $windowWidth</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__window-width"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `altura de la ventana` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $windowHeight</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__window-height"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `URL de la ventana` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $windowUrl</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".viewport__window-url"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  verificación de bloques  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$browserWidth</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$browserHeight</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$browserUrl</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$windowWidth</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$windowHeight</span><span style="color:#D4D4D4"> ||</span></span>
+<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$windowUrl</span></span>
+<span class="line"><span style="color:#D4D4D4">    ) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -----  actualizarInfo()  ------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `actualizarInfo()`  -----</span></span>
 <span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -Funcion para actualizar la informacion del navegador y la ventana cada vez que se ejecute, mostrando la anchura, altura y URL de ambos</span></span>
+<span class="line"><span style="color:#6A9955">     * - Actualiza la información del navegador y de la ventana.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> actualizarInfo</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - Información del navegador y la ventana */</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> info</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;br> </span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h2> Navegador &#x3C;/h2></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3> Anchura: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">screen</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">width</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3> Altura: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">screen</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">height</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3> URL: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">location</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">href</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;br> &#x3C;hr> &#x3C;br></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h2> Ventana &#x3C;/h2></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3>Anchura: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerWidth</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3> Altura: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHeight</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">            &#x3C;h3> URL: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">location</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">href</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> &#x3C;/h3></span></span>
-<span class="line"><span style="color:#CE9178">        `</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> url</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">location</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">href</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        data</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHTML</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">info</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"><span style="color:#9CDCFE">        $browserWidth</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">screen</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">width</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $browserHeight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">screen</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">height</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $browserUrl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">url</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $windowWidth</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerWidth</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $windowHeight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">innerHeight</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> px`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $windowUrl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">url</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Mostrar info inicial  -----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `abrirRutaExterna()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Abre la ruta solicitada en una nueva pestaña.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> abrirRutaExterna</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">open</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"https://victorroblesweb.es/ruta"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"_blank"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"noopener,noreferrer"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DCDCAA">    actualizarInfo</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Abrir la nueva página en una ventana aparte  -----</span></span>
-<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">open</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'https://victorroblesweb.es/ruta'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"_blank"</span><span style="color:#D4D4D4">), </span><span style="color:#B5CEA8">3000</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Actualizar info en cada resize de la ventana  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'resize'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">actualizarInfo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"resize"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">actualizarInfo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    setTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">abrirRutaExterna</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">3000</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>

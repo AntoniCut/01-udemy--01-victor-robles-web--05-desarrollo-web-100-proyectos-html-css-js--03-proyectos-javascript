@@ -1,58 +1,108 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-16.js  --  /src/scripts/main-16.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-16.js  --  /src/scripts/pages/main-16.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+/// <reference path="../../../types/global.d.ts" />
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 16 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 16 JS  -----");
+    console.log("\n");
 
 
-    /** @type {HTMLDivElement | null} - Elemento donde se mostrará la información del navegador y la ventana */
-    const data = document.querySelector("#data");
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
 
-    if (!data)
-        throw new Error('No se ha encontrado el elemento con el id "data"');
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo del viewport` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__viewport")
+    );
+
+
+    //  -----  verificación de la demo  -----
+    if (!$demo) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
+
+
+    /** @type {HTMLElement | null} - `anchura del navegador` */
+    const $browserWidth = $demo.querySelector(".viewport__browser-width");
+
+    /** @type {HTMLElement | null} - `altura del navegador` */
+    const $browserHeight = $demo.querySelector(".viewport__browser-height");
+
+    /** @type {HTMLElement | null} - `URL del navegador` */
+    const $browserUrl = $demo.querySelector(".viewport__browser-url");
+
+    /** @type {HTMLElement | null} - `anchura de la ventana` */
+    const $windowWidth = $demo.querySelector(".viewport__window-width");
+
+    /** @type {HTMLElement | null} - `altura de la ventana` */
+    const $windowHeight = $demo.querySelector(".viewport__window-height");
+
+    /** @type {HTMLElement | null} - `URL de la ventana` */
+    const $windowUrl = $demo.querySelector(".viewport__window-url");
+
+
+    //  -----  verificación de bloques  -----
+    if (
+        !$browserWidth ||
+        !$browserHeight ||
+        !$browserUrl ||
+        !$windowWidth ||
+        !$windowHeight ||
+        !$windowUrl
+    ) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
 
 
     /**
      * -------------------------------
-     * -----  actualizarInfo()  ------
+     * -----  `actualizarInfo()`  -----
      * -------------------------------
-     * -Funcion para actualizar la informacion del navegador y la ventana cada vez que se ejecute, mostrando la anchura, altura y URL de ambos
+     * - Actualiza la información del navegador y de la ventana.
+     * @return {void}
      */
-
     const actualizarInfo = () => {
 
-        /** @type {string} - Información del navegador y la ventana */
-        const info = `
-            <br> 
-            <h2> Navegador </h2>
-            <h3> Anchura: ${screen.width} px </h3>
-            <h3> Altura: ${screen.height} px </h3>
-            <h3> URL: ${window.location.href} </h3>
-            <br> <hr> <br>
-            <h2> Ventana </h2>
-            <h3>Anchura: ${window.innerWidth} px </h3>
-            <h3> Altura: ${window.innerHeight} px </h3>
-            <h3> URL: ${window.location.href} </h3>
-        `;
+        const url = window.location.href;
 
-        data.innerHTML = info;
-    }
+        $browserWidth.textContent = `${screen.width} px`;
+        $browserHeight.textContent = `${screen.height} px`;
+        $browserUrl.textContent = url;
+        $windowWidth.textContent = `${window.innerWidth} px`;
+        $windowHeight.textContent = `${window.innerHeight} px`;
+        $windowUrl.textContent = url;
+    };
 
-    //  -----  Mostrar info inicial  -----
+
+    /**
+     * ----------------------------------
+     * -----  `abrirRutaExterna()`  -----
+     * ----------------------------------
+     * - Abre la ruta solicitada en una nueva pestaña.
+     * @return {void}
+     */
+    const abrirRutaExterna = () => {
+
+        window.open("https://victorroblesweb.es/ruta", "_blank", "noopener,noreferrer");
+    };
+
+
     actualizarInfo();
-
-    //  -----  Abrir la nueva página en una ventana aparte  -----
-    setTimeout(() => window.open('https://victorroblesweb.es/ruta', "_blank"), 3000);
-
-    //  -----  Actualizar info en cada resize de la ventana  -----
-    window.addEventListener('resize', actualizarInfo);
+    window.addEventListener("resize", actualizarInfo);
+    setTimeout(abrirRutaExterna, 3000);
 
 
 })();
