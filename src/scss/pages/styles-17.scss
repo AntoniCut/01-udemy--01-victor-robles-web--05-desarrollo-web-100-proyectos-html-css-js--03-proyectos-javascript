@@ -1,91 +1,149 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-17.css  --  /src/styles/pages/styles-17.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-17.scss  --  /src/scss/pages/styles-17.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__demo {
-    position: relative;
-    width: 100vw;
-    min-height: 60rem;
+
+.demo__tarjetas-estilos {
+    width: 100%;
+    min-height: 40rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 10rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.6rem 1.2rem 2.4rem;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-.layout__card{
-    width: 30rem;
+@media (min-width: 768px) {
+
+    .demo__tarjetas-estilos {
+        padding: 2.4rem 2rem 3.2rem;
+    }
+}
+
+.layout__main > .main__container > [data-component-page] .main__demo.demo__tarjetas-estilos {
+    width: min(95%, 120rem);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+.tarjetas-estilos__grid {
+    display: grid;
+    grid-template-columns: minmax(0, min(30rem, 100%));
+    grid-auto-rows: 33rem;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+@media (min-width: 768px) {
+
+    .tarjetas-estilos__grid {
+        grid-template-columns: repeat(2, minmax(28rem, 30rem));
+        gap: 2.4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .tarjetas-estilos__grid {
+        grid-template-columns: repeat(3, minmax(28rem, 30rem));
+    }
+
+    .tarjetas-estilos__card:last-child:nth-child(3n + 1) {
+        grid-column: 2;
+    }
+}
+
+
+.tarjetas-estilos__card {
+    width: 100%;
+    height: 33rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding: 1rem;
-    background-color: #0D6EFD;
-    color: white;
-    border-radius: 0.5rem;
+    box-sizing: border-box;
     overflow: hidden;
+    color: #ffffff;
+    background-color: #0d6efd;
+    border-radius: 0.8rem;
     text-align: center;
 }
 
-.card__header{
+
+.tarjetas-estilos__card-header {
     border-bottom: 1px solid #0b58ca;
 }
 
-.header__author{
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: white;
+
+.tarjetas-estilos__author {
+    margin: 0;
     padding: 1rem 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
-.card__content{
+
+.tarjetas-estilos__content {
+    flex: 1;
     padding: 1.5rem;
 }
 
-.content__title{
+
+.tarjetas-estilos__title {
+    margin: 0 0 1rem;
+    color: #ffffff;
     font-size: 1.8rem;
-    margin-bottom: 1rem;
 }
 
-.content__description{
+
+.tarjetas-estilos__description {
+    height: 10rem;
+    margin: 0 0 1rem;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.4;
-    margin-bottom: 1rem;
 }
 
-.content__btn,
-.delete__btn{
-    border: 1px solid #0b58ca;
-    background-color: transparent;
+
+.tarjetas-estilos__style-button {
     width: 100%;
+    margin-bottom: 1rem;
     padding: 1rem;
-    outline: none;
+    border: 1px solid #0b58ca;
     border-radius: 0.5rem;
+    outline: none;
+    color: #ffffff;
+    background-color: transparent;
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 1rem;
+}
+
+.tarjetas-estilos__style-button:hover,
+.tarjetas-estilos__style-button:focus {
+    background-color: rgba(255, 255, 255, 0.18);
 }
 
 
-/*  -----  Para cambiar estilos en JS  -----  */
-.layout__card.active {
-    box-shadow: 0px 0px 14px black;
+.tarjetas-estilos__card--active {
+    box-shadow: 0 0 1.4rem #000000;
 }
 
-.card__header.active {
+.tarjetas-estilos__card-header--active {
     background-color: #1b62ca;
 }
 
-.content__description.active {
+.tarjetas-estilos__description--active {
     opacity: 0.8;
 }
 
-.content__btn.active {
+.tarjetas-estilos__style-button--active {
     color: #1b62ca;
-    background-color: white;
+    background-color: #ffffff;
 }

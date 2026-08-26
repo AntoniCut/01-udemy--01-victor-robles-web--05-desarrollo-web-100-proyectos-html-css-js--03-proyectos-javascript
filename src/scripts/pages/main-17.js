@@ -1,69 +1,115 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-17.js  --  /src/scripts/main-17.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-17.js  --  /src/scripts/pages/main-17.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+/// <reference path="../../../types/global.d.ts" />
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 17 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 17 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de tarjetas` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__tarjetas-estilos")
+    );
 
 
-     /** @type {NodeListOf<HTMLElement>} - listas de tarjetas */
-    const cards = document.querySelectorAll(".layout__card");
-    
-
-    //  -----  recorrer cada tarjeta para agregar eventos  -----
-    cards.forEach(
-
-        
-        /** @param {HTMLArticleElement} card - article card */
-
-        card => {
+    //  -----  verificación de la demo  -----
+    if (!$demo) {
+        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    }
 
 
-        //  -----  Referencias al HTML de cada tarjeta  -----
-
-        /** @type {HTMLHeaderElement | null} - header de la tarjeta */
-        const header = card.querySelector('.card__header');
-        
-        /** @type {HTMLParagraphElement | null} - descripción de la tarjeta */  
-        const description = card.querySelector('.content__description');
-        
-        /** @type {HTMLButtonElement | null} - botón para cambiar estilos */
-        const btnChangeEstilos = card.querySelector(".content__btn");
+    /** @type {NodeListOf<HTMLArticleElement>} - `tarjetas de la demo` */
+    const $cards = /** @type {NodeListOf<HTMLArticleElement>} */ (
+        $demo.querySelectorAll(".tarjetas-estilos__card")
+    );
 
 
-        //  -----  Validar que los elementos existan antes de agregar eventos  -----
-        if(!header || !description || !btnChangeEstilos) 
+    /**
+     * -----------------------------------------
+     * -----  `alternarEstilos(card)`  -----
+     * -----------------------------------------
+     * - Alterna los estilos visuales de una tarjeta.
+     * @param {HTMLArticleElement} card - Tarjeta que cambiará de estilo.
+     * @return {void}
+     */
+    const alternarEstilos = (card) => {
+
+        /** @type {HTMLButtonElement | null} - `botón de estilos` */
+        const $button = /** @type {HTMLButtonElement | null} */ (
+            card.querySelector(".tarjetas-estilos__style-button")
+        );
+
+        /** @type {HTMLHeaderElement | null} - `cabecera de la tarjeta` */
+        const $header = /** @type {HTMLHeaderElement | null} */ (
+            card.querySelector(".tarjetas-estilos__card-header")
+        );
+
+        /** @type {HTMLParagraphElement | null} - `descripción de la tarjeta` */
+        const $description = /** @type {HTMLParagraphElement | null} */ (
+            card.querySelector(".tarjetas-estilos__description")
+        );
+
+
+        if (!$button || !$header || !$description) {
             return;
+        }
 
 
-        //  -----  Seleccionar botón de cambiar estilos existente -----
-        btnChangeEstilos.addEventListener('click', () => {
+        const isActive = card.classList.toggle("tarjetas-estilos__card--active");
+
+        $header.classList.toggle("tarjetas-estilos__card-header--active", isActive);
+        $description.classList.toggle("tarjetas-estilos__description--active", isActive);
+        $button.classList.toggle("tarjetas-estilos__style-button--active", isActive);
+        $button.textContent = isActive ? "Estilos iniciales" : "Cambiar estilos";
+    };
 
 
-            //  -----  Cambiar estilos de la tarjeta, header, descripción y botón  -----
-            card.classList.toggle("active");  
-            header.classList.toggle("active");
-            description.classList.toggle("active");
-            btnChangeEstilos.classList.toggle("active");
-            
-            //  -----  Cambiar el texto del botón según el estado de la tarjeta  -----
-            if(card.classList.contains('active'))
-                btnChangeEstilos.textContent = "Estilos Iniciales";
-            
-            else
-                btnChangeEstilos.textContent = "Cambiar estilos";
+    /**
+     * --------------------------------------
+     * -----  `configurarTarjeta(card)`  -----
+     * --------------------------------------
+     * - Configura el botón de cambio de estilos.
+     * @param {HTMLArticleElement} card - Tarjeta que se configurará.
+     * @return {void}
+     */
+    const configurarTarjeta = (card) => {
 
+        /** @type {HTMLButtonElement | null} - `botón de estilos` */
+        const $button = /** @type {HTMLButtonElement | null} */ (
+            card.querySelector(".tarjetas-estilos__style-button")
+        );
+
+
+        if (!$button) {
+            return;
+        }
+
+
+        $button.addEventListener("click", () => {
+            alternarEstilos(card);
         });
+    };
 
+
+    $cards.forEach((card) => {
+        configurarTarjeta(card);
     });
 
 
