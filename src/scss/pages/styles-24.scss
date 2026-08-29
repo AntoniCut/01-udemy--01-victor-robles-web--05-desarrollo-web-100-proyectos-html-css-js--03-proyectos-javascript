@@ -1,73 +1,103 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-24.css  --  /src/styles/pages/styles-24.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-24.scss  --  /src/scss/pages/styles-24.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
+
+.demo__password-eye {
+    width: 100%;
     min-height: 30rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 10rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
-    .main__container {
-        min-height: 60rem;    
-        padding-top: 20rem;
+    .demo__password-eye {
+        min-height: 42rem;
+        padding: 3rem 2rem 5rem;
     }
 }
 
 
-.main__form-password {
+.password-eye__form {
+    position: relative;
+    width: min(90%, 36rem);
+    min-height: 5rem;
     display: flex;
-    border: 2px solid #444;
+    align-items: stretch;
+    overflow: hidden;
+    border: 2px solid #444444;
     border-radius: 0.5rem;
     background-color: #ffffff;
 }
 
-.form__hidden-username {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
 
-.form__input {
+.password-eye__input {
     display: block;
-    width: 26rem;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
     height: 5rem;
-    padding: 1rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-    border: none;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    border: 0;
     outline: none;
-    border-radius: 0.5rem;
+    background-color: #ffffff;
+    font: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
-.form__eye {
+.password-eye__input:-webkit-autofill,
+.password-eye__input:-webkit-autofill:hover,
+.password-eye__input:-webkit-autofill:focus,
+.password-eye__input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #212529 !important;
+    caret-color: #212529;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+@media (min-width: 768px) {
+
+    .password-eye__input {
+        font-size: 1.6rem;
+    }
+}
+
+
+.password-eye__toggle {
+    flex: 0 0 4.8rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-right: 1rem;
-    color: #444;
-}
-
-.form__eye > .fa-solid {
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background-color: #ffffff;
+    color: #444444;
     cursor: pointer;
 }
 
-.form__eye > .fa-solid:active {
-    color: red;
+.password-eye__toggle:active,
+.password-eye__toggle:focus-visible {
+    color: #c0392b;
+}
+
+
+.password-eye__icon {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+
+    .password-eye__icon {
+        font-size: 2rem;
+    }
 }

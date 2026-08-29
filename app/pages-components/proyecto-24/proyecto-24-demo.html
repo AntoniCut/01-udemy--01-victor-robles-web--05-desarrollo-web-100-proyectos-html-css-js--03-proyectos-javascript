@@ -1,21 +1,32 @@
 <!--
-    *  -----  /proyecto-24-demo.html  --  /src/pages-components/proyecto-24/proyecto-24-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-24-demo.html  --  /src/pages-components/proyecto-24/proyecto-24-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<form class="main__form-password">
+<section class="main__demo demo__password-eye">
 
-    <input
-        type="text"
-        name="username"
-        class="form__hidden-username"
-        autocomplete="username"
-        tabindex="-1"
-    >
+    <form class="password-eye__form" autocomplete="off">
 
-    <input type="password" id="password" class="form__input" placeholder="Introduce tu contraseña" autocomplete="new-password">
+        <input
+            class="password-eye__input"
+            id="password-eye-input"
+            type="password"
+            name="clave-demo"
+            placeholder="Introduce tu contraseña"
+            autocomplete="off"
+            aria-label="Contraseña"
+        >
 
-    <div class="form__eye">
-        <i class="fa-solid fa-eye"> </i>
-    </div>
+        <button
+            class="password-eye__toggle"
+            type="button"
+            aria-label="Mostrar contraseña"
+            aria-pressed="false"
+        >
+            <i class="password-eye__icon fa-solid fa-eye" aria-hidden="true"></i>
+        </button>
 
-</form>
+    </form>
+
+</section>

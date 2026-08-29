@@ -1,43 +1,107 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-24.js  --  /src/scripts/main-24.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-24.js  --  /src/scripts/pages/main-24.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 00 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 24 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
 
-    /** @type {HTMLInputElement | null} - `input de tipo password` */
-    const $input = document.querySelector(".form__input");
-    
-    
-    /** @type {HTMLElement | null} - `icono de ojo` */
-    const $icon = document.querySelector(".form__eye > .fa-solid");
-        
-
-    //  -----  Validación de elementos en el DOM  -----
-    if (!$input || !$icon) 
-        throw new Error("No se han encontrado los elementos necesarios en el DOM");
+    /** @type {HTMLSectionElement | null} - `demo del formulario de contraseña` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__password-eye")
+    );
 
 
-    //  -----  Eventos  -----
-    $icon.addEventListener("click", () => {
-        
-        //  -----  Toggle del tipo de input  -----
-        if ($input.type === "password" && $input.value.trim() != "")
-            $input.type = "text";
-        
-        else
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de la contraseña.");
+    }
+
+
+    /** @type {HTMLFormElement | null} - `formulario de contraseña` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".password-eye__form")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de contraseña` */
+    const $input = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector(".password-eye__input")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón del ojo` */
+    const $toggle = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".password-eye__toggle")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$form || !$input || !$toggle) {
+        throw new Error("No se han encontrado los elementos necesarios de la contraseña.");
+    }
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
+    /**
+     * -------------------------------------
+     * -----  `alternarVisibilidad()`  -----
+     * -------------------------------------
+     * - Muestra u oculta el texto de la contraseña.
+     * @return {void}
+     */
+    const alternarVisibilidad = () => {
+
+        /** - `la contraseña se está mostrando` */
+        const visible = $input.type === "text";
+
+        //  -----  si está visible o el campo está vacío, volver a ocultar  -----
+        if (visible || $input.value.trim() === "") {
             $input.type = "password";
-        
+            $toggle.setAttribute("aria-pressed", "false");
+            $toggle.setAttribute("aria-label", "Mostrar contraseña");
+            return;
+        }
+
+        $input.type = "text";
+        $toggle.setAttribute("aria-pressed", "true");
+        $toggle.setAttribute("aria-label", "Ocultar contraseña");
+    };
+
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  evitar que el formulario recargue la página  -----
+    $form.addEventListener("submit", (event) => {
+        event.preventDefault();
     });
-    
+
+
+    //  -----  pulsar el ojo para mostrar u ocultar  -----
+    $toggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        alternarVisibilidad();
+    });
+
 
 })();
