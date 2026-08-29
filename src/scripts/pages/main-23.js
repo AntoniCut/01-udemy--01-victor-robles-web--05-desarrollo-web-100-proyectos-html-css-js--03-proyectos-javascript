@@ -1,84 +1,137 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-23.js  --  /src/scripts/main-23.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-23.js  --  /src/scripts/pages/main-23.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 23 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 23 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
 
-    /** @type {HTMLFormElement | null} - `Referencia al formulario de validación de email` */
-    const main = document.querySelector(".main__validation-email");
-    
-    /** @type {HTMLInputElement | null} - `Referencia al input de email` */
-    const input = document.querySelector(".validation-email__input");
-    
-    /** @type {HTMLElement | null} - `Referencia al icono de check - correcto` */
-    const check = document.querySelector(".icons__check");
-    
-    /** @type {HTMLElement | null} - `Referencia al icono de cruz - incorrecto` */
-    const xMark = document.querySelector(".icons__xmark");
+    /** @type {HTMLSectionElement | null} - `demo del validador` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__email")
+    );
 
 
-    //  -----  Validación de email  -----
-    if(!main || !input || !check || !xMark) 
-        throw new Error('No se han podido obtener las referencias del HTML');
-   
-
-    /**
-     * --------------------------
-     * -----  `validate()`  -----
-     * ---------------------------
-     * 
-     * - `Función que valida el email ingresado en el input utilizando una expresión regular`
-     */
-
-    const validate = () => {
-
-        //let pattern = /@.*\./;
-        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const email = input.value;
-
-        //  -----  Validar que el email no esté vacío  -----
-        if (email.trim() != "") {
-
-            /** @type {boolean} - `Resultado de la prueba de la expresión regular` */
-            const test = pattern.test(email);
-            
-            console.log('test => ', test);
-
-            if (test) {
-                check.classList.add('show');;
-                xMark.classList.remove('show');
-            }
-
-            else {
-                check.classList.remove('show');;
-                xMark.classList.add('show');
-            }
-
-        }
-
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del validador de email.");
     }
 
 
-    //  -----  Evento focus  -----
-    input.addEventListener('focus', () => main.classList.add('focus'));
+    /** @type {HTMLFormElement | null} - `formulario de validación` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".email__form")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de email` */
+    const $input = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector(".email__input")
+    );
+
+    /** @type {HTMLElement | null} - `icono de email correcto` */
+    const $check = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".email__check")
+    );
+
+    /** @type {HTMLElement | null} - `icono de email incorrecto` */
+    const $error = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".email__error")
+    );
 
 
-    //  -----  Evento blur  -----
-    input.addEventListener('blur', () => main.classList.remove('focus'));
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$form || !$input || !$check || !$error) {
+        throw new Error("No se han encontrado los elementos necesarios del validador.");
+    }
 
-    
-    //  -----  Evento keydown  -----
-    input.addEventListener('keydown', validate);
+
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
+    /** @type {RegExp} - `patrón para validar el email` */
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
+    /**
+     * ------------------------------
+     * -----  `validarEmail()`  -----
+     * ------------------------------
+     * - Valida el email y muestra el check o la cruz.
+     * @return {void}
+     */
+    const validarEmail = () => {
+
+        /** @type {string} - `email escrito por el usuario` */
+        const email = $input.value.trim();
+
+        //  -----  si el campo está vacío, ocultar ambos iconos  -----
+        if (email === "") {
+            $check.classList.remove("email__check--show");
+            $error.classList.remove("email__error--show");
+            $input.removeAttribute("aria-invalid");
+            return;
+        }
+
+        /** - `el email cumple el patrón` */
+        const esValido = pattern.test(email);
+
+        $check.classList.toggle("email__check--show", esValido);
+        $error.classList.toggle("email__error--show", !esValido);
+        $input.setAttribute("aria-invalid", esValido ? "false" : "true");
+    };
+
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  evitar que el formulario recargue la página  -----
+    $form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        validarEmail();
+    });
+
+
+    //  -----  marcar el foco del formulario  -----
+    $input.addEventListener("focus", () => {
+        $form.classList.add("email__form--focus");
+    });
+
+
+    //  -----  quitar el foco del formulario  -----
+    $input.addEventListener("blur", () => {
+        $form.classList.remove("email__form--focus");
+    });
+
+
+    //  -----  validar al escribir  -----
+    $input.addEventListener("input", () => {
+        validarEmail();
+    });
 
 
 })();

@@ -1,135 +1,134 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-23.css  --  /src/styles/pages/styles-23.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-23.scss  --  /src/scss/pages/styles-23.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-input:-webkit-autofill {
-    background-color: transparent !important;
-}
 
-.main__container {
-    position: relative;
-    width: 100vw;
+.demo__email {
+    width: 100%;
     min-height: 30rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 10rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
-    .main__container {
-        min-height: 60rem;    
-        padding-top: 20rem;
+    .demo__email {
+        min-height: 42rem;
+        padding: 3rem 2rem 5rem;
     }
 }
 
-.main__validation-email {
-    position: relative;
-    width: 90%;
-    max-width: 60rem;
-    height: 5rem;
+
+.email__form {
+    width: min(90%, 60rem);
+    min-height: 5rem;
     display: flex;
-    flex-direction: row;
-    border: 2px solid #ccc;
-    border-radius: 0.5rem;
-    transition: all 300ms linear;
-}
-
-
-.validation-email__input {
-    display: block;
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border: none;
-    outline: none;
+    align-items: stretch;
+    overflow: hidden;
+    border: 2px solid #cccccc;
     border-radius: 0.5rem;
     background-color: #ffffff;
+    transition: border-color 300ms linear;
 }
 
-@media (min-width: 500px) {
+.email__form--focus {
+    border-color: #000000;
+}
 
-    .validation-email__input {  
+.email__form:focus-within .email__input,
+.email__form:focus-within .email__icons {
+    background-color: #f0f0f0;
+}
+
+
+.email__input {
+    display: block;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 1.2rem 1.5rem;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-color: #ffffff;
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+
+    .email__input {
         font-size: 1.6rem;
     }
 }
 
-.validation-email__icons {
+.email__input:-webkit-autofill,
+.email__input:-webkit-autofill:hover,
+.email__input:-webkit-autofill:focus,
+.email__input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset !important;
+    -webkit-text-fill-color: #000000 !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.email__input:-webkit-autofill ~ .email__icons {
+    background-color: #f0f0f0;
+}
+
+
+.email__icons {
     position: relative;
-    flex-basis: 10%;
+    flex: 0 0 4.8rem;
+    min-width: 4.8rem;
     background-color: #ffffff;
 }
 
-.icons__check,
-.icons__xmark {
+@media (min-width: 768px) {
+
+    .email__icons {
+        flex-basis: 6rem;
+        min-width: 6rem;
+    }
+}
+
+
+.email__check,
+.email__error {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
     opacity: 0;
-    transition: all 300ms linear;
+    transition: opacity 300ms linear;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
-    .icons__check,
-    .icons__xmark {
+    .email__check,
+    .email__error {
         font-size: 3rem;
     }
 }
 
-.icons__check {
+.email__check {
     color: #6dc06d;
 }
 
-.icons__xmark {
+.email__error {
     color: #f95d5d;
 }
 
-.focus {
-    border-color: black;
-}
-
-.validation-email__icons > .show {
+.email__check--show,
+.email__error--show {
     opacity: 1;
 }
-
-
-/*  -----  Estilos fondos del input e iconos - FOCUS  -----  */
-.main__validation-email:focus-within .validation-email__input {
-    background-color: #f0f0f0;
-}
-
-.main__validation-email:focus-within .validation-email__icons {
-    background-color: #f0f0f0;
-}
-
-
-/*  -----  Sobrescribir fondo amarillo/azul del autofill  ----- */
-.validation-email__input:-webkit-autofill,
-.validation-email__input:-webkit-autofill:hover,
-.validation-email__input:-webkit-autofill:focus,
-.validation-email__input:-webkit-autofill:active {
-
-    
-    -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset !important;
-    -webkit-text-fill-color: #000000 !important;
-    transition: background-color 9999s ease-in-out 0s;
-}
-
-/* Cambiar también el fondo del contenedor de iconos */
-.validation-email__input:-webkit-autofill ~ .validation-email__icons {
-    background-color: #f0f0f0;
-}
-

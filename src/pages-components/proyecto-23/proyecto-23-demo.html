@@ -1,14 +1,28 @@
 <!--
-    *  -----  /proyecto-23-demo.html  --  /src/pages-components/proyecto-23/proyecto-23-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-23-demo.html  --  /src/pages-components/proyecto-23/proyecto-23-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
-<form class="main__validation-email">
+<section class="main__demo demo__email">
 
-    <input type="email" id="email" class="validation-email__input" placeholder="Introduce tu Email">
+    <form class="email__form">
 
-    <div class="validation-email__icons">
-        <i class="icons__check fa-solid fa-circle-check"> </i>
-        <i class="icons__xmark fa-solid fa-circle-xmark"> </i>
-    </div>
+        <input
+            class="email__input"
+            id="email-input"
+            type="email"
+            name="email"
+            placeholder="Introduce tu Email"
+            autocomplete="email"
+            aria-label="Introduce tu email"
+        >
 
-</form>
+        <div class="email__icons" aria-live="polite">
+            <i class="email__check fa-solid fa-circle-check" aria-hidden="true"></i>
+            <i class="email__error fa-solid fa-circle-xmark" aria-hidden="true"></i>
+        </div>
+
+    </form>
+
+</section>
