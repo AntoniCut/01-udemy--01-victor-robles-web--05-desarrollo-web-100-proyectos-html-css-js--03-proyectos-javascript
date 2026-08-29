@@ -1,125 +1,180 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-21.js  --  /src/scripts/main-21.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-21.js  --  /src/scripts/pages/main-21.js  -----  *
+    *  -----------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 21 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 21 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
-    
-    /** @type {HTMLSectionElement | null} - `Contenedor de las cajas del inventario` */
-    const inventarioDom = document.querySelector(".main__inventario");
-    
-    /** @type {NodeListOf<HTMLDivElement>} - `Cajas del inventario - cada caja es un 'HTMLDivElement'` */
-    const cajas = document.querySelectorAll(".inventario__caja");
-    
-    /** @type {NodeListOf<HTMLDivElement>} - `Estanterías del almacén - cada estantería es un 'HTMLDivElement'` */
-    const estanteriaDom = document.querySelectorAll(".almacen__estanteria");
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {HTMLSectionElement | null} - `demo del almacén` */
+    const $demo = /** @type {HTMLSectionElement | null} */ (
+        document.querySelector(".demo__almacen")
+    );
 
 
-    //  -----  Validar referencias al DOM  -----
-    if (!inventarioDom || cajas.length === 0 || estanteriaDom.length === 0) {
-        throw new Error('Error: No se pudieron encontrar los elementos del DOM necesarios para el proyecto.');
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del almacén.");
     }
 
 
-    //  -----  Mostrar referencias en consola  -----
-    console.log('inventarioDom => ', inventarioDom);
-    console.log('cajas => ', cajas);
-    console.log('estanteriaDom => ', estanteriaDom);
+    /** @type {HTMLElement | null} - `contenedor de las cajas del inventario` */
+    const $inventario = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".almacen__inventario")
+    );
+
+    /** @type {HTMLParagraphElement | null} - `mensaje de estado del almacén` */
+    const $status = /** @type {HTMLParagraphElement | null} */ (
+        $demo.querySelector(".almacen__status")
+    );
+
+    /** @type {NodeListOf<HTMLElement>} - `cajas arrastrables` */
+    const $cajas = /** @type {NodeListOf<HTMLElement>} */ (
+        $demo.querySelectorAll(".almacen__caja")
+    );
+
+    /** @type {NodeListOf<HTMLDivElement>} - `huecos de la estantería` */
+    const $huecos = /** @type {NodeListOf<HTMLDivElement>} */ (
+        $demo.querySelectorAll(".almacen__hueco")
+    );
 
 
-    //  -----  poner un id único a cada caja movible  -----
-    cajas.forEach((caja, i) => {
-        
-        //  -----  asignar un id único a cada caja  -----
-        caja.setAttribute('id', 'caja' + (i + 1));
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$inventario || !$status || $cajas.length === 0 || $huecos.length === 0) {
+        throw new Error("No se han encontrado los elementos necesarios del almacén.");
+    }
 
-        //  -----  establecer cada caja como un elemento arrastrable  -----
-        caja.addEventListener("dragstart", (e) => {
-            
-            /** @type {DataTransfer | null} - `Objeto dataTransfer del evento de arrastre` */
-            const dataTransfer = e.dataTransfer;
-                   
-            //  -----  establecer el id de la caja como dato a transferir durante el arrastre  -----
-            const target = e.target;
-            
-            //  -----  Validar que el target del evento es un elemento HTML y que el objeto dataTransfer no es nulo  -----
-            if (dataTransfer && target instanceof HTMLElement) {
-                dataTransfer.setData("id", target.id);
+
+    /**
+     * -------------------------------------------
+     * -----  `mostrarMensaje(texto, tipo)`  -----
+     * -------------------------------------------
+     * - Muestra un mensaje de error o de éxito dentro de la demo.
+     * @param {string} texto - Texto que verá el usuario.
+     * @param {AlmacenMensajeTipo} tipo - Tipo visual del mensaje.
+     * @return {void}
+     */
+    const mostrarMensaje = (texto, tipo) => {
+
+        $status.textContent = texto;
+        $status.classList.remove("almacen__status--error", "almacen__status--success");
+        $status.classList.add(
+            tipo === "error" ? "almacen__status--error" : "almacen__status--success"
+        );
+    };
+
+
+    /**
+     * --------------------------------
+     * -----  `ocultarMensaje()`  -----
+     * --------------------------------
+     * - Quita el mensaje de estado de la demo.
+     * @return {void}
+     */
+    const ocultarMensaje = () => {
+
+        $status.textContent = "";
+        $status.classList.remove("almacen__status--error", "almacen__status--success");
+    };
+
+
+    //  -----  preparar cada caja como elemento arrastrable  -----
+    $cajas.forEach((caja, indice) => {
+
+        caja.id = `caja${indice + 1}`;
+
+        //  -----  ocultar el aviso al seleccionar otra caja  -----
+        caja.addEventListener("pointerdown", () => {
+            ocultarMensaje();
+        });
+
+        //  -----  guardar el id de la caja al empezar el arrastre  -----
+        caja.addEventListener("dragstart", (event) => {
+
+            ocultarMensaje();
+
+            /** @type {DataTransfer | null} - `datos del arrastre` */
+            const dataTransfer = event.dataTransfer;
+
+            //  -----  validar el destino y el dataTransfer  -----
+            if (dataTransfer && event.currentTarget instanceof HTMLElement) {
+                dataTransfer.setData("id", event.currentTarget.id);
             }
         });
-        
     });
 
 
-    //  -----  establecer cada hueco de la estanteria   -----
-    //  -----  un hueco donde puedo soltar un elemento  -----
-    estanteriaDom.forEach((estanteria) => {
+    //  -----  cada hueco puede recibir una sola caja  -----
+    $huecos.forEach((hueco) => {
+
+        //  -----  permitir soltar sobre el hueco  -----
+        hueco.addEventListener("dragover", (event) => {
+            event.preventDefault();
+        });
 
 
-        //  -----  desactivar el dragover  -----
-        estanteria.addEventListener("dragover", e => e.preventDefault());
+        //  -----  soltar la caja en el hueco  -----
+        hueco.addEventListener("drop", (event) => {
+
+            event.preventDefault();
+
+            /** @type {DataTransfer | null} - `datos del arrastre` */
+            const dataTransfer = event.dataTransfer;
+
+            /** @type {string} - `id de la caja arrastrada` */
+            const cajaId = dataTransfer ? dataTransfer.getData("id") : "";
 
 
-        //  -----  al soltar la caja en la almacen estanteria  -----
-        estanteria.addEventListener("drop", e => {
+            //  -----  validar el id y el hueco destino  -----
+            if (!cajaId || !(event.currentTarget instanceof HTMLElement)) {
+                return;
+            }
 
+            /** @type {HTMLElement | null} - `caja que se ha soltado` */
+            const caja = /** @type {HTMLElement | null} */ (
+                document.getElementById(cajaId)
+            );
 
-            e.preventDefault();
+            //  -----  si no existe la caja, no continuar  -----
+            if (!caja) {
+                return;
+            }
 
-            /** @type {DataTransfer | null} - `Objeto dataTransfer del evento de arrastre` */
-            const dataTransfer = e.dataTransfer;
+            //  -----  si el hueco está libre, guardar la caja  -----
+            if (event.currentTarget.children.length === 0) {
 
-            /** @type {string | null} - `ID de la caja arrastrada` */
-            const cajaId = dataTransfer ? dataTransfer.getData("id") : null;
-            
-            console.log('cajaId => ', cajaId);
+                event.currentTarget.appendChild(caja);
+                caja.classList.add("almacen__caja--guardada");
 
-
-            //  -----  Validar que se obtuvo un id de caja válido y que  -----
-            //  -----  el elemento actual del evento es un HTMLElement   -----
-            if (cajaId && e.currentTarget instanceof HTMLElement) {
-
-                /** @type {HTMLDivElement | null} */
-                const caja = document.querySelector("#" + cajaId);
-                
-                //  -----  Validar que se encontró el elemento de la caja con el id proporcionado  -----
-                if (!caja) {
-                    throw new Error('Error: No se pudo encontrar la caja con el id proporcionado.');
+                //  -----  avisar cuando ya no queden cajas en el inventario  -----
+                if ($inventario.children.length === 0) {
+                    window.setTimeout(() => {
+                        mostrarMensaje("Todas las cajas han sido guardadas.", "success");
+                    }, 1000);
                 }
-                
-                console.log("Elemento de la caja:", caja);
-
-                //  -----  Verificar si la estantería ya tiene una caja dentro  -----
-                if (e.currentTarget.children.length === 0) {
-                    
-                    //  -----  Mover la caja al estante soltado  -----
-                    e.currentTarget.appendChild(caja);
-                    
-                    //  -----  Eliminar el estilo 'sombra' de caja arrastrable para indicar que ya está guardada  -----
-                    caja.style.boxShadow = "none";
-
-                } else
-                    alert("❌ ¡Estantería ocupada! ❌");
-
-                //  -----  alerta si todas las cajas han sido guardadas  -----
-                if (inventarioDom.children.length === 0) 
-                    setTimeout(() => alert("😊 ¡Todas las cajas han sido guardadas! 😊"), 1000);
-                
             }
-
+            //  -----  si el hueco ya tiene una caja, avisar  -----
+            else {
+                mostrarMensaje("Estantería ocupada.", "error");
+            }
         });
-
     });
-
 
 
 })();

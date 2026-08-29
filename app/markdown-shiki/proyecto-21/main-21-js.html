@@ -1,119 +1,152 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  Proyecto 21 JS  -----'</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Referencias al HTML  -----</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de las cajas del inventario` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> inventarioDom</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".main__inventario"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Cajas del inventario - cada caja es un 'HTMLDivElement'` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> cajas</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".inventario__caja"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    </span></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Estanterías del almacén - cada estantería es un 'HTMLDivElement'` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> estanteriaDom</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__estanteria"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"-----  Proyecto 21 JS  -----"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Validar referencias al DOM  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">inventarioDom</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">cajas</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">estanteriaDom</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Error: No se pudieron encontrar los elementos del DOM necesarios para el proyecto.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `demo del almacén` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__almacen"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo del almacén."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  Mostrar referencias en consola  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'inventarioDom => '</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">inventarioDom</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'cajas => '</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">cajas</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'estanteriaDom => '</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">estanteriaDom</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `contenedor de las cajas del inventario` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $inventario</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__inventario"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `mensaje de estado del almacén` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $status</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__status"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `cajas arrastrables` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $cajas</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__caja"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `huecos de la estantería` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $huecos</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".almacen__hueco"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  poner un id único a cada caja movible  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    cajas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
-<span class="line"><span style="color:#6A9955">        //  -----  asignar un id único a cada caja  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'id'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'caja'</span><span style="color:#D4D4D4"> + (</span><span style="color:#9CDCFE">i</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los elementos necesarios  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$inventario</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$status</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">$cajas</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">$huecos</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios del almacén."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  establecer cada caja como un elemento arrastrable  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"dragstart"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#D4D4D4">            </span></span>
-<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DataTransfer | null}</span><span style="color:#6A9955"> - `Objeto dataTransfer del evento de arrastre` */</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> dataTransfer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">                   </span></span>
-<span class="line"><span style="color:#6A9955">            //  -----  establecer el id de la caja como dato a transferir durante el arrastre  -----</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> target</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">target</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">            </span></span>
-<span class="line"><span style="color:#6A9955">            //  -----  Validar que el target del evento es un elemento HTML y que el objeto dataTransfer no es nulo  -----</span></span>
-<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">target</span><span style="color:#569CD6"> instanceof</span><span style="color:#4EC9B0"> HTMLElement</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#9CDCFE">                dataTransfer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setData</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"id"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">target</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarMensaje(texto, tipo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra un mensaje de error o de éxito dentro de la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> texto</span><span style="color:#6A9955"> - Texto que verá el usuario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {AlmacenMensajeTipo}</span><span style="color:#9CDCFE"> tipo</span><span style="color:#6A9955"> - Tipo visual del mensaje.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarMensaje</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">tipo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"almacen__status--error"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"almacen__status--success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#9CDCFE">            tipo</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"almacen__status--error"</span><span style="color:#D4D4D4"> : </span><span style="color:#CE9178">"almacen__status--success"</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  preparar cada caja como elemento arrastrable  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $cajas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">indice</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`caja</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">indice</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  guardar el id de la caja al empezar el arrastre  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"dragstart"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DataTransfer | null}</span><span style="color:#6A9955"> - `datos del arrastre` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> dataTransfer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  validar el destino y el dataTransfer  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#569CD6"> instanceof</span><span style="color:#4EC9B0"> HTMLElement</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                dataTransfer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setData</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"id"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  establecer cada hueco de la estanteria   -----</span></span>
-<span class="line"><span style="color:#6A9955">    //  -----  un hueco donde puedo soltar un elemento  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    estanteriaDom</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">estanteria</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cada hueco puede recibir una sola caja  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $huecos</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">hueco</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  permitir soltar sobre el hueco  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        hueco</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"dragover"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  desactivar el dragover  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        estanteria</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"dragover"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">e</span><span style="color:#569CD6"> =></span><span style="color:#9CDCFE"> e</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">());</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  soltar la caja en el hueco  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        hueco</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"drop"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DataTransfer | null}</span><span style="color:#6A9955"> - `datos del arrastre` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> dataTransfer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `id de la caja arrastrada` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> cajaId</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getData</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"id"</span><span style="color:#D4D4D4">) : </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  al soltar la caja en la almacen estanteria  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">        estanteria</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"drop"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">e</span><span style="color:#569CD6"> =></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  validar el id y el hueco destino  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">cajaId</span><span style="color:#D4D4D4"> || !(</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#569CD6"> instanceof</span><span style="color:#4EC9B0"> HTMLElement</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `caja que se ha soltado` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> caja</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">                document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getElementById</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">cajaId</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">            );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">            e</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si no existe la caja, no continuar  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DataTransfer | null}</span><span style="color:#6A9955"> - `Objeto dataTransfer del evento de arrastre` */</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> dataTransfer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el hueco está libre, guardar la caja  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">children</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string | null}</span><span style="color:#6A9955"> - `ID de la caja arrastrada` */</span></span>
-<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> cajaId</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getData</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"id"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#D4D4D4">            </span></span>
-<span class="line"><span style="color:#9CDCFE">            console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'cajaId => '</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">cajaId</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                caja</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"almacen__caja--guardada"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  Validar que se obtuvo un id de caja válido y que  -----</span></span>
-<span class="line"><span style="color:#6A9955">            //  -----  el elemento actual del evento es un HTMLElement   -----</span></span>
-<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">cajaId</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#569CD6"> instanceof</span><span style="color:#4EC9B0"> HTMLElement</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> */</span></span>
-<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> caja</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#"</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">cajaId</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                </span></span>
-<span class="line"><span style="color:#6A9955">                //  -----  Validar que se encontró el elemento de la caja con el id proporcionado  -----</span></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">                    throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Error: No se pudo encontrar la caja con el id proporcionado.'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">                //  -----  avisar cuando ya no queden cajas en el inventario  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$inventario</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">children</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                        mostrarMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Todas las cajas han sido guardadas."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }, </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">                }</span></span>
-<span class="line"><span style="color:#D4D4D4">                </span></span>
-<span class="line"><span style="color:#9CDCFE">                console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Elemento de la caja:"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">                //  -----  Verificar si la estantería ya tiene una caja dentro  -----</span></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">children</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#D4D4D4">                    </span></span>
-<span class="line"><span style="color:#6A9955">                    //  -----  Mover la caja al estante soltado  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">                    e</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">currentTarget</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                    </span></span>
-<span class="line"><span style="color:#6A9955">                    //  -----  Eliminar el estilo 'sombra' de caja arrastrable para indicar que ya está guardada  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">                    caja</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">boxShadow</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"none"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">                } </span><span style="color:#C586C0">else</span></span>
-<span class="line"><span style="color:#DCDCAA">                    alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"❌ ¡Estantería ocupada! ❌"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">                //  -----  alerta si todas las cajas han sido guardadas  -----</span></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">inventarioDom</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">children</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) </span></span>
-<span class="line"><span style="color:#DCDCAA">                    setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> alert</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"😊 ¡Todas las cajas han sido guardadas! 😊"</span><span style="color:#D4D4D4">), </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">                </span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el hueco ya tiene una caja, avisar  -----</span></span>
+<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                mostrarMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Estantería ocupada."</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"error"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
-<span class="line"></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>

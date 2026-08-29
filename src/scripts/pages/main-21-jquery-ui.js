@@ -1,165 +1,196 @@
 /*
-    *  --------------------------------------------------------------------------  *
-    *  -----  /main-21-jquery-ui.js  --  /src/scripts/main-21-jquery-ui.js  -----  *
-    *  --------------------------------------------------------------------------  *
+    *  -------------------------------------------------------------------------------  *
+    *  -----  main-21-jquery-ui.js  --  /src/scripts/pages/main-21-jquery-ui.js  -----  *
+    *  -------------------------------------------------------------------------------  *
 */
+
+
+/// <reference path="../../../types/types.d.js" />
+
 
 (($) => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 21 con jQuery y jQuery UI  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 21 con jQuery y jQuery UI  -----");
+    console.log("\n");
 
 
-    //  -----  Verificar que jQuery y jQuery UI están cargados  -----
+    //  -----  verificar que jQuery y jQuery UI están cargados  -----
 
-    /** @type {string} - `Versión de jQuery` */
+    /** @type {string} - `versión de jQuery` */
     const jqueryVersion = $.fn.jquery;
 
     console.warn("Versión de jQuery:", jqueryVersion);
 
-    //  -----  Verificar si jQuery UI está cargado y mostrar su versión  -----
+    //  -----  verificar si jQuery UI está cargado  -----
     if ($.ui) {
 
-        /** @type {string} - `Versión de jQuery UI` */
+        /** @type {string} - `versión de jQuery UI` */
         const jqueryUiVersion = $.ui.version;
 
         console.warn("Versión de jQuery UI:", jqueryUiVersion);
-
+    }
+    else {
+        console.warn("jQuery UI no está cargado.");
     }
 
-    else
-        console.warn("jQuery UI no está cargado.");
+
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
+
+    /** @type {JQuery<HTMLElement>} - `demo del almacén` */
+    const $demo = $(".demo__almacen");
+
+    /** @type {JQuery<HTMLElement>} - `contenedor de las cajas` */
+    const $inventario = $demo.find(".almacen__inventario");
+
+    /** @type {JQuery<HTMLElement>} - `cajas arrastrables` */
+    const $cajas = $demo.find(".almacen__caja");
+
+    /** @type {JQuery<HTMLElement>} - `huecos de la estantería` */
+    const $huecos = $demo.find(".almacen__hueco");
+
+    /** @type {JQuery<HTMLElement>} - `mensaje de estado del almacén` */
+    const $status = $demo.find(".almacen__status");
 
 
-    //  -----  Referencias al HTML  -----
-
-    /** @type {JQuery<HTMLDivElement>} - `Contenedor de las cajas` */
-    const $cajas = $(".inventario__caja");
-
-    /** @type {JQuery<HTMLDivElement>} - `Contenedor de las estanterías` */
-    const $estanterias = $(".almacen__estanteria");
-
-
-    //  -----  Hacer que las cajas sean arrastrables  -----
-    $cajas
-
-        //  -----  recorremos cada caja y le asignamos un ID único  -----
-        .each(
-
-            /**
-             * @this {HTMLDivElement}
-             * @param {number} index
-             * @param {HTMLDivElement} element
-             * @returns {void}
-             */
-            function (index, element) {
-
-                /** @type {JQuery<HTMLDivElement>} - `Elemento de la caja` */
-                const $element = $(element);
-
-                //  -----  Asignar un ID único a cada caja  -----
-                const id = "caja" + (index + 1);
-
-                //  -----  Establecer el atributo ID de la caja  -----
-                $element.attr("id", id);
-
-            }
-        )
-
-        //  -----  Hacemos las cajas arrastrables con jQuery UI  -----
-        .draggable(
-
-            /** @type {JQueryUI.DraggableOptions} */
-            ({
-                revert: "invalid",
-                containment: ".layout",
-                cursor: "grab"
-            })
-        );
+    //  -----  validamos que existan los elementos necesarios  -----
+    if ($demo.length === 0 || $inventario.length === 0 || $status.length === 0 || $cajas.length === 0 || $huecos.length === 0) {
+        throw new Error("No se han encontrado los elementos necesarios del almacén.");
+    }
 
 
     /**
-     * - `Objeto de la configuración de las opciones para hacer las estanterías droppables con jQuery UI`
-     * @type {JQueryUI.DroppableOptions} */
+     * -------------------------------------------
+     * -----  `mostrarMensaje(texto, tipo)`  -----
+     * -------------------------------------------
+     * - Muestra un mensaje de error o de éxito dentro de la demo.
+     * @param {string} texto - Texto que verá el usuario.
+     * @param {AlmacenMensajeTipo} tipo - Tipo visual del mensaje.
+     * @return {void}
+     */
+    const mostrarMensaje = (texto, tipo) => {
 
+        $status
+            .text(texto)
+            .removeClass("almacen__status--error almacen__status--success")
+            .addClass(
+                tipo === "error" ? "almacen__status--error" : "almacen__status--success"
+            );
+    };
+
+
+    /**
+     * --------------------------------
+     * -----  `ocultarMensaje()`  -----
+     * --------------------------------
+     * - Quita el mensaje de estado de la demo.
+     * @return {void}
+     */
+    const ocultarMensaje = () => {
+
+        $status
+            .text("")
+            .removeClass("almacen__status--error almacen__status--success");
+    };
+
+
+    //  -----  asignar un id único a cada caja  -----
+    $cajas.each((index, element) => {
+        $(element).attr("id", `caja${index + 1}`);
+    });
+
+
+    //  -----  ocultar el aviso al seleccionar otra caja  -----
+    $cajas.on("pointerdown", () => {
+        ocultarMensaje();
+    });
+
+
+    //  -----  hacer que las cajas sean arrastrables  -----
+    $cajas.draggable(
+
+        /** @type {JQueryUI.DraggableOptions} */
+        ({
+            revert: "invalid",
+            containment: ".demo__almacen",
+            cursor: "grab",
+            start: () => {
+                ocultarMensaje();
+            }
+        })
+    );
+
+
+    /**
+     * - `opciones para soltar las cajas en los huecos`
+     * @type {JQueryUI.DroppableOptions}
+     */
     const droppableOptions = {
 
-        accept: ".inventario__caja",
-        hoverClass: "hovered",
+        accept: ".almacen__caja",
+        hoverClass: "almacen__hueco--hovered",
 
         /**
-         * - Función que se ejecuta cuando una caja es soltada sobre una estantería. 
-         *   Verifica si la estantería está ocupada y maneja el movimiento de la caja.
+         * - Mueve la caja al hueco si está libre o avisa si ya está ocupado.
          * @this {HTMLElement}
-         * @param {Event} event - Evento de jQuery UI que se dispara al soltar un elemento sobre la estantería.
-         * @param {JQueryUI.DroppableEventUIParam} ui - Objeto que contiene información sobre el elemento arrastrado y la estantería de destino.
+         * @param {Event} _event - Evento de soltar de jQuery UI.
+         * @param {JQueryUI.DroppableEventUIParam} ui - Datos de la caja arrastrada.
          * @returns {void}
          */
+        drop: function (_event, ui) {
 
-        drop: function (event, ui) {
-
-            /** @type {JQuery<HTMLElement>} */
+            /** @type {JQuery<HTMLElement>} - `caja arrastrada` */
             const $caja = ui.draggable;
 
-            /** @type {JQuery<HTMLElement>} */
-            const $estanteria = $(this);
+            /** @type {JQuery<HTMLElement>} - `hueco de destino` */
+            const $hueco = $(this);
 
+            /** - `el hueco ya tiene una caja` */
+            const huecoOcupado = $hueco.children().length > 0;
 
-            /**  `-----  Verificar si la estantería ya tiene una caja  -----` */
-            const estanteriaOcupada = $estanteria.children().length > 0;
-
-            //  -----  Si la estantería no está ocupada, mover la caja a la estantería  -----
-            if (!estanteriaOcupada) {
+            //  -----  si el hueco está libre, guardar la caja  -----
+            if (!huecoOcupado) {
 
                 $caja
-                    .appendTo($estanteria)
+                    .appendTo($hueco)
+                    .addClass("almacen__caja--guardada")
                     .css(
                         /** @type {JQuery.PlainObject<string>} */
                         ({
                             position: "relative",
                             left: "0",
-                            top: "0",
-                            boxShadow: "none"
+                            top: "0"
                         })
                     );
 
-                /** @type {JQuery<HTMLElement>} - `Contenedor del inventario` */
-                const $inventario = $(".main__inventario");
-
-                /**  `-----  Verificar si el inventario está vacío después de mover la caja  -----` */
+                /** - `ya no quedan cajas en el inventario` */
                 const sinCajas = $inventario.children().length === 0;
 
-                //  -----  Si el inventario está vacío, mostrar una alerta después de un breve retraso  -----
-                if (sinCajas) 
-
-                    setTimeout(() => {
-                        alert("😊 ¡Todas las cajas han sido guardadas! 😊");
+                //  -----  avisar cuando el inventario quede vacío  -----
+                if (sinCajas) {
+                    window.setTimeout(() => {
+                        mostrarMensaje("Todas las cajas han sido guardadas.", "success");
                     }, 1000);
-                
-
+                }
             }
-
-            //  -----  de lo contrario, revertir el movimiento y mostrar una alerta     -----
+            //  -----  si el hueco está ocupado, revertir el movimiento  -----
             else {
 
-                alert("❌ ¡Estantería ocupada! ❌");
+                mostrarMensaje("Estantería ocupada.", "error");
 
-                $caja.draggable(
-                    "option",
-                    "revert",
-                    true
-                );
+                $caja.draggable("option", "revert", true);
             }
-
         }
-
     };
 
 
-    //  -----  Hacer que las estanterías sean droppables con jQuery UI usando las opciones definidas  -----
-    $estanterias.droppable(droppableOptions);
+    //  -----  hacer que los huecos reciban las cajas  -----
+    $huecos.droppable(droppableOptions);
 
 
 })(jQuery);
