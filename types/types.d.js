@@ -133,3 +133,24 @@
  * @property {string} text - `texto de la tarea`
  * @property {boolean} completed - `estado del checkbox`
  */
+
+
+
+/*
+    *  ----------------------------  *
+    *  -----  Proyecto 50 JS  -----  *
+    *  ----------------------------  *
+*/
+
+/**
+ * -----------------------
+ * -----  `Product`  -----
+ * -----------------------
+ * @typedef {object} Product - Producto de la tienda.
+ * @property {number} id - Identificador del producto.
+ * @property {string} title - Título del producto.
+ * @property {string} img - Ruta de la imagen del producto.
+ * @property {number} stock - Unidades disponibles.
+ * @property {number} price - Precio del producto.
+ * @property {number} quantity - Cantidad en el carrito.
+ */

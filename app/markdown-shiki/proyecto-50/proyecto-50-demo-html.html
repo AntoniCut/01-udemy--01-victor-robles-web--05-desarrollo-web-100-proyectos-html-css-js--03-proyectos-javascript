@@ -1,4 +1,70 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"main__description-project"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"content"</span><span style="color:#808080">></span></span>
-<span class="line"><span style="color:#6A9955">    &#x3C;!--*  -----  Renderizado del Proyecto (main-50.js escribe aquí)  -----  --></span></span>
-<span class="line"><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"main__demo demo__shop"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__feedback"</span><span style="color:#9CDCFE"> hidden</span><span style="color:#808080">>&#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__products"</span><span style="color:#9CDCFE"> aria-label</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Productos"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">        &#x3C;!--  -----  Esquema de producto que se inserta en el DOM  -----</span></span>
+<span class="line"><span style="color:#6A9955">            &#x3C;article class="shop__product"></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;figure class="shop__container-img"></span></span>
+<span class="line"><span style="color:#6A9955">                    &#x3C;img class="shop__img" src="assets/img/proyecto-50/product-1.jpg" alt="Camiseta"></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;/figure></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;h3 class="shop__product-title">Camiseta&#x3C;/h3></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;p class="shop__price">14.99 €&#x3C;/p></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;button type="button" class="shop__btn" data-id="0">Comprar&#x3C;/button></span></span>
+<span class="line"><span style="color:#6A9955">            &#x3C;/article></span></span>
+<span class="line"><span style="color:#6A9955">        --></span></span>
+<span class="line"><span style="color:#808080">    &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"button"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__btn-cart"</span><span style="color:#9CDCFE"> aria-label</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Mostrar carrito"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">i</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart-icon fa-solid fa-cart-shopping"</span><span style="color:#9CDCFE"> aria-hidden</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"true"</span><span style="color:#808080">>&#x3C;/</span><span style="color:#569CD6">i</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;</span><span style="color:#569CD6">aside</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart shop__cart--hide"</span><span style="color:#9CDCFE"> aria-label</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Carrito de la compra"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">header</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart-header"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h3</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart-title"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Mi Carrito</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">h3</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"button"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart-close"</span><span style="color:#9CDCFE"> aria-label</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Cerrar carrito"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">i</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__close-icon fa-solid fa-xmark"</span><span style="color:#9CDCFE"> aria-hidden</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"true"</span><span style="color:#808080">>&#x3C;/</span><span style="color:#569CD6">i</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">header</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__messages"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__empty"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Su carrito está vacío</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__stock"</span><span style="color:#808080">>&#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__cart-products"</span><span style="color:#9CDCFE"> aria-label</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Productos del carrito"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">            &#x3C;!--  -----  Esquema de ítem del carrito que se inserta en el DOM  -----</span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;article class="shop__item"></span></span>
+<span class="line"><span style="color:#6A9955">                    &#x3C;figure class="shop__item-img-wrap"></span></span>
+<span class="line"><span style="color:#6A9955">                        &#x3C;img class="shop__item-img" src="assets/img/proyecto-50/product-1.jpg" alt="Camiseta"></span></span>
+<span class="line"><span style="color:#6A9955">                    &#x3C;/figure></span></span>
+<span class="line"><span style="color:#6A9955">                    &#x3C;div class="shop__item-content"></span></span>
+<span class="line"><span style="color:#6A9955">                        &#x3C;h3 class="shop__item-title">Camiseta&#x3C;/h3></span></span>
+<span class="line"><span style="color:#6A9955">                        &#x3C;div class="shop__quantity"></span></span>
+<span class="line"><span style="color:#6A9955">                            &#x3C;button type="button" class="shop__quantity-minus" data-id="0" aria-label="Quitar unidad"></span></span>
+<span class="line"><span style="color:#6A9955">                                &#x3C;i class="fa-solid fa-minus" aria-hidden="true">&#x3C;/i></span></span>
+<span class="line"><span style="color:#6A9955">                            &#x3C;/button></span></span>
+<span class="line"><span style="color:#6A9955">                            &#x3C;span class="shop__quantity-number">1&#x3C;/span></span></span>
+<span class="line"><span style="color:#6A9955">                            &#x3C;button type="button" class="shop__quantity-plus" data-id="0" aria-label="Añadir unidad"></span></span>
+<span class="line"><span style="color:#6A9955">                                &#x3C;i class="fa-solid fa-plus" aria-hidden="true">&#x3C;/i></span></span>
+<span class="line"><span style="color:#6A9955">                            &#x3C;/button></span></span>
+<span class="line"><span style="color:#6A9955">                        &#x3C;/div></span></span>
+<span class="line"><span style="color:#6A9955">                        &#x3C;p class="shop__subtotal">14.99 €&#x3C;/p></span></span>
+<span class="line"><span style="color:#6A9955">                    &#x3C;/div></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;/article></span></span>
+<span class="line"><span style="color:#6A9955">            --></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__checkout"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__total"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">span</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__total-text"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Total</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">span</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">span</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__total-price"</span><span style="color:#808080">></span><span style="color:#D4D4D4">0.00 €</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">span</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"button"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"shop__btn-checkout"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Comprar Todo</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;/</span><span style="color:#569CD6">aside</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
 <span class="line"></span></code></pre>

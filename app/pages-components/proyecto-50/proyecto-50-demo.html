@@ -1,7 +1,75 @@
 <!--
-    *  -----  /proyecto-50-demo.html  --  /src/pages-components/proyecto-50/proyecto-50-demo.html  -----
+    *  ----------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-50-demo.html  --  /src/pages-components/proyecto-50/proyecto-50-demo.html  -----  *
+    *  ----------------------------------------------------------------------------------------------  *
 -->
 
-<div class="main__description-project" id="content">
-    <!--*  -----  Renderizado del Proyecto (main-50.js escribe aquí)  -----  -->
-</div>
+<section class="main__demo demo__shop">
+
+    <p class="shop__feedback" hidden></p>
+
+    <section class="shop__products" aria-label="Productos">
+        <!--  -----  Esquema de producto que se inserta en el DOM  -----
+            <article class="shop__product">
+                <figure class="shop__container-img">
+                    <img class="shop__img" src="assets/img/proyecto-50/product-1.jpg" alt="Camiseta">
+                </figure>
+                <h3 class="shop__product-title">Camiseta</h3>
+                <p class="shop__price">14.99 €</p>
+                <button type="button" class="shop__btn" data-id="0">Comprar</button>
+            </article>
+        -->
+    </section>
+
+    <button type="button" class="shop__btn-cart" aria-label="Mostrar carrito">
+        <i class="shop__cart-icon fa-solid fa-cart-shopping" aria-hidden="true"></i>
+    </button>
+
+    <aside class="shop__cart shop__cart--hide" aria-label="Carrito de la compra">
+
+        <header class="shop__cart-header">
+            <h3 class="shop__cart-title">Mi Carrito</h3>
+            <button type="button" class="shop__cart-close" aria-label="Cerrar carrito">
+                <i class="shop__close-icon fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <div class="shop__messages">
+            <p class="shop__empty">Su carrito está vacío</p>
+            <p class="shop__stock"></p>
+        </div>
+
+        <section class="shop__cart-products" aria-label="Productos del carrito">
+            <!--  -----  Esquema de ítem del carrito que se inserta en el DOM  -----
+                <article class="shop__item">
+                    <figure class="shop__item-img-wrap">
+                        <img class="shop__item-img" src="assets/img/proyecto-50/product-1.jpg" alt="Camiseta">
+                    </figure>
+                    <div class="shop__item-content">
+                        <h3 class="shop__item-title">Camiseta</h3>
+                        <div class="shop__quantity">
+                            <button type="button" class="shop__quantity-minus" data-id="0" aria-label="Quitar unidad">
+                                <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                            </button>
+                            <span class="shop__quantity-number">1</span>
+                            <button type="button" class="shop__quantity-plus" data-id="0" aria-label="Añadir unidad">
+                                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <p class="shop__subtotal">14.99 €</p>
+                    </div>
+                </article>
+            -->
+        </section>
+
+        <div class="shop__checkout">
+            <div class="shop__total">
+                <span class="shop__total-text">Total</span>
+                <span class="shop__total-price">0.00 €</span>
+            </div>
+            <button type="button" class="shop__btn-checkout">Comprar Todo</button>
+        </div>
+
+    </aside>
+
+</section>
