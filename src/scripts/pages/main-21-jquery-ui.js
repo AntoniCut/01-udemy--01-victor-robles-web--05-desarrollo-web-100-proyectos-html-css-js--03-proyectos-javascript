@@ -17,23 +17,12 @@
 
 
     //  -----  verificar que jQuery y jQuery UI están cargados  -----
-
-    /** @type {string} - `versión de jQuery` */
-    const jqueryVersion = $.fn.jquery;
-
-    console.warn("Versión de jQuery:", jqueryVersion);
-
-    //  -----  verificar si jQuery UI está cargado  -----
-    if ($.ui) {
-
-        /** @type {string} - `versión de jQuery UI` */
-        const jqueryUiVersion = $.ui.version;
-
-        console.warn("Versión de jQuery UI:", jqueryUiVersion);
+    if (!$.ui) {
+        throw new Error("jQuery UI no está cargado.");
     }
-    else {
-        console.warn("jQuery UI no está cargado.");
-    }
+
+    console.warn("Versión de jQuery:", $.fn.jquery);
+    console.warn("Versión de jQuery UI:", $.ui.version);
 
 
     /*
@@ -99,6 +88,30 @@
     };
 
 
+    /**
+     * ----------------------------------------
+     * -----  `limpiarEstiloCaja($caja)`  -----
+     * ----------------------------------------
+     * - Quita los estilos inline que deja jQuery UI al soltar.
+     * @param {JQuery<HTMLElement>} $caja - Caja que se acaba de guardar.
+     * @return {void}
+     */
+    const limpiarEstiloCaja = ($caja) => {
+
+        $caja.css(
+            /** @type {JQuery.PlainObject<string>} */
+            ({
+                position: "",
+                left: "",
+                top: "",
+                width: "",
+                height: "",
+                "z-index": ""
+            })
+        );
+    };
+
+
     //  -----  asignar un id único a cada caja  -----
     $cajas.each((index, element) => {
         $(element).attr("id", `caja${index + 1}`);
@@ -121,6 +134,7 @@
             cursor: "grab",
             start: () => {
                 ocultarMensaje();
+                $cajas.draggable("option", "revert", "invalid");
             }
         })
     );
@@ -134,6 +148,7 @@
 
         accept: ".almacen__caja",
         hoverClass: "almacen__hueco--hovered",
+        tolerance: "pointer",
 
         /**
          * - Mueve la caja al hueco si está libre o avisa si ya está ocupado.
@@ -151,39 +166,28 @@
             const $hueco = $(this);
 
             /** - `el hueco ya tiene una caja` */
-            const huecoOcupado = $hueco.children().length > 0;
+            const huecoOcupado = $hueco.children(".almacen__caja").length > 0;
 
-            //  -----  si el hueco está libre, guardar la caja  -----
-            if (!huecoOcupado) {
-
-                $caja
-                    .appendTo($hueco)
-                    .addClass("almacen__caja--guardada")
-                    .css(
-                        /** @type {JQuery.PlainObject<string>} */
-                        ({
-                            position: "relative",
-                            left: "0",
-                            top: "0"
-                        })
-                    );
-
-                /** - `ya no quedan cajas en el inventario` */
-                const sinCajas = $inventario.children().length === 0;
-
-                //  -----  avisar cuando el inventario quede vacío  -----
-                if (sinCajas) {
-                    window.setTimeout(() => {
-                        mostrarMensaje("Todas las cajas han sido guardadas.", "success");
-                    }, 1000);
-                }
-            }
             //  -----  si el hueco está ocupado, revertir el movimiento  -----
-            else {
-
+            if (huecoOcupado) {
                 mostrarMensaje("Estantería ocupada.", "error");
-
                 $caja.draggable("option", "revert", true);
+                return;
+            }
+
+            //  -----  guardar la caja en el hueco libre  -----
+            $caja
+                .appendTo($hueco)
+                .addClass("almacen__caja--guardada");
+
+            limpiarEstiloCaja($caja);
+            $caja.draggable("option", "revert", "invalid");
+
+            //  -----  avisar cuando el inventario quede vacío  -----
+            if ($inventario.children().length === 0) {
+                window.setTimeout(() => {
+                    mostrarMensaje("Todas las cajas han sido guardadas.", "success");
+                }, 1000);
             }
         }
     };

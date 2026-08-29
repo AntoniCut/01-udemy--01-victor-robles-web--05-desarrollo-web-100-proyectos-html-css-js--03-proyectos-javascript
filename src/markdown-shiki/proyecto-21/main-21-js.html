@@ -73,13 +73,34 @@
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `ocultarMensaje()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Quita el mensaje de estado de la demo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> ocultarMensaje</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $status</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"almacen__status--error"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"almacen__status--success"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  preparar cada caja como elemento arrastrable  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $cajas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">caja</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">indice</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`caja</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">indice</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">1</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  ocultar el aviso al seleccionar otra caja  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"pointerdown"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">            ocultarMensaje</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  guardar el id de la caja al empezar el arrastre  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        caja</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"dragstart"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            ocultarMensaje</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {DataTransfer | null}</span><span style="color:#6A9955"> - `datos del arrastre` */</span></span>
 <span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> dataTransfer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">dataTransfer</span><span style="color:#D4D4D4">;</span></span>

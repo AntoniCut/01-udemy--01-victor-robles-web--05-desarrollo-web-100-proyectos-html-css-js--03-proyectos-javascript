@@ -119,6 +119,11 @@
     box-shadow: none;
 }
 
+.almacen__caja.ui-draggable-dragging {
+    z-index: 10;
+    cursor: grabbing;
+}
+
 
 .almacen__estanterias {
     display: grid;
