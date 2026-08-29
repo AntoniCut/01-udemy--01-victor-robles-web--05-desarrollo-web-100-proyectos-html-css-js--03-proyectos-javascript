@@ -1,64 +1,161 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-22.css  --  /src/styles/pages/styles-22.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-22.scss  --  /src/scss/pages/styles-22.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
+
+.demo__buscador {
+    width: 100%;
     min-height: 60rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-.main__search {
-    width: 95%;
-    max-width: 50rem;
+@media (min-width: 768px) {
+
+    .demo__buscador {
+        min-height: 68rem;
+        padding: 3rem 2rem 5rem;
+    }
+}
+
+
+.buscador__card {
+    width: min(100%, 50rem);
+    padding: 1.6rem 1.2rem;
+    box-sizing: border-box;
     background-color: #e6e1f0;
-    padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.main__input,
-.main__textarea {
+@media (min-width: 768px) {
+
+    .buscador__card {
+        padding: 2rem;
+    }
+}
+
+
+.buscador__editor-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 0.6rem;
+}
+
+
+.buscador__label {
+    display: block;
+    margin: 0 0 0.6rem;
+    color: #212529;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.buscador__editor-head .buscador__label {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+
+    .buscador__label {
+        font-size: 1.4rem;
+    }
+}
+
+
+.buscador__input,
+.buscador__editor {
     width: 100%;
     display: block;
-    padding: 1.5rem;
+    margin: 0 0 2.4rem;
+    padding: 1.2rem;
+    box-sizing: border-box;
+    border: 2px solid #cccccc;
     border-radius: 0.5rem;
-    border: 2px solid #ccc;
     outline: none;
-    margin-bottom: 3rem;
+    font: inherit;
+    font-size: 1.4rem;
 }
 
-.main__textarea {
-    height: 20rem;
-    text-align: left;
+@media (min-width: 768px) {
+
+    .buscador__input,
+    .buscador__editor {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+
+.buscador__editor {
+    height: 16rem;
     overflow-y: auto;
-    margin-bottom: 3rem;
+    resize: none;
+    text-align: left;
+    line-height: 1.6;
     background-color: #fdf8f8;
 }
 
-.main__text {
-    height: 25rem;
-    text-align: justify;
-    line-height: 1.8;
-    overflow-y: auto;
+@media (min-width: 768px) {
+
+    .buscador__editor {
+        height: 20rem;
+    }
 }
 
-/* clase que añade el javascript dinamicamente */
-.text__search {
+
+.buscador__borrar {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    background-color: #6f42c1;
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.buscador__borrar:hover,
+.buscador__borrar:focus-visible {
+    background-color: #59359a;
+}
+
+
+.buscador__resultado {
+    height: 20rem;
+    margin: 0;
+    padding: 1.2rem 1.8rem 1.2rem 1.2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    color: #212529;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+
+    .buscador__resultado {
+        height: 25rem;
+        font-size: 1.6rem;
+    }
+}
+
+
+.buscador__mark {
+    padding: 0.2rem 0.4rem;
     background-color: #cdbaf5;
     border-radius: 0.5rem;
-    padding: 0.4rem;
 }
