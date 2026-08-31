@@ -1,8 +1,10 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/**</span></span>
-<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@typedef</span><span style="color:#4EC9B0"> {Object}</span><span style="color:#4EC9B0"> ChatMensaje</span></span>
-<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> nombre</span><span style="color:#6A9955"> - Nombre del autor del mensaje.</span></span>
-<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> texto</span><span style="color:#6A9955"> - Texto del mensaje.</span></span>
-<span class="line"><span style="color:#6A9955"> */</span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/*</span></span>
+<span class="line"><span style="color:#6A9955">    *  -----------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    *  -----  main-34.js  --  /src/scripts/pages/main-34.js  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">    *  -----------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">*/</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
@@ -19,29 +21,52 @@
 <span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
 <span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo del chat` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $chat</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__chat"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> - `Contenedor de los mensajes` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $messages</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".chat__messages"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `Formulario de envío` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $form</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".chat__form"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `Campo de texto del mensaje` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__input"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `Botón de enviar mensaje` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btn</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__btn"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `demo del chat con loader` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__chat"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  verificación de elementos  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$messages</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$form</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btn</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo del chat."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> - `contenedor de los mensajes` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $messages</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLDivElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".chat__messages"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> - `formulario de envío` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $form</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".chat__form"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> - `campo de texto del mensaje` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $input</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__input"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón de enviar mensaje` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btn</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".form__btn"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los elementos necesarios  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$messages</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$form</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$input</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btn</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** - `clave de localstorage para los mensajes` */</span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Variables  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `clave de localStorage para los mensajes` */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> CLAVE_STORAGE</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"proyecto-34-chat"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** - `nombre del autor de los mensajes` */</span></span>
@@ -50,6 +75,21 @@
 <span class="line"><span style="color:#6A9955">    /** - `mensaje inicial del chat` */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> MENSAJE_BIENVENIDA</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Bienvenido al chat"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `duración del loader en milisegundos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> CARGA_MS</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">5000</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `indica si la carga ya se ejecutó` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> cargaIniciada</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | null}</span><span style="color:#6A9955"> - `identificador del temporizador de carga` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> timeoutId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * ---------------------------------</span></span>
@@ -60,7 +100,7 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> obtenerMensajes</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** - `contenido crudo de localstorage` */</span></span>
+<span class="line"><span style="color:#6A9955">        /** - `contenido crudo de localStorage` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> bruto</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">localStorage</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getItem</span><span style="color:#D4D4D4">(</span><span style="color:#4FC1FF">CLAVE_STORAGE</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si no hay datos, devolver lista vacía  -----</span></span>
@@ -68,7 +108,7 @@
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4"> [];</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  parsear el json de localstorage  -----</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  parsear el json de localStorage  -----</span></span>
 <span class="line"><span style="color:#C586C0">        try</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {unknown}</span><span style="color:#6A9955"> - `datos parseados` */</span></span>
@@ -86,7 +126,6 @@
 <span class="line"><span style="color:#C586C0">        catch</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4"> [];</span></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -99,9 +138,7 @@
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> guardarMensajes</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        localStorage</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setItem</span><span style="color:#D4D4D4">(</span><span style="color:#4FC1FF">CLAVE_STORAGE</span><span style="color:#D4D4D4">, </span><span style="color:#4FC1FF">JSON</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">stringify</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">));</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -118,18 +155,15 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement}</span><span style="color:#6A9955"> - `artículo del mensaje` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> articulo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"article"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        articulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"messages__message"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `nombre del autor` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> nombreEl</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        nombreEl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"message__name"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        nombreEl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `texto del mensaje` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"message__text"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
@@ -137,9 +171,8 @@
 <span class="line"><span style="color:#9CDCFE">        articulo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $messages</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">articulo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** - `scroll al final del chat` */</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  scroll al final del chat  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $messages</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">scrollTop</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$messages</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">scrollHeight</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -158,7 +191,6 @@
 <span class="line"><span style="color:#9CDCFE">        mensajes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#DCDCAA">            crearMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -190,14 +222,12 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ChatMensaje[]}</span><span style="color:#6A9955"> - `lista actualizada de mensajes` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> mensajes</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">obtenerMensajes</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        mensajes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#DCDCAA">        guardarMensajes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#DCDCAA">        crearMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">focus</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -215,88 +245,79 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  si no hay mensajes, guardar el de bienvenida  -----</span></span>
 <span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">            mensajes</span><span style="color:#D4D4D4"> = [{</span></span>
 <span class="line"><span style="color:#9CDCFE">                nombre:</span><span style="color:#4FC1FF"> AUTOR</span><span style="color:#D4D4D4">,</span></span>
 <span class="line"><span style="color:#9CDCFE">                texto:</span><span style="color:#4FC1FF"> MENSAJE_BIENVENIDA</span><span style="color:#D4D4D4">,</span></span>
 <span class="line"><span style="color:#D4D4D4">            }];</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#DCDCAA">            guardarMensajes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#DCDCAA">        pintarMensajes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        $chat</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"demo__chat--ready"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $chat</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"aria-busy"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"false"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"demo__chat--ready"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"aria-busy"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"false"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">removeAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"disabled"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">focus</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * -----  `iniciarCargaAlScroll()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">     * --------------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">     * - Observa la demo y arranca la carga al entrar en pantalla.</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `iniciarCarga()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Inicia el temporizador de 5 segundos y muestra el chat.</span></span>
 <span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
 <span class="line"><span style="color:#6A9955">     */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> iniciarCargaAlScroll</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> iniciarCarga</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** - `indica si la carga ya se ejecutó` */</span></span>
-<span class="line"><span style="color:#569CD6">        let</span><span style="color:#9CDCFE"> cargaIniciada</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  evitar repetir la carga  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">cargaIniciada</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /**</span></span>
-<span class="line"><span style="color:#6A9955">         * ------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">         * -----  `iniciarCarga()`  -----</span></span>
-<span class="line"><span style="color:#6A9955">         * ------------------------------</span></span>
-<span class="line"><span style="color:#6A9955">         * - Inicia el temporizador de 5 segundos y muestra el chat.</span></span>
-<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
-<span class="line"><span style="color:#6A9955">         */</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> iniciarCarga</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        cargaIniciada</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        timeoutId</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mostrarChat</span><span style="color:#D4D4D4">, </span><span style="color:#4FC1FF">CARGA_MS</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  evitar repetir la carga  -----</span></span>
-<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">cargaIniciada</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Eventos  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {IntersectionObserver}</span><span style="color:#6A9955"> - `observer para detectar cuando la demo es visible` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> observer</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> IntersectionObserver</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">entries</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        entries</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">entry</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si la demo es visible, iniciar la carga  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">entry</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">isIntersecting</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">                iniciarCarga</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#9CDCFE">                observer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">disconnect</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">            cargaIniciada</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#DCDCAA">            setTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mostrarChat</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">5000</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        };</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** - `observer para detectar cuando la demo es visible` */</span></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> observer</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> IntersectionObserver</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">entries</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">            entries</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">entry</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">                //  -----  si la demo es visible, iniciar la carga  -----</span></span>
-<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">entry</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">isIntersecting</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">                    iniciarCarga</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#9CDCFE">                    observer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">disconnect</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#D4D4D4">                }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">            });</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        }, {</span></span>
-<span class="line"><span style="color:#9CDCFE">            threshold:</span><span style="color:#B5CEA8"> 0.25</span><span style="color:#D4D4D4">,</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        observer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">observe</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$chat</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }, {</span></span>
+<span class="line"><span style="color:#9CDCFE">        threshold:</span><span style="color:#B5CEA8"> 0.25</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  observamos la demo para iniciar la carga al hacer scroll  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    observer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">observe</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  envío del formulario  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $form</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">enviarMensaje</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  clic en el botón enviar  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">        enviarMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  pulsar enter para enviar  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"keydown"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
@@ -308,10 +329,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">        enviarMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">    iniciarCargaAlScroll</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">})();</span></span>

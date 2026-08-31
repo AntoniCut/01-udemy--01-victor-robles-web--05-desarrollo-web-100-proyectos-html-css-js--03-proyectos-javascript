@@ -59,6 +59,23 @@
 
 /*
     *  ----------------------------  *
+    *  -----  Proyecto 34 JS  -----  *
+    *  ----------------------------  *
+*/
+
+/**
+ * --------------------------------
+ * -----  `ChatMensaje`  -----
+ * --------------------------------
+ * @typedef {object} ChatMensaje - Mensaje del chat del proyecto 34.
+ * @property {string} nombre - Nombre del autor del mensaje.
+ * @property {string} texto - Texto del mensaje.
+ */
+
+
+
+/*
+    *  ----------------------------  *
     *  -----  Proyecto 42 JS  -----  *
     *  ----------------------------  *
 */

@@ -6,48 +6,42 @@
 
 <section class="main__demo demo__chat" aria-busy="true">
 
+    <div class="chat__panel">
 
-    <div class="chat__messages" aria-live="polite">
+        <div class="chat__messages" aria-live="polite"></div>
 
-        <article class="messages__message">
-            <p class="message__name"> Antonio Cutillas </p>
-            <p class="message__text"> Bienvenido al chat </p>
-        </article>
+        <form class="chat__form" autocomplete="off">
+
+            <input
+                id="chat-mensaje"
+                class="form__input"
+                type="text"
+                name="mensaje"
+                placeholder="Escribe tu mensaje aquí"
+                aria-label="Escribe tu mensaje aquí"
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                class="form__btn"
+                disabled
+                aria-label="Enviar mensaje"
+            >
+                <i class="fa-solid fa-caret-right" aria-hidden="true"></i>
+            </button>
+
+        </form>
+
+        <div
+            class="chat__loader"
+            role="status"
+            aria-live="polite"
+            aria-label="Cargando chat"
+        >
+            <span class="loader__circle"></span>
+        </div>
 
     </div>
-
-
-    <form class="chat__form">
-
-        <input
-            id="chat-mensaje"
-            class="form__input"
-            type="text"
-            name="mensaje"
-            placeholder="Escribe tu mensaje aquí"
-            aria-label="Escribe tu mensaje aquí"
-            autocomplete="off"
-        >
-
-        <button 
-            type="submit" 
-            class="form__btn" 
-            aria-label="Enviar mensaje"
-        >
-            <i class="fa-solid fa-caret-right" aria-hidden="true"> </i>
-        </button>
-
-    </form>
-
-
-    <div 
-        class="chat__loader" 
-        role="status" 
-        aria-live="polite" 
-        aria-label="Cargando chat"
-    >
-        <span class="loader__circle"> </span>
-    </div>
-
 
 </section>

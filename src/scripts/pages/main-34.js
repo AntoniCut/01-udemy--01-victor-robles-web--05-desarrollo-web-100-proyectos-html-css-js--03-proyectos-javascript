@@ -4,12 +4,6 @@
     *  -----------------------------------------------------------  *
 */
 
-/**
- * @typedef {Object} ChatMensaje
- * @property {string} nombre - Nombre del autor del mensaje.
- * @property {string} texto - Texto del mensaje.
- */
-
 
 (() => {
 
@@ -25,29 +19,52 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo del chat` */
-    const $chat = document.querySelector(".demo__chat");
-
-    /** @type {HTMLDivElement | null} - `Contenedor de los mensajes` */
-    const $messages = $chat ? $chat.querySelector(".chat__messages") : null;
-
-    /** @type {HTMLFormElement | null} - `Formulario de envío` */
-    const $form = $chat ? $chat.querySelector(".chat__form") : null;
-
-    /** @type {HTMLInputElement | null} - `Campo de texto del mensaje` */
-    const $input = $chat ? $chat.querySelector(".form__input") : null;
-
-    /** @type {HTMLButtonElement | null} - `Botón de enviar mensaje` */
-    const $btn = $chat ? $chat.querySelector(".form__btn") : null;
+    /** @type {HTMLElement | null} - `demo del chat con loader` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__chat")
+    );
 
 
-    //  -----  verificación de elementos  -----
-    if (!$chat || !$messages || !$form || !$input || !$btn) {
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del chat.");
+    }
+
+
+    /** @type {HTMLDivElement | null} - `contenedor de los mensajes` */
+    const $messages = /** @type {HTMLDivElement | null} */ (
+        $demo.querySelector(".chat__messages")
+    );
+
+    /** @type {HTMLFormElement | null} - `formulario de envío` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".chat__form")
+    );
+
+    /** @type {HTMLInputElement | null} - `campo de texto del mensaje` */
+    const $input = /** @type {HTMLInputElement | null} */ (
+        $demo.querySelector(".form__input")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón de enviar mensaje` */
+    const $btn = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".form__btn")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$messages || !$form || !$input || !$btn) {
         throw new Error("No se han encontrado los elementos necesarios en el HTML.");
     }
 
 
-    /** - `clave de localstorage para los mensajes` */
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
+    /** - `clave de localStorage para los mensajes` */
     const CLAVE_STORAGE = "proyecto-34-chat";
 
     /** - `nombre del autor de los mensajes` */
@@ -56,6 +73,21 @@
     /** - `mensaje inicial del chat` */
     const MENSAJE_BIENVENIDA = "Bienvenido al chat";
 
+    /** - `duración del loader en milisegundos` */
+    const CARGA_MS = 5000;
+
+    /** - `indica si la carga ya se ejecutó` */
+    let cargaIniciada = false;
+
+    /** @type {number | null} - `identificador del temporizador de carga` */
+    let timeoutId = null;
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * ---------------------------------
@@ -66,7 +98,7 @@
      */
     const obtenerMensajes = () => {
 
-        /** - `contenido crudo de localstorage` */
+        /** - `contenido crudo de localStorage` */
         const bruto = localStorage.getItem(CLAVE_STORAGE);
 
         //  -----  si no hay datos, devolver lista vacía  -----
@@ -74,7 +106,7 @@
             return [];
         }
 
-        //  -----  parsear el json de localstorage  -----
+        //  -----  parsear el json de localStorage  -----
         try {
 
             /** @type {unknown} - `datos parseados` */
@@ -92,7 +124,6 @@
         catch {
             return [];
         }
-
     };
 
 
@@ -105,9 +136,7 @@
      * @return {void}
      */
     const guardarMensajes = (mensajes) => {
-
         localStorage.setItem(CLAVE_STORAGE, JSON.stringify(mensajes));
-
     };
 
 
@@ -124,26 +153,29 @@
 
         /** @type {HTMLArticleElement} - `artículo del mensaje` */
         const articulo = document.createElement("article");
-
+        
         articulo.className = "messages__message";
+
 
         /** @type {HTMLParagraphElement} - `nombre del autor` */
         const nombreEl = document.createElement("p");
-
+        
         nombreEl.className = "message__name";
         nombreEl.textContent = nombre;
 
+
         /** @type {HTMLParagraphElement} - `texto del mensaje` */
         const mensaje = document.createElement("p");
-
+        
         mensaje.className = "message__text";
         mensaje.textContent = texto;
+
 
         articulo.appendChild(nombreEl);
         articulo.appendChild(mensaje);
         $messages.appendChild(articulo);
 
-        /** - `scroll al final del chat` */
+        //  -----  scroll al final del chat  -----
         $messages.scrollTop = $messages.scrollHeight;
 
     };
@@ -164,7 +196,6 @@
         mensajes.forEach((mensaje) => {
             crearMensaje(mensaje.texto, mensaje.nombre);
         });
-
     };
 
 
@@ -196,14 +227,14 @@
 
         /** @type {ChatMensaje[]} - `lista actualizada de mensajes` */
         const mensajes = obtenerMensajes();
-
+        
         mensajes.push(mensajeNuevo);
         guardarMensajes(mensajes);
         crearMensaje(mensajeNuevo.texto, mensajeNuevo.nombre);
 
         $input.value = "";
         $input.focus();
-
+        
     };
 
 
@@ -221,88 +252,79 @@
 
         //  -----  si no hay mensajes, guardar el de bienvenida  -----
         if (mensajes.length === 0) {
-
             mensajes = [{
                 nombre: AUTOR,
                 texto: MENSAJE_BIENVENIDA,
             }];
-
             guardarMensajes(mensajes);
-
         }
 
         pintarMensajes(mensajes);
 
-        $chat.classList.add("demo__chat--ready");
-        $chat.setAttribute("aria-busy", "false");
+        $demo.classList.add("demo__chat--ready");
+        $demo.setAttribute("aria-busy", "false");
         $btn.removeAttribute("disabled");
         $input.focus();
-
     };
 
 
     /**
-     * --------------------------------------
-     * -----  `iniciarCargaAlScroll()`  -----
-     * --------------------------------------
-     * - Observa la demo y arranca la carga al entrar en pantalla.
+     * ------------------------------
+     * -----  `iniciarCarga()`  -----
+     * ------------------------------
+     * - Inicia el temporizador de 5 segundos y muestra el chat.
      * @return {void}
      */
-    const iniciarCargaAlScroll = () => {
+    const iniciarCarga = () => {
 
-        /** - `indica si la carga ya se ejecutó` */
-        let cargaIniciada = false;
+        //  -----  evitar repetir la carga  -----
+        if (cargaIniciada) {
+            return;
+        }
 
-        /**
-         * ------------------------------
-         * -----  `iniciarCarga()`  -----
-         * ------------------------------
-         * - Inicia el temporizador de 5 segundos y muestra el chat.
-         * @return {void}
-         */
-        const iniciarCarga = () => {
+        cargaIniciada = true;
+        timeoutId = window.setTimeout(mostrarChat, CARGA_MS);
+    };
 
-            //  -----  evitar repetir la carga  -----
-            if (cargaIniciada) {
-                return;
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    /** @type {IntersectionObserver} - `observer para detectar cuando la demo es visible` */
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            //  -----  si la demo es visible, iniciar la carga  -----
+            if (entry.isIntersecting) {
+                iniciarCarga();
+                observer.disconnect();
             }
 
-            cargaIniciada = true;
-            setTimeout(mostrarChat, 5000);
-
-        };
-
-
-        /** - `observer para detectar cuando la demo es visible` */
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach((entry) => {
-
-                //  -----  si la demo es visible, iniciar la carga  -----
-                if (entry.isIntersecting) {
-                    iniciarCarga();
-                    observer.disconnect();
-                }
-
-            });
-
-        }, {
-            threshold: 0.25,
         });
 
-        observer.observe($chat);
+    }, {
+        threshold: 0.25,
+    });
 
-    };
+
+    //  -----  observamos la demo para iniciar la carga al hacer scroll  -----
+    observer.observe($demo);
 
 
     //  -----  envío del formulario  -----
     $form.addEventListener("submit", enviarMensaje);
+
 
     //  -----  clic en el botón enviar  -----
     $btn.addEventListener("click", (evento) => {
         evento.preventDefault();
         enviarMensaje(evento);
     });
+
 
     //  -----  pulsar enter para enviar  -----
     $input.addEventListener("keydown", (evento) => {
@@ -314,10 +336,7 @@
 
         evento.preventDefault();
         enviarMensaje(evento);
-
     });
-
-    iniciarCargaAlScroll();
 
 
 })();
