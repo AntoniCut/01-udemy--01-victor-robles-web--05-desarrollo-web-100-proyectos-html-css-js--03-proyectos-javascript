@@ -12,35 +12,84 @@
 <span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
 <span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo de estrella` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $star</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__star"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `icono de estrella gris` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $grayStar</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".star__icon--gray"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `icono de estrella amarilla` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $yellowStar</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".star__icon--yellow"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `demo de estrella favorita` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__star"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  verificación de elementos  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$star</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$grayStar</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$yellowStar</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han podido encontrar los elementos en el DOM"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo de la estrella."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `icono de estrella gris` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $grayStar</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".star__icon--gray"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `icono de estrella amarilla` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $yellowStar</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".star__icon--yellow"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los iconos de la estrella  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$grayStar</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$yellowStar</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los iconos de la estrella."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `marcarFavorito()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Pinta la estrella de amarillo y lanza la animación.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> marcarFavorito</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $yellowStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--visible"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $grayStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `quitarFavorito()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Restaura la estrella gris.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> quitarFavorito</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $yellowStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--visible"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $grayStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Eventos  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  click en la estrella gris  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $grayStar</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#9CDCFE">        $yellowStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--visible"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $grayStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">        marcarFavorito</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  click en la estrella amarilla  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $yellowStar</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">        event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#9CDCFE">        $yellowStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--visible"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $grayStar</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"star__icon--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">        quitarFavorito</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>

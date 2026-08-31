@@ -4,48 +4,63 @@
     *  ----------------------------------------------------------------  *
 */
 
+
 .demo__star {
     position: relative;
+    width: 100%;
+    min-height: 34rem;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 40rem;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
+    background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 768px) {
 
     .demo__star {
-        min-height: 60rem;
+        min-height: 42rem;
+        padding: 3rem 2rem 5rem;
     }
 }
+
 
 .star__icon {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 18rem;
+    height: 18rem;
+    min-height: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translate(-50%, -50%);
     color: #fbe323;
     font-size: 18rem;
+    line-height: 1;
     cursor: pointer;
-}
-
-@media (min-width: 480px) {
-
-    .star__icon {
-        font-size: 20rem;
-    }
 }
 
 @media (min-width: 768px) {
 
     .star__icon {
+        width: 25rem;
+        height: 25rem;
+        min-height: 25rem;
         font-size: 25rem;
     }
 }
 
+
 .star__icon--gray {
-    color: gray;
+    color: #808080;
     z-index: 1;
     opacity: 1;
 }
+
 
 .star__icon--yellow {
     color: #fbe323;
@@ -53,6 +68,7 @@
     opacity: 0;
     visibility: hidden;
 }
+
 
 @keyframes star-burst {
 
@@ -62,11 +78,13 @@
     }
 }
 
+
 .star__icon--visible {
     animation: star-burst 1s linear;
     opacity: 1;
     visibility: visible;
 }
+
 
 .star__icon--active {
     color: #fbe323;
