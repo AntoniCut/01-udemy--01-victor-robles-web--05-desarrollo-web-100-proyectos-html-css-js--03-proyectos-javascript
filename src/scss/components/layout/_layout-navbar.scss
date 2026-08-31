@@ -19,10 +19,10 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
     z-index: 2147483000;
     isolation: isolate;
     pointer-events: none;
@@ -39,13 +39,14 @@
     margin-top: -100%;
     width: 100%;
     height: 100dvh;
-    min-height: 100dvh;
+    max-height: 100dvh;
+    min-height: 0;
+    display: block;
     overflow-x: hidden;
     overflow-y: auto;
-    column-count: 1;
-    column-fill: balance;
-    column-gap: 1.2rem;
-    padding: 7.2rem 0.8rem 1.2rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 122, 204, 0.92) rgba(203, 213, 225, 0.55);
+    padding: 7.2rem 0.8rem 2rem;
     border: none;
     border-radius: 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(235, 243, 255, 0.96)), var.$bg-main;
@@ -54,6 +55,8 @@
     box-sizing: border-box;
     z-index: 100;
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
     pointer-events: auto;
 
     &::before {
@@ -66,35 +69,46 @@
     }
 
     @include mix.mobile {
-        column-count: 2;
-        column-gap: 1.2rem;
-        padding: 7.4rem 1rem 1.2rem;
+        padding: 7.4rem 1rem 2rem;
     }
 
     @include mix.tablet {
-        column-count: 3;
         overflow-y: hidden;
+        scrollbar-width: auto;
         padding: 8.2rem 1.2rem 1.4rem;
-        column-gap: 1.2rem;
     }
 
     @include mix.desktopSM {
-        column-count: 3;
-        column-gap: 1.4rem;
         padding-left: 1.6rem;
         padding-right: 1.6rem;
     }
 
     @include mix.desktop {
-        column-count: 3;
-        column-gap: 1.4rem;
         padding-left: 2rem;
         padding-right: 2rem;
     }
 }
 
+.navbar__content {
+    column-count: 1;
+    column-fill: balance;
+    column-gap: 1.2rem;
+
+    @include mix.mobile {
+        column-count: 2;
+    }
+
+    @include mix.tablet {
+        column-count: 3;
+    }
+
+    @include mix.desktopSM {
+        column-gap: 1.4rem;
+    }
+}
+
 .navbar__container::-webkit-scrollbar {
-    width: 1rem;
+    width: 0.35rem;
 }
 
 .navbar__container::-webkit-scrollbar-track {
@@ -105,6 +119,12 @@
 .navbar__container::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, rgba(0, 122, 204, 0.92), rgba(59, 130, 246, 0.8));
     border-radius: 999px;
+}
+
+@media (min-width: 768px) {
+    .navbar__container::-webkit-scrollbar {
+        width: 1rem;
+    }
 }
 
 /*
@@ -188,7 +208,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 30rem;
+    max-width: none;
     box-sizing: border-box;
     min-width: 0;
     margin: 0 0 1.2rem;
@@ -205,6 +225,10 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(241, 245, 249, 0.92));
     box-shadow: 0 16px 35px rgba(148, 163, 184, 0.18);
     list-style: none;
+
+    @include mix.tablet {
+        max-width: 30rem;
+    }
 
     @include mix.desktop {
         width: calc(100% - 2.8rem);

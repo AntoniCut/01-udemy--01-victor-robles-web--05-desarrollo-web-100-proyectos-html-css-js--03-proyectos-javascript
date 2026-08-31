@@ -1512,9 +1512,9 @@ export const spaLoaderContentHtml = (options = {}) => {
         /** - Òbtenemos el valor de display actual del elemento */
         let display = window.getComputedStyle(element).display;
 
-        //  -----  Si el display es 'none', lo cambiamos a 'flex' para mostrarlo (puede ser otro valor según el diseño, pero 'flex' es común para contenedores)  -----
+        //  -----  Si el display es 'none', lo cambiamos a 'block' para mostrarlo  -----
         if (display === 'none')
-            display = 'flex';
+            display = 'block';
 
         //  -----  Configurar estilos para la animación de slideDown  -----
         element.style.display = display;

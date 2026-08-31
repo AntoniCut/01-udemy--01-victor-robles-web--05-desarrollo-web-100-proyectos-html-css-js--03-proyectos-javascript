@@ -1,10 +1,5 @@
-<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/types.d.js"</span><span style="color:#808080"> /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">/*</span></span>
-<span class="line"><span style="color:#6A9955">    *  -----------------------------------------------------------  *</span></span>
-<span class="line"><span style="color:#6A9955">    *  -----  main-34.js  --  /src/scripts/pages/main-34.js  -----  *</span></span>
-<span class="line"><span style="color:#6A9955">    *  -----------------------------------------------------------  *</span></span>
-<span class="line"><span style="color:#6A9955">*/</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
@@ -155,17 +150,23 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement}</span><span style="color:#6A9955"> - `artículo del mensaje` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> articulo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"article"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        articulo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"messages__message"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `nombre del autor` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> nombreEl</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        nombreEl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"message__name"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        nombreEl</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement}</span><span style="color:#6A9955"> - `texto del mensaje` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"p"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"message__text"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        mensaje</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        articulo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">nombreEl</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        articulo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">appendChild</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensaje</span><span style="color:#D4D4D4">);</span></span>
@@ -173,6 +174,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  scroll al final del chat  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $messages</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">scrollTop</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$messages</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">scrollHeight</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -222,12 +224,14 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ChatMensaje[]}</span><span style="color:#6A9955"> - `lista actualizada de mensajes` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> mensajes</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">obtenerMensajes</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#9CDCFE">        mensajes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#DCDCAA">        guardarMensajes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajes</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#DCDCAA">        crearMensaje</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">mensajeNuevo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">nombre</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $input</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">focus</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
