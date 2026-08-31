@@ -4,21 +4,35 @@
     *  ----------------------------------------------------------------  *
 */
 
+
 .demo__load {
     position: relative;
-    width: 95%;
+    width: 100%;
     max-width: 120rem;
-    min-height: 40rem;
-    height: clamp(40rem, 55vw, 68rem);
+    min-height: 34rem;
+    height: clamp(34rem, 55vw, 68rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
     overflow: hidden;
-    gap: 0;
     border-radius: 1.2rem;
+    background-color: #e8effa;
     box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.18);
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
+
+@media (min-width: 768px) {
+
+    .demo__load {
+        min-height: 42rem;
+        height: clamp(42rem, 55vw, 68rem);
+        padding: 3rem 2rem 5rem;
+    }
+}
+
 
 .load__background {
     display: block;
@@ -31,6 +45,7 @@
     filter: blur(3rem);
 }
 
+
 .load__image {
     display: block;
     width: 100%;
@@ -40,10 +55,12 @@
     object-position: center;
 }
 
+
 .load__section {
     position: relative;
     z-index: 1;
     width: min(90%, 42rem);
+    min-height: 18rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,42 +69,55 @@
     text-align: center;
 }
 
+@media (min-width: 768px) {
+
+    .load__section {
+        min-height: 22rem;
+    }
+}
+
+
 .load__number {
+    min-height: 1em;
     font-size: clamp(4rem, 8vw, 7rem);
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     text-align: center;
     line-height: 1;
-    text-shadow: 0 0 1rem black;
+    text-shadow: 0 0 1rem #000000;
 }
+
 
 .load__btn,
 .load__btn-reset {
+    min-width: 14rem;
+    min-height: 4.8rem;
     padding: 1rem 2.4rem;
     border: none;
-    min-width: 14rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     font-size: 1.6rem;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     background-color: #2e9955;
     cursor: pointer;
-    transition: all 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out, opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 }
 
-.load__btn:hover,
-.load__btn-reset:hover {
-    background-color: #30af5e;
-}
 
 .load__complete {
-    display: none;
+    min-height: 1.2em;
     color: #30af5e;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 600;
-    text-shadow: 0 0 1rem black;
+    text-shadow: 0 0 1rem #000000;
+    transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 }
 
-.load__btn-reset {
-    display: none;
+
+.load__btn--hidden,
+.load__btn-reset--hidden,
+.load__complete--hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }

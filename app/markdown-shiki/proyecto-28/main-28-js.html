@@ -12,42 +12,74 @@
 <span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
 <span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo de carga` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $load</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__load"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLPictureElement | null}</span><span style="color:#6A9955"> - `Fondo con la imagen` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $background</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__background"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `Porcentaje de carga` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $number</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__number"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `Botón para iniciar la carga` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnLoad</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__btn"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `Mensaje de carga completada` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $complete</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__complete"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `Botón para reiniciar la carga` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnReset</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__btn-reset"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `demo de carga con blur` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__load"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  verificación de elementos  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$load</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$background</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$number</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btnLoad</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$complete</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btnReset</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo de carga."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLPictureElement | null}</span><span style="color:#6A9955"> - `fondo con la imagen` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $background</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLPictureElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__background"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `porcentaje de carga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $number</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__number"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para iniciar la carga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnLoad</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__btn"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> - `mensaje de carga completada` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $complete</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLParagraphElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__complete"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> - `botón para reiniciar la carga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnReset</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".load__btn-reset"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los elementos necesarios  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$background</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$number</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btnLoad</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$complete</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$btnReset</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  variables de carga  -----</span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Variables  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** - `desenfoque inicial en pixeles` */</span></span>
+<span class="line"><span style="color:#6A9955">    /** - `desenfoque inicial en píxeles` */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> BLUR_INICIAL</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">30</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** - `porcentaje de carga` */</span></span>
 <span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> percent</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** - `desenfoque actual en pixeles` */</span></span>
+<span class="line"><span style="color:#6A9955">    /** - `desenfoque actual en píxeles` */</span></span>
 <span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> blur</span><span style="color:#D4D4D4"> = </span><span style="color:#4FC1FF">BLUR_INICIAL</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | null}</span><span style="color:#6A9955"> - `identificador del intervalo de carga` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
@@ -58,9 +90,9 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> iniciarCarga</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">        $btnLoad</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"none"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">        $btnLoad</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__btn--hidden"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> interval</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">            percent</span><span style="color:#D4D4D4">++;</span></span>
 <span class="line"><span style="color:#9CDCFE">            blur</span><span style="color:#D4D4D4"> -= </span><span style="color:#4FC1FF">BLUR_INICIAL</span><span style="color:#D4D4D4"> / </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">;</span></span>
@@ -68,18 +100,21 @@
 <span class="line"><span style="color:#6A9955">            //  -----  si la carga ha terminado  -----</span></span>
 <span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">percent</span><span style="color:#D4D4D4"> > </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">                clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">interval</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">                $complete</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"block"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">                $btnReset</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"inline-block"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                    intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">            } </span><span style="color:#C586C0">else</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">                $number</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">percent</span><span style="color:#D4D4D4"> + </span><span style="color:#CE9178">"%"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">                $background</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">filter</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`blur(</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">blur</span><span style="color:#569CD6">}</span><span style="color:#CE9178">px)`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">                $complete</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__complete--hidden"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                $btnReset</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__btn-reset--hidden"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">20</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  actualizamos el porcentaje y el desenfoque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $number</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">percent</span><span style="color:#569CD6">}</span><span style="color:#CE9178">%`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">            $background</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">filter</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`blur(</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">blur</span><span style="color:#569CD6">}</span><span style="color:#CE9178">px)`</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">20</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -92,17 +127,27 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> resetearCarga</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">intervalId</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            intervalId</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        percent</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        blur</span><span style="color:#D4D4D4"> = </span><span style="color:#4FC1FF">BLUR_INICIAL</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $number</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"0%"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#9CDCFE">        $background</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">filter</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        $complete</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"none"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        $btnReset</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"none"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"><span style="color:#9CDCFE">        $btnLoad</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">display</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"inline-block"</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $complete</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__complete--hidden"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $btnReset</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__btn-reset--hidden"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $btnLoad</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"load__btn--hidden"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Eventos  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    //  -----  click en cargar  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $btnLoad</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>

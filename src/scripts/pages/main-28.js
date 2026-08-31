@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,42 +19,74 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de carga` */
-    const $load = document.querySelector(".demo__load");
-
-    /** @type {HTMLPictureElement | null} - `Fondo con la imagen` */
-    const $background = $load ? $load.querySelector(".load__background") : null;
-
-    /** @type {HTMLParagraphElement | null} - `Porcentaje de carga` */
-    const $number = $load ? $load.querySelector(".load__number") : null;
-
-    /** @type {HTMLButtonElement | null} - `Botón para iniciar la carga` */
-    const $btnLoad = $load ? $load.querySelector(".load__btn") : null;
-
-    /** @type {HTMLParagraphElement | null} - `Mensaje de carga completada` */
-    const $complete = $load ? $load.querySelector(".load__complete") : null;
-
-    /** @type {HTMLButtonElement | null} - `Botón para reiniciar la carga` */
-    const $btnReset = $load ? $load.querySelector(".load__btn-reset") : null;
+    /** @type {HTMLElement | null} - `demo de carga con blur` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__load")
+    );
 
 
-    //  -----  verificación de elementos  -----
-    if (!$load || !$background || !$number || !$btnLoad || !$complete || !$btnReset) {
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de carga.");
+    }
+
+
+    /** @type {HTMLPictureElement | null} - `fondo con la imagen` */
+    const $background = /** @type {HTMLPictureElement | null} */ (
+        $demo.querySelector(".load__background")
+    );
+
+    /** @type {HTMLParagraphElement | null} - `porcentaje de carga` */
+    const $number = /** @type {HTMLParagraphElement | null} */ (
+        $demo.querySelector(".load__number")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón para iniciar la carga` */
+    const $btnLoad = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".load__btn")
+    );
+
+    /** @type {HTMLParagraphElement | null} - `mensaje de carga completada` */
+    const $complete = /** @type {HTMLParagraphElement | null} */ (
+        $demo.querySelector(".load__complete")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón para reiniciar la carga` */
+    const $btnReset = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".load__btn-reset")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$background || !$number || !$btnLoad || !$complete || !$btnReset) {
         throw new Error("No se han encontrado los elementos necesarios en el HTML.");
     }
 
 
-    //  -----  variables de carga  -----
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
 
-    /** - `desenfoque inicial en pixeles` */
+    /** - `desenfoque inicial en píxeles` */
     const BLUR_INICIAL = 30;
 
     /** - `porcentaje de carga` */
     let percent = 1;
 
-    /** - `desenfoque actual en pixeles` */
+    /** - `desenfoque actual en píxeles` */
     let blur = BLUR_INICIAL;
 
+    /** @type {number | null} - `identificador del intervalo de carga` */
+    let intervalId = null;
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * ------------------------------
@@ -64,9 +97,9 @@
      */
     const iniciarCarga = () => {
 
-        $btnLoad.style.display = "none";
+        $btnLoad.classList.add("load__btn--hidden");
 
-        const interval = setInterval(() => {
+        intervalId = window.setInterval(() => {
 
             percent++;
             blur -= BLUR_INICIAL / 100;
@@ -74,18 +107,21 @@
             //  -----  si la carga ha terminado  -----
             if (percent > 100) {
 
-                clearInterval(interval);
-                $complete.style.display = "block";
-                $btnReset.style.display = "inline-block";
+                if (intervalId !== null) {
+                    window.clearInterval(intervalId);
+                    intervalId = null;
+                }
 
-            } else {
-
-                $number.textContent = percent + "%";
-                $background.style.filter = `blur(${blur}px)`;
+                $complete.classList.remove("load__complete--hidden");
+                $btnReset.classList.remove("load__btn-reset--hidden");
+                return;
             }
 
-        }, 20);
+            //  -----  actualizamos el porcentaje y el desenfoque  -----
+            $number.textContent = `${percent}%`;
+            $background.style.filter = `blur(${blur}px)`;
 
+        }, 20);
     };
 
 
@@ -98,17 +134,27 @@
      */
     const resetearCarga = () => {
 
+        if (intervalId !== null) {
+            window.clearInterval(intervalId);
+            intervalId = null;
+        }
+
         percent = 1;
         blur = BLUR_INICIAL;
 
         $number.textContent = "0%";
         $background.style.filter = "";
-        $complete.style.display = "none";
-        $btnReset.style.display = "none";
-        $btnLoad.style.display = "inline-block";
-
+        $complete.classList.add("load__complete--hidden");
+        $btnReset.classList.add("load__btn-reset--hidden");
+        $btnLoad.classList.remove("load__btn--hidden");
     };
 
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
 
     //  -----  click en cargar  -----
     $btnLoad.addEventListener("click", (event) => {
