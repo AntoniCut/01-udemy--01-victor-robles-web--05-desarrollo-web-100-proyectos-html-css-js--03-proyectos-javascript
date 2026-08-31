@@ -1,54 +1,52 @@
 <!--
-    *  -----  /proyecto-31-demo.html  --  /src/pages-components/proyecto-31/proyecto-31-demo.html  -----
+    *  ------------------------------------------------------------------------------------------------  *
+    *  -----  proyecto-31-demo.html  --  /src/pages-components/proyecto-31/proyecto-31-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------  *
 -->
 
 <section class="main__demo demo__steps">
 
+    <div class="steps__panel">
 
-    <section class="demo-steps__steps">
+        <div class="steps__track">
 
-        <div class="steps__progress"> 
-            <div class="steps__bar"> </div>
+            <div class="steps__progress">
+                <div class="steps__bar"></div>
+            </div>
+
+            <div class="steps__circles">
+
+                <article class="steps__step steps__step--active">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </article>
+
+                <article class="steps__step">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </article>
+
+                <article class="steps__step">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </article>
+
+                <article class="steps__step">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </article>
+
+                <article class="steps__step">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </article>
+
+            </div>
+
         </div>
 
-        <div class="steps__circles"> 
+        <div class="steps__actions">
 
-            <article class="steps__step active"> 
-                <i class="fa-solid fa-check"> </i>
-            </article>
-
-            <article class="steps__step"> 
-                <i class="fa-solid fa-check"> </i>
-            </article>
-
-            <article class="steps__step"> 
-                <i class="fa-solid fa-check"> </i>
-            </article>
-
-            <article class="steps__step"> 
-                <i class="fa-solid fa-check"> </i>
-            </article>
-
-            <article class="steps__step"> 
-                <i class="fa-solid fa-check"> </i>
-            </article>
+            <button class="steps__btn steps__btn--prev steps__btn--disabled" type="button" disabled>Anterior</button>
+            <button class="steps__btn steps__btn--next" type="button">Siguiente</button>
 
         </div>
-        
-    </section>
 
-
-    <section class="demo-steps__btns">
-
-        <button class="btns__prev disable" disabled="true"> 
-            Anterior 
-        </button>
-
-        <button class="btns__next"> 
-            Siguiente
-        </button>
-
-    </section>
-
+    </div>
 
 </section>

@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,24 +19,50 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLButtonElement | null} - `Botón anterior` */
-    const $btnPrev = document.querySelector(".btns__prev");
-
-    /** @type {HTMLButtonElement | null} - `Botón siguiente` */
-    const $btnNext = document.querySelector(".btns__next");
-
-    /** @type {HTMLDivElement | null} - `Barra de progreso` */
-    const $stepsBar = document.querySelector(".steps__bar");
-
-    /** @type {NodeListOf<HTMLElement> | null} - `Círculos de los pasos` */
-    const $stepCircles = document.querySelectorAll(".steps__step");
+    /** @type {HTMLElement | null} - `demo de pasos con barra de progreso` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__steps")
+    );
 
 
-    //  -----  verificación de elementos  -----
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de pasos.");
+    }
+
+
+    /** @type {HTMLButtonElement | null} - `botón anterior` */
+    const $btnPrev = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".steps__btn--prev")
+    );
+
+    /** @type {HTMLButtonElement | null} - `botón siguiente` */
+    const $btnNext = /** @type {HTMLButtonElement | null} */ (
+        $demo.querySelector(".steps__btn--next")
+    );
+
+    /** @type {HTMLDivElement | null} - `barra de progreso` */
+    const $stepsBar = /** @type {HTMLDivElement | null} */ (
+        $demo.querySelector(".steps__bar")
+    );
+
+    /** @type {NodeListOf<HTMLElement> | null} - `círculos de los pasos` */
+    const $stepCircles = /** @type {NodeListOf<HTMLElement> | null} */ (
+        $demo.querySelectorAll(".steps__step")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
     if (!$btnPrev || !$btnNext || !$stepsBar || !$stepCircles || $stepCircles.length === 0) {
         throw new Error("No se han encontrado los elementos necesarios en el HTML.");
     }
 
+
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
 
     /** - `altura actual de la barra de progreso (0-100)` */
     let progress = 0;
@@ -46,6 +73,12 @@
     /** - `incremento de progreso por paso` */
     const incremento = 100 / ($stepCircles.length - 1);
 
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * ----------------------------------------------
@@ -60,25 +93,25 @@
         //  -----  deshabilitar siguiente si se alcanzó el final  -----
         if (progreso >= 100) {
             $btnNext.setAttribute("disabled", "true");
-            $btnNext.classList.add("disable");
-        }
-        //  -----  habilitar siguiente si quedan pasos  -----
-        else {
-            $btnNext.removeAttribute("disabled");
-            $btnNext.classList.remove("disable");
+            $btnNext.classList.add("steps__btn--disabled");
+            $btnPrev.removeAttribute("disabled");
+            $btnPrev.classList.remove("steps__btn--disabled");
+            return;
         }
 
         //  -----  deshabilitar anterior si estamos en el inicio  -----
         if (progreso <= 0) {
             $btnPrev.setAttribute("disabled", "true");
-            $btnPrev.classList.add("disable");
-        }
-        //  -----  habilitar anterior si hay pasos previos  -----
-        else {
-            $btnPrev.removeAttribute("disabled");
-            $btnPrev.classList.remove("disable");
+            $btnPrev.classList.add("steps__btn--disabled");
+            $btnNext.removeAttribute("disabled");
+            $btnNext.classList.remove("steps__btn--disabled");
+            return;
         }
 
+        $btnPrev.removeAttribute("disabled");
+        $btnPrev.classList.remove("steps__btn--disabled");
+        $btnNext.removeAttribute("disabled");
+        $btnNext.classList.remove("steps__btn--disabled");
     };
 
 
@@ -95,15 +128,13 @@
 
             //  -----  activar pasos completados  -----
             if (counter > index) {
-                step.classList.add("active");
+                step.classList.add("steps__step--active");
+                return;
             }
+
             //  -----  desactivar pasos pendientes  -----
-            else {
-                step.classList.remove("active");
-            }
-
+            step.classList.remove("steps__step--active");
         });
-
     };
 
 
@@ -115,11 +146,9 @@
      * @return {void}
      */
     const actualizarVista = () => {
-
         $stepsBar.style.height = `${progress}%`;
         deshabilitarBotones(progress);
         activarBordes();
-
     };
 
 
@@ -142,7 +171,6 @@
         }
 
         actualizarVista();
-
     };
 
 
@@ -165,20 +193,31 @@
         }
 
         actualizarVista();
-
     };
 
 
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
     //  -----  click en botón siguiente  -----
-    $btnNext.addEventListener("click", () => {
+    $btnNext.addEventListener("click", (event) => {
+        event.preventDefault();
         avanzarPaso();
     });
 
 
     //  -----  click en botón anterior  -----
-    $btnPrev.addEventListener("click", () => {
+    $btnPrev.addEventListener("click", (event) => {
+        event.preventDefault();
         retrocederPaso();
     });
+
+
+    //  -----  estado inicial de la demo  -----
+    actualizarVista();
 
 
 })();

@@ -7,8 +7,27 @@
 
 .demo__steps {
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.2rem;
+    box-sizing: border-box;
+    background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 600px) {
+
+    .demo__steps {
+        padding: 3rem 2rem;
+    }
+}
+
+
+.steps__panel {
+    width: 100%;
+    max-width: 45rem;
+    min-height: 40rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,53 +35,54 @@
     gap: 2.5rem;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 600px) {
 
-    .demo__steps {
+    .steps__panel {
         flex-direction: row;
         width: auto;
-        max-width: 35rem;
-        min-width: 35rem;
+        max-width: none;
         gap: 0;
     }
- 
 }
 
-.demo-steps__steps {
+
+.steps__track {
     position: relative;
     width: 3rem;
     height: 40rem;
+    min-height: 40rem;
+    flex-shrink: 0;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 600px) {
 
-    .demo-steps__steps {
+    .steps__track {
         margin-right: 4rem;
     }
 }
 
 
-//  -----  Barra y Progreso de pasos  -----
-
 .steps__progress,
 .steps__bar {
     position: absolute;
     left: 50%;
-    right: 50%;
     transform: translateX(-50%);
     width: 0.5rem;
-    transition: all 300ms ease-in-out;
+    transition: height 300ms ease-in-out;
 }
 
 .steps__progress {
+    top: 0;
     height: 100%;
     background-color: #cbd0cc;
 }
 
 .steps__bar {
+    top: 0;
     height: 0%;
     background-color: #009688;
 }
+
 
 .steps__circles {
     position: relative;
@@ -70,82 +90,83 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    min-height: 40rem;
 }
+
 
 .steps__step {
     width: 3rem;
     height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4rem;
     font-weight: 600;
     color: #5c6f84;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 5rem;
-    border: 3px solid #cbd0cc;
-    transition: all 300ms linear;
+    border: 0.3rem solid #cbd0cc;
+    transition: border-color 300ms linear;
 }
+
 
 .steps__step > .fa-solid {
     opacity: 0;
-    transition: all 300ms linear;
+    transition: opacity 300ms linear;
 }
 
-.active {
-    border: 3px solid #009688;
+
+.steps__step--active {
+    border-color: #009688;
 }
 
-.active > .fa-solid {
+
+.steps__step--active > .fa-solid {
     opacity: 1;
 }
 
 
-//  -----  Botones  -----
-
-.demo-steps__btns {
+.steps__actions {
     width: 100%;
+    min-height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 600px) {
 
-    .demo-steps__btns {
+    .steps__actions {
         width: 30rem;
-        height: 100%;
+        min-height: 40rem;
         align-items: flex-end;
     }
 }
 
-.btns__prev,
-.btns__next {
+
+.steps__btn {
     width: 12rem;
-    height: 4rem;
+    min-height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 1rem;
     border: none;
     outline: none;
+    border-radius: 0.5rem;
     background-color: #009688;
-    padding: 1rem;
-    color: white;
-    border-radius: 5px;
+    color: #ffffff;
     font-size: 1.4rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 300ms linear;
+    transition: background-color 300ms linear;
 }
 
-.disable {
+
+.steps__btn--disabled {
     background-color: #e0e0e0;
     cursor: not-allowed;
-}
-
-.btns__prev:not(.disable):hover,
-.btns__next:not(.disable):hover {
-    background-color: #38b6a9;
 }
