@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,47 +19,104 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de artículos` */
-    const $articles = document.querySelector(".demo__articles");
-
-    /** @type {HTMLArticleElement | null} - `Articulo del lado izquierdo` */
-    const $articleLeft = $articles ? $articles.querySelector(".articles__article--left") : null;
-
-    /** @type {HTMLArticleElement | null} - `Articulo del lado derecho` */
-    const $articleRight = $articles ? $articles.querySelector(".articles__article--right") : null;
+    /** @type {HTMLElement | null} - `demo de artículos expandibles` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__articles")
+    );
 
 
-    //  -----  verificación de elementos  -----
-    if (!$articles || !$articleLeft || !$articleRight) {
-        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de artículos.");
     }
 
 
-    //  -----  cuando el mouse entre en el artículo izquierdo  -----
-    $articleLeft.addEventListener("mouseenter", () => {
-        $articleLeft.classList.add("articles__article--active");
-        $articleRight.classList.add("articles__article--inactive");
-    });
+    /** @type {HTMLElement | null} - `artículo del lado izquierdo` */
+    const $articleLeft = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".articles__article--left")
+    );
+
+    /** @type {HTMLElement | null} - `artículo del lado derecho` */
+    const $articleRight = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".articles__article--right")
+    );
 
 
-    //  -----  cuando el mouse salga del artículo izquierdo  -----
-    $articleLeft.addEventListener("mouseleave", () => {
-        $articleLeft.classList.remove("articles__article--active");
-        $articleRight.classList.remove("articles__article--inactive");
-    });
+    //  -----  validamos que existan los artículos  -----
+    if (!$articleLeft || !$articleRight) {
+        throw new Error("No se han encontrado los artículos en el HTML.");
+    }
 
 
-    //  -----  cuando el mouse entre en el artículo derecho  -----
-    $articleRight.addEventListener("mouseenter", () => {
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
+    /**
+     * ------------------------------------------
+     * -----  `activarArticulo(articulo)`  -----
+     * ------------------------------------------
+     * - Expande el artículo activo y reduce el otro.
+     * @param {HTMLElement} articulo - Artículo sobre el que está el ratón.
+     * @return {void}
+     */
+    const activarArticulo = (articulo) => {
+
+        //  -----  activamos el artículo izquierdo  -----
+        if (articulo === $articleLeft) {
+            $articleLeft.classList.add("articles__article--active");
+            $articleRight.classList.add("articles__article--inactive");
+            return;
+        }
+
+        //  -----  activamos el artículo derecho  -----
         $articleRight.classList.add("articles__article--active");
         $articleLeft.classList.add("articles__article--inactive");
+    };
+
+
+    /**
+     * -----------------------------------
+     * -----  `restaurarArticulos()`  -----
+     * -----------------------------------
+     * - Vuelve ambos artículos a su estado inicial.
+     * @return {void}
+     */
+    const restaurarArticulos = () => {
+        $articleLeft.classList.remove("articles__article--active", "articles__article--inactive");
+        $articleRight.classList.remove("articles__article--active", "articles__article--inactive");
+    };
+
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  ratón sobre el artículo izquierdo  -----
+    $articleLeft.addEventListener("mouseenter", () => {
+        activarArticulo($articleLeft);
     });
 
 
-    //  -----  cuando el mouse salga del artículo derecho  -----
+    //  -----  ratón fuera del artículo izquierdo  -----
+    $articleLeft.addEventListener("mouseleave", () => {
+        restaurarArticulos();
+    });
+
+
+    //  -----  ratón sobre el artículo derecho  -----
+    $articleRight.addEventListener("mouseenter", () => {
+        activarArticulo($articleRight);
+    });
+
+
+    //  -----  ratón fuera del artículo derecho  -----
     $articleRight.addEventListener("mouseleave", () => {
-        $articleRight.classList.remove("articles__article--active");
-        $articleLeft.classList.remove("articles__article--inactive");
+        restaurarArticulos();
     });
 
 

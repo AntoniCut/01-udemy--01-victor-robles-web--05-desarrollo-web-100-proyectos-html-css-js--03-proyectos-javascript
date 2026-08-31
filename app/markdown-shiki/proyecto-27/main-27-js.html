@@ -12,47 +12,104 @@
 <span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
 <span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo de artículos` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articles</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__articles"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement | null}</span><span style="color:#6A9955"> - `Articulo del lado izquierdo` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleLeft</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$articles</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".articles__article--left"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLArticleElement | null}</span><span style="color:#6A9955"> - `Articulo del lado derecho` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleRight</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$articles</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$articles</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".articles__article--right"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `demo de artículos expandibles` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__articles"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  verificación de elementos  -----</span></span>
-<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$articles</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$articleLeft</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$articleRight</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los elementos necesarios en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo de artículos."</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse entre en el artículo izquierdo  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseenter"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `artículo del lado izquierdo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleLeft</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".articles__article--left"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `artículo del lado derecho` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $articleRight</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".articles__article--right"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse salga del artículo izquierdo  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseleave"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los artículos  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$articleLeft</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">$articleRight</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se han encontrado los artículos en el HTML."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse entre en el artículo derecho  -----</span></span>
-<span class="line"><span style="color:#9CDCFE">    $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseenter"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `activarArticulo(articulo)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Expande el artículo activo y reduce el otro.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {HTMLElement}</span><span style="color:#9CDCFE"> articulo</span><span style="color:#6A9955"> - Artículo sobre el que está el ratón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> activarArticulo</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">articulo</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  activamos el artículo izquierdo  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">articulo</span><span style="color:#D4D4D4"> === </span><span style="color:#9CDCFE">$articleLeft</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  activamos el artículo derecho  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `restaurarArticulos()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Vuelve ambos artículos a su estado inicial.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> restaurarArticulos</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Eventos  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ratón sobre el artículo izquierdo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseenter"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        activarArticulo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$articleLeft</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  cuando el mouse salga del artículo derecho  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ratón fuera del artículo izquierdo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseleave"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        restaurarArticulos</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ratón sobre el artículo derecho  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseenter"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">        activarArticulo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$articleRight</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ratón fuera del artículo derecho  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseleave"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleRight</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--active"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        $articleLeft</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"articles__article--inactive"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">        restaurarArticulos</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
