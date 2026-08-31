@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,20 +19,70 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de redes sociales` */
-    const $socials = document.querySelector(".demo__socials");
-
-    /** @type {HTMLUListElement | null} - `Lista de redes sociales` */
-    const $socialsList = $socials ? $socials.querySelector(".socials__list") : null;
-
-    /** @type {NodeListOf<HTMLSpanElement> | null} - `Números de followers` */
-    const $followers = $socials ? $socials.querySelectorAll(".socials__number") : null;
+    /** @type {HTMLElement | null} - `demo de contadores de redes sociales` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__socials")
+    );
 
 
-    //  -----  verificación de elementos  -----
-    if (!$socials || !$socialsList || !$followers || $followers.length === 0) {
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de redes sociales.");
+    }
+
+
+    /** @type {HTMLUListElement | null} - `lista de redes sociales` */
+    const $socialsList = /** @type {HTMLUListElement | null} */ (
+        $demo.querySelector(".socials__list")
+    );
+
+    /** @type {NodeListOf<HTMLSpanElement> | null} - `números de followers` */
+    const $followers = /** @type {NodeListOf<HTMLSpanElement> | null} */ (
+        $demo.querySelectorAll(".socials__number")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$socialsList || !$followers || $followers.length === 0) {
         throw new Error("No se han encontrado los elementos necesarios en el HTML.");
     }
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
+    /** @type {Map<HTMLSpanElement, number>} - `intervalos activos por contador` */
+    const intervalosActivos = new Map();
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
+    /**
+     * ----------------------------------
+     * -----  `detenerContadores()`  -----
+     * ----------------------------------
+     * - Detiene las animaciones y reinicia los contadores a cero.
+     * @return {void}
+     */
+    const detenerContadores = () => {
+
+        intervalosActivos.forEach((intervalId) => {
+            window.clearInterval(intervalId);
+        });
+
+        intervalosActivos.clear();
+
+        $followers.forEach((number) => {
+            number.textContent = "0";
+        });
+    };
 
 
     /**
@@ -44,12 +95,20 @@
      */
     const animarContador = (number) => {
 
-        /** - `valor objetivo de followers` */
+        /** @type {number} - `valor objetivo de followers` */
         const max = Number.parseInt(number.dataset.target ?? "0", 10);
 
         //  -----  si el objetivo no es válido, salir  -----
         if (Number.isNaN(max) || max <= 0) {
             return;
+        }
+
+        /** @type {number | undefined} - `intervalo previo del contador` */
+        const intervaloPrevio = intervalosActivos.get(number);
+
+        //  -----  si ya había una animación, la detenemos  -----
+        if (intervaloPrevio !== undefined) {
+            window.clearInterval(intervaloPrevio);
         }
 
         /** - `valor actual del contador` */
@@ -58,79 +117,71 @@
         /** - `incremento por tick de la animación` */
         const increment = Math.ceil(max / 100);
 
-        const interval = setInterval(() => {
+        number.textContent = "0";
+
+        const intervalId = window.setInterval(() => {
 
             actual = Math.min(actual + increment, max);
             number.textContent = String(actual);
 
             //  -----  si se alcanzó el objetivo, detener  -----
             if (actual >= max) {
-                clearInterval(interval);
+                window.clearInterval(intervalId);
+                intervalosActivos.delete(number);
             }
 
         }, 50);
 
+        intervalosActivos.set(number, intervalId);
     };
 
 
     /**
-     * ----------------------------------------------
-     * -----  `iniciarContadoresAlScroll()`  -----
-     * ----------------------------------------------
-     * - Observa la lista y anima los contadores al entrar en pantalla.
+     * -----------------------------------
+     * -----  `iniciarContadores()`  -----
+     * -----------------------------------
+     * - Anima todos los contadores de followers.
      * @return {void}
      */
-    const iniciarContadoresAlScroll = () => {
+    const iniciarContadores = () => {
 
-        /** - `indica si la animación ya se ejecutó` */
-        let animacionIniciada = false;
+        detenerContadores();
 
-        /**
-         * --------------------------------------
-         * -----  `iniciarContadores()`  -----
-         * --------------------------------------
-         * - Anima todos los contadores de followers.
-         * @return {void}
-         */
-        const iniciarContadores = () => {
-
-            //  -----  evitar repetir la animación  -----
-            if (animacionIniciada) {
-                return;
-            }
-
-            animacionIniciada = true;
-
-            $followers.forEach((number) => {
-                animarContador(number);
-            });
-
-        };
-
-        
-        /** - `observer para detectar cuando la lista es visible` */
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach((entry) => {
-
-                //  -----  si la lista es visible, iniciar contadores  -----
-                if (entry.isIntersecting) {
-                    iniciarContadores();
-                    observer.disconnect();
-                }
-
-            });
-
-        }, {
-            threshold: 0.25,
+        $followers.forEach((number) => {
+            animarContador(number);
         });
-
-        observer.observe($socialsList);
-
     };
 
 
-    iniciarContadoresAlScroll();
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    /** @type {IntersectionObserver} - `observer para detectar cuando la lista es visible` */
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            //  -----  si la lista entra en pantalla, iniciar contadores  -----
+            if (entry.isIntersecting) {
+                iniciarContadores();
+                return;
+            }
+
+            //  -----  si la lista sale de pantalla, reiniciar contadores  -----
+            detenerContadores();
+
+        });
+
+    }, {
+        threshold: 0.25,
+    });
+
+
+    //  -----  observamos la lista para animar cada vez que entre en pantalla  -----
+    observer.observe($socialsList);
 
 
 })();
