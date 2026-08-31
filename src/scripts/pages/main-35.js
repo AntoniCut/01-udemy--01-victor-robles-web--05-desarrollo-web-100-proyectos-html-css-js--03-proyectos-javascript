@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,31 +19,54 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo del curso` */
-    const $course = document.querySelector(".demo__course");
+    /** @type {HTMLElement | null} - `demo del widget del curso` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__course")
+    );
 
-    /** @type {HTMLHeadingElement | null} - `Título con efecto de escritura` */
-    const $title = $course ? $course.querySelector(".course__title") : null;
 
-
-    //  -----  verificación de elementos  -----
-    if (!$course || !$title) {
-        throw new Error("No se han encontrado los elementos necesarios en el HTML.");
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del curso.");
     }
 
+
+    /** @type {HTMLHeadingElement | null} - `título con efecto de escritura` */
+    const $title = /** @type {HTMLHeadingElement | null} */ (
+        $demo.querySelector(".course__title")
+    );
+
+
+    //  -----  validamos que exista el título  -----
+    if (!$title) {
+        throw new Error("No se ha encontrado el título del curso.");
+    }
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
 
     /** - `texto completo del título` */
     const texto = "¡Bienvenido al Curso!";
 
-    /** - `inicio del recorte del texto` */
-    const letraInicio = 0;
-
     /** - `final del recorte del texto` */
     let letraFin = 1;
 
-    /** - `intervalo entre cada letra (ms)` */
+    /** - `intervalo entre cada letra en milisegundos` */
     const velocidad = 150;
 
+    /** @type {number | null} - `identificador del intervalo de escritura` */
+    let intervalId = null;
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * --------------------------------
@@ -53,9 +77,13 @@
      */
     const escribirTitulo = () => {
 
-        setInterval(() => {
+        if (intervalId !== null) {
+            window.clearInterval(intervalId);
+        }
 
-            $title.textContent = texto.slice(letraInicio, letraFin);
+        intervalId = window.setInterval(() => {
+
+            $title.textContent = texto.slice(0, letraFin);
             letraFin++;
 
             //  -----  si se completó el texto, volver a empezar  -----
@@ -64,10 +92,16 @@
             }
 
         }, velocidad);
-
     };
 
 
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  iniciar el efecto de escritura al cargar la demo  -----
     escribirTitulo();
 
 
