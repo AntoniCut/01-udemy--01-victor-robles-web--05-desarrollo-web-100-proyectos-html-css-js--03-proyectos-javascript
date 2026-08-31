@@ -1,60 +1,106 @@
 /*
-    *  ------------------------------------------------------  *
-    *  -----  /main-25.js  --  /src/scripts/main-25.js  -----  *
-    *  ------------------------------------------------------  *
+    *  -----------------------------------------------------------  *
+    *  -----  main-25.js  --  /src/scripts/pages/main-25.js  -----  *
+    *  -----------------------------------------------------------  *
 */
-
-/** - `array de emojis` */
-const arrEmojis = [
-    '💘', '💝', '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔',
-    '❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '❤️‍',
-    '🔥', '❤️‍', '🩹', '💯', '♨️', '💢', '💬', '👁️‍🗨️', '🗨️', '🗯️',
-    '💭', '💤', '🌐', '♠️', '♥️', '♦️', '♣️', '🃏', '🀄️', '🎴',
-    '🎭️', '🔇', '🔈️', '🔉', '🔊', '🔔', '🔕', '🎼', '🎵', '🎶',
-    '💹', '🏧', '🚮', '🚰', '♿️', '🚹️', '🚺️', '🚻', '🚼️', '🚾',
-    '🛂', '🛃', '🛄', '🛅', '⚠️', '🚸', '⛔️', '🚫', '😊', '🛑',
-    '❌', '🥊', '🚀', '🏆', '⚠️'
-];
-
 
 
 (() => {
 
 
-    console.log('\n');
-    console.warn('-----  Proyecto 25 JS  -----');
-    console.log('\n');
+    console.log("\n");
+    console.warn("-----  Proyecto 25 JS  -----");
+    console.log("\n");
 
 
-    //  -----  Referencias al HTML  -----
+    /*
+        *  ---------------------------------  *
+        *  -----  Referencias al HTML  -----  *
+        *  ---------------------------------  *
+    */
 
-    /** @type {HTMLSpanElement | null} - `Contenedor del emoji` */
-    const $emojiContainer = document.querySelector(".emojis__emoji");
+    /** @type {HTMLElement | null} - `demo de emojis aleatorios` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__emojis")
+    );
 
 
-    //  -----  Validación de Referencias  -----
-    if (!$emojiContainer)
-        throw new Error("No se ha encontrado el elemento con la clase 'emojis__emoji' en el HTML.");
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de emojis.");
+    }
 
 
-    //  -----  al pasar el ratón por encima del emoji debe colorearse  ----- 
-    //  -----  y al sacar el ratón fuera debe cambiar a otro emoji     -----
-    $emojiContainer.addEventListener("mouseleave", () => {
+    /** @type {HTMLSpanElement | null} - `contenedor del emoji` */
+    const $emojiContainer = /** @type {HTMLSpanElement | null} */ (
+        $demo.querySelector(".emojis__emoji")
+    );
+
+
+    //  -----  validamos que exista el contenedor del emoji  -----
+    if (!$emojiContainer) {
+        throw new Error("No se ha encontrado el contenedor del emoji.");
+    }
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
+    /** @type {string[]} - `lista de emojis disponibles` */
+    const arrEmojis = [
+        "💘", "💝", "💖", "💗", "💓", "💞", "💕", "💟", "❣️", "💔",
+        "❤️", "🧡", "💛", "💚", "💙", "💜", "🤎", "🖤", "🤍", "❤️‍",
+        "🔥", "❤️‍", "🩹", "💯", "♨️", "💢", "💬", "👁️‍🗨️", "🗨️", "🗯️",
+        "💭", "💤", "🌐", "♠️", "♥️", "♦️", "♣️", "🃏", "🀄️", "🎴",
+        "🎭️", "🔇", "🔈️", "🔉", "🔊", "🔔", "🔕", "🎼", "🎵", "🎶",
+        "💹", "🏧", "🚮", "🚰", "♿️", "🚹️", "🚺️", "🚻", "🚼️", "🚾",
+        "🛂", "🛃", "🛄", "🛅", "⚠️", "🚸", "⛔️", "🚫", "😊", "🛑",
+        "❌", "🥊", "🚀", "🏆", "⚠️"
+    ];
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
+    /**
+     * ---------------------------------------
+     * -----  `cambiarEmojiAleatorio()`  -----
+     * ---------------------------------------
+     * - Asigna un emoji aleatorio al contenedor.
+     * @return {void}
+     */
+    const cambiarEmojiAleatorio = () => {
 
         /** @type {number} - `índice aleatorio del array de emojis` */
         const random = Math.floor(Math.random() * arrEmojis.length);
 
-        //  -----  se muestra el número de emojis, el índice aleatorio  ----- 
-        //  -----  y el emoji seleccionado por consola                   -----
+        //  -----  mostramos por consola el total, el índice y el emoji  -----
         console.log(
-            'Nº emojis => ', arrEmojis.length, 
-            ' - índice aleatorio => ', random, 
-            ' - emoji => ', arrEmojis[random]
+            "Nº emojis => ", arrEmojis.length,
+            " - índice aleatorio => ", random,
+            " - emoji => ", arrEmojis[random]
         );
 
-        //  -----  se asigna el emoji aleatorio al contenedor  -----
-        $emojiContainer.innerHTML = arrEmojis[random];
+        //  -----  asignamos el emoji aleatorio al contenedor  -----
+        $emojiContainer.textContent = arrEmojis[random];
+    };
 
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  al salir el ratón, cambiar a otro emoji  -----
+    $emojiContainer.addEventListener("mouseleave", () => {
+        cambiarEmojiAleatorio();
     });
 
 

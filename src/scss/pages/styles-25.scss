@@ -1,47 +1,62 @@
 /*
-    *  -----------------------------------------------------------------  *
-    *  -----  /styles-25.css  --  /src/styles/pages/styles-25.css  -----  *
-    *  -----------------------------------------------------------------  *
+    *  ----------------------------------------------------------------  *
+    *  -----  styles-25.scss  --  /src/scss/pages/styles-25.scss  -----  *
+    *  ----------------------------------------------------------------  *
 */
 
-.main__container {
-    position: relative;
-    width: 100vw;
-    min-height: 60rem;
+
+.demo__emojis {
+    width: 100%;
+    min-height: 34rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 5rem;
-    font-family: 'Monserrat', sans-serif;
+    padding: 2rem 1.2rem 4rem;
+    box-sizing: border-box;
     background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-.main__emojis {
-    margin-top: 8rem;
-    width: 28rem;
-    height: 28rem;
-    overflow: hidden;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+@media (min-width: 768px) {
+
+    .demo__emojis {
+        min-height: 42rem;
+        padding: 3rem 2rem 5rem;
+    }
 }
+
 
 .emojis__emoji {
-    font-size: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22rem;
+    height: 22rem;
+    min-height: 22rem;
+    overflow: hidden;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    font-size: 16rem;
+    line-height: 1;
     filter: grayscale(1);
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
 }
+
+@media (min-width: 768px) {
+
+    .emojis__emoji {
+        width: 28rem;
+        height: 28rem;
+        min-height: 28rem;
+        font-size: 20rem;
+    }
+}
+
 
 .emojis__emoji:hover {
     transform: scale(1.1);
     filter: grayscale(0);
-    cursor: pointer;
-    
 }
