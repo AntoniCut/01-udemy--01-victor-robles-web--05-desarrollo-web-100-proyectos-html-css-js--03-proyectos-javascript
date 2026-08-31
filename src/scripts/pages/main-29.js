@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,21 +19,40 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo de login` */
-    const $login = document.querySelector(".demo__login");
-
-    /** @type {HTMLFormElement | null} - `Formulario de login` */
-    const $form = $login ? $login.querySelector(".login__form") : null;
-
-    /** @type {NodeListOf<HTMLDivElement> | null} - `Controles del formulario` */
-    const $controls = $form ? $form.querySelectorAll(".form__control") : null;
+    /** @type {HTMLElement | null} - `demo del formulario de login` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__login")
+    );
 
 
-    //  -----  verificación de elementos  -----
-    if (!$login || !$form || !$controls || $controls.length === 0) {
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo de login.");
+    }
+
+
+    /** @type {HTMLFormElement | null} - `formulario de login` */
+    const $form = /** @type {HTMLFormElement | null} */ (
+        $demo.querySelector(".login__form")
+    );
+
+    /** @type {NodeListOf<HTMLDivElement> | null} - `controles del formulario` */
+    const $controls = /** @type {NodeListOf<HTMLDivElement> | null} */ (
+        $form ? $form.querySelectorAll(".form__control") : null
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
+    if (!$form || !$controls || $controls.length === 0) {
         throw new Error("No se han encontrado los elementos necesarios en el HTML.");
     }
 
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * ---------------------------------------------
@@ -45,34 +65,44 @@
      */
     const actualizarLabel = (label, input) => {
 
-        /** - `Verifica si el input tiene texto` */
+        /** - `el input tiene texto` */
         const tieneTexto = input.value.trim() !== "";
-        
-        /** - `Verifica si el input está enfocado` */
+
+        /** - `el input está enfocado` */
         const estaEnfocado = document.activeElement === input;
 
         //  -----  si hay texto o el input está enfocado, sacar el label  -----
         if (tieneTexto || estaEnfocado) {
             label.classList.remove("form__label--blur");
             label.classList.add("form__label--focus");
-        }
-        
-        //  -----  si está vacío y sin foco, devolver el label al input  -----
-        else {
-            label.classList.remove("form__label--focus");
-            label.classList.add("form__label--blur");
+            return;
         }
 
+        //  -----  si está vacío y sin foco, devolver el label al input  -----
+        label.classList.remove("form__label--focus");
+        label.classList.add("form__label--blur");
     };
 
 
-    $controls.forEach((control) => {
-        
-        /** @type {HTMLLabelElement | null} - `Label del control` */
-        const $label = control.querySelector(".form__label");
+    /**
+     * ---------------------------------------
+     * -----  `inicializarControl()`  -----
+     * ---------------------------------------
+     * - Asigna los eventos de un control del formulario.
+     * @param {HTMLDivElement} control - Contenedor del label y el input.
+     * @return {void}
+     */
+    const inicializarControl = (control) => {
 
-        /** @type {HTMLInputElement | null} - `Input del control` */
-        const $input = control.querySelector(".form__input");
+        /** @type {HTMLLabelElement | null} - `label del control` */
+        const $label = /** @type {HTMLLabelElement | null} */ (
+            control.querySelector(".form__label")
+        );
+
+        /** @type {HTMLInputElement | null} - `input del control` */
+        const $input = /** @type {HTMLInputElement | null} */ (
+            control.querySelector(".form__input")
+        );
 
         //  -----  si faltan el label o el input, saltar este control  -----
         if (!$label || !$input) {
@@ -89,6 +119,22 @@
             actualizarLabel($label, $input);
         });
 
+        //  -----  cambio de texto en el input  -----
+        $input.addEventListener("input", () => {
+            actualizarLabel($label, $input);
+        });
+    };
+
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  inicializamos cada control del formulario  -----
+    $controls.forEach((control) => {
+        inicializarControl(control);
     });
 
 

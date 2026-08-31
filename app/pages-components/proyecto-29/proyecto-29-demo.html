@@ -6,22 +6,38 @@
 
 <section class="main__demo demo__login">
 
-    <h2 class="login__title"> Login </h2>
+    <div class="login__panel">
 
-    <form class="login__form">
+        <h2 class="login__title">Login</h2>
 
-        <div class="form__control">
-            <label class="form__label form__label--blur" for="username"> Username </label>
-            <input class="form__input" type="text" id="username">
-        </div>
+        <form class="login__form" autocomplete="off">
 
-        <div class="form__control">
-            <label class="form__label form__label--blur" for="password"> Contraseña </label>
-            <input class="form__input" type="password" id="password">
-        </div>
+            <div class="form__control">
+                <label class="form__label form__label--blur" for="username">Username</label>
+                <input
+                    class="form__input"
+                    type="text"
+                    id="username"
+                    name="username"
+                    autocomplete="username"
+                >
+            </div>
 
-        <button class="form__btn" type="submit"> Entrar </button>
+            <div class="form__control">
+                <label class="form__label form__label--blur" for="password">Contraseña</label>
+                <input
+                    class="form__input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                >
+            </div>
 
-    </form>
+            <button class="form__btn" type="submit">Entrar</button>
+
+        </form>
+
+    </div>
 
 </section>
