@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,40 +19,66 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo del banco` */
-    const $bank = document.querySelector(".demo__bank");
-
-    /** @type {HTMLParagraphElement | null} - `Número de cuenta` */
-    const $numberAccount = $bank ? $bank.querySelector(".header__number") : null;
-
-    /** @type {HTMLHeadingElement | null} - `Saldo de la cuenta` */
-    const $money = $bank ? $bank.querySelector(".header__money") : null;
-
-    /** @type {NodeListOf<HTMLDivElement> | null} - `Contenedores del icono` */
-    const $containersIco = $bank ? $bank.querySelectorAll(".item__ico") : null;
-
-    /** @type {NodeListOf<HTMLHeadingElement> | null} - `Títulos de los movimientos` */
-    const $titles = $bank ? $bank.querySelectorAll(".item__title") : null;
-
-    /** @type {NodeListOf<HTMLParagraphElement> | null} - `Fechas de los movimientos` */
-    const $dates = $bank ? $bank.querySelectorAll(".item__date") : null;
-
-    /** @type {NodeListOf<HTMLParagraphElement> | null} - `Importes de los movimientos` */
-    const $bills = $bank ? $bank.querySelectorAll(".item__bill") : null;
-
-    /** @type {NodeListOf<HTMLParagraphElement> | null} - `Totales de los movimientos` */
-    const $totals = $bank ? $bank.querySelectorAll(".item__total") : null;
-
-    /** @type {NodeListOf<HTMLElement> | null} - `Elementos con animación de carga` */
-    const $bgLoads = $bank ? $bank.querySelectorAll(".bank__load") : null;
-
-    /** @type {NodeListOf<HTMLElement> | null} - `Textos con animación de carga` */
-    const $bgLoadsText = $bank ? $bank.querySelectorAll(".bank__load-text") : null;
+    /** @type {HTMLElement | null} - `demo del banco con skeleton` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__bank")
+    );
 
 
-    //  -----  verificación de elementos  -----
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del banco.");
+    }
+
+
+    /** @type {HTMLParagraphElement | null} - `número de cuenta` */
+    const $numberAccount = /** @type {HTMLParagraphElement | null} */ (
+        $demo.querySelector(".header__number")
+    );
+
+    /** @type {HTMLHeadingElement | null} - `saldo de la cuenta` */
+    const $money = /** @type {HTMLHeadingElement | null} */ (
+        $demo.querySelector(".header__money")
+    );
+
+    /** @type {NodeListOf<HTMLDivElement> | null} - `contenedores del icono` */
+    const $containersIco = /** @type {NodeListOf<HTMLDivElement> | null} */ (
+        $demo.querySelectorAll(".item__ico")
+    );
+
+    /** @type {NodeListOf<HTMLHeadingElement> | null} - `títulos de los movimientos` */
+    const $titles = /** @type {NodeListOf<HTMLHeadingElement> | null} */ (
+        $demo.querySelectorAll(".item__title")
+    );
+
+    /** @type {NodeListOf<HTMLParagraphElement> | null} - `fechas de los movimientos` */
+    const $dates = /** @type {NodeListOf<HTMLParagraphElement> | null} */ (
+        $demo.querySelectorAll(".item__date")
+    );
+
+    /** @type {NodeListOf<HTMLParagraphElement> | null} - `importes de los movimientos` */
+    const $bills = /** @type {NodeListOf<HTMLParagraphElement> | null} */ (
+        $demo.querySelectorAll(".item__bill")
+    );
+
+    /** @type {NodeListOf<HTMLParagraphElement> | null} - `totales de los movimientos` */
+    const $totals = /** @type {NodeListOf<HTMLParagraphElement> | null} */ (
+        $demo.querySelectorAll(".item__total")
+    );
+
+    /** @type {NodeListOf<HTMLElement> | null} - `elementos con animación de carga` */
+    const $bgLoads = /** @type {NodeListOf<HTMLElement> | null} */ (
+        $demo.querySelectorAll(".bank__load")
+    );
+
+    /** @type {NodeListOf<HTMLElement> | null} - `textos con animación de carga` */
+    const $bgLoadsText = /** @type {NodeListOf<HTMLElement> | null} */ (
+        $demo.querySelectorAll(".bank__load-text")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
     if (
-        !$bank ||
         !$numberAccount ||
         !$money ||
         !$containersIco ||
@@ -73,6 +100,28 @@
     }
 
 
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
+    /** - `indica si la carga ya se ejecutó` */
+    let cargaIniciada = false;
+
+    /** - `duración del skeleton en milisegundos` */
+    const CARGA_MS = 3000;
+
+    /** @type {number | null} - `identificador del temporizador de carga` */
+    let timeoutId = null;
+
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
+
     /**
      * -----------------------------------
      * -----  `crearIconoTarjeta()`  -----
@@ -82,13 +131,12 @@
      */
     const crearIconoTarjeta = () => {
 
-        /** - `icono de tarjeta de crédito` */
+        /** @type {HTMLElement} - `icono de tarjeta de crédito` */
         const icono = document.createElement("i");
-        
         icono.className = "fa-regular fa-credit-card";
-        
-        return icono;
+        icono.setAttribute("aria-hidden", "true");
 
+        return icono;
     };
 
 
@@ -131,65 +179,54 @@
         $bgLoadsText.forEach((bgLoadText) => {
             bgLoadText.classList.remove("bank__load-text");
         });
-
     };
 
 
     /**
-     * --------------------------------------
-     * -----  `iniciarCargaAlScroll()`  -----
-     * --------------------------------------
-     * - Observa la demo y arranca la carga al entrar en pantalla.
+     * ------------------------------
+     * -----  `iniciarCarga()`  -----
+     * ------------------------------
+     * - Inicia el temporizador de 3 segundos y muestra los datos.
      * @return {void}
      */
-    const iniciarCargaAlScroll = () => {
+    const iniciarCarga = () => {
 
-        /** - `indica si la carga ya se ejecutó` */
-        let cargaIniciada = false;
+        //  -----  evitar repetir la carga  -----
+        if (cargaIniciada) {
+            return;
+        }
 
-        /**
-         * ------------------------------
-         * -----  `iniciarCarga()`  -----
-         * ------------------------------
-         * - Inicia el temporizador de 3 segundos y muestra los datos.
-         * @return {void}
-         */
-        const iniciarCarga = () => {
-
-            //  -----  evitar repetir la carga  -----
-            if (cargaIniciada) {
-                return;
-            }
-
-            cargaIniciada = true;
-            setTimeout(setInfo, 3000);
-
-        };
-
-
-        /** - `observer para detectar cuando la demo es visible` */
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach((entry) => {
-
-                //  -----  si la demo es visible, iniciar la carga  -----
-                if (entry.isIntersecting) {
-                    iniciarCarga();
-                    observer.disconnect();
-                }
-
-            });
-
-        }, {
-            threshold: 0.25,
-        });
-
-        observer.observe($bank);
-
+        cargaIniciada = true;
+        timeoutId = window.setTimeout(setInfo, CARGA_MS);
     };
 
 
-    iniciarCargaAlScroll();
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    /** @type {IntersectionObserver} - `observer para detectar cuando la demo es visible` */
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            //  -----  si la demo es visible, iniciar la carga  -----
+            if (entry.isIntersecting) {
+                iniciarCarga();
+                observer.disconnect();
+            }
+
+        });
+
+    }, {
+        threshold: 0.25,
+    });
+
+
+    //  -----  observamos la demo para iniciar la carga al hacer scroll  -----
+    observer.observe($demo);
 
 
 })();

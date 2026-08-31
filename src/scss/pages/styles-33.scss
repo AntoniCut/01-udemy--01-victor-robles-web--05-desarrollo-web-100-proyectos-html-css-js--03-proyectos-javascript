@@ -7,19 +7,40 @@
 
 .demo__bank {
     width: 100%;
-    max-width: 80rem;
-    background-color: white;
-    padding: 1.5rem;
-    box-shadow: 0 0 10px #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.2rem;
+    box-sizing: border-box;
+    background-color: #e8effa;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 600px) {
 
     .demo__bank {
-        width: 95%;
+        padding: 3rem 2rem;
+    }
+}
+
+
+.bank__panel {
+    width: 100%;
+    max-width: 80rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 1rem #d3d3d3;
+}
+
+@media (min-width: 480px) {
+
+    .bank__panel {
         padding: 5rem;
     }
 }
+
 
 .bank__header {
     display: flex;
@@ -27,22 +48,23 @@
     align-items: center;
     justify-content: space-between;
     gap: 3rem;
+    min-height: 10rem;
+    margin-bottom: 4rem;
     padding: 1rem;
     border-bottom: 1px solid #d3d3d3;
-    box-shadow: 0 0 10px #d3d3d3;
     border-radius: 0.5rem;
-    margin-bottom: 4rem;
+    box-shadow: 0 0 1rem #d3d3d3;
     line-height: 1;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .bank__header {
         padding: 4rem 1.5rem;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     .bank__header {
         flex-direction: row;
@@ -50,29 +72,44 @@
     }
 }
 
+
 .header__number {
+    width: 100%;
+    min-height: 1.6rem;
     font-size: 1rem;
     font-weight: 400;
-    color: #444;
+    color: #444444;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .header__number {
         font-size: 1.6rem;
     }
 }
 
+
 .header__money {
+    width: 100%;
+    min-height: 3rem;
     font-size: 3rem;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .header__money {
+        min-height: 4rem;
         font-size: 4rem;
     }
 }
+
+
+.bank__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 
 .list__item {
     display: flex;
@@ -80,110 +117,124 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border-top: 1px solid #d3d3d3;
+    min-height: 7rem;
     padding: 1.5rem 0.5rem;
+    border-top: 1px solid #d3d3d3;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .list__item {
         padding: 2rem;
     }
 }
 
+
 .list__item:last-child {
     border-bottom: 1px solid #d3d3d3;
 }
 
+
 .item__left {
     width: 65%;
+    min-width: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-width: 0;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     .item__left {
         width: 20%;
     }
 }
 
+
 .item__ico {
     width: 3.5rem;
     height: 3.5rem;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     margin-right: 1rem;
     border-radius: 10rem;
     border: 1px solid #6a6aea;
     color: #6a6aea;
 }
 
+
 .item__ico .fa-regular {
     font-size: 1.6rem;
 }
+
 
 .item__container {
     width: 65%;
     min-width: 0;
 }
 
+
 .item__title {
-    line-height: 1.2;
+    min-height: 1.2em;
     font-size: 1.6rem;
     font-weight: 600;
+    line-height: 1.2;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .item__title {
         font-size: 2rem;
     }
 }
 
+
 .item__date {
+    min-height: 1.4rem;
     font-size: 1.4rem;
     color: #b7b7b7;
 }
+
 
 .item__right {
     width: 30%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     .item__right {
         width: 15%;
     }
 }
 
+
 .item__bill {
+    min-height: 1.2em;
     font-size: 1.6rem;
     font-weight: 500;
     text-align: right;
     color: #cd4e4f;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 480px) {
 
     .item__bill {
         font-size: 2rem;
     }
 }
 
+
 .item__total {
+    min-height: 1.4rem;
     font-size: 1.4rem;
     text-align: right;
     color: #b7b7b7;
 }
 
-
-//  -----  Animación de carga  -----
 
 @keyframes load {
 
@@ -195,6 +246,7 @@
         background-position: -150% 0;
     }
 }
+
 
 .bank__load {
     background-image: linear-gradient(
@@ -208,17 +260,22 @@
     animation: load 1s linear infinite;
 }
 
+
 .bank__load-text {
-    border-radius: 5rem;
     display: inline-block;
-    height: 1rem;
     width: 100%;
+    height: 1rem;
+    min-height: 1rem;
+    border-radius: 5rem;
 }
+
 
 .bank__header .bank__load-text {
     width: 40%;
 }
 
+
 .list__item .bank__load-text {
     height: 1.4rem;
+    min-height: 1.4rem;
 }
