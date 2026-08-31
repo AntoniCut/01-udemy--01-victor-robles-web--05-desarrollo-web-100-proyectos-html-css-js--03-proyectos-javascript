@@ -12,28 +12,46 @@
 <span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
 <span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de la demo del slider` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $slider</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__slider"</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSectionElement | null}</span><span style="color:#6A9955"> - `Contenedor de las diapositivas` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $slidesContainer</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__slides"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLArticleElement> | null}</span><span style="color:#6A9955"> - `Diapositivas del slider` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $slides</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slides__item"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `Botones anterior` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsPrev</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__prev"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `Botones siguiente` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsNext</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__next"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `Botones de autoplay` */</span></span>
-<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsAutoplay</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ? </span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__autoplay-toggle"</span><span style="color:#D4D4D4">) : </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `demo del slider de imágenes` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $demo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".demo__slider"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  verificación de elementos  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que exista la demo  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$demo</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">        throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No se ha encontrado la demo del slider."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> - `contenedor de las diapositivas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $slidesContainer</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLElement | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__slides"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLElement> | null}</span><span style="color:#6A9955"> - `diapositivas del slider` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $slides</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLElement> | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slides__item"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `botones anterior` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsPrev</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__prev"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `botones siguiente` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsNext</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__next"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> - `botones de autoplay` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $btnsAutoplay</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {NodeListOf&#x3C;HTMLButtonElement> | null}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">        $demo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelectorAll</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".slider__autoplay-toggle"</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  validamos que existan los elementos necesarios  -----</span></span>
 <span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span></span>
-<span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$slider</span><span style="color:#D4D4D4"> ||</span></span>
 <span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$slidesContainer</span><span style="color:#D4D4D4"> ||</span></span>
 <span class="line"><span style="color:#D4D4D4">        !</span><span style="color:#9CDCFE">$slides</span><span style="color:#D4D4D4"> ||</span></span>
 <span class="line"><span style="color:#9CDCFE">        $slides</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4"> ||</span></span>
@@ -48,6 +66,12 @@
 <span class="line"><span style="color:#D4D4D4">    }</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Variables  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /** - `índice de la diapositiva visible` */</span></span>
 <span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> count</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
@@ -57,9 +81,15 @@
 <span class="line"><span style="color:#6A9955">    /** - `intervalo del autoplay en milisegundos` */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> AUTOPLAY_MS</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">5000</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ReturnType&#x3C;typeof setInterval> | undefined}</span><span style="color:#6A9955"> - `identificador del intervalo de autoplay` */</span></span>
-<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> autoplayInterval</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | null}</span><span style="color:#6A9955"> - `identificador del intervalo de autoplay` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">    /**</span></span>
 <span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
@@ -73,7 +103,6 @@
 <span class="line"><span style="color:#9CDCFE">        $slides</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">slide</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            slide</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">style</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">transform</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">`translateX(</span><span style="color:#569CD6">${</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">index</span><span style="color:#D4D4D4"> - </span><span style="color:#9CDCFE">count</span><span style="color:#D4D4D4">) * </span><span style="color:#B5CEA8">100</span><span style="color:#569CD6">}</span><span style="color:#CE9178">%)`</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -100,7 +129,6 @@
 <span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#DCDCAA">        mostrarSlides</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -113,15 +141,17 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> iniciarAutoplay</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">        clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">        autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> irASlide</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">), </span><span style="color:#4FC1FF">AUTOPLAY_MS</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> irASlide</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">), </span><span style="color:#4FC1FF">AUTOPLAY_MS</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $btnsAutoplay</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"⏸ Pausar"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        isAutoplay</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -134,81 +164,107 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> detenerAutoplay</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#DCDCAA">        clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        $btnsAutoplay</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            btn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"▶ Reanudar"</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CDCFE">        isAutoplay</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">;</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    };</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#9CDCFE">    $btnsPrev</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `pausarAutoplayHover()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Pausa temporalmente el autoplay al pasar el ratón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> pausarAutoplayHover</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  click en botón anterior  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">isAutoplay</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4"> === </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `reanudarAutoplayHover()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Reanuda el autoplay al salir el ratón del slider.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> reanudarAutoplayHover</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">isAutoplay</span><span style="color:#D4D4D4"> || </span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> irASlide</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">), </span><span style="color:#4FC1FF">AUTOPLAY_MS</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Eventos  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  click en botones anteriores  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $btnsPrev</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">        btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">            irASlide</span><span style="color:#D4D4D4">(-</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  click en botones siguientes  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $btnsNext</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  click en botón siguiente  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">            irASlide</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  click en botones de autoplay  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $btnsAutoplay</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">btn</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  click en botón de autoplay  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        btn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">            event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">            //  -----  si el autoplay está activo, detenerlo  -----</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  alternar autoplay  -----</span></span>
 <span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">isAutoplay</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#DCDCAA">                detenerAutoplay</span><span style="color:#D4D4D4">();</span></span>
-<span class="line"><span style="color:#D4D4D4">            }</span></span>
-<span class="line"><span style="color:#6A9955">            //  -----  si el autoplay está detenido, reanudarlo  -----</span></span>
-<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"><span style="color:#DCDCAA">                iniciarAutoplay</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
 <span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            iniciarAutoplay</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">        });</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  pausar el intervalo al pasar el ratón por el slider  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  pausar el autoplay al pasar el ratón  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $slidesContainer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseenter"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">isAutoplay</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">            clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">        }</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        pausarAutoplayHover</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  reanudar el intervalo al salir del slider  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  reanudar el autoplay al salir el ratón  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">    $slidesContainer</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addEventListener</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mouseleave"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">isAutoplay</span><span style="color:#D4D4D4">) {</span></span>
-<span class="line"><span style="color:#DCDCAA">            clearInterval</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">autoplayInterval</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#9CDCFE">            autoplayInterval</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">setInterval</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#DCDCAA"> irASlide</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">), </span><span style="color:#4FC1FF">AUTOPLAY_MS</span><span style="color:#D4D4D4">);</span></span>
-<span class="line"><span style="color:#D4D4D4">        }</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        reanudarAutoplayHover</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#D4D4D4">    });</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">    //  -----  inicializar  -----</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  estado inicial del slider  -----</span></span>
 <span class="line"><span style="color:#DCDCAA">    mostrarSlides</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"><span style="color:#DCDCAA">    iniciarAutoplay</span><span style="color:#D4D4D4">();</span></span>
 <span class="line"></span>

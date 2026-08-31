@@ -4,6 +4,7 @@
     *  -----------------------------------------------------------  *
 */
 
+
 (() => {
 
 
@@ -18,28 +19,46 @@
         *  ---------------------------------  *
     */
 
-    /** @type {HTMLSectionElement | null} - `Contenedor de la demo del slider` */
-    const $slider = document.querySelector(".demo__slider");
-
-    /** @type {HTMLSectionElement | null} - `Contenedor de las diapositivas` */
-    const $slidesContainer = $slider ? $slider.querySelector(".slider__slides") : null;
-
-    /** @type {NodeListOf<HTMLArticleElement> | null} - `Diapositivas del slider` */
-    const $slides = $slider ? $slider.querySelectorAll(".slides__item") : null;
-
-    /** @type {NodeListOf<HTMLButtonElement> | null} - `Botones anterior` */
-    const $btnsPrev = $slider ? $slider.querySelectorAll(".slider__prev") : null;
-
-    /** @type {NodeListOf<HTMLButtonElement> | null} - `Botones siguiente` */
-    const $btnsNext = $slider ? $slider.querySelectorAll(".slider__next") : null;
-
-    /** @type {NodeListOf<HTMLButtonElement> | null} - `Botones de autoplay` */
-    const $btnsAutoplay = $slider ? $slider.querySelectorAll(".slider__autoplay-toggle") : null;
+    /** @type {HTMLElement | null} - `demo del slider de imágenes` */
+    const $demo = /** @type {HTMLElement | null} */ (
+        document.querySelector(".demo__slider")
+    );
 
 
-    //  -----  verificación de elementos  -----
+    //  -----  validamos que exista la demo  -----
+    if (!$demo) {
+        throw new Error("No se ha encontrado la demo del slider.");
+    }
+
+
+    /** @type {HTMLElement | null} - `contenedor de las diapositivas` */
+    const $slidesContainer = /** @type {HTMLElement | null} */ (
+        $demo.querySelector(".slider__slides")
+    );
+
+    /** @type {NodeListOf<HTMLElement> | null} - `diapositivas del slider` */
+    const $slides = /** @type {NodeListOf<HTMLElement> | null} */ (
+        $demo.querySelectorAll(".slides__item")
+    );
+
+    /** @type {NodeListOf<HTMLButtonElement> | null} - `botones anterior` */
+    const $btnsPrev = /** @type {NodeListOf<HTMLButtonElement> | null} */ (
+        $demo.querySelectorAll(".slider__prev")
+    );
+
+    /** @type {NodeListOf<HTMLButtonElement> | null} - `botones siguiente` */
+    const $btnsNext = /** @type {NodeListOf<HTMLButtonElement> | null} */ (
+        $demo.querySelectorAll(".slider__next")
+    );
+
+    /** @type {NodeListOf<HTMLButtonElement> | null} - `botones de autoplay` */
+    const $btnsAutoplay = /** @type {NodeListOf<HTMLButtonElement> | null} */ (
+        $demo.querySelectorAll(".slider__autoplay-toggle")
+    );
+
+
+    //  -----  validamos que existan los elementos necesarios  -----
     if (
-        !$slider ||
         !$slidesContainer ||
         !$slides ||
         $slides.length === 0 ||
@@ -54,6 +73,12 @@
     }
 
 
+    /*
+        *  -----------------------  *
+        *  -----  Variables  -----  *
+        *  -----------------------  *
+    */
+
     /** - `índice de la diapositiva visible` */
     let count = 0;
 
@@ -63,9 +88,15 @@
     /** - `intervalo del autoplay en milisegundos` */
     const AUTOPLAY_MS = 5000;
 
-    /** @type {ReturnType<typeof setInterval> | undefined} - `identificador del intervalo de autoplay` */
-    let autoplayInterval;
+    /** @type {number | null} - `identificador del intervalo de autoplay` */
+    let autoplayInterval = null;
 
+
+    /*
+        *  -----------------------  *
+        *  -----  Funciones  -----  *
+        *  -----------------------  *
+    */
 
     /**
      * -------------------------------
@@ -79,7 +110,6 @@
         $slides.forEach((slide, index) => {
             slide.style.transform = `translateX(${(index - count) * 100}%)`;
         });
-
     };
 
 
@@ -106,7 +136,6 @@
         }
 
         mostrarSlides();
-
     };
 
 
@@ -119,15 +148,17 @@
      */
     const iniciarAutoplay = () => {
 
-        clearInterval(autoplayInterval);
-        autoplayInterval = setInterval(() => irASlide(1), AUTOPLAY_MS);
+        if (autoplayInterval !== null) {
+            window.clearInterval(autoplayInterval);
+        }
+
+        autoplayInterval = window.setInterval(() => irASlide(1), AUTOPLAY_MS);
 
         $btnsAutoplay.forEach((btn) => {
             btn.textContent = "⏸ Pausar";
         });
 
         isAutoplay = true;
-
     };
 
 
@@ -140,81 +171,107 @@
      */
     const detenerAutoplay = () => {
 
-        clearInterval(autoplayInterval);
+        if (autoplayInterval !== null) {
+            window.clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
 
         $btnsAutoplay.forEach((btn) => {
             btn.textContent = "▶ Reanudar";
         });
 
         isAutoplay = false;
-
     };
 
 
-    $btnsPrev.forEach((btn) => {
+    /**
+     * ---------------------------------------
+     * -----  `pausarAutoplayHover()`  -----
+     * ---------------------------------------
+     * - Pausa temporalmente el autoplay al pasar el ratón.
+     * @return {void}
+     */
+    const pausarAutoplayHover = () => {
 
-        //  -----  click en botón anterior  -----
+        if (!isAutoplay || autoplayInterval === null) {
+            return;
+        }
+
+        window.clearInterval(autoplayInterval);
+        autoplayInterval = null;
+    };
+
+
+    /**
+     * -----------------------------------------
+     * -----  `reanudarAutoplayHover()`  -----
+     * -----------------------------------------
+     * - Reanuda el autoplay al salir el ratón del slider.
+     * @return {void}
+     */
+    const reanudarAutoplayHover = () => {
+
+        if (!isAutoplay || autoplayInterval !== null) {
+            return;
+        }
+
+        autoplayInterval = window.setInterval(() => irASlide(1), AUTOPLAY_MS);
+    };
+
+
+    /*
+        *  ---------------------  *
+        *  -----  Eventos  -----  *
+        *  ---------------------  *
+    */
+
+    //  -----  click en botones anteriores  -----
+    $btnsPrev.forEach((btn) => {
         btn.addEventListener("click", (event) => {
             event.preventDefault();
             irASlide(-1);
         });
-
     });
 
 
+    //  -----  click en botones siguientes  -----
     $btnsNext.forEach((btn) => {
-
-        //  -----  click en botón siguiente  -----
         btn.addEventListener("click", (event) => {
             event.preventDefault();
             irASlide(1);
         });
-
     });
 
 
+    //  -----  click en botones de autoplay  -----
     $btnsAutoplay.forEach((btn) => {
-
-        //  -----  click en botón de autoplay  -----
         btn.addEventListener("click", (event) => {
             event.preventDefault();
 
-            //  -----  si el autoplay está activo, detenerlo  -----
+            //  -----  alternar autoplay  -----
             if (isAutoplay) {
                 detenerAutoplay();
-            }
-            //  -----  si el autoplay está detenido, reanudarlo  -----
-            else {
-                iniciarAutoplay();
+                return;
             }
 
+            iniciarAutoplay();
         });
-
     });
 
 
-    //  -----  pausar el intervalo al pasar el ratón por el slider  -----
+    //  -----  pausar el autoplay al pasar el ratón  -----
     $slidesContainer.addEventListener("mouseenter", () => {
-
-        if (isAutoplay) {
-            clearInterval(autoplayInterval);
-        }
-
+        pausarAutoplayHover();
     });
 
 
-    //  -----  reanudar el intervalo al salir del slider  -----
+    //  -----  reanudar el autoplay al salir el ratón  -----
     $slidesContainer.addEventListener("mouseleave", () => {
-
-        if (isAutoplay) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = setInterval(() => irASlide(1), AUTOPLAY_MS);
-        }
-
+        reanudarAutoplayHover();
     });
 
 
-    //  -----  inicializar  -----
+    //  -----  estado inicial del slider  -----
     mostrarSlides();
     iniciarAutoplay();
 
